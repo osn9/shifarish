@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SifarishModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Citizen_GharJagga_Info">
+    <Key>
+      <PropertyRef Name="Citizen_gharjaga_Id" />
+    </Key>
+    <Property Name="Citizen_gharjaga_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Citizen_Id" Type="int" />
+    <Property Name="NumberOfHouse" Type="int" />
+    <Property Name="Area" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kitta_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="East" Type="nvarchar" MaxLength="50" />
+    <Property Name="West" Type="nvarchar" MaxLength="50" />
+    <Property Name="North" Type="nvarchar" MaxLength="50" />
+    <Property Name="South" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Citizen_Info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Citizen_id" Type="int" />
+    <Property Name="Citizenship_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="District_Id" Type="int" />
+    <Property Name="Zone_Id" Type="int" />
+    <Property Name="Mun_Ward" Type="int" />
+    <Property Name="Sabik_Ward" Type="int" />
+    <Property Name="Father_Husband_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="GrandFatherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CitizenShip_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="CitizinShip_Zone" Type="int" />
+  </EntityType>
+  <EntityType Name="JaagaTarfa">
+    <Key>
+      <PropertyRef Name="jagaTarfa_id" />
+    </Key>
+    <Property Name="jagaTarfa_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MulSadak" Type="nvarchar" MaxLength="50" />
+    <Property Name="sahayakSadaK" Type="nvarchar" MaxLength="50" />
+    <Property Name="KacchiSadak" Type="nvarchar" MaxLength="50" />
+    <Property Name="Goreto" Type="nvarchar" MaxLength="50" />
+    <Property Name="BatoNavaeko" Type="nvarchar" MaxLength="50" />
+    <Property Name="CitizenId" Type="int" />
+  </EntityType>
+  <EntityType Name="Karlayatarfa">
+    <Key>
+      <PropertyRef Name="Karlayatarfa_id" />
+    </Key>
+    <Property Name="Karlayatarfa_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="KardartaFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="citizen_ID" Type="int" />
+  </EntityType>
+  <Association Name="FK_Citizen_GharJagga_Info_Citizen_Info">
+    <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="0..1" />
+    <End Role="Citizen_GharJagga_Info" Type="Self.Citizen_GharJagga_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Citizen_GharJagga_Info">
+        <PropertyRef Name="Citizen_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JaagaTarfa_Citizen_Info">
+    <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="0..1" />
+    <End Role="JaagaTarfa" Type="Self.JaagaTarfa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JaagaTarfa">
+        <PropertyRef Name="CitizenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Karlayatarfa_Citizen_Info">
+    <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="0..1" />
+    <End Role="Karlayatarfa" Type="Self.Karlayatarfa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Karlayatarfa">
+        <PropertyRef Name="citizen_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SifarishModelStoreContainer">
+    <EntitySet Name="Citizen_GharJagga_Info" EntityType="Self.Citizen_GharJagga_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Citizen_Info" EntityType="Self.Citizen_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JaagaTarfa" EntityType="Self.JaagaTarfa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Karlayatarfa" EntityType="Self.Karlayatarfa" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Citizen_GharJagga_Info_Citizen_Info" Association="Self.FK_Citizen_GharJagga_Info_Citizen_Info">
+      <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+      <End Role="Citizen_GharJagga_Info" EntitySet="Citizen_GharJagga_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JaagaTarfa_Citizen_Info" Association="Self.FK_JaagaTarfa_Citizen_Info">
+      <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+      <End Role="JaagaTarfa" EntitySet="JaagaTarfa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Karlayatarfa_Citizen_Info" Association="Self.FK_Karlayatarfa_Citizen_Info">
+      <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+      <End Role="Karlayatarfa" EntitySet="Karlayatarfa" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SifarishModelStoreContainer" CdmEntityContainer="SifarishEntities">
+    <EntitySetMapping Name="Citizen_GharJagga_Info">
+      <EntityTypeMapping TypeName="SifarishModel.Citizen_GharJagga_Info">
+        <MappingFragment StoreEntitySet="Citizen_GharJagga_Info">
+          <ScalarProperty Name="Citizen_gharjaga_Id" ColumnName="Citizen_gharjaga_Id" />
+          <ScalarProperty Name="Citizen_Id" ColumnName="Citizen_Id" />
+          <ScalarProperty Name="NumberOfHouse" ColumnName="NumberOfHouse" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Kitta_No" ColumnName="Kitta_No" />
+          <ScalarProperty Name="East" ColumnName="East" />
+          <ScalarProperty Name="West" ColumnName="West" />
+          <ScalarProperty Name="North" ColumnName="North" />
+          <ScalarProperty Name="South" ColumnName="South" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Citizen_Info">
+      <EntityTypeMapping TypeName="SifarishModel.Citizen_Info">
+        <MappingFragment StoreEntitySet="Citizen_Info">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Citizen_id" ColumnName="Citizen_id" />
+          <ScalarProperty Name="Citizenship_No" ColumnName="Citizenship_No" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="District_Id" ColumnName="District_Id" />
+          <ScalarProperty Name="Zone_Id" ColumnName="Zone_Id" />
+          <ScalarProperty Name="Mun_Ward" ColumnName="Mun_Ward" />
+          <ScalarProperty Name="Sabik_Ward" ColumnName="Sabik_Ward" />
+          <ScalarProperty Name="Father_Husband_Name" ColumnName="Father_Husband_Name" />
+          <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
+          <ScalarProperty Name="CitizenShip_Date" ColumnName="CitizenShip_Date" />
+          <ScalarProperty Name="CitizinShip_Zone" ColumnName="CitizinShip_Zone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JaagaTarfas">
+      <EntityTypeMapping TypeName="SifarishModel.JaagaTarfa">
+        <MappingFragment StoreEntitySet="JaagaTarfa">
+          <ScalarProperty Name="CitizenId" ColumnName="CitizenId" />
+          <ScalarProperty Name="BatoNavaeko" ColumnName="BatoNavaeko" />
+          <ScalarProperty Name="Goreto" ColumnName="Goreto" />
+          <ScalarProperty Name="KacchiSadak" ColumnName="KacchiSadak" />
+          <ScalarProperty Name="sahayakSadaK" ColumnName="sahayakSadaK" />
+          <ScalarProperty Name="MulSadak" ColumnName="MulSadak" />
+          <ScalarProperty Name="jagaTarfa_id" ColumnName="jagaTarfa_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Karlayatarfas">
+      <EntityTypeMapping TypeName="SifarishModel.Karlayatarfa">
+        <MappingFragment StoreEntitySet="Karlayatarfa">
+          <ScalarProperty Name="citizen_ID" ColumnName="citizen_ID" />
+          <ScalarProperty Name="KardartaFullName" ColumnName="KardartaFullName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Karlayatarfa_id" ColumnName="Karlayatarfa_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
