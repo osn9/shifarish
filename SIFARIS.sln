@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIFARIS", "SIFARIS\SIFARIS.csproj", "{F5AA2AEC-7C87-41E3-8EE3-688D2D23F963}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SifarishView", "SifarishView\SifarishView.csproj", "{58B7C0F5-585F-4FA5-A3DA-3635A8CF082F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F5AA2AEC-7C87-41E3-8EE3-688D2D23F963}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5AA2AEC-7C87-41E3-8EE3-688D2D23F963}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5AA2AEC-7C87-41E3-8EE3-688D2D23F963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B7C0F5-585F-4FA5-A3DA-3635A8CF082F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B7C0F5-585F-4FA5-A3DA-3635A8CF082F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B7C0F5-585F-4FA5-A3DA-3635A8CF082F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B7C0F5-585F-4FA5-A3DA-3635A8CF082F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

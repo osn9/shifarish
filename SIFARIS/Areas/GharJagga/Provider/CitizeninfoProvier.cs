@@ -154,7 +154,8 @@ namespace SIFARIS.Areas.GharJagga.Provider
                                 .Join(con.Karlayatarfas, k => k.ppc.Citizen_Info.Id, z => z.citizen_ID, (k, z) => new { k, z })
 
                                 .Select(x => new CitizenInfoViewModel()
-                {
+                                {
+                                    Id = x.k.ppc.Citizen_Info.Id,
                                     Citizenship_No = x.k.ppc.Citizen_Info.Citizenship_No,
                 Address = x.k.ppc.Citizen_Info.Address,
                 District_Id = x.k.ppc.Citizen_Info.District_Id,

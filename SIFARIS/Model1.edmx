@@ -36,6 +36,26 @@
           <Property Name="CitizenShip_Date" Type="nvarchar" MaxLength="50" />
           <Property Name="CitizinShip_Zone" Type="int" />
         </EntityType>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="StateId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DistrictDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DistId" Type="bigint" Nullable="false" />
+          <Property Name="HeadQuater" Type="nvarchar" MaxLength="250" />
+          <Property Name="PDensity" Type="nvarchar" MaxLength="50" />
+          <Property Name="Population" Type="nvarchar" MaxLength="50" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="150" />
+        </EntityType>
         <EntityType Name="JaagaTarfa">
           <Key>
             <PropertyRef Name="jagaTarfa_id" />
@@ -59,6 +79,67 @@
           <Property Name="KardartaFullName" Type="nvarchar" MaxLength="50" />
           <Property Name="citizen_ID" Type="int" />
         </EntityType>
+        <EntityType Name="LocalLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="DistId" Type="bigint" Nullable="false" />
+          <Property Name="MaxWardNo" Type="int" />
+        </EntityType>
+        <EntityType Name="LocalLevelDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LocalLevelId" Type="bigint" Nullable="false" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Density" Type="nvarchar" MaxLength="150" />
+          <Property Name="Population" Type="nvarchar" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StateDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateId" Type="bigint" Nullable="false" />
+          <Property Name="Capital" Type="nvarchar" MaxLength="250" />
+          <Property Name="ChiefMinister" Type="nvarchar" MaxLength="150" />
+          <Property Name="PDensity" Type="nvarchar" MaxLength="50" />
+          <Property Name="Governer" Type="nvarchar" MaxLength="250" />
+          <Property Name="Population" Type="nvarchar" MaxLength="50" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="250" />
+          <Property Name="TotalDist" Type="int" />
+        </EntityType>
+        <EntityType Name="Ward">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WardNo" Type="bigint" />
+          <Property Name="LocalLevelId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="WardDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WardId" Type="bigint" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Density" Type="nvarchar" MaxLength="50" />
+          <Property Name="Popullation" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK_Citizen_GharJagga_Info_Citizen_Info">
           <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="0..1" />
           <End Role="Citizen_GharJagga_Info" Type="Self.Citizen_GharJagga_Info" Multiplicity="*" />
@@ -68,6 +149,18 @@
             </Principal>
             <Dependent Role="Citizen_GharJagga_Info">
               <PropertyRef Name="Citizen_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DistrictDetails_District">
+          <End Role="District" Type="Self.District" Multiplicity="1" />
+          <End Role="DistrictDetails" Type="Self.DistrictDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictDetails">
+              <PropertyRef Name="DistId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -95,14 +188,86 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_LocalLevel_District">
+          <End Role="District" Type="Self.District" Multiplicity="1" />
+          <End Role="LocalLevel" Type="Self.LocalLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LocalLevel">
+              <PropertyRef Name="DistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LocalLevelDetails_LocalLevel">
+          <End Role="LocalLevel" Type="Self.LocalLevel" Multiplicity="1" />
+          <End Role="LocalLevelDetails" Type="Self.LocalLevelDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocalLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LocalLevelDetails">
+              <PropertyRef Name="LocalLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StateDetails_State">
+          <End Role="State" Type="Self.State" Multiplicity="1" />
+          <End Role="StateDetails" Type="Self.StateDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StateDetails">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ward_LocalLevel">
+          <End Role="LocalLevel" Type="Self.LocalLevel" Multiplicity="0..1" />
+          <End Role="Ward" Type="Self.Ward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocalLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ward">
+              <PropertyRef Name="LocalLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WardDetails_Ward">
+          <End Role="Ward" Type="Self.Ward" Multiplicity="0..1" />
+          <End Role="WardDetails" Type="Self.WardDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ward">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WardDetails">
+              <PropertyRef Name="WardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="SifarishModelStoreContainer">
           <EntitySet Name="Citizen_GharJagga_Info" EntityType="Self.Citizen_GharJagga_Info" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Citizen_Info" EntityType="Self.Citizen_Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DistrictDetails" EntityType="Self.DistrictDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JaagaTarfa" EntityType="Self.JaagaTarfa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Karlayatarfa" EntityType="Self.Karlayatarfa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LocalLevel" EntityType="Self.LocalLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LocalLevelDetails" EntityType="Self.LocalLevelDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StateDetails" EntityType="Self.StateDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ward" EntityType="Self.Ward" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WardDetails" EntityType="Self.WardDetails" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Citizen_GharJagga_Info_Citizen_Info" Association="Self.FK_Citizen_GharJagga_Info_Citizen_Info">
             <End Role="Citizen_Info" EntitySet="Citizen_Info" />
             <End Role="Citizen_GharJagga_Info" EntitySet="Citizen_GharJagga_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DistrictDetails_District" Association="Self.FK_DistrictDetails_District">
+            <End Role="District" EntitySet="District" />
+            <End Role="DistrictDetails" EntitySet="DistrictDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_JaagaTarfa_Citizen_Info" Association="Self.FK_JaagaTarfa_Citizen_Info">
             <End Role="Citizen_Info" EntitySet="Citizen_Info" />
@@ -111,6 +276,26 @@
           <AssociationSet Name="FK_Karlayatarfa_Citizen_Info" Association="Self.FK_Karlayatarfa_Citizen_Info">
             <End Role="Citizen_Info" EntitySet="Citizen_Info" />
             <End Role="Karlayatarfa" EntitySet="Karlayatarfa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LocalLevel_District" Association="Self.FK_LocalLevel_District">
+            <End Role="District" EntitySet="District" />
+            <End Role="LocalLevel" EntitySet="LocalLevel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LocalLevelDetails_LocalLevel" Association="Self.FK_LocalLevelDetails_LocalLevel">
+            <End Role="LocalLevel" EntitySet="LocalLevel" />
+            <End Role="LocalLevelDetails" EntitySet="LocalLevelDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StateDetails_State" Association="Self.FK_StateDetails_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="StateDetails" EntitySet="StateDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ward_LocalLevel" Association="Self.FK_Ward_LocalLevel">
+            <End Role="LocalLevel" EntitySet="LocalLevel" />
+            <End Role="Ward" EntitySet="Ward" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WardDetails_Ward" Association="Self.FK_WardDetails_Ward">
+            <End Role="Ward" EntitySet="Ward" />
+            <End Role="WardDetails" EntitySet="WardDetails" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -181,6 +366,38 @@
             <End Role="Citizen_Info" EntitySet="Citizen_Info" />
             <End Role="Karlayatarfa" EntitySet="Karlayatarfas" />
           </AssociationSet>
+          <EntitySet Name="Districts" EntityType="SifarishModel.District" />
+          <EntitySet Name="DistrictDetails" EntityType="SifarishModel.DistrictDetail" />
+          <EntitySet Name="LocalLevels" EntityType="SifarishModel.LocalLevel" />
+          <EntitySet Name="LocalLevelDetails" EntityType="SifarishModel.LocalLevelDetail" />
+          <EntitySet Name="States" EntityType="SifarishModel.State" />
+          <EntitySet Name="StateDetails" EntityType="SifarishModel.StateDetail" />
+          <EntitySet Name="Wards" EntityType="SifarishModel.Ward" />
+          <EntitySet Name="WardDetails" EntityType="SifarishModel.WardDetail" />
+          <AssociationSet Name="FK_DistrictDetails_District" Association="SifarishModel.FK_DistrictDetails_District">
+            <End Role="District" EntitySet="Districts" />
+            <End Role="DistrictDetail" EntitySet="DistrictDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LocalLevel_District" Association="SifarishModel.FK_LocalLevel_District">
+            <End Role="District" EntitySet="Districts" />
+            <End Role="LocalLevel" EntitySet="LocalLevels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LocalLevelDetails_LocalLevel" Association="SifarishModel.FK_LocalLevelDetails_LocalLevel">
+            <End Role="LocalLevel" EntitySet="LocalLevels" />
+            <End Role="LocalLevelDetail" EntitySet="LocalLevelDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ward_LocalLevel" Association="SifarishModel.FK_Ward_LocalLevel">
+            <End Role="LocalLevel" EntitySet="LocalLevels" />
+            <End Role="Ward" EntitySet="Wards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StateDetails_State" Association="SifarishModel.FK_StateDetails_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="StateDetail" EntitySet="StateDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WardDetails_Ward" Association="SifarishModel.FK_WardDetails_Ward">
+            <End Role="Ward" EntitySet="Wards" />
+            <End Role="WardDetail" EntitySet="WardDetails" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="JaagaTarfa">
           <Key>
@@ -228,6 +445,171 @@
             </Principal>
             <Dependent Role="Karlayatarfa">
               <PropertyRef Name="citizen_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="StateId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="DistrictDetails" Relationship="SifarishModel.FK_DistrictDetails_District" FromRole="District" ToRole="DistrictDetail" />
+          <NavigationProperty Name="LocalLevels" Relationship="SifarishModel.FK_LocalLevel_District" FromRole="District" ToRole="LocalLevel" />
+        </EntityType>
+        <EntityType Name="DistrictDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DistId" Type="Int64" Nullable="false" />
+          <Property Name="HeadQuater" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PDensity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Population" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="District" Relationship="SifarishModel.FK_DistrictDetails_District" FromRole="DistrictDetail" ToRole="District" />
+        </EntityType>
+        <EntityType Name="LocalLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DistId" Type="Int64" Nullable="false" />
+          <Property Name="MaxWardNo" Type="Int32" />
+          <NavigationProperty Name="District" Relationship="SifarishModel.FK_LocalLevel_District" FromRole="LocalLevel" ToRole="District" />
+          <NavigationProperty Name="LocalLevelDetails" Relationship="SifarishModel.FK_LocalLevelDetails_LocalLevel" FromRole="LocalLevel" ToRole="LocalLevelDetail" />
+          <NavigationProperty Name="Wards" Relationship="SifarishModel.FK_Ward_LocalLevel" FromRole="LocalLevel" ToRole="Ward" />
+        </EntityType>
+        <EntityType Name="LocalLevelDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LocalLevelId" Type="Int64" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Density" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Population" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LocalLevel" Relationship="SifarishModel.FK_LocalLevelDetails_LocalLevel" FromRole="LocalLevelDetail" ToRole="LocalLevel" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="StateDetails" Relationship="SifarishModel.FK_StateDetails_State" FromRole="State" ToRole="StateDetail" />
+        </EntityType>
+        <EntityType Name="StateDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateId" Type="Int64" Nullable="false" />
+          <Property Name="Capital" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ChiefMinister" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PDensity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Governer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Population" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TotalDist" Type="Int32" />
+          <NavigationProperty Name="State" Relationship="SifarishModel.FK_StateDetails_State" FromRole="StateDetail" ToRole="State" />
+        </EntityType>
+        <EntityType Name="Ward">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WardNo" Type="Int64" />
+          <Property Name="LocalLevelId" Type="Int64" />
+          <NavigationProperty Name="LocalLevel" Relationship="SifarishModel.FK_Ward_LocalLevel" FromRole="Ward" ToRole="LocalLevel" />
+          <NavigationProperty Name="WardDetails" Relationship="SifarishModel.FK_WardDetails_Ward" FromRole="Ward" ToRole="WardDetail" />
+        </EntityType>
+        <EntityType Name="WardDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WardId" Type="Int64" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Density" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Popullation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ward" Relationship="SifarishModel.FK_WardDetails_Ward" FromRole="WardDetail" ToRole="Ward" />
+        </EntityType>
+        <Association Name="FK_DistrictDetails_District">
+          <End Type="SifarishModel.District" Role="District" Multiplicity="1" />
+          <End Type="SifarishModel.DistrictDetail" Role="DistrictDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictDetail">
+              <PropertyRef Name="DistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LocalLevel_District">
+          <End Type="SifarishModel.District" Role="District" Multiplicity="1" />
+          <End Type="SifarishModel.LocalLevel" Role="LocalLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LocalLevel">
+              <PropertyRef Name="DistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LocalLevelDetails_LocalLevel">
+          <End Type="SifarishModel.LocalLevel" Role="LocalLevel" Multiplicity="1" />
+          <End Type="SifarishModel.LocalLevelDetail" Role="LocalLevelDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocalLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LocalLevelDetail">
+              <PropertyRef Name="LocalLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ward_LocalLevel">
+          <End Type="SifarishModel.LocalLevel" Role="LocalLevel" Multiplicity="0..1" />
+          <End Type="SifarishModel.Ward" Role="Ward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocalLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ward">
+              <PropertyRef Name="LocalLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StateDetails_State">
+          <End Type="SifarishModel.State" Role="State" Multiplicity="1" />
+          <End Type="SifarishModel.StateDetail" Role="StateDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StateDetail">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WardDetails_Ward">
+          <End Type="SifarishModel.Ward" Role="Ward" Multiplicity="0..1" />
+          <End Type="SifarishModel.WardDetail" Role="WardDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ward">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WardDetail">
+              <PropertyRef Name="WardId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -292,6 +674,95 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Karlayatarfa_id" ColumnName="Karlayatarfa_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Districts">
+            <EntityTypeMapping TypeName="SifarishModel.District">
+              <MappingFragment StoreEntitySet="District">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DistrictDetails">
+            <EntityTypeMapping TypeName="SifarishModel.DistrictDetail">
+              <MappingFragment StoreEntitySet="DistrictDetails">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Population" ColumnName="Population" />
+                <ScalarProperty Name="PDensity" ColumnName="PDensity" />
+                <ScalarProperty Name="HeadQuater" ColumnName="HeadQuater" />
+                <ScalarProperty Name="DistId" ColumnName="DistId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocalLevels">
+            <EntityTypeMapping TypeName="SifarishModel.LocalLevel">
+              <MappingFragment StoreEntitySet="LocalLevel">
+                <ScalarProperty Name="MaxWardNo" ColumnName="MaxWardNo" />
+                <ScalarProperty Name="DistId" ColumnName="DistId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocalLevelDetails">
+            <EntityTypeMapping TypeName="SifarishModel.LocalLevelDetail">
+              <MappingFragment StoreEntitySet="LocalLevelDetails">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Population" ColumnName="Population" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="LocalLevelId" ColumnName="LocalLevelId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="SifarishModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateDetails">
+            <EntityTypeMapping TypeName="SifarishModel.StateDetail">
+              <MappingFragment StoreEntitySet="StateDetails">
+                <ScalarProperty Name="TotalDist" ColumnName="TotalDist" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Population" ColumnName="Population" />
+                <ScalarProperty Name="Governer" ColumnName="Governer" />
+                <ScalarProperty Name="PDensity" ColumnName="PDensity" />
+                <ScalarProperty Name="ChiefMinister" ColumnName="ChiefMinister" />
+                <ScalarProperty Name="Capital" ColumnName="Capital" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wards">
+            <EntityTypeMapping TypeName="SifarishModel.Ward">
+              <MappingFragment StoreEntitySet="Ward">
+                <ScalarProperty Name="LocalLevelId" ColumnName="LocalLevelId" />
+                <ScalarProperty Name="WardNo" ColumnName="WardNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WardDetails">
+            <EntityTypeMapping TypeName="SifarishModel.WardDetail">
+              <MappingFragment StoreEntitySet="WardDetails">
+                <ScalarProperty Name="Popullation" ColumnName="Popullation" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="WardId" ColumnName="WardId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -59,5 +59,94 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Districts">
+      <EntityTypeMapping TypeName="SifarishModel.District">
+        <MappingFragment StoreEntitySet="District">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistrictDetails">
+      <EntityTypeMapping TypeName="SifarishModel.DistrictDetail">
+        <MappingFragment StoreEntitySet="DistrictDetails">
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="PDensity" ColumnName="PDensity" />
+          <ScalarProperty Name="HeadQuater" ColumnName="HeadQuater" />
+          <ScalarProperty Name="DistId" ColumnName="DistId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocalLevels">
+      <EntityTypeMapping TypeName="SifarishModel.LocalLevel">
+        <MappingFragment StoreEntitySet="LocalLevel">
+          <ScalarProperty Name="MaxWardNo" ColumnName="MaxWardNo" />
+          <ScalarProperty Name="DistId" ColumnName="DistId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocalLevelDetails">
+      <EntityTypeMapping TypeName="SifarishModel.LocalLevelDetail">
+        <MappingFragment StoreEntitySet="LocalLevelDetails">
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="Density" ColumnName="Density" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="LocalLevelId" ColumnName="LocalLevelId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="SifarishModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StateDetails">
+      <EntityTypeMapping TypeName="SifarishModel.StateDetail">
+        <MappingFragment StoreEntitySet="StateDetails">
+          <ScalarProperty Name="TotalDist" ColumnName="TotalDist" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="Governer" ColumnName="Governer" />
+          <ScalarProperty Name="PDensity" ColumnName="PDensity" />
+          <ScalarProperty Name="ChiefMinister" ColumnName="ChiefMinister" />
+          <ScalarProperty Name="Capital" ColumnName="Capital" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wards">
+      <EntityTypeMapping TypeName="SifarishModel.Ward">
+        <MappingFragment StoreEntitySet="Ward">
+          <ScalarProperty Name="LocalLevelId" ColumnName="LocalLevelId" />
+          <ScalarProperty Name="WardNo" ColumnName="WardNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WardDetails">
+      <EntityTypeMapping TypeName="SifarishModel.WardDetail">
+        <MappingFragment StoreEntitySet="WardDetails">
+          <ScalarProperty Name="Popullation" ColumnName="Popullation" />
+          <ScalarProperty Name="Density" ColumnName="Density" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="WardId" ColumnName="WardId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

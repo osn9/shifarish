@@ -1,0 +1,84 @@
+﻿@model IEnumerable<SifarishView.Areas.GharJagga.Models.CitizenInfoViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "Index";
+}
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="card">
+
+<div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Citizenship_No)
+
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Father_Husband_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrandFatherName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mun_Ward)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Zone_Id)
+                </th>
+                <th></th>
+            </tr>
+</thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Citizenship_No)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Father_Husband_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrandFatherName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mun_Ward)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Zone_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.District_Id)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "AddOrEdit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+       
+
+</table>
+    </div>
+</div>

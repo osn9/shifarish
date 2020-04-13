@@ -15,6 +15,7 @@ namespace SIFARIS.Areas.GharJagga.Controllers
         private CitizeninfoProvier pro = new CitizeninfoProvier();
 
         // GET: api/Citizen
+        [Authorize]
         public IEnumerable<CitizenInfoViewModel> Get()
         {
             return  pro.GetAll(); 

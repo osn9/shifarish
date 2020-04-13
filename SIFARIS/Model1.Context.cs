@@ -29,5 +29,13 @@ namespace SIFARIS
         public virtual DbSet<Citizen_Info> Citizen_Info { get; set; }
         public virtual DbSet<JaagaTarfa> JaagaTarfas { get; set; }
         public virtual DbSet<Karlayatarfa> Karlayatarfas { get; set; }
+        public virtual DbSet<District> Districts { get; set; }
+        public virtual DbSet<DistrictDetail> DistrictDetails { get; set; }
+        public virtual DbSet<LocalLevel> LocalLevels { get; set; }
+        public virtual DbSet<LocalLevelDetail> LocalLevelDetails { get; set; }
+        public virtual DbSet<State> States { get; set; }
+        public virtual DbSet<StateDetail> StateDetails { get; set; }
+        public virtual DbSet<Ward> Wards { get; set; }
+        public virtual DbSet<WardDetail> WardDetails { get; set; }
     }
 }
