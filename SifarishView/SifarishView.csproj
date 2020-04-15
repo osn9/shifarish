@@ -228,6 +228,7 @@
     <Compile Include="Areas\GharJagga\Models\Token.cs" />
     <Compile Include="Areas\GharJagga\Utilities\Common.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -277,6 +278,25 @@
     <Content Include="Content\assets\js\light-bootstrap-dashboard.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Coming_Soon\01-comming-soon\css\responsive.css" />
+    <Content Include="Content\Coming_Soon\01-comming-soon\css\styles.css" />
+    <Content Include="Content\Coming_Soon\common-css\bootstrap.css" />
+    <Content Include="Content\Coming_Soon\common-css\ionicons.css" />
+    <Content Include="Content\Coming_Soon\common-css\jquery.classycountdown.css" />
+    <Content Include="Content\Coming_Soon\common-js\bootstrap.js" />
+    <Content Include="Content\Coming_Soon\common-js\jquery-3.1.1.min.js" />
+    <Content Include="Content\Coming_Soon\common-js\jquery.classycountdown.js" />
+    <Content Include="Content\Coming_Soon\common-js\jquery.countdown.min.js" />
+    <Content Include="Content\Coming_Soon\common-js\jquery.knob.js" />
+    <Content Include="Content\Coming_Soon\common-js\jquery.throttle.js" />
+    <Content Include="Content\Coming_Soon\common-js\scripts.js" />
+    <Content Include="Content\Coming_Soon\common-js\tether.min.js" />
+    <Content Include="Content\Coming_Soon\common-js\TimeCircles.js" />
+    <Content Include="Content\Coming_Soon\fonts\ionicons.svg" />
+    <Content Include="Content\Coming_Soon\images\countdown-1-1000x1000.jpg" />
+    <Content Include="Content\Coming_Soon\images\countdown-2-1000x1000.jpg" />
+    <Content Include="Content\Coming_Soon\images\logo-black.png" />
+    <Content Include="Content\Coming_Soon\images\logo-white.png" />
     <Content Include="Content\documentation\css\documentation.css" />
     <Content Include="Content\documentation\tutorial-components.html" />
     <Content Include="Content\Login\css\main.css" />
@@ -426,6 +446,10 @@
     <Content Include="Content\Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Content\Login\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Content\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\Coming_Soon\.DS_Store" />
+    <Content Include="Content\Coming_Soon\fonts\ionicons.eot" />
+    <Content Include="Content\Coming_Soon\fonts\ionicons.ttf" />
+    <Content Include="Content\Coming_Soon\fonts\ionicons.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -474,6 +498,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Errors\PageNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

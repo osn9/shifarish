@@ -12,14 +12,20 @@ namespace SifarishView.Areas.GharJagga.Controllers
     {
         //[Authorize]
         // GET: GharJagga/CitizenInfo
+        [HandleError]
         public ActionResult Index()
         {
+
             IEnumerable<CitizenInfoViewModel> DataList;
             var accesstoken = Session["accesstoken"];
             GlobalVariables.webApiClient.DefaultRequestHeaders.Clear();
 
             GlobalVariables.webApiClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + accesstoken);
             HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Citizen").Result;
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    return erro
+            //}
 
             DataList = response.Content.ReadAsAsync<IEnumerable<CitizenInfoViewModel>>().Result;
             return View(DataList);
