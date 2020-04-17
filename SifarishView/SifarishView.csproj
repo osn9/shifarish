@@ -227,6 +227,7 @@
     <Compile Include="Areas\GharJagga\Models\CommonViewModel.cs" />
     <Compile Include="Areas\GharJagga\Models\Token.cs" />
     <Compile Include="Areas\GharJagga\Utilities\Common.cs" />
+    <Compile Include="Areas\GharJagga\Utilities\Server_Response.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

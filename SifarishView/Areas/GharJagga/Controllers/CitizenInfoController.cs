@@ -1,4 +1,6 @@
-﻿using SifarishView.Areas.GharJagga.Models;
+﻿using Newtonsoft.Json;
+using SifarishView.Areas.GharJagga.Models;
+using SifarishView.Areas.GharJagga.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +24,18 @@ namespace SifarishView.Areas.GharJagga.Controllers
 
             GlobalVariables.webApiClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + accesstoken);
             HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Citizen").Result;
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    return erro
-            //}
-
-            DataList = response.Content.ReadAsAsync<IEnumerable<CitizenInfoViewModel>>().Result;
-            return View(DataList);
-
+            
+            if (response.IsSuccessStatusCode)
+            { 
+                var result = response.Content.ReadAsAsync<Server_Response>().Result;
+            if (result.obj.ToString() != null)
+            {
+                    DataList = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<CitizenInfoViewModel>>(result.obj.ToString());
+                    return View(DataList);
+                }
+          
+        }
+            return View(new CitizenInfoViewModel());
         }
 
         // GET: GharJagga/CitizenInfo/Details/5
@@ -37,9 +43,20 @@ namespace SifarishView.Areas.GharJagga.Controllers
         {
             CitizenInfoViewModel DataList;
             HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Citizen/" + id).Result;
-            DataList = response.Content.ReadAsAsync<CitizenInfoViewModel>().Result;
-            return View(DataList);
-            
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadAsAsync<Server_Response>().Result;
+                if (result.obj.ToString() != null)
+                {
+                    DataList = Newtonsoft.Json.JsonConvert.DeserializeObject<CitizenInfoViewModel>(result.obj.ToString());
+                    return View(DataList);
+                }
+
+            }
+            // DataList = response.Content.ReadAsAsync<CitizenInfoViewModel>().Result;
+            return View(new CitizenInfoViewModel());
+
         }
 
         // GET: GharJagga/CitizenInfo/Create
@@ -74,7 +91,15 @@ namespace SifarishView.Areas.GharJagga.Controllers
             else
             {
                 HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Citizen/" + id).Result;
-                return View(response.Content.ReadAsAsync<CitizenInfoViewModel>().Result);
+                //return View(response.Content.ReadAsAsync<CitizenInfoViewModel>().Result);
+                CitizenInfoViewModel DataList = new CitizenInfoViewModel();
+                var result = response.Content.ReadAsAsync<Server_Response>().Result;
+                if (result.obj.ToString() != null)
+                {
+                    DataList = Newtonsoft.Json.JsonConvert.DeserializeObject<CitizenInfoViewModel>(result.obj.ToString());
+                    return View(DataList);
+                }
+                return View(new CitizenInfoViewModel());
             }
             //return View();
         }

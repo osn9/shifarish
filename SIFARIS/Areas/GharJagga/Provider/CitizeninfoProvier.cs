@@ -24,7 +24,7 @@ namespace SIFARIS.Areas.GharJagga.Provider
     //    // other assignments
     //})
                    // var update = con.Citizen_Info.Where(x => x.Id == model.Id).FirstOrDefault();
-                    var data = con.Citizen_Info.Join(con.Citizen_GharJagga_Info,
+                    var data = con.Citizen_Info.Where(x => x.Id == model.Id).Join(con.Citizen_GharJagga_Info,
                                 a => a.Id,
                                 b => b.Citizen_Id,
                                 (a, b) => new { Citizen_Info = a, Citizen_GharJagga_Info = b })
@@ -45,8 +45,8 @@ namespace SIFARIS.Areas.GharJagga.Provider
                         data.k.ppc.Citizen_Info.GrandFatherName = model.GrandFatherName;
                         data.k.ppc.Citizen_Info.CitizenShip_Date = model.CitizenShip_Date;
                         data.k.ppc.Citizen_Info.CitizinShip_Zone = model.CitizinShip_Zone;
-                       // data.k.ppc.Citizen_GharJagga_Info.Citizen_gharjaga_Id = model.Citizen_gharjaga_Id;
-                     //   data.k.ppc.Citizen_GharJagga_Info.Citizen_Id = model.Id;
+                        //data.k.ppc.Citizen_GharJagga_Info.Citizen_gharjaga_Id = model.Id;
+                        data.k.ppc.Citizen_GharJagga_Info.Citizen_Id = model.Id;
                         data.k.ppc.Citizen_GharJagga_Info.Area = model.Area;
                         data.k.ppc.Citizen_GharJagga_Info.NumberOfHouse = model.NumberOfHouse;
                         data.k.ppc.Citizen_GharJagga_Info.Kitta_No = model.Kitta_No;
@@ -54,11 +54,14 @@ namespace SIFARIS.Areas.GharJagga.Provider
                         data.k.ppc.Citizen_GharJagga_Info.West = model.West;
                         data.k.ppc.Citizen_GharJagga_Info.North = model.North;
                         data.k.ppc.Citizen_GharJagga_Info.South = model.South;
+                        //data.k.c.CitizenId = model.Id;
+
                         data.k.c.MulSadak = model.MulSadak;
                         data.k.c.KacchiSadak = model.KacchiSadak;
                         data.k.c.Goreto = model.Goreto;
                         data.k.c.sahayakSadaK = model.sahayakSadaK;
                         data.k.c.BatoNavaeko = model.BatoNavaeko;
+                        //data.z.citizen_ID = model.Id;
                         data.z.Name = model.Name;
                         data.z.Address = model.KAddress;
                         data.z.Date = model.Date;
