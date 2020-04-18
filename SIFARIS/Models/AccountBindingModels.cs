@@ -48,6 +48,13 @@ namespace SIFARIS.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        //added
+        [Display(Name = "us")]
+        public string UserId { get; set; }
+        [Display(Name = "Role")]
+        public string Role { get; set; }
+        [Display(Name = "RoleId")]
+        public string RoleId { get; set; }
     }
 
     public class RegisterExternalBindingModel

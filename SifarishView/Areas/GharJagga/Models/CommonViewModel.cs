@@ -89,5 +89,10 @@ namespace SifarishView.Areas.GharJagga.Models
             public bool IsActive { get; set; }
 
         }
+        public class RoleViewModel
+        {
+            public string Id { get; set; }
+            public string name { get; set; }
+        }
     }
 }

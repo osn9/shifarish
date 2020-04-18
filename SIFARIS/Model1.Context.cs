@@ -37,5 +37,9 @@ namespace SIFARIS
         public virtual DbSet<StateDetail> StateDetails { get; set; }
         public virtual DbSet<Ward> Wards { get; set; }
         public virtual DbSet<WardDetail> WardDetails { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
     }
 }

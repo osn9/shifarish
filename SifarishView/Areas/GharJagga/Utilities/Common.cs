@@ -45,6 +45,26 @@ namespace SifarishView.Areas.GharJagga.Utilities
                 new {Id="5",Value="5"},
             }, "Id", "Value");
         }
+        public static IEnumerable<SelectListItem> GetRoleList()
+        {
+            IEnumerable<RoleViewModel> RoleList;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Roles").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadAsAsync<Server_Response>().Result;
+                if (result.obj.ToString() != null)
+                {
+                    RoleList = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<RoleViewModel>>(result.obj.ToString());
+                    return new SelectList(RoleList, "Id", "Name");
+                }
 
+            }
+            //RoleList = response.Content.ReadAsAsync<IEnumerable<StateViewModel>>().Result;
+            return new SelectList(new[]
+            {
+                new {Id="1",Value="Admin"},
+               
+            }, "Id", "Value");
+        }
     }
 }

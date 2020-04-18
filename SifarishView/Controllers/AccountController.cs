@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using SifarishView.Areas.GharJagga.Models;
+using SifarishView.Areas.GharJagga.Utilities;
 
 namespace SifarishView.Controllers
 {
@@ -454,7 +455,77 @@ namespace SifarishView.Controllers
 
             base.Dispose(disposing);
         }
+        //added
 
+        [AllowAnonymous]
+        public ActionResult Userlist()
+        {
+
+            IEnumerable<RegisterViewModel> DataList;
+            var accesstoken = Session["accesstoken"];
+            GlobalVariables.webApiClient.DefaultRequestHeaders.Clear();
+            Server_Response res = new Server_Response();
+            GlobalVariables.webApiClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + accesstoken);
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("GetUserAndRole").Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadAsAsync<Server_Response>().Result;
+                if (result.obj.ToString() != null)
+                {
+                    DataList = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<RegisterViewModel>>(result.obj.ToString());
+                    return View(DataList);
+                }
+
+            }
+            return View(new RegisterViewModel());
+            //return View();
+        }
+        [AllowAnonymous]
+        public ActionResult AssignRole(string id)
+        {
+            RegisterViewModel DataList;
+            var accesstoken = Session["accesstoken"];
+            GlobalVariables.webApiClient.DefaultRequestHeaders.Clear();
+            Server_Response res = new Server_Response();
+            GlobalVariables.webApiClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + accesstoken);
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("GetUser/" + id).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadAsAsync<Server_Response>().Result;
+                if (result.obj.ToString() != null)
+                {
+                    DataList = Newtonsoft.Json.JsonConvert.DeserializeObject<RegisterViewModel>(result.obj.ToString());
+                    return View(DataList);
+                }
+
+            }
+            return View(new RegisterViewModel());
+           // return View();
+        }
+
+        
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AssignRole(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                HttpResponseMessage response = GlobalVariables.webApiClient.PostAsJsonAsync("Account/Role/", model).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError("", "Error");
+                //AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+        //ended
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";

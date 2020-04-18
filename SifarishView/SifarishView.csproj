@@ -500,6 +500,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Errors\PageNotFound.cshtml" />
+    <Content Include="Views\Account\AssignRole.cshtml" />
+    <Content Include="Views\Account\Userlist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

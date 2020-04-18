@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SIFARIS.Areas.GharJagga.Models;
+using SIFARIS.Models;
 
 namespace SIFARIS.Areas.GharJagga.Provider
 {
@@ -467,6 +468,88 @@ namespace SIFARIS.Areas.GharJagga.Provider
                 else
                     return false;
             }
+        }
+
+        public List<roleViewModel> GetAllRole()
+        {
+            using (var con = new SifarishEntities())
+            {
+                var data = (from w in con.AspNetRoles
+                            select new roleViewModel
+                            {
+                                id = w.Id,
+                                name = w.Name,
+
+                            }).ToList();
+                return data;
+            }
+
+        }
+        public roleViewModel GetRoleById(string id)
+        {
+            using (var con = new SifarishEntities())
+            {
+                var data = (from w in con.AspNetRoles
+                            select new roleViewModel
+                            {
+                                id = w.Id,
+                                name = w.Name,
+
+                            }).Where(x => x.id == id).FirstOrDefault();
+                return data;
+            }
+
+        }
+
+        public List<RegisterBindingModel> getUserwithRole()
+        {
+            using (var con = new SifarishEntities())
+            {
+                List<RegisterBindingModel> list = new List<RegisterBindingModel>();
+                var db = new ApplicationDbContext();
+                var users = db.Users.ToList();
+                foreach (var item in users)
+                {
+                    RegisterBindingModel data = new RegisterBindingModel
+                    {
+                        Email = item.Email,
+                        UserId=item.Id,
+                        //item.Id
+                        RoleId = item.Roles.FirstOrDefault()!=null ? item.Roles.FirstOrDefault().RoleId : ""
+                    
+
+                };
+                    list.Add(data);
+                }
+                return list;
+
+            }
+
+
+        }
+        public RegisterBindingModel getUserwithRoleById(string id)
+        {
+            using (var con = new SifarishEntities())
+            {
+                List<RegisterBindingModel> list = new List<RegisterBindingModel>();
+                var db = new ApplicationDbContext();
+                var users = db.Users.Where(x=>x.Id== id).FirstOrDefault();
+
+                if (users!=null)
+                {
+                    RegisterBindingModel data = new RegisterBindingModel
+                    {
+                        Email = users.Email,
+                        RoleId = users.Roles.FirstOrDefault() != null ? users.Roles.FirstOrDefault().RoleId : "",
+                        UserId=users.Id
+
+                    };
+                    return data;
+                }
+
+                return new RegisterBindingModel() ;
+            }
+
         }
     }
 }

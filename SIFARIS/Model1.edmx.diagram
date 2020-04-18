@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f2ba5d727a93447d84fb0664a106cccb" Name="Diagram1">
+      <Diagram DiagramId="f2ba5d727a93447d84fb0664a106cccb" Name="Diagram1" ZoomLevel="99">
         <EntityTypeShape EntityType="SifarishModel.Citizen_GharJagga_Info" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SifarishModel.Citizen_Info" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="SifarishModel.FK_Citizen_GharJagga_Info_Citizen_Info" ManuallyRouted="false" />
@@ -26,6 +26,13 @@
         <AssociationConnector Association="SifarishModel.FK_Ward_LocalLevel" />
         <AssociationConnector Association="SifarishModel.FK_StateDetails_State" />
         <AssociationConnector Association="SifarishModel.FK_WardDetails_Ward" />
+        <EntityTypeShape EntityType="SifarishModel.AspNetRole" Width="1.5" PointX="10.375" PointY="9.5" />
+        <EntityTypeShape EntityType="SifarishModel.AspNetUserClaim" Width="1.5" PointX="14.875" PointY="10.625" />
+        <EntityTypeShape EntityType="SifarishModel.AspNetUserLogin" Width="1.5" PointX="14.875" PointY="8" />
+        <EntityTypeShape EntityType="SifarishModel.AspNetUser" Width="1.5" PointX="12.625" PointY="8.375" />
+        <AssociationConnector Association="SifarishModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SifarishModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SifarishModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

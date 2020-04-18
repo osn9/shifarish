@@ -40,4 +40,13 @@ namespace SIFARIS.Models
 
         public string ProviderKey { get; set; }
     }
+
+    public class roleViewModel  
+    {
+        public string id { get; set; }
+
+        public string name { get; set; }
+
+       // public string State { get; set; }
+    }
 }

@@ -384,6 +384,45 @@ namespace SIFARIS.Controllers
             base.Dispose(disposing);
         }
 
+        //added for role 
+        [Route("Role")]
+        public async Task<IHttpActionResult> Role(RegisterBindingModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            ApplicationDbContext context = new ApplicationDbContext();
+
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+            try
+            {
+                var user =  UserManager.FindByName(model.Email);
+              await  UserManager.AddToRoleAsync(user.Id, model.Role);
+                var result= context.SaveChanges();
+                if (result!=0)
+                {
+                    return InternalServerError();
+                }
+
+            }
+            catch
+            {
+                throw;
+            }
+
+
+          //  var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+
+         //   IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+
+         
+            return Ok();
+        }
+        //ended
+
+
         #region Helpers
 
         private IAuthenticationManager Authentication
