@@ -12,6 +12,10 @@ namespace SifarishView.Controllers
         {
             return View();
         }
+        public ActionResult Setup()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {

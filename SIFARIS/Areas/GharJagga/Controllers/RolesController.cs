@@ -102,6 +102,26 @@ namespace SIFARIS.Areas.GharJagga.Controllers
                 throw;
             }
         }
+
+        [Route("api/Getrolename")]
+        public IHttpActionResult GetRoles()
+        {
+            List<roleViewModel> data = new List<roleViewModel>();
+            try
+            {
+                data = pro.GetAllRoleName();
+                res.obj = data;
+                res.status = true;
+                return Ok(res);
+            }
+            catch (Exception)
+            {
+                res.obj = data;
+                res.status = false;
+                return Ok(res);
+                throw;
+            }
+        }
         // PUT: api/Roles/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutAspNetRole(string id, AspNetRole aspNetRole)

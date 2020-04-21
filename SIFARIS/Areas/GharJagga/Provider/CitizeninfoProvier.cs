@@ -37,6 +37,8 @@ namespace SIFARIS.Areas.GharJagga.Provider
                        // data.k.ppc.Citizen_Info.Id = model.Id;
                         data.k.ppc.Citizen_Info.Citizenship_No = model.Citizenship_No;
                         data.k.ppc.Citizen_Info.Address = model.Address;
+                        data.k.ppc.Citizen_Info.CitizenName = model.CitizenName;
+                        data.k.ppc.Citizen_Info.DeparmentId = model.DeparmentId;
                         data.k.ppc.Citizen_Info.District_Id = model.District_Id;
                         data.k.ppc.Citizen_Info.Zone_Id = model.Zone_Id;
                         data.k.ppc.Citizen_Info.Mun_Ward = model.Mun_Ward;
@@ -85,6 +87,8 @@ namespace SIFARIS.Areas.GharJagga.Provider
                     {
 
                         Id = model.Id,
+                        CitizenName=model.CitizenName,
+                        DeparmentId=model.DeparmentId,
                     Citizenship_No = model.Citizenship_No,
                     Address = model.Address,
                     District_Id = model.District_Id,
@@ -160,6 +164,8 @@ namespace SIFARIS.Areas.GharJagga.Provider
                                 {
                                     Id = x.k.ppc.Citizen_Info.Id,
                                     Citizenship_No = x.k.ppc.Citizen_Info.Citizenship_No,
+                                    CitizenName = x.k.ppc.Citizen_Info.CitizenName,
+                                    DeparmentId = x.k.ppc.Citizen_Info.DeparmentId,
                 Address = x.k.ppc.Citizen_Info.Address,
                 District_Id = x.k.ppc.Citizen_Info.District_Id,
                 Zone_Id = x.k.ppc.Citizen_Info.Zone_Id,
@@ -206,8 +212,10 @@ namespace SIFARIS.Areas.GharJagga.Provider
 
                                 .Select(x => new CitizenInfoViewModel()
                                 {
-                                    Id=x.k.ppc.Citizen_Info.Id,
+                                    Id = x.k.ppc.Citizen_Info.Id,
                                     Citizenship_No = x.k.ppc.Citizen_Info.Citizenship_No,
+                                    CitizenName = x.k.ppc.Citizen_Info.CitizenName,
+                                    DeparmentId = x.k.ppc.Citizen_Info.DeparmentId,
                                     Address = x.k.ppc.Citizen_Info.Address,
                                     District_Id = x.k.ppc.Citizen_Info.District_Id,
                                     Zone_Id = x.k.ppc.Citizen_Info.Zone_Id,

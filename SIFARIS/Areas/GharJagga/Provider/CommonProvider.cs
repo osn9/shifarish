@@ -500,25 +500,46 @@ namespace SIFARIS.Areas.GharJagga.Provider
             }
 
         }
+        public roleViewModel GetRoleByName(string id)
+        {
+            using (var con = new SifarishEntities())
+            {
+                var data = (from w in con.AspNetRoles
+                            select new roleViewModel
+                            {
+                                id = w.Id,
+                                name = w.Name,
 
+                            }).Where(x => x.name == id).FirstOrDefault();
+                return data;
+            }
+
+        }
         public List<RegisterBindingModel> getUserwithRole()
         {
             using (var con = new SifarishEntities())
             {
                 List<RegisterBindingModel> list = new List<RegisterBindingModel>();
+                CommonProvider pro = new CommonProvider();
                 var db = new ApplicationDbContext();
                 var users = db.Users.ToList();
                 foreach (var item in users)
                 {
                     RegisterBindingModel data = new RegisterBindingModel
                     {
+                        
                         Email = item.Email,
                         UserId=item.Id,
                         //item.Id
-                        RoleId = item.Roles.FirstOrDefault()!=null ? item.Roles.FirstOrDefault().RoleId : ""
-                    
+                        RoleId = item.Roles.FirstOrDefault()!=null ? item.Roles.FirstOrDefault().RoleId : "",
+                       
 
-                };
+                    };
+                    if (data.RoleId!="")
+                    {
+                        data.Role = pro.GetRoleById(data.RoleId).name;
+                    }
+                   
                     list.Add(data);
                 }
                 return list;
@@ -531,6 +552,8 @@ namespace SIFARIS.Areas.GharJagga.Provider
         {
             using (var con = new SifarishEntities())
             {
+                CommonProvider pro = new CommonProvider();
+
                 List<RegisterBindingModel> list = new List<RegisterBindingModel>();
                 var db = new ApplicationDbContext();
                 var users = db.Users.Where(x=>x.Id== id).FirstOrDefault();
@@ -544,10 +567,29 @@ namespace SIFARIS.Areas.GharJagga.Provider
                         UserId=users.Id
 
                     };
+                    if (data.RoleId != "")
+                    {
+                        data.Role = pro.GetRoleById(data.RoleId).name;
+                    }
                     return data;
                 }
 
                 return new RegisterBindingModel() ;
+            }
+
+        }
+        public List<roleViewModel> GetAllRoleName()
+        {
+            using (var con = new SifarishEntities())
+            {
+                var data = (from w in con.AspNetRoles
+                            select new roleViewModel
+                            {
+                                id = w.Name,
+                                name = w.Name,
+
+                            }).ToList();
+                return data;
             }
 
         }

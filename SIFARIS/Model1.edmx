@@ -75,6 +75,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeparmentId" Type="int" />
+          <Property Name="CitizenName" Type="nvarchar" MaxLength="100" />
           <Property Name="Citizen_id" Type="int" />
           <Property Name="Citizenship_No" Type="nvarchar" MaxLength="50" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" />
@@ -86,6 +88,28 @@
           <Property Name="GrandFatherName" Type="nvarchar" MaxLength="50" />
           <Property Name="CitizenShip_Date" Type="nvarchar" MaxLength="50" />
           <Property Name="CitizinShip_Zone" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="int" />
+          <Property Name="DeletedDate" Type="date" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="Updatedate" Type="date" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeparmentId" />
+          </Key>
+          <Property Name="DeparmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartmentAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartmentCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="date" />
+          <Property Name="DeletedDate" Type="date" />
         </EntityType>
         <EntityType Name="District">
           <Key>
@@ -106,6 +130,24 @@
           <Property Name="Population" Type="nvarchar" MaxLength="50" />
           <Property Name="Area" Type="nvarchar" MaxLength="50" />
           <Property Name="Website" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="fiscal_year">
+          <Key>
+            <PropertyRef Name="FiscalId" />
+          </Key>
+          <Property Name="FiscalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nanem" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDateAd" Type="date" />
+          <Property Name="EndDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="EndDateAd" Type="date" />
+          <Property Name="PreviousYear" Type="int" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="DeletedDate" Type="date" />
+          <Property Name="UpdatedDate" Type="date" />
+          <Property Name="UpdatteBy" Type="int" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
         </EntityType>
         <EntityType Name="JaagaTarfa">
           <Key>
@@ -200,6 +242,18 @@
             </Principal>
             <Dependent Role="Citizen_GharJagga_Info">
               <PropertyRef Name="Citizen_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Citizen_Info_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeparmentId" />
+            </Principal>
+            <Dependent Role="Citizen_Info">
+              <PropertyRef Name="DeparmentId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -363,8 +417,10 @@
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Citizen_GharJagga_Info" EntityType="Self.Citizen_GharJagga_Info" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Citizen_Info" EntityType="Self.Citizen_Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DistrictDetails" EntityType="Self.DistrictDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fiscal_year" EntityType="Self.fiscal_year" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JaagaTarfa" EntityType="Self.JaagaTarfa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Karlayatarfa" EntityType="Self.Karlayatarfa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LocalLevel" EntityType="Self.LocalLevel" Schema="dbo" store:Type="Tables" />
@@ -376,6 +432,10 @@
           <AssociationSet Name="FK_Citizen_GharJagga_Info_Citizen_Info" Association="Self.FK_Citizen_GharJagga_Info_Citizen_Info">
             <End Role="Citizen_Info" EntitySet="Citizen_Info" />
             <End Role="Citizen_GharJagga_Info" EntitySet="Citizen_GharJagga_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Citizen_Info_Department" Association="Self.FK_Citizen_Info_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Citizen_Info" EntitySet="Citizen_Info" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
@@ -443,57 +503,12 @@
           <Property Name="West" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="North" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="South" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Citizen_Info" Relationship="Self.FK_Citizen_GharJagga_Info_Citizen_Info" FromRole="Citizen_GharJagga_Info" ToRole="Citizen_Info" />
+          <NavigationProperty Name="Citizen_Info" Relationship="SifarishModel.FK_Citizen_GharJagga_Info_Citizen_Info" FromRole="Citizen_GharJagga_Info" ToRole="Citizen_Info" />
         </EntityType>
-        <EntityType Name="Citizen_Info">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Citizen_id" Type="Int32" />
-          <Property Name="Citizenship_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="District_Id" Type="Int32" />
-          <Property Name="Zone_Id" Type="Int32" />
-          <Property Name="Mun_Ward" Type="Int32" />
-          <Property Name="Sabik_Ward" Type="Int32" />
-          <Property Name="Father_Husband_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GrandFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CitizenShip_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CitizinShip_Zone" Type="Int32" />
-          <NavigationProperty Name="Citizen_GharJagga_Info" Relationship="Self.FK_Citizen_GharJagga_Info_Citizen_Info" FromRole="Citizen_Info" ToRole="Citizen_GharJagga_Info" />
-          <NavigationProperty Name="JaagaTarfas" Relationship="SifarishModel.FK_JaagaTarfa_Citizen_Info" FromRole="Citizen_Info" ToRole="JaagaTarfa" />
-          <NavigationProperty Name="Karlayatarfas" Relationship="SifarishModel.FK_Karlayatarfa_Citizen_Info" FromRole="Citizen_Info" ToRole="Karlayatarfa" />
-        </EntityType>
-        <Association Name="FK_Citizen_GharJagga_Info_Citizen_Info">
-          <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="0..1" />
-          <End Role="Citizen_GharJagga_Info" Type="Self.Citizen_GharJagga_Info" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Citizen_Info">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Citizen_GharJagga_Info">
-              <PropertyRef Name="Citizen_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="SifarishEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Citizen_GharJagga_Info" EntityType="Self.Citizen_GharJagga_Info" />
-          <EntitySet Name="Citizen_Info" EntityType="Self.Citizen_Info" />
-          <AssociationSet Name="FK_Citizen_GharJagga_Info_Citizen_Info" Association="Self.FK_Citizen_GharJagga_Info_Citizen_Info">
-            <End Role="Citizen_Info" EntitySet="Citizen_Info" />
-            <End Role="Citizen_GharJagga_Info" EntitySet="Citizen_GharJagga_Info" />
-          </AssociationSet>
           <EntitySet Name="JaagaTarfas" EntityType="SifarishModel.JaagaTarfa" />
           <EntitySet Name="Karlayatarfas" EntityType="SifarishModel.Karlayatarfa" />
-          <AssociationSet Name="FK_JaagaTarfa_Citizen_Info" Association="SifarishModel.FK_JaagaTarfa_Citizen_Info">
-            <End Role="Citizen_Info" EntitySet="Citizen_Info" />
-            <End Role="JaagaTarfa" EntitySet="JaagaTarfas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Karlayatarfa_Citizen_Info" Association="SifarishModel.FK_Karlayatarfa_Citizen_Info">
-            <End Role="Citizen_Info" EntitySet="Citizen_Info" />
-            <End Role="Karlayatarfa" EntitySet="Karlayatarfas" />
-          </AssociationSet>
           <EntitySet Name="Districts" EntityType="SifarishModel.District" />
           <EntitySet Name="DistrictDetails" EntityType="SifarishModel.DistrictDetail" />
           <EntitySet Name="LocalLevels" EntityType="SifarishModel.LocalLevel" />
@@ -542,6 +557,25 @@
             <End Role="AspNetRole" EntitySet="AspNetRoles" />
             <End Role="AspNetUser" EntitySet="AspNetUsers" />
           </AssociationSet>
+          <EntitySet Name="Citizen_Info" EntityType="SifarishModel.Citizen_Info" />
+          <EntitySet Name="Departments" EntityType="SifarishModel.Department" />
+          <AssociationSet Name="FK_Citizen_GharJagga_Info_Citizen_Info" Association="SifarishModel.FK_Citizen_GharJagga_Info_Citizen_Info">
+            <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+            <End Role="Citizen_GharJagga_Info" EntitySet="Citizen_GharJagga_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Citizen_Info_Department" Association="SifarishModel.FK_Citizen_Info_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JaagaTarfa_Citizen_Info" Association="SifarishModel.FK_JaagaTarfa_Citizen_Info">
+            <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+            <End Role="JaagaTarfa" EntitySet="JaagaTarfas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Karlayatarfa_Citizen_Info" Association="SifarishModel.FK_Karlayatarfa_Citizen_Info">
+            <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+            <End Role="Karlayatarfa" EntitySet="Karlayatarfas" />
+          </AssociationSet>
+          <EntitySet Name="fiscal_year" EntityType="SifarishModel.fiscal_year" />
         </EntityContainer>
         <EntityType Name="JaagaTarfa">
           <Key>
@@ -568,30 +602,6 @@
           <Property Name="citizen_ID" Type="Int32" />
           <NavigationProperty Name="Citizen_Info" Relationship="SifarishModel.FK_Karlayatarfa_Citizen_Info" FromRole="Karlayatarfa" ToRole="Citizen_Info" />
         </EntityType>
-        <Association Name="FK_JaagaTarfa_Citizen_Info">
-          <End Type="SifarishModel.Citizen_Info" Role="Citizen_Info" Multiplicity="0..1" />
-          <End Type="SifarishModel.JaagaTarfa" Role="JaagaTarfa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Citizen_Info">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="JaagaTarfa">
-              <PropertyRef Name="CitizenId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Karlayatarfa_Citizen_Info">
-          <End Type="SifarishModel.Citizen_Info" Role="Citizen_Info" Multiplicity="0..1" />
-          <End Type="SifarishModel.Karlayatarfa" Role="Karlayatarfa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Citizen_Info">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Karlayatarfa">
-              <PropertyRef Name="citizen_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="District">
           <Key>
             <PropertyRef Name="Id" />
@@ -838,6 +848,118 @@
           <End Type="SifarishModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
           <End Type="SifarishModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
         </Association>
+        <EntityType Name="Citizen_Info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeparmentId" Type="Int32" />
+          <Property Name="CitizenName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Citizen_id" Type="Int32" />
+          <Property Name="Citizenship_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="District_Id" Type="Int32" />
+          <Property Name="Zone_Id" Type="Int32" />
+          <Property Name="Mun_Ward" Type="Int32" />
+          <Property Name="Sabik_Ward" Type="Int32" />
+          <Property Name="Father_Husband_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GrandFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CitizenShip_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CitizinShip_Zone" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="Int32" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="Updatedate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <NavigationProperty Name="Citizen_GharJagga_Info" Relationship="SifarishModel.FK_Citizen_GharJagga_Info_Citizen_Info" FromRole="Citizen_Info" ToRole="Citizen_GharJagga_Info" />
+          <NavigationProperty Name="Department" Relationship="SifarishModel.FK_Citizen_Info_Department" FromRole="Citizen_Info" ToRole="Department" />
+          <NavigationProperty Name="JaagaTarfas" Relationship="SifarishModel.FK_JaagaTarfa_Citizen_Info" FromRole="Citizen_Info" ToRole="JaagaTarfa" />
+          <NavigationProperty Name="Karlayatarfas" Relationship="SifarishModel.FK_Karlayatarfa_Citizen_Info" FromRole="Citizen_Info" ToRole="Karlayatarfa" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeparmentId" />
+          </Key>
+          <Property Name="DeparmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Citizen_Info" Relationship="SifarishModel.FK_Citizen_Info_Department" FromRole="Department" ToRole="Citizen_Info" />
+        </EntityType>
+        <Association Name="FK_Citizen_GharJagga_Info_Citizen_Info">
+          <End Type="SifarishModel.Citizen_Info" Role="Citizen_Info" Multiplicity="0..1" />
+          <End Type="SifarishModel.Citizen_GharJagga_Info" Role="Citizen_GharJagga_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Citizen_Info">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Citizen_GharJagga_Info">
+              <PropertyRef Name="Citizen_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Citizen_Info_Department">
+          <End Type="SifarishModel.Department" Role="Department" Multiplicity="0..1" />
+          <End Type="SifarishModel.Citizen_Info" Role="Citizen_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeparmentId" />
+            </Principal>
+            <Dependent Role="Citizen_Info">
+              <PropertyRef Name="DeparmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JaagaTarfa_Citizen_Info">
+          <End Type="SifarishModel.Citizen_Info" Role="Citizen_Info" Multiplicity="0..1" />
+          <End Type="SifarishModel.JaagaTarfa" Role="JaagaTarfa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Citizen_Info">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JaagaTarfa">
+              <PropertyRef Name="CitizenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Karlayatarfa_Citizen_Info">
+          <End Type="SifarishModel.Citizen_Info" Role="Citizen_Info" Multiplicity="0..1" />
+          <End Type="SifarishModel.Karlayatarfa" Role="Karlayatarfa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Citizen_Info">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Karlayatarfa">
+              <PropertyRef Name="citizen_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="fiscal_year">
+          <Key>
+            <PropertyRef Name="FiscalId" />
+          </Key>
+          <Property Name="FiscalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nanem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDateAd" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EndDateAd" Type="DateTime" Precision="0" />
+          <Property Name="PreviousYear" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatteBy" Type="Int32" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -856,24 +978,6 @@
                 <ScalarProperty Name="West" ColumnName="West" />
                 <ScalarProperty Name="North" ColumnName="North" />
                 <ScalarProperty Name="South" ColumnName="South" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Citizen_Info">
-            <EntityTypeMapping TypeName="SifarishModel.Citizen_Info">
-              <MappingFragment StoreEntitySet="Citizen_Info">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Citizen_id" ColumnName="Citizen_id" />
-                <ScalarProperty Name="Citizenship_No" ColumnName="Citizenship_No" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="District_Id" ColumnName="District_Id" />
-                <ScalarProperty Name="Zone_Id" ColumnName="Zone_Id" />
-                <ScalarProperty Name="Mun_Ward" ColumnName="Mun_Ward" />
-                <ScalarProperty Name="Sabik_Ward" ColumnName="Sabik_Ward" />
-                <ScalarProperty Name="Father_Husband_Name" ColumnName="Father_Husband_Name" />
-                <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
-                <ScalarProperty Name="CitizenShip_Date" ColumnName="CitizenShip_Date" />
-                <ScalarProperty Name="CitizinShip_Zone" ColumnName="CitizinShip_Zone" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1044,6 +1148,68 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Citizen_Info">
+            <EntityTypeMapping TypeName="SifarishModel.Citizen_Info">
+              <MappingFragment StoreEntitySet="Citizen_Info">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Updatedate" ColumnName="Updatedate" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CitizinShip_Zone" ColumnName="CitizinShip_Zone" />
+                <ScalarProperty Name="CitizenShip_Date" ColumnName="CitizenShip_Date" />
+                <ScalarProperty Name="GrandFatherName" ColumnName="GrandFatherName" />
+                <ScalarProperty Name="Father_Husband_Name" ColumnName="Father_Husband_Name" />
+                <ScalarProperty Name="Sabik_Ward" ColumnName="Sabik_Ward" />
+                <ScalarProperty Name="Mun_Ward" ColumnName="Mun_Ward" />
+                <ScalarProperty Name="Zone_Id" ColumnName="Zone_Id" />
+                <ScalarProperty Name="District_Id" ColumnName="District_Id" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Citizenship_No" ColumnName="Citizenship_No" />
+                <ScalarProperty Name="Citizen_id" ColumnName="Citizen_id" />
+                <ScalarProperty Name="CitizenName" ColumnName="CitizenName" />
+                <ScalarProperty Name="DeparmentId" ColumnName="DeparmentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="SifarishModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+                <ScalarProperty Name="DepartmentAddress" ColumnName="DepartmentAddress" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="DeparmentId" ColumnName="DeparmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fiscal_year">
+            <EntityTypeMapping TypeName="SifarishModel.fiscal_year">
+              <MappingFragment StoreEntitySet="fiscal_year">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="UpdatteBy" ColumnName="UpdatteBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="PreviousYear" ColumnName="PreviousYear" />
+                <ScalarProperty Name="EndDateAd" ColumnName="EndDateAd" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDateAd" ColumnName="StartDateAd" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Nanem" ColumnName="Nanem" />
+                <ScalarProperty Name="FiscalId" ColumnName="FiscalId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

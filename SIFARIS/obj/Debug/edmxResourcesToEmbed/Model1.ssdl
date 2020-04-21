@@ -70,6 +70,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeparmentId" Type="int" />
+    <Property Name="CitizenName" Type="nvarchar" MaxLength="100" />
     <Property Name="Citizen_id" Type="int" />
     <Property Name="Citizenship_No" Type="nvarchar" MaxLength="50" />
     <Property Name="Address" Type="nvarchar" MaxLength="50" />
@@ -81,6 +83,28 @@
     <Property Name="GrandFatherName" Type="nvarchar" MaxLength="50" />
     <Property Name="CitizenShip_Date" Type="nvarchar" MaxLength="50" />
     <Property Name="CitizinShip_Zone" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="int" />
+    <Property Name="DeletedDate" Type="date" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="Updatedate" Type="date" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DeparmentId" />
+    </Key>
+    <Property Name="DeparmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepartmentAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepartmentCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="date" />
+    <Property Name="DeletedDate" Type="date" />
   </EntityType>
   <EntityType Name="District">
     <Key>
@@ -101,6 +125,24 @@
     <Property Name="Population" Type="nvarchar" MaxLength="50" />
     <Property Name="Area" Type="nvarchar" MaxLength="50" />
     <Property Name="Website" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="fiscal_year">
+    <Key>
+      <PropertyRef Name="FiscalId" />
+    </Key>
+    <Property Name="FiscalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nanem" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDateAd" Type="date" />
+    <Property Name="EndDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="EndDateAd" Type="date" />
+    <Property Name="PreviousYear" Type="int" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="DeletedDate" Type="date" />
+    <Property Name="UpdatedDate" Type="date" />
+    <Property Name="UpdatteBy" Type="int" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
   </EntityType>
   <EntityType Name="JaagaTarfa">
     <Key>
@@ -195,6 +237,18 @@
       </Principal>
       <Dependent Role="Citizen_GharJagga_Info">
         <PropertyRef Name="Citizen_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Citizen_Info_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DeparmentId" />
+      </Principal>
+      <Dependent Role="Citizen_Info">
+        <PropertyRef Name="DeparmentId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -358,8 +412,10 @@
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Citizen_GharJagga_Info" EntityType="Self.Citizen_GharJagga_Info" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Citizen_Info" EntityType="Self.Citizen_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DistrictDetails" EntityType="Self.DistrictDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fiscal_year" EntityType="Self.fiscal_year" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="JaagaTarfa" EntityType="Self.JaagaTarfa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Karlayatarfa" EntityType="Self.Karlayatarfa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LocalLevel" EntityType="Self.LocalLevel" Schema="dbo" store:Type="Tables" />
@@ -371,6 +427,10 @@
     <AssociationSet Name="FK_Citizen_GharJagga_Info_Citizen_Info" Association="Self.FK_Citizen_GharJagga_Info_Citizen_Info">
       <End Role="Citizen_Info" EntitySet="Citizen_Info" />
       <End Role="Citizen_GharJagga_Info" EntitySet="Citizen_GharJagga_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Citizen_Info_Department" Association="Self.FK_Citizen_Info_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Citizen_Info" EntitySet="Citizen_Info" />
     </AssociationSet>
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />

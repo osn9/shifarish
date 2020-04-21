@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using SIFARIS.Models;
 using SIFARIS.Providers;
 using SIFARIS.Results;
+using System.Web.Security;
 
 namespace SIFARIS.Controllers
 {
@@ -385,21 +386,30 @@ namespace SIFARIS.Controllers
         }
 
         //added for role 
-        [Route("Role")]
+        [HttpPost]
+        [Route("assiginrole")]
+
         public async Task<IHttpActionResult> Role(RegisterBindingModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
             ApplicationDbContext context = new ApplicationDbContext();
 
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+           // var rolelist = Roles.GetAllRoles();
+
 
             try
             {
                 var user =  UserManager.FindByName(model.Email);
-              await  UserManager.AddToRoleAsync(user.Id, model.Role);
+                var roles = await UserManager.GetRolesAsync(user.Id);
+                foreach (var item in roles)
+                {
+                    await UserManager.RemoveFromRolesAsync(user.Id, item);
+                }
+                await  UserManager.AddToRoleAsync(user.Id, model.Role);
                 var result= context.SaveChanges();
                 if (result!=0)
                 {

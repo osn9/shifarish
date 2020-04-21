@@ -26,7 +26,6 @@ namespace SIFARIS
         }
     
         public virtual DbSet<Citizen_GharJagga_Info> Citizen_GharJagga_Info { get; set; }
-        public virtual DbSet<Citizen_Info> Citizen_Info { get; set; }
         public virtual DbSet<JaagaTarfa> JaagaTarfas { get; set; }
         public virtual DbSet<Karlayatarfa> Karlayatarfas { get; set; }
         public virtual DbSet<District> Districts { get; set; }
@@ -41,5 +40,8 @@ namespace SIFARIS
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<Citizen_Info> Citizen_Info { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<fiscal_year> fiscal_year { get; set; }
     }
 }

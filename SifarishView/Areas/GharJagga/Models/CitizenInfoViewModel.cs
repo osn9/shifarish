@@ -10,10 +10,13 @@ namespace SifarishView.Areas.GharJagga.Models
     {
 
         public int Id { get; set; }
-        [Display(Name = "First Name")]
+       
         public Nullable<int> Citizen_id { get; set; }
         [Display(Name = "नागरिकता नम्बर")]
         public string Citizenship_No { get; set; }
+        public Nullable<int> DeparmentId { get; set; }
+        [Display(Name = "First Name")]
+        public string CitizenName { get; set; }
         [Display(Name = "ठेगान ")]
         public string Address { get; set; }
         [Display(Name = "जिल्ला")]

@@ -6,12 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f2ba5d727a93447d84fb0664a106cccb" Name="Diagram1" ZoomLevel="99">
         <EntityTypeShape EntityType="SifarishModel.Citizen_GharJagga_Info" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SifarishModel.Citizen_Info" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="SifarishModel.FK_Citizen_GharJagga_Info_Citizen_Info" ManuallyRouted="false" />
         <EntityTypeShape EntityType="SifarishModel.JaagaTarfa" Width="1.5" PointX="3" PointY="6.625" />
         <EntityTypeShape EntityType="SifarishModel.Karlayatarfa" Width="1.5" PointX="3" PointY="10" />
-        <AssociationConnector Association="SifarishModel.FK_JaagaTarfa_Citizen_Info" />
-        <AssociationConnector Association="SifarishModel.FK_Karlayatarfa_Citizen_Info" />
         <EntityTypeShape EntityType="SifarishModel.District" Width="1.5" PointX="5.375" PointY="4.5" />
         <EntityTypeShape EntityType="SifarishModel.DistrictDetail" Width="1.5" PointX="7.625" PointY="7.25" />
         <EntityTypeShape EntityType="SifarishModel.LocalLevel" Width="1.5" PointX="7.625" PointY="2.625" />
@@ -33,6 +29,13 @@
         <AssociationConnector Association="SifarishModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="SifarishModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="SifarishModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="SifarishModel.Citizen_Info" Width="1.5" PointX="0.75" PointY="5.625" />
+        <EntityTypeShape EntityType="SifarishModel.Department" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="SifarishModel.FK_Citizen_GharJagga_Info_Citizen_Info" />
+        <AssociationConnector Association="SifarishModel.FK_Citizen_Info_Department" />
+        <AssociationConnector Association="SifarishModel.FK_JaagaTarfa_Citizen_Info" />
+        <AssociationConnector Association="SifarishModel.FK_Karlayatarfa_Citizen_Info" />
+        <EntityTypeShape EntityType="SifarishModel.fiscal_year" Width="1.5" PointX="0.75" PointY="13.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

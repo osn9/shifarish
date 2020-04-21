@@ -11,6 +11,8 @@ namespace SIFARIS.Areas.GharJagga.Models
 
         public int Id { get; set; }
         public Nullable<int> Citizen_id { get; set; }
+        public Nullable<int> DeparmentId { get; set; }
+        public string CitizenName { get; set; }
         public string Citizenship_No { get; set; }
         public string Address { get; set; }
         public Nullable<int> District_Id { get; set; }

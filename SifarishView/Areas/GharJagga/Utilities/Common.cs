@@ -1,10 +1,15 @@
-﻿using System;
+﻿using SifarishView.Areas.GharJagga.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 using static SifarishView.Areas.GharJagga.Models.CommonViewModel;
+
+//using SIFARIS.Areas.GharJagga.Models;
+
+
 
 namespace SifarishView.Areas.GharJagga.Utilities
 {
@@ -47,7 +52,7 @@ namespace SifarishView.Areas.GharJagga.Utilities
         }
         public static IEnumerable<SelectListItem> GetRoleList()
         {
-            IEnumerable<RoleViewModel> RoleList;
+            IEnumerable<Models.CommonViewModel.RoleViewModel> RoleList;
             HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Roles").Result;
             if (response.IsSuccessStatusCode)
             {
@@ -64,6 +69,48 @@ namespace SifarishView.Areas.GharJagga.Utilities
             {
                 new {Id="1",Value="Admin"},
                
+            }, "Id", "Value");
+        }
+        public static IEnumerable<SelectListItem> GetRoleListName()
+        {
+            IEnumerable<RoleViewModel> RoleList;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Getrolename").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadAsAsync<Server_Response>().Result;
+                if (result.obj.ToString() != null)
+                {
+                    RoleList = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<RoleViewModel>>(result.obj.ToString());
+                    return new SelectList(RoleList, "Id", "Name");
+                }
+
+            }
+            //RoleList = response.Content.ReadAsAsync<IEnumerable<StateViewModel>>().Result;
+            return new SelectList(new[]
+            {
+                new {Id="Admin",Value="Admin"},
+
+            }, "Id", "Value");
+        }
+        public static IEnumerable<SelectListItem> GetFiscalyear()
+        {
+            IEnumerable<FiscalYearViewModel> RoleList;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Fiscalyear").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadAsAsync<Server_Response>().Result;
+                if (result.obj.ToString() != null)
+                {
+                    RoleList = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<FiscalYearViewModel>>(result.obj.ToString());
+                    return new SelectList(RoleList, "FiscalId", "Nanem");
+                }
+
+            }
+            //RoleList = response.Content.ReadAsAsync<IEnumerable<StateViewModel>>().Result;
+            return new SelectList(new[]
+            {
+                new {Id="1",Value="Admin"},
+
             }, "Id", "Value");
         }
     }

@@ -1,0 +1,81 @@
+﻿@model SifarishView.Areas.GharJagga.Models.FiscalYearViewModel
+@{
+    ViewBag.Title = "AddOrEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="card">
+        <div class="header">
+            <h4 class="title"> १) fiscal year :- </h4>
+        </div>
+        <div class="card-body">
+
+
+
+            @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+            <div class="row">
+
+                @Html.HiddenFor(model => model.FiscalId)
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nanem, htmlAttributes: new { @class = "control-label " })
+                        @Html.EditorFor(model => model.Nanem, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Nanem, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PreviousYear, htmlAttributes: new { @class = "control-label " })
+                        @Html.DropDownListFor(model => model.PreviousYear, SifarishView.Areas.GharJagga.Utilities.Common.GetFiscalyear(), "--छानुहोस--", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.PreviousYear, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label " })
+                        @*@Html.EditorFor(model => model.Zone_Id, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control" })
+                        @Html.TextBoxFor(model => model.StartDateAd, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label " })
+                        @*@Html.EditorFor(model => model.District_Id, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.TextBoxFor(model => model.EndDate, new { @class = "form-control" })
+                        @Html.TextBoxFor(model => model.EndDateAd, new { @class = "form-control" })
+
+
+                        @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+              
+
+            </div>
+
+            <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

@@ -229,15 +229,21 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\GharJagga\Controllers\CitizenController.cs" />
+    <Compile Include="Areas\GharJagga\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\DistrictController.cs" />
+    <Compile Include="Areas\GharJagga\Controllers\FiscalyearController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\RolesController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\StateController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\WardController.cs" />
     <Compile Include="Areas\GharJagga\GharJaggaAreaRegistration.cs" />
     <Compile Include="Areas\GharJagga\Models\CitizenInfoViewModel.cs" />
     <Compile Include="Areas\GharJagga\Models\CommonViewModel.cs" />
+    <Compile Include="Areas\GharJagga\Models\DepartmentModel.cs" />
+    <Compile Include="Areas\GharJagga\Models\FiscalyearViewModel.cs" />
     <Compile Include="Areas\GharJagga\Provider\CitizeninfoProvier.cs" />
     <Compile Include="Areas\GharJagga\Provider\CommonProvider.cs" />
+    <Compile Include="Areas\GharJagga\Provider\Departmentprovider.cs" />
+    <Compile Include="Areas\GharJagga\Provider\FiscalyearProvider.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -287,10 +293,16 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Department.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="District.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DistrictDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fiscal_year.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -422,6 +434,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\GharJagga\Views\Department\" />
     <Folder Include="Areas\GharJagga\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

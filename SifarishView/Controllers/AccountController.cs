@@ -511,16 +511,15 @@ namespace SifarishView.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> AssignRole(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                HttpResponseMessage response = GlobalVariables.webApiClient.PostAsJsonAsync("Account/Role/", model).Result;
+           
+                HttpResponseMessage response = GlobalVariables.webApiClient.PostAsJsonAsync("Account/assiginrole", model).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Userlist", "Account");
                 }
                 ModelState.AddModelError("", "Error");
                 //AddErrors(result);
-            }
+            
 
             // If we got this far, something failed, redisplay form
             return View(model);

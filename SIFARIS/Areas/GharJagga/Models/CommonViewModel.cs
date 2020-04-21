@@ -58,12 +58,12 @@ namespace SIFARIS.Areas.GharJagga.Models
         public string Density { get; set; }
         public string Popullation { get; set; }
     }
-    public class DepartmentViewModel
-    {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public Nullable<long> LocalLevelId { get; set; }
-    }
+    //public class DepartmentViewModel
+    //{
+    //    public long Id { get; set; }
+    //    public string Name { get; set; }
+    //    public Nullable<long> LocalLevelId { get; set; }
+    //}
     public class DesignationViewModel
     {
         public long Id { get; set; }

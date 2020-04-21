@@ -112,6 +112,14 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -222,9 +230,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\GharJagga\Controllers\CitizenInfoController.cs" />
+    <Compile Include="Areas\GharJagga\Controllers\DepartmentController.cs" />
+    <Compile Include="Areas\GharJagga\Controllers\FiscalYearController.cs" />
     <Compile Include="Areas\GharJagga\GharJaggaAreaRegistration.cs" />
     <Compile Include="Areas\GharJagga\Models\CitizenInfoViewModel.cs" />
     <Compile Include="Areas\GharJagga\Models\CommonViewModel.cs" />
+    <Compile Include="Areas\GharJagga\Models\DepartmentViewModel.cs" />
+    <Compile Include="Areas\GharJagga\Models\FiscalYearViewModel.cs" />
     <Compile Include="Areas\GharJagga\Models\Token.cs" />
     <Compile Include="Areas\GharJagga\Utilities\Common.cs" />
     <Compile Include="Areas\GharJagga\Utilities\Server_Response.cs" />
@@ -451,6 +463,10 @@
     <Content Include="Content\Coming_Soon\fonts\ionicons.eot" />
     <Content Include="Content\Coming_Soon\fonts\ionicons.ttf" />
     <Content Include="Content\Coming_Soon\fonts\ionicons.woff" />
+    <Content Include="Areas\GharJagga\Views\FiscalYear\AddOrEdit.cshtml" />
+    <Content Include="Areas\GharJagga\Views\FiscalYear\Index.cshtml" />
+    <Content Include="Areas\GharJagga\Views\Department\AddOrEdit.cshtml" />
+    <Content Include="Areas\GharJagga\Views\Department\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -502,6 +518,7 @@
     <Content Include="Views\Errors\PageNotFound.cshtml" />
     <Content Include="Views\Account\AssignRole.cshtml" />
     <Content Include="Views\Account\Userlist.cshtml" />
+    <Content Include="Views\Home\Setup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

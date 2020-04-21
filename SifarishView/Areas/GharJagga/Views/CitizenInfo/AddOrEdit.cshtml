@@ -24,11 +24,13 @@
                 @Html.HiddenFor(model => model.Id)
                 <div class="col-md-4">
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label " })
-                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        @Html.LabelFor(model => model.CitizenName, htmlAttributes: new { @class = "control-label " })
+                        @Html.EditorFor(model => model.CitizenName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CitizenName, "", new { @class = "text-danger" })
+
                     </div>
                 </div>
+
 
                 <div class="col-md-4">
                     <div class="form-group">
