@@ -193,6 +193,84 @@
           <Property Name="Population" Type="nvarchar" MaxLength="50" />
           <Property Name="Website" Type="nvarchar" MaxLength="150" />
         </EntityType>
+        <EntityType Name="NirmanBebasahi">
+          <Key>
+            <PropertyRef Name="nirmanbebasaiId" />
+          </Key>
+          <Property Name="nirmanbebasaiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="postboxNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelPhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="KaralayaName" Type="nvarchar" MaxLength="150" />
+          <Property Name="KaralayaAddress" Type="nvarchar" MaxLength="510" />
+          <Property Name="PramanPatraNo" Type="nvarchar" MaxLength="150" />
+          <Property Name="approvalNo" Type="int" />
+          <Property Name="RegisterdDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegisterDateAd" Type="date" />
+          <Property Name="AprovalDateAd" Type="date" />
+          <Property Name="ApprovealDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApprovalKaryalaya" Type="nvarchar" MaxLength="50" />
+          <Property Name="RenewalDatead" Type="date" />
+          <Property Name="RenewalDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="MembershipNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="AmountEng" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="FormName" Type="nvarchar" MaxLength="510" />
+          <Property Name="FormAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="SanchalakName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateAd" Type="date" />
+          <Property Name="PrintDateAd" Type="date" />
+          <Property Name="PrintDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="CreateddDate" Type="date" />
+          <Property Name="deletedDate" Type="date" />
+          <Property Name="Deletedby" Type="int" />
+          <Property Name="updatedDate" Type="date" />
+          <Property Name="updatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="NirmanBebasahiApproval">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="PostBoxNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyTypr" Type="nvarchar" MaxLength="50" />
+          <Property Name="ComapanyPersonelName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyPersonelAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyPersonelPostbosNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyPersonelTelephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyPersonelFax" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyPersonelEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegisterationNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegistrarionDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegistrationDateAd" Type="date" />
+          <Property Name="AdhiriktaPuji" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdhirikataPujiEng" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="JariPugi" Type="nvarchar" MaxLength="50" />
+          <Property Name="JariPujiEng" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Grade" Type="nvarchar" MaxLength="50" />
+          <Property Name="groups" Type="nvarchar" MaxLength="50" />
+          <Property Name="Technical" Type="nvarchar" MaxLength="50" />
+          <Property Name="NonTechnical" Type="nvarchar" MaxLength="50" />
+          <Property Name="Others" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrintDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrintDateAd" Type="date" />
+          <Property Name="Date" Type="date" />
+          <Property Name="status" Type="bit" />
+          <Property Name="CreateDate" Type="nchar" MaxLength="10" />
+          <Property Name="Createdby" Type="int" />
+          <Property Name="DeletedDate" Type="date" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="date" />
+          <Property Name="updateby" Type="int" />
+        </EntityType>
         <EntityType Name="State">
           <Key>
             <PropertyRef Name="Id" />
@@ -425,6 +503,8 @@
           <EntitySet Name="Karlayatarfa" EntityType="Self.Karlayatarfa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LocalLevel" EntityType="Self.LocalLevel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LocalLevelDetails" EntityType="Self.LocalLevelDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NirmanBebasahi" EntityType="Self.NirmanBebasahi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NirmanBebasahiApproval" EntityType="Self.NirmanBebasahiApproval" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StateDetails" EntityType="Self.StateDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ward" EntityType="Self.Ward" Schema="dbo" store:Type="Tables" />
@@ -576,6 +656,8 @@
             <End Role="Karlayatarfa" EntitySet="Karlayatarfas" />
           </AssociationSet>
           <EntitySet Name="fiscal_year" EntityType="SifarishModel.fiscal_year" />
+          <EntitySet Name="NirmanBebasahis" EntityType="SifarishModel.NirmanBebasahi" />
+          <EntitySet Name="NirmanBebasahiApprovals" EntityType="SifarishModel.NirmanBebasahiApproval" />
         </EntityContainer>
         <EntityType Name="JaagaTarfa">
           <Key>
@@ -960,6 +1042,84 @@
           <Property Name="DeletedBy" Type="Int32" />
           <Property Name="CreatedBy" Type="Int32" />
         </EntityType>
+        <EntityType Name="NirmanBebasahi">
+          <Key>
+            <PropertyRef Name="nirmanbebasaiId" />
+          </Key>
+          <Property Name="nirmanbebasaiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="postboxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelPhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FaxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KaralayaName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="KaralayaAddress" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
+          <Property Name="PramanPatraNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="approvalNo" Type="Int32" />
+          <Property Name="RegisterdDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegisterDateAd" Type="DateTime" Precision="0" />
+          <Property Name="AprovalDateAd" Type="DateTime" Precision="0" />
+          <Property Name="ApprovealDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovalKaryalaya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RenewalDatead" Type="DateTime" Precision="0" />
+          <Property Name="RenewalDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MembershipNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AmountEng" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FormName" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
+          <Property Name="FormAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SanchalakName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateAd" Type="DateTime" Precision="0" />
+          <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+          <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="CreateddDate" Type="DateTime" Precision="0" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="Deletedby" Type="Int32" />
+          <Property Name="updatedDate" Type="DateTime" Precision="0" />
+          <Property Name="updatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NirmanBebasahiApproval">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PostBoxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyTypr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ComapanyPersonelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyPersonelAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyPersonelPostbosNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyPersonelTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyPersonelFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyPersonelEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegisterationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrarionDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrationDateAd" Type="DateTime" Precision="0" />
+          <Property Name="AdhiriktaPuji" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdhirikataPujiEng" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="JariPugi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JariPujiEng" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="groups" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Technical" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NonTechnical" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Others" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="CreateDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Createdby" Type="Int32" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="updateby" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1207,6 +1367,86 @@
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="Nanem" ColumnName="Nanem" />
                 <ScalarProperty Name="FiscalId" ColumnName="FiscalId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NirmanBebasahis">
+            <EntityTypeMapping TypeName="SifarishModel.NirmanBebasahi">
+              <MappingFragment StoreEntitySet="NirmanBebasahi">
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="Deletedby" ColumnName="Deletedby" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="CreateddDate" ColumnName="CreateddDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="PrintDateAd" ColumnName="PrintDateAd" />
+                <ScalarProperty Name="DateAd" ColumnName="DateAd" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SanchalakName" ColumnName="SanchalakName" />
+                <ScalarProperty Name="FormAddress" ColumnName="FormAddress" />
+                <ScalarProperty Name="FormName" ColumnName="FormName" />
+                <ScalarProperty Name="AmountEng" ColumnName="AmountEng" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="MembershipNo" ColumnName="MembershipNo" />
+                <ScalarProperty Name="RenewalDate" ColumnName="RenewalDate" />
+                <ScalarProperty Name="RenewalDatead" ColumnName="RenewalDatead" />
+                <ScalarProperty Name="ApprovalKaryalaya" ColumnName="ApprovalKaryalaya" />
+                <ScalarProperty Name="ApprovealDate" ColumnName="ApprovealDate" />
+                <ScalarProperty Name="AprovalDateAd" ColumnName="AprovalDateAd" />
+                <ScalarProperty Name="RegisterDateAd" ColumnName="RegisterDateAd" />
+                <ScalarProperty Name="RegisterdDate" ColumnName="RegisterdDate" />
+                <ScalarProperty Name="approvalNo" ColumnName="approvalNo" />
+                <ScalarProperty Name="PramanPatraNo" ColumnName="PramanPatraNo" />
+                <ScalarProperty Name="KaralayaAddress" ColumnName="KaralayaAddress" />
+                <ScalarProperty Name="KaralayaName" ColumnName="KaralayaName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="TelPhoneNo" ColumnName="TelPhoneNo" />
+                <ScalarProperty Name="postboxNo" ColumnName="postboxNo" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="nirmanbebasaiId" ColumnName="nirmanbebasaiId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NirmanBebasahiApprovals">
+            <EntityTypeMapping TypeName="SifarishModel.NirmanBebasahiApproval">
+              <MappingFragment StoreEntitySet="NirmanBebasahiApproval">
+                <ScalarProperty Name="updateby" ColumnName="updateby" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="PrintDateAd" ColumnName="PrintDateAd" />
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="Others" ColumnName="Others" />
+                <ScalarProperty Name="NonTechnical" ColumnName="NonTechnical" />
+                <ScalarProperty Name="Technical" ColumnName="Technical" />
+                <ScalarProperty Name="groups" ColumnName="groups" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="JariPujiEng" ColumnName="JariPujiEng" />
+                <ScalarProperty Name="JariPugi" ColumnName="JariPugi" />
+                <ScalarProperty Name="AdhirikataPujiEng" ColumnName="AdhirikataPujiEng" />
+                <ScalarProperty Name="AdhiriktaPuji" ColumnName="AdhiriktaPuji" />
+                <ScalarProperty Name="RegistrationDateAd" ColumnName="RegistrationDateAd" />
+                <ScalarProperty Name="RegistrarionDate" ColumnName="RegistrarionDate" />
+                <ScalarProperty Name="RegisterationNo" ColumnName="RegisterationNo" />
+                <ScalarProperty Name="CompanyPersonelEmail" ColumnName="CompanyPersonelEmail" />
+                <ScalarProperty Name="CompanyPersonelFax" ColumnName="CompanyPersonelFax" />
+                <ScalarProperty Name="CompanyPersonelTelephone" ColumnName="CompanyPersonelTelephone" />
+                <ScalarProperty Name="CompanyPersonelPostbosNo" ColumnName="CompanyPersonelPostbosNo" />
+                <ScalarProperty Name="CompanyPersonelAddress" ColumnName="CompanyPersonelAddress" />
+                <ScalarProperty Name="ComapanyPersonelName" ColumnName="ComapanyPersonelName" />
+                <ScalarProperty Name="CompanyTypr" ColumnName="CompanyTypr" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="PostBoxNo" ColumnName="PostBoxNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -101,6 +101,6 @@ C:\Users\SoftechDev-1\documents\visual studio 2015\Projects\SIFARIS\SIFARIS\bin\
 C:\Users\SoftechDev-1\documents\visual studio 2015\Projects\SIFARIS\SIFARIS\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\SoftechDev-1\documents\visual studio 2015\Projects\SIFARIS\SIFARIS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\SoftechDev-1\documents\visual studio 2015\Projects\SIFARIS\SIFARIS\bin\System.Web.Http.Owin.xml
-C:\Users\SoftechDev-1\documents\visual studio 2015\Projects\SIFARIS\SIFARIS\obj\Debug\SIFARIS.csprojResolveAssemblyReference.cache
 C:\Users\SoftechDev-1\documents\visual studio 2015\Projects\SIFARIS\SIFARIS\obj\Debug\SIFARIS.dll
 C:\Users\SoftechDev-1\documents\visual studio 2015\Projects\SIFARIS\SIFARIS\obj\Debug\SIFARIS.pdb
+C:\Users\SoftechDev-1\documents\visual studio 2015\Projects\SIFARIS\SIFARIS\obj\Debug\SIFARIS.csprojResolveAssemblyReference.cache

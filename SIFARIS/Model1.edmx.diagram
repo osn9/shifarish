@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f2ba5d727a93447d84fb0664a106cccb" Name="Diagram1" ZoomLevel="99">
+      <Diagram DiagramId="f2ba5d727a93447d84fb0664a106cccb" Name="Diagram1" ZoomLevel="51">
         <EntityTypeShape EntityType="SifarishModel.Citizen_GharJagga_Info" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SifarishModel.JaagaTarfa" Width="1.5" PointX="3" PointY="6.625" />
         <EntityTypeShape EntityType="SifarishModel.Karlayatarfa" Width="1.5" PointX="3" PointY="10" />
@@ -36,6 +36,8 @@
         <AssociationConnector Association="SifarishModel.FK_JaagaTarfa_Citizen_Info" />
         <AssociationConnector Association="SifarishModel.FK_Karlayatarfa_Citizen_Info" />
         <EntityTypeShape EntityType="SifarishModel.fiscal_year" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SifarishModel.NirmanBebasahi" Width="1.5" PointX="10.375" PointY="13.75" />
+        <EntityTypeShape EntityType="SifarishModel.NirmanBebasahiApproval" Width="1.5" PointX="12.375" PointY="13.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

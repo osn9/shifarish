@@ -188,6 +188,84 @@
     <Property Name="Population" Type="nvarchar" MaxLength="50" />
     <Property Name="Website" Type="nvarchar" MaxLength="150" />
   </EntityType>
+  <EntityType Name="NirmanBebasahi">
+    <Key>
+      <PropertyRef Name="nirmanbebasaiId" />
+    </Key>
+    <Property Name="nirmanbebasaiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="postboxNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelPhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="KaralayaName" Type="nvarchar" MaxLength="150" />
+    <Property Name="KaralayaAddress" Type="nvarchar" MaxLength="510" />
+    <Property Name="PramanPatraNo" Type="nvarchar" MaxLength="150" />
+    <Property Name="approvalNo" Type="int" />
+    <Property Name="RegisterdDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegisterDateAd" Type="date" />
+    <Property Name="AprovalDateAd" Type="date" />
+    <Property Name="ApprovealDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApprovalKaryalaya" Type="nvarchar" MaxLength="50" />
+    <Property Name="RenewalDatead" Type="date" />
+    <Property Name="RenewalDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="MembershipNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="AmountEng" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FormName" Type="nvarchar" MaxLength="510" />
+    <Property Name="FormAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="SanchalakName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateAd" Type="date" />
+    <Property Name="PrintDateAd" Type="date" />
+    <Property Name="PrintDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Createdby" Type="int" />
+    <Property Name="CreateddDate" Type="date" />
+    <Property Name="deletedDate" Type="date" />
+    <Property Name="Deletedby" Type="int" />
+    <Property Name="updatedDate" Type="date" />
+    <Property Name="updatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="NirmanBebasahiApproval">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Address" Type="nvarchar" MaxLength="150" />
+    <Property Name="PostBoxNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyTypr" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComapanyPersonelName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyPersonelAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyPersonelPostbosNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyPersonelTelephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyPersonelFax" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyPersonelEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegisterationNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegistrarionDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegistrationDateAd" Type="date" />
+    <Property Name="AdhiriktaPuji" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdhirikataPujiEng" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="JariPugi" Type="nvarchar" MaxLength="50" />
+    <Property Name="JariPujiEng" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="50" />
+    <Property Name="groups" Type="nvarchar" MaxLength="50" />
+    <Property Name="Technical" Type="nvarchar" MaxLength="50" />
+    <Property Name="NonTechnical" Type="nvarchar" MaxLength="50" />
+    <Property Name="Others" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintDateAd" Type="date" />
+    <Property Name="Date" Type="date" />
+    <Property Name="status" Type="bit" />
+    <Property Name="CreateDate" Type="nchar" MaxLength="10" />
+    <Property Name="Createdby" Type="int" />
+    <Property Name="DeletedDate" Type="date" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="date" />
+    <Property Name="updateby" Type="int" />
+  </EntityType>
   <EntityType Name="State">
     <Key>
       <PropertyRef Name="Id" />
@@ -420,6 +498,8 @@
     <EntitySet Name="Karlayatarfa" EntityType="Self.Karlayatarfa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LocalLevel" EntityType="Self.LocalLevel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LocalLevelDetails" EntityType="Self.LocalLevelDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NirmanBebasahi" EntityType="Self.NirmanBebasahi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NirmanBebasahiApproval" EntityType="Self.NirmanBebasahiApproval" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StateDetails" EntityType="Self.StateDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ward" EntityType="Self.Ward" Schema="dbo" store:Type="Tables" />

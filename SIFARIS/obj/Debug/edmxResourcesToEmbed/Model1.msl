@@ -245,5 +245,85 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="NirmanBebasahis">
+      <EntityTypeMapping TypeName="SifarishModel.NirmanBebasahi">
+        <MappingFragment StoreEntitySet="NirmanBebasahi">
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="Deletedby" ColumnName="Deletedby" />
+          <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+          <ScalarProperty Name="CreateddDate" ColumnName="CreateddDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+          <ScalarProperty Name="PrintDateAd" ColumnName="PrintDateAd" />
+          <ScalarProperty Name="DateAd" ColumnName="DateAd" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SanchalakName" ColumnName="SanchalakName" />
+          <ScalarProperty Name="FormAddress" ColumnName="FormAddress" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+          <ScalarProperty Name="AmountEng" ColumnName="AmountEng" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="MembershipNo" ColumnName="MembershipNo" />
+          <ScalarProperty Name="RenewalDate" ColumnName="RenewalDate" />
+          <ScalarProperty Name="RenewalDatead" ColumnName="RenewalDatead" />
+          <ScalarProperty Name="ApprovalKaryalaya" ColumnName="ApprovalKaryalaya" />
+          <ScalarProperty Name="ApprovealDate" ColumnName="ApprovealDate" />
+          <ScalarProperty Name="AprovalDateAd" ColumnName="AprovalDateAd" />
+          <ScalarProperty Name="RegisterDateAd" ColumnName="RegisterDateAd" />
+          <ScalarProperty Name="RegisterdDate" ColumnName="RegisterdDate" />
+          <ScalarProperty Name="approvalNo" ColumnName="approvalNo" />
+          <ScalarProperty Name="PramanPatraNo" ColumnName="PramanPatraNo" />
+          <ScalarProperty Name="KaralayaAddress" ColumnName="KaralayaAddress" />
+          <ScalarProperty Name="KaralayaName" ColumnName="KaralayaName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+          <ScalarProperty Name="TelPhoneNo" ColumnName="TelPhoneNo" />
+          <ScalarProperty Name="postboxNo" ColumnName="postboxNo" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="nirmanbebasaiId" ColumnName="nirmanbebasaiId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NirmanBebasahiApprovals">
+      <EntityTypeMapping TypeName="SifarishModel.NirmanBebasahiApproval">
+        <MappingFragment StoreEntitySet="NirmanBebasahiApproval">
+          <ScalarProperty Name="updateby" ColumnName="updateby" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PrintDateAd" ColumnName="PrintDateAd" />
+          <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+          <ScalarProperty Name="Others" ColumnName="Others" />
+          <ScalarProperty Name="NonTechnical" ColumnName="NonTechnical" />
+          <ScalarProperty Name="Technical" ColumnName="Technical" />
+          <ScalarProperty Name="groups" ColumnName="groups" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="JariPujiEng" ColumnName="JariPujiEng" />
+          <ScalarProperty Name="JariPugi" ColumnName="JariPugi" />
+          <ScalarProperty Name="AdhirikataPujiEng" ColumnName="AdhirikataPujiEng" />
+          <ScalarProperty Name="AdhiriktaPuji" ColumnName="AdhiriktaPuji" />
+          <ScalarProperty Name="RegistrationDateAd" ColumnName="RegistrationDateAd" />
+          <ScalarProperty Name="RegistrarionDate" ColumnName="RegistrarionDate" />
+          <ScalarProperty Name="RegisterationNo" ColumnName="RegisterationNo" />
+          <ScalarProperty Name="CompanyPersonelEmail" ColumnName="CompanyPersonelEmail" />
+          <ScalarProperty Name="CompanyPersonelFax" ColumnName="CompanyPersonelFax" />
+          <ScalarProperty Name="CompanyPersonelTelephone" ColumnName="CompanyPersonelTelephone" />
+          <ScalarProperty Name="CompanyPersonelPostbosNo" ColumnName="CompanyPersonelPostbosNo" />
+          <ScalarProperty Name="CompanyPersonelAddress" ColumnName="CompanyPersonelAddress" />
+          <ScalarProperty Name="ComapanyPersonelName" ColumnName="ComapanyPersonelName" />
+          <ScalarProperty Name="CompanyTypr" ColumnName="CompanyTypr" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="PostBoxNo" ColumnName="PostBoxNo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
