@@ -3,7 +3,9 @@
     ViewBag.Title = "AddOrEdit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Content/NepaliDatePicker/jquery.nepaliDatePicker.min.js"></script>
+<link href="~/Content/NepaliDatePicker/nepaliDatePicker.min.css" rel="stylesheet" />
 
 
 @using (Html.BeginForm())
@@ -181,10 +183,10 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="form-group">
+                    <div class="form-group date">
                         @Html.LabelFor(model => model.RegistrarionDate, htmlAttributes: new { @class = "control-label " })
-                        @Html.EditorFor(model => model.RegistrarionDate, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.HiddenFor(model => model.RegistrationDateAd, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.RegistrarionDate, new { htmlAttributes = new { @class = "form-control date-picker   " } })
+                        @Html.HiddenFor(model => model.RegistrationDateAd, new { htmlAttributes = new { @class = "form-control addate" } })
 
 
                         @Html.ValidationMessageFor(model => model.RegistrarionDate, "", new { @class = "text-danger" })
@@ -235,7 +237,7 @@
 
 
 
-                        @Html.ValidationMessageFor(model => model.RegistrarionDate, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.groups, "", new { @class = " text-danger" })
                     </div>
                 </div>
             </div>
@@ -287,3 +289,39 @@
 @*@section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }*@
+
+<script>
+    $(".date-picker").nepaliDatePicker({
+        dateFormat: "%y-%m-%d",
+        closeOnDateSelect: true
+    });
+    function eventLog(event)
+    {
+        var datePickerData = event.datePickerData;
+        var outputData = {
+            "type": event.type,
+            "message": event.message,
+            "datePickerData": datePickerData
+        };
+
+        var output = '<p><code>▸ ' + JSON.stringify(outputData) + '</code></p>';
+        $('.output').append(output);
+    }
+    $(".date-picker").on("dateChange", function (event)
+    {
+        //debugger;
+        try {
+            var o = event.datePickerData;
+
+            console.log(o.adDate.toLocaleDateString());
+            var AdDate = o.adDate.toLocaleDateString();
+            eventLog(event);
+            $(this).closest(".date").find(".addate").val(AdDate);
+
+        } catch (e) {
+
+        }
+  
+        //$(event.target).closest(".addate").val("asda");
+    });
+</script>

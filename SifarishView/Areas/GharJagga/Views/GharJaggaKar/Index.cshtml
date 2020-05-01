@@ -1,0 +1,86 @@
+﻿@model IEnumerable<SifarishView.Areas.GharJagga.Models.GharJaggaKarViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "Index";
+}
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="card">
+    <div class="header">
+        <h4 class="title">@Html.ActionLink("नयाँ थप्नुहोस्", "AddOrEdit", new { id = 0 })</h4>
+    </div>
+    <div class="content table-responsive table-full-width">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.gharNo)
+
+
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.kittaNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GharDesigin)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.roadType)
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.)
+                        </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.Road)
+                    </th>
+                    @*<th></th>*@
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.gharNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.kittaNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GharDesigin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.roadType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Road)
+                        </td>
+                        @*<td>*@
+                        @*@Html.DisplayFor(modelItem => item.District_Id)*@
+                        @*</td>*@
+                        <td>
+                            @Html.ActionLink("Edit", "AddOrEdit", new { id = item.id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.id })
+                            @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+
+        </table>
+    </div>
+</div>

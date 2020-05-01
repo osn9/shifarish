@@ -95,6 +95,31 @@
           <Property Name="Updatedate" Type="date" />
           <Property Name="UpdatedBy" Type="int" />
         </EntityType>
+        <EntityType Name="Demolition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="250" />
+          <Property Name="SuchakName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Relation" Type="nvarchar" MaxLength="150" />
+          <Property Name="SuchakPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateAd" Type="date" />
+          <Property Name="PrindDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrintDateAd" Type="date" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="DeletedDate" Type="date" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="Updateddate" Type="date" />
+          <Property Name="updatedBy" Type="int" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
         <EntityType Name="Department">
           <Key>
             <PropertyRef Name="DeparmentId" />
@@ -148,6 +173,62 @@
           <Property Name="UpdatteBy" Type="int" />
           <Property Name="DeletedBy" Type="int" />
           <Property Name="CreatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="gharBato">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="munOrvdcName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Ward" Type="int" />
+          <Property Name="Map_no" Type="nvarchar" MaxLength="500" />
+          <Property Name="KittaNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="buyerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="buyerFatherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SellerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SellerFatherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateAd" Type="date" />
+          <Property Name="PrintDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrintDateAd" Type="date" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="DeletedDate" Type="date" />
+          <Property Name="Updatedate" Type="date" />
+          <Property Name="updatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GharJaggaKar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ward" Type="int" />
+          <Property Name="gharNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="kittaNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Area" Type="nvarchar" MaxLength="500" />
+          <Property Name="BuildDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Length" Type="nvarchar" MaxLength="50" />
+          <Property Name="breadth" Type="nvarchar" MaxLength="50" />
+          <Property Name="Height" Type="nvarchar" MaxLength="50" />
+          <Property Name="GharDesigin" Type="nvarchar" MaxLength="500" />
+          <Property Name="Road" Type="nvarchar" MaxLength="500" />
+          <Property Name="roadType" Type="nvarchar" MaxLength="500" />
+          <Property Name="NibedakName" Type="nvarchar" MaxLength="500" />
+          <Property Name="NibedakAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="marphatName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="dateAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrintDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="printDateAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDae" Type="date" />
+          <Property Name="deltedDate" Type="date" />
+          <Property Name="updatedate" Type="date" />
+          <Property Name="updateBy" Type="int" />
+          <Property Name="createby" Type="int" />
+          <Property Name="deletedby" Type="int" />
         </EntityType>
         <EntityType Name="JaagaTarfa">
           <Key>
@@ -495,10 +576,13 @@
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Citizen_GharJagga_Info" EntityType="Self.Citizen_GharJagga_Info" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Citizen_Info" EntityType="Self.Citizen_Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Demolition" EntityType="Self.Demolition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DistrictDetails" EntityType="Self.DistrictDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="fiscal_year" EntityType="Self.fiscal_year" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gharBato" EntityType="Self.gharBato" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GharJaggaKar" EntityType="Self.GharJaggaKar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JaagaTarfa" EntityType="Self.JaagaTarfa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Karlayatarfa" EntityType="Self.Karlayatarfa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LocalLevel" EntityType="Self.LocalLevel" Schema="dbo" store:Type="Tables" />
@@ -658,6 +742,9 @@
           <EntitySet Name="fiscal_year" EntityType="SifarishModel.fiscal_year" />
           <EntitySet Name="NirmanBebasahis" EntityType="SifarishModel.NirmanBebasahi" />
           <EntitySet Name="NirmanBebasahiApprovals" EntityType="SifarishModel.NirmanBebasahiApproval" />
+          <EntitySet Name="Demolitions" EntityType="SifarishModel.Demolition" />
+          <EntitySet Name="gharBatoes" EntityType="SifarishModel.gharBato" />
+          <EntitySet Name="GharJaggaKars" EntityType="SifarishModel.GharJaggaKar" />
         </EntityContainer>
         <EntityType Name="JaagaTarfa">
           <Key>
@@ -1120,6 +1207,87 @@
           <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
           <Property Name="updateby" Type="Int32" />
         </EntityType>
+        <EntityType Name="Demolition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reason" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SuchakName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Relation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SuchakPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateAd" Type="DateTime" Precision="0" />
+          <Property Name="PrindDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="Updateddate" Type="DateTime" Precision="0" />
+          <Property Name="updatedBy" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="gharBato">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="munOrvdcName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Ward" Type="Int32" />
+          <Property Name="Map_no" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="KittaNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="buyerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="buyerFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SellerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SellerFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateAd" Type="DateTime" Precision="0" />
+          <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+          <Property Name="Updatedate" Type="DateTime" Precision="0" />
+          <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GharJaggaKar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ward" Type="Int32" />
+          <Property Name="gharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kittaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BuildDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Length" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="breadth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GharDesigin" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Road" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="roadType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NibedakName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NibedakAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="marphatName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dateAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="printDateAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDae" Type="DateTime" Precision="0" />
+          <Property Name="deltedDate" Type="DateTime" Precision="0" />
+          <Property Name="updatedate" Type="DateTime" Precision="0" />
+          <Property Name="updateBy" Type="Int32" />
+          <Property Name="createby" Type="Int32" />
+          <Property Name="deletedby" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1446,6 +1614,90 @@
                 <ScalarProperty Name="PostBoxNo" ColumnName="PostBoxNo" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Demolitions">
+            <EntityTypeMapping TypeName="SifarishModel.Demolition">
+              <MappingFragment StoreEntitySet="Demolition">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="Updateddate" ColumnName="Updateddate" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="PrintDateAd" ColumnName="PrintDateAd" />
+                <ScalarProperty Name="PrindDate" ColumnName="PrindDate" />
+                <ScalarProperty Name="DateAd" ColumnName="DateAd" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SuchakPhone" ColumnName="SuchakPhone" />
+                <ScalarProperty Name="Relation" ColumnName="Relation" />
+                <ScalarProperty Name="SuchakName" ColumnName="SuchakName" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gharBatoes">
+            <EntityTypeMapping TypeName="SifarishModel.gharBato">
+              <MappingFragment StoreEntitySet="gharBato">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="Updatedate" ColumnName="Updatedate" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="PrintDateAd" ColumnName="PrintDateAd" />
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="DateAd" ColumnName="DateAd" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SellerFatherName" ColumnName="SellerFatherName" />
+                <ScalarProperty Name="SellerName" ColumnName="SellerName" />
+                <ScalarProperty Name="buyerFatherName" ColumnName="buyerFatherName" />
+                <ScalarProperty Name="buyerName" ColumnName="buyerName" />
+                <ScalarProperty Name="KittaNo" ColumnName="KittaNo" />
+                <ScalarProperty Name="Map_no" ColumnName="Map_no" />
+                <ScalarProperty Name="Ward" ColumnName="Ward" />
+                <ScalarProperty Name="munOrvdcName" ColumnName="munOrvdcName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GharJaggaKars">
+            <EntityTypeMapping TypeName="SifarishModel.GharJaggaKar">
+              <MappingFragment StoreEntitySet="GharJaggaKar">
+                <ScalarProperty Name="deletedby" ColumnName="deletedby" />
+                <ScalarProperty Name="createby" ColumnName="createby" />
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+                <ScalarProperty Name="deltedDate" ColumnName="deltedDate" />
+                <ScalarProperty Name="CreatedDae" ColumnName="CreatedDae" />
+                <ScalarProperty Name="printDateAd" ColumnName="printDateAd" />
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="dateAd" ColumnName="dateAd" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="marphatName" ColumnName="marphatName" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="NibedakAddress" ColumnName="NibedakAddress" />
+                <ScalarProperty Name="NibedakName" ColumnName="NibedakName" />
+                <ScalarProperty Name="roadType" ColumnName="roadType" />
+                <ScalarProperty Name="Road" ColumnName="Road" />
+                <ScalarProperty Name="GharDesigin" ColumnName="GharDesigin" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="breadth" ColumnName="breadth" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="BuildDate" ColumnName="BuildDate" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="kittaNo" ColumnName="kittaNo" />
+                <ScalarProperty Name="gharNo" ColumnName="gharNo" />
+                <ScalarProperty Name="ward" ColumnName="ward" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

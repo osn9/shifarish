@@ -38,6 +38,9 @@
         <EntityTypeShape EntityType="SifarishModel.fiscal_year" Width="1.5" PointX="0.75" PointY="13.75" />
         <EntityTypeShape EntityType="SifarishModel.NirmanBebasahi" Width="1.5" PointX="10.375" PointY="13.75" />
         <EntityTypeShape EntityType="SifarishModel.NirmanBebasahiApproval" Width="1.5" PointX="12.375" PointY="13.75" />
+        <EntityTypeShape EntityType="SifarishModel.Demolition" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SifarishModel.gharBato" Width="1.5" PointX="3.375" PointY="14.75" />
+        <EntityTypeShape EntityType="SifarishModel.GharJaggaKar" Width="1.5" PointX="14.375" PointY="13.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,132 @@
+﻿@model SifarishView.Areas.GharJagga.Models.GharBatoViewModel
+@{
+    ViewBag.Title = "AddOrEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="card">
+        <div class="header">
+            <h2 class="title">- घर/बाटो प्रमाणित         </h2>
+        </div>
+     
+
+        <div class="content">
+
+      
+            @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+            <div class="row">
+
+                @Html.HiddenFor(model => model.id)
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.munOrvdcName, htmlAttributes: new { @class = "control-label " })
+                        @Html.EditorFor(model => model.munOrvdcName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.munOrvdcName, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Ward, htmlAttributes: new { @class = "control-label " })
+                        @Html.EditorFor(model => model.Ward, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Ward, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Map_no, htmlAttributes: new { @class = "control-label " })
+                        @*@Html.EditorFor(model => model.Zone_Id, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                        @Html.EditorFor(model => model.Map_no, new { htmlAttributes = new { @class = "form-control" } })
+
+                        @Html.ValidationMessageFor(model => model.Map_no, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.KittaNo, htmlAttributes: new { @class = "control-label " })
+                        @*@Html.EditorFor(model => model.District_Id, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.EditorFor(model => model.KittaNo, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                        @Html.ValidationMessageFor(model => model.KittaNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+             
+
+
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="header">
+                    <h4 class="title">जग्गा लिनेको सही  </h4>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.buyerName, htmlAttributes: new { @class = "control-label " })
+                        @Html.EditorFor(model => model.buyerName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.buyerName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.buyerFatherName, htmlAttributes: new { @class = "control-label " })
+                        @Html.EditorFor(model => model.buyerFatherName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.buyerFatherName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                </div>
+            <div class="row">
+
+                <div class="header">
+                    <h4 class="title">जग्गा धर्नको सहह  </h4>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.SellerName, htmlAttributes: new { @class = "control-label " })
+                        @Html.EditorFor(model => model.SellerName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SellerName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.SellerFatherName, htmlAttributes: new { @class = "control-label " })
+                        @Html.EditorFor(model => model.SellerFatherName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SellerFatherName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+            <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

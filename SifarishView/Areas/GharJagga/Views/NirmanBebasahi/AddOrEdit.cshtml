@@ -3,7 +3,9 @@
     ViewBag.Title = "AddOrEdit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Content/NepaliDatePicker/jquery.nepaliDatePicker.min.js"></script>
+<link href="~/Content/NepaliDatePicker/nepaliDatePicker.min.css" rel="stylesheet" />
 
 
 @using (Html.BeginForm())
@@ -122,11 +124,11 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="form-group">
+                    <div class="form-group date ">
                         @Html.LabelFor(model => model.ApprovealDate, htmlAttributes: new { @class = "control-label " })
 
-                        @Html.EditorFor(model => model.ApprovealDate, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.HiddenFor(model => model.AprovalDateAd, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.ApprovealDate, new { htmlAttributes = new { @class = "form-control date-picker" } })
+                        @Html.HiddenFor(model => model.AprovalDateAd, new { htmlAttributes = new { @class = "form-control addate" } })
                         @Html.ValidationMessageFor(model => model.ApprovealDate, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -149,11 +151,11 @@
                         @Html.ValidationMessageFor(model => model.SanchalakName, "", new { @class = "text-danger" })
                     </div>
                 </div><div class="col-md-4">
-                    <div class="form-group">
+                    <div class="form-group date">
                         @Html.LabelFor(model => model.RenewalDate, htmlAttributes: new { @class = "control-label " })
 
-                        @Html.EditorFor(model => model.RenewalDate, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.HiddenFor(model => model.RenewalDatead, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.RenewalDate, new { htmlAttributes = new { @class = "form-control date-picker" } })
+                        @Html.HiddenFor(model => model.RenewalDatead, new { htmlAttributes = new { @class = "form-control addate" } })
                         @Html.ValidationMessageFor(model => model.RenewalDate, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -197,19 +199,19 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="form-group">
+                    <div class="form-group date">
                         @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label " })
-                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.HiddenFor(model => model.DateAd, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control date-picker" } })
+                        @Html.HiddenFor(model => model.DateAd, new { htmlAttributes = new { @class = "form-control addate" } })
                         @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="form-group">
+                    <div class="form-group date">
                         @Html.LabelFor(model => model.PrintDate, htmlAttributes: new { @class = "control-label " })
-                        @Html.EditorFor(model => model.PrintDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.PrintDate, new { htmlAttributes = new { @class = "form-control date-picker" } })
 
-                        @Html.HiddenFor(model => model.PrintDateAd, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.HiddenFor(model => model.PrintDateAd, new { htmlAttributes = new { @class = "form-control addate" } })
                         @Html.ValidationMessageFor(model => model.PrintDateAd, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -229,3 +231,38 @@
 @*@section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }*@
+<script>
+    $(".date-picker").nepaliDatePicker({
+        dateFormat: "%y-%m-%d",
+        closeOnDateSelect: true
+    });
+    function eventLog(event)
+    {
+        var datePickerData = event.datePickerData;
+        var outputData = {
+            "type": event.type,
+            "message": event.message,
+            "datePickerData": datePickerData
+        };
+
+        var output = '<p><code>▸ ' + JSON.stringify(outputData) + '</code></p>';
+        $('.output').append(output);
+    }
+    $(".date-picker").on("dateChange", function (event)
+    {
+        //debugger;
+        try {
+            var o = event.datePickerData;
+
+            console.log(o.adDate.toLocaleDateString());
+            var AdDate = o.adDate.toLocaleDateString();
+            eventLog(event);
+            $(this).closest(".date").find(".addate").val(AdDate);
+
+        } catch (e) {
+
+        }
+
+        //$(event.target).closest(".addate").val("asda");
+    });
+</script>

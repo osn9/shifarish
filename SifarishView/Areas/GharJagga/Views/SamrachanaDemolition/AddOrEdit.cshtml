@@ -1,0 +1,135 @@
+﻿@model SifarishView.Areas.GharJagga.Models.SanrachanaDemolitionViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "Index";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">संरचनाको विवरण :</h4>
+                    </div>
+                    <div class="content">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.HiddenFor(model => model.id)
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                           
+                                <div class="row">
+                                    <div class="col-md-4" >
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label " })
+                                            <label>
+                                                @Html.RadioButtonFor(m => m.Type, "घर")
+                                                घर
+                                            </label>
+                                            <label>
+                                                @Html.RadioButtonFor(m => m.Type, "भवन")
+                                                भवन
+                                            </label>
+                                            <label>
+                                                @Html.RadioButtonFor(m => m.Type, "सार्वजनिक भवन")
+                                                सार्वजनिक भवन
+                                            </label>
+                                       
+
+                                            <label>
+
+                                                @Html.RadioButtonFor(m => m.Type, "मन्दिर ")
+                                                मन्दिर
+                                            </label>
+
+
+                                            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                             
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label  " })
+                                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                               
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label " })
+                                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label " })
+                                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            
+                                <div class="row">
+                                    <div class="header">
+                                        <h4 class="title">सूचकको विवरण :</h4>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.SuchakName, htmlAttributes: new { @class = "control-label " })
+                                            @Html.EditorFor(model => model.SuchakName, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.SuchakName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.SuchakPhone, htmlAttributes: new { @class = "control-label " })
+                                            @Html.EditorFor(model => model.SuchakPhone, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.SuchakPhone, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Reason, htmlAttributes: new { @class = "control-label " })
+                                            @Html.EditorFor(model => model.Reason, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Reason, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Relation, htmlAttributes: new { @class = "control-label " })
+                                            @Html.EditorFor(model => model.Relation, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Relation, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                  
+                                
+
+                               
+                     
+
+                    
+                          
+                               
+
+
+
+                                <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                                <div class="clearfix"></div>
+                       
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

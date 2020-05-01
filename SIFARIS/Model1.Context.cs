@@ -45,5 +45,8 @@ namespace SIFARIS
         public virtual DbSet<fiscal_year> fiscal_year { get; set; }
         public virtual DbSet<NirmanBebasahi> NirmanBebasahis { get; set; }
         public virtual DbSet<NirmanBebasahiApproval> NirmanBebasahiApprovals { get; set; }
+        public virtual DbSet<Demolition> Demolitions { get; set; }
+        public virtual DbSet<gharBato> gharBatoes { get; set; }
+        public virtual DbSet<GharJaggaKar> GharJaggaKars { get; set; }
     }
 }

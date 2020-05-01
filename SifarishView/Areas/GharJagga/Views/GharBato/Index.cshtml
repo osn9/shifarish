@@ -1,0 +1,86 @@
+﻿@model IEnumerable<SifarishView.Areas.GharJagga.Models.GharBatoViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "Index";
+}
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="card">
+    <div class="header">
+        <h4 class="title">@Html.ActionLink("नयाँ थप्नुहोस्", "AddOrEdit", new { id = 0 })</h4>
+    </div>
+    <div class="content table-responsive table-full-width">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.munOrvdcName)
+
+
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ward)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Map_no)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.KittaNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.buyerName)
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.)
+                        </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.SellerName)
+                    </th>
+                    @*<th></th>*@
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.munOrvdcName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ward)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Map_no)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KittaNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.buyerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SellerName)
+                        </td>
+                        @*<td>*@
+                        @*@Html.DisplayFor(modelItem => item.District_Id)*@
+                        @*</td>*@
+                        <td>
+                            @Html.ActionLink("Edit", "AddOrEdit", new { id = item.id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.id })
+                            @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+
+        </table>
+    </div>
+</div>

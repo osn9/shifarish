@@ -325,5 +325,89 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Demolitions">
+      <EntityTypeMapping TypeName="SifarishModel.Demolition">
+        <MappingFragment StoreEntitySet="Demolition">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="Updateddate" ColumnName="Updateddate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PrintDateAd" ColumnName="PrintDateAd" />
+          <ScalarProperty Name="PrindDate" ColumnName="PrindDate" />
+          <ScalarProperty Name="DateAd" ColumnName="DateAd" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SuchakPhone" ColumnName="SuchakPhone" />
+          <ScalarProperty Name="Relation" ColumnName="Relation" />
+          <ScalarProperty Name="SuchakName" ColumnName="SuchakName" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gharBatoes">
+      <EntityTypeMapping TypeName="SifarishModel.gharBato">
+        <MappingFragment StoreEntitySet="gharBato">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="Updatedate" ColumnName="Updatedate" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="PrintDateAd" ColumnName="PrintDateAd" />
+          <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+          <ScalarProperty Name="DateAd" ColumnName="DateAd" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SellerFatherName" ColumnName="SellerFatherName" />
+          <ScalarProperty Name="SellerName" ColumnName="SellerName" />
+          <ScalarProperty Name="buyerFatherName" ColumnName="buyerFatherName" />
+          <ScalarProperty Name="buyerName" ColumnName="buyerName" />
+          <ScalarProperty Name="KittaNo" ColumnName="KittaNo" />
+          <ScalarProperty Name="Map_no" ColumnName="Map_no" />
+          <ScalarProperty Name="Ward" ColumnName="Ward" />
+          <ScalarProperty Name="munOrvdcName" ColumnName="munOrvdcName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GharJaggaKars">
+      <EntityTypeMapping TypeName="SifarishModel.GharJaggaKar">
+        <MappingFragment StoreEntitySet="GharJaggaKar">
+          <ScalarProperty Name="deletedby" ColumnName="deletedby" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+          <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+          <ScalarProperty Name="deltedDate" ColumnName="deltedDate" />
+          <ScalarProperty Name="CreatedDae" ColumnName="CreatedDae" />
+          <ScalarProperty Name="printDateAd" ColumnName="printDateAd" />
+          <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+          <ScalarProperty Name="dateAd" ColumnName="dateAd" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="marphatName" ColumnName="marphatName" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="NibedakAddress" ColumnName="NibedakAddress" />
+          <ScalarProperty Name="NibedakName" ColumnName="NibedakName" />
+          <ScalarProperty Name="roadType" ColumnName="roadType" />
+          <ScalarProperty Name="Road" ColumnName="Road" />
+          <ScalarProperty Name="GharDesigin" ColumnName="GharDesigin" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="breadth" ColumnName="breadth" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="BuildDate" ColumnName="BuildDate" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="kittaNo" ColumnName="kittaNo" />
+          <ScalarProperty Name="gharNo" ColumnName="gharNo" />
+          <ScalarProperty Name="ward" ColumnName="ward" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

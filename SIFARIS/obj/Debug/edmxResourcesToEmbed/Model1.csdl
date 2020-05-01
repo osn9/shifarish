@@ -88,6 +88,9 @@
     <EntitySet Name="fiscal_year" EntityType="SifarishModel.fiscal_year" />
     <EntitySet Name="NirmanBebasahis" EntityType="SifarishModel.NirmanBebasahi" />
     <EntitySet Name="NirmanBebasahiApprovals" EntityType="SifarishModel.NirmanBebasahiApproval" />
+    <EntitySet Name="Demolitions" EntityType="SifarishModel.Demolition" />
+    <EntitySet Name="gharBatoes" EntityType="SifarishModel.gharBato" />
+    <EntitySet Name="GharJaggaKars" EntityType="SifarishModel.GharJaggaKar" />
   </EntityContainer>
   <EntityType Name="JaagaTarfa">
     <Key>
@@ -549,5 +552,86 @@
     <Property Name="DeletedBy" Type="Int32" />
     <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
     <Property Name="updateby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Demolition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reason" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SuchakName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Relation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SuchakPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateAd" Type="DateTime" Precision="0" />
+    <Property Name="PrindDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="Updateddate" Type="DateTime" Precision="0" />
+    <Property Name="updatedBy" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="gharBato">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="munOrvdcName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Ward" Type="Int32" />
+    <Property Name="Map_no" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="KittaNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="buyerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="buyerFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SellerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SellerFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateAd" Type="DateTime" Precision="0" />
+    <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="Updatedate" Type="DateTime" Precision="0" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GharJaggaKar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ward" Type="Int32" />
+    <Property Name="gharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kittaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="BuildDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Length" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="breadth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GharDesigin" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Road" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="roadType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NibedakName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NibedakAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="marphatName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dateAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="printDateAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDae" Type="DateTime" Precision="0" />
+    <Property Name="deltedDate" Type="DateTime" Precision="0" />
+    <Property Name="updatedate" Type="DateTime" Precision="0" />
+    <Property Name="updateBy" Type="Int32" />
+    <Property Name="createby" Type="Int32" />
+    <Property Name="deletedby" Type="Int32" />
   </EntityType>
 </Schema>

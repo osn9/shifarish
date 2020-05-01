@@ -90,6 +90,31 @@
     <Property Name="Updatedate" Type="date" />
     <Property Name="UpdatedBy" Type="int" />
   </EntityType>
+  <EntityType Name="Demolition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Address" Type="nvarchar" MaxLength="150" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="250" />
+    <Property Name="SuchakName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Relation" Type="nvarchar" MaxLength="150" />
+    <Property Name="SuchakPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateAd" Type="date" />
+    <Property Name="PrindDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintDateAd" Type="date" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="DeletedDate" Type="date" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="Updateddate" Type="date" />
+    <Property Name="updatedBy" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
   <EntityType Name="Department">
     <Key>
       <PropertyRef Name="DeparmentId" />
@@ -143,6 +168,62 @@
     <Property Name="UpdatteBy" Type="int" />
     <Property Name="DeletedBy" Type="int" />
     <Property Name="CreatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="gharBato">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="munOrvdcName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Ward" Type="int" />
+    <Property Name="Map_no" Type="nvarchar" MaxLength="500" />
+    <Property Name="KittaNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="buyerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="buyerFatherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SellerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SellerFatherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateAd" Type="date" />
+    <Property Name="PrintDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintDateAd" Type="date" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="DeletedDate" Type="date" />
+    <Property Name="Updatedate" Type="date" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GharJaggaKar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ward" Type="int" />
+    <Property Name="gharNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="kittaNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Area" Type="nvarchar" MaxLength="500" />
+    <Property Name="BuildDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Length" Type="nvarchar" MaxLength="50" />
+    <Property Name="breadth" Type="nvarchar" MaxLength="50" />
+    <Property Name="Height" Type="nvarchar" MaxLength="50" />
+    <Property Name="GharDesigin" Type="nvarchar" MaxLength="500" />
+    <Property Name="Road" Type="nvarchar" MaxLength="500" />
+    <Property Name="roadType" Type="nvarchar" MaxLength="500" />
+    <Property Name="NibedakName" Type="nvarchar" MaxLength="500" />
+    <Property Name="NibedakAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="marphatName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="dateAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="printDateAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDae" Type="date" />
+    <Property Name="deltedDate" Type="date" />
+    <Property Name="updatedate" Type="date" />
+    <Property Name="updateBy" Type="int" />
+    <Property Name="createby" Type="int" />
+    <Property Name="deletedby" Type="int" />
   </EntityType>
   <EntityType Name="JaagaTarfa">
     <Key>
@@ -490,10 +571,13 @@
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Citizen_GharJagga_Info" EntityType="Self.Citizen_GharJagga_Info" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Citizen_Info" EntityType="Self.Citizen_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Demolition" EntityType="Self.Demolition" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DistrictDetails" EntityType="Self.DistrictDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="fiscal_year" EntityType="Self.fiscal_year" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gharBato" EntityType="Self.gharBato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GharJaggaKar" EntityType="Self.GharJaggaKar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="JaagaTarfa" EntityType="Self.JaagaTarfa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Karlayatarfa" EntityType="Self.Karlayatarfa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LocalLevel" EntityType="Self.LocalLevel" Schema="dbo" store:Type="Tables" />
