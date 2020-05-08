@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SifarishView.Areas.GharJagga.Models.GhraJaggaKarFileViewModle>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "Index";
+
+    var data = Model.FirstOrDefault();
+    int value= 0;
+    if (data!=null)
+    {
+        value = data.GhraJaggaKarId??0;
+    }
+}
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="card">
+    <div class="header">
+        @if (data != null)
+        {
+        <h4 class="title">@Html.ActionLink("नयाँ थप्नुहोस्", "Create", new { id = value })</h4>
+        }
+    </div>
+    <div class="content table-responsive table-full-width">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FileName)
+
+
+                    </th>
+              
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FileName)
+                        </td>
+                 
+
+                        <td>
+                            @Html.ActionLink("DownLoad", "FilesDownload", new { id = item.id }) 
+                         
+                            @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+
+        </table>
+    </div>
+</div>

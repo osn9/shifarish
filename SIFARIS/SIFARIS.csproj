@@ -234,6 +234,7 @@
     <Compile Include="Areas\GharJagga\Controllers\FiscalyearController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\GharBatoController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\GharJaggaKarController.cs" />
+    <Compile Include="Areas\GharJagga\Controllers\GharJaggaKarFileController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\NirmanBebasahiApprovalController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\NirmanBebasahiController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\RolesController.cs" />
@@ -327,6 +328,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="GharJaggaKar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GharjaggakarFile.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">

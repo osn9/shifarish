@@ -56,4 +56,17 @@ namespace SifarishView.Areas.GharJagga.Models
         public Nullable<int> createby { get; set; }
         public Nullable<int> deletedby { get; set; }
     }
+    public class GhraJaggaKarFileViewModle
+    {
+
+        public int id { get; set; }
+        public Nullable<int> GhraJaggaKarId { get; set; }
+        [Display(Name = "कागजात")]
+        public string FileName { get; set; }
+        [Display(Name = "कागजात")]
+
+        public string FilePath { get; set; }
+        public Nullable<bool> Status { get; set; }
+      //  public HttpPostedFileBase files { get; set; }
+    }
 }

@@ -14,6 +14,12 @@ namespace SIFARIS
     
     public partial class GharJaggaKar
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public GharJaggaKar()
+        {
+            this.GharjaggakarFiles = new HashSet<GharjaggakarFile>();
+        }
+    
         public int id { get; set; }
         public Nullable<int> ward { get; set; }
         public string gharNo { get; set; }
@@ -41,5 +47,8 @@ namespace SIFARIS
         public Nullable<int> updateBy { get; set; }
         public Nullable<int> createby { get; set; }
         public Nullable<int> deletedby { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GharjaggakarFile> GharjaggakarFiles { get; set; }
     }
 }

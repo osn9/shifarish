@@ -1,10 +1,14 @@
-﻿using SIFARIS.Areas.GharJagga.Models;
+﻿using Newtonsoft.Json;
+using SIFARIS.Areas.GharJagga.Models;
 using SIFARIS.Areas.GharJagga.Provider;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
+using System.Web.Hosting;
 using System.Web.Http;
 
 namespace SIFARIS.Areas.GharJagga.Controllers
@@ -107,5 +111,8 @@ namespace SIFARIS.Areas.GharJagga.Controllers
         public void Delete(int id)
         {
         }
+        //upload files
+
+
     }
 }

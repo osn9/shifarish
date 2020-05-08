@@ -41,6 +41,8 @@
         <EntityTypeShape EntityType="SifarishModel.Demolition" Width="1.5" PointX="14.375" PointY="0.75" />
         <EntityTypeShape EntityType="SifarishModel.gharBato" Width="1.5" PointX="3.375" PointY="14.75" />
         <EntityTypeShape EntityType="SifarishModel.GharJaggaKar" Width="1.5" PointX="14.375" PointY="13.75" />
+        <EntityTypeShape EntityType="SifarishModel.GharjaggakarFile" Width="1.5" PointX="16.625" PointY="15.875" />
+        <AssociationConnector Association="SifarishModel.FK_GharjaggakarFiles_GharJaggaKar" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

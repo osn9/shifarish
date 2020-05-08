@@ -178,5 +178,75 @@ namespace SIFARIS.Areas.GharJagga.Provider
                 return result;
             }
         }
+
+        //save file on db
+        public bool InsertFile(GhraJaggaKarFileViewModle model)
+        {
+            using (var con = new SifarishEntities())
+            {
+                {
+                    GharjaggakarFile cdata = new GharjaggakarFile()
+                    {
+                        FileName = model.FileName,
+                        FilePath = model.FilePath,
+
+                        Status = model.Status,
+                        GhraJaggaKarId = model.GhraJaggaKarId,
+                        
+
+                    };
+                    con.GharjaggakarFiles.Add(cdata);
+
+
+
+
+                }
+                int i = con.SaveChanges();
+                if (i > 0)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
+        public List<GhraJaggaKarFileViewModle> GetFilesById(int id)
+        {
+            using (var con = new SifarishEntities())
+            {
+                var result = con.GharjaggakarFiles
+
+                                .Select(x => new GhraJaggaKarFileViewModle()
+                                {
+                                    id = x.id,
+                                    FileName = x.FileName,
+                                    FilePath=x.FilePath,
+                                    GhraJaggaKarId = x.GhraJaggaKarId,
+                                    Status =x.Status,
+                                    
+
+                                }).Where(x => x.GhraJaggaKarId == id).ToList();
+                return result;
+            }
+        }
+
+        public GhraJaggaKarFileViewModle GetFilesByIdDownload(int id)
+        {
+            using (var con = new SifarishEntities())
+            {
+                var result = con.GharjaggakarFiles
+
+                                .Select(x => new GhraJaggaKarFileViewModle()
+                                {
+                                    id = x.id,
+                                    FileName = x.FileName,
+                                    FilePath = x.FilePath,
+                                    GhraJaggaKarId = x.GhraJaggaKarId,
+                                    Status = x.Status,
+
+
+                                }).Where(x => x.id == id).FirstOrDefault();
+                return result;
+            }
+        }
     }
 }

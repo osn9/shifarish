@@ -230,6 +230,16 @@
           <Property Name="createby" Type="int" />
           <Property Name="deletedby" Type="int" />
         </EntityType>
+        <EntityType Name="GharjaggakarFiles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GhraJaggaKarId" Type="int" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
         <EntityType Name="JaagaTarfa">
           <Key>
             <PropertyRef Name="jagaTarfa_id" />
@@ -484,6 +494,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_GharjaggakarFiles_GharJaggaKar">
+          <End Role="GharJaggaKar" Type="Self.GharJaggaKar" Multiplicity="0..1" />
+          <End Role="GharjaggakarFiles" Type="Self.GharjaggakarFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GharJaggaKar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GharjaggakarFiles">
+              <PropertyRef Name="GhraJaggaKarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_JaagaTarfa_Citizen_Info">
           <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="0..1" />
           <End Role="JaagaTarfa" Type="Self.JaagaTarfa" Multiplicity="*" />
@@ -583,6 +605,7 @@
           <EntitySet Name="fiscal_year" EntityType="Self.fiscal_year" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gharBato" EntityType="Self.gharBato" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GharJaggaKar" EntityType="Self.GharJaggaKar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GharjaggakarFiles" EntityType="Self.GharjaggakarFiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JaagaTarfa" EntityType="Self.JaagaTarfa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Karlayatarfa" EntityType="Self.Karlayatarfa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LocalLevel" EntityType="Self.LocalLevel" Schema="dbo" store:Type="Tables" />
@@ -620,6 +643,10 @@
           <AssociationSet Name="FK_DistrictDetails_District" Association="Self.FK_DistrictDetails_District">
             <End Role="District" EntitySet="District" />
             <End Role="DistrictDetails" EntitySet="DistrictDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GharjaggakarFiles_GharJaggaKar" Association="Self.FK_GharjaggakarFiles_GharJaggaKar">
+            <End Role="GharJaggaKar" EntitySet="GharJaggaKar" />
+            <End Role="GharjaggakarFiles" EntitySet="GharjaggakarFiles" />
           </AssociationSet>
           <AssociationSet Name="FK_JaagaTarfa_Citizen_Info" Association="Self.FK_JaagaTarfa_Citizen_Info">
             <End Role="Citizen_Info" EntitySet="Citizen_Info" />
@@ -745,6 +772,11 @@
           <EntitySet Name="Demolitions" EntityType="SifarishModel.Demolition" />
           <EntitySet Name="gharBatoes" EntityType="SifarishModel.gharBato" />
           <EntitySet Name="GharJaggaKars" EntityType="SifarishModel.GharJaggaKar" />
+          <EntitySet Name="GharjaggakarFiles" EntityType="SifarishModel.GharjaggakarFile" />
+          <AssociationSet Name="FK_GharjaggakarFiles_GharJaggaKar" Association="SifarishModel.FK_GharjaggakarFiles_GharJaggaKar">
+            <End Role="GharJaggaKar" EntitySet="GharJaggaKars" />
+            <End Role="GharjaggakarFile" EntitySet="GharjaggakarFiles" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="JaagaTarfa">
           <Key>
@@ -1287,7 +1319,31 @@
           <Property Name="updateBy" Type="Int32" />
           <Property Name="createby" Type="Int32" />
           <Property Name="deletedby" Type="Int32" />
+          <NavigationProperty Name="GharjaggakarFiles" Relationship="SifarishModel.FK_GharjaggakarFiles_GharJaggaKar" FromRole="GharJaggaKar" ToRole="GharjaggakarFile" />
         </EntityType>
+        <EntityType Name="GharjaggakarFile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GhraJaggaKarId" Type="Int32" />
+          <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="GharJaggaKar" Relationship="SifarishModel.FK_GharjaggakarFiles_GharJaggaKar" FromRole="GharjaggakarFile" ToRole="GharJaggaKar" />
+        </EntityType>
+        <Association Name="FK_GharjaggakarFiles_GharJaggaKar">
+          <End Type="SifarishModel.GharJaggaKar" Role="GharJaggaKar" Multiplicity="0..1" />
+          <End Type="SifarishModel.GharjaggakarFile" Role="GharjaggakarFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GharJaggaKar">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GharjaggakarFile">
+              <PropertyRef Name="GhraJaggaKarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1698,6 +1754,17 @@
                 <ScalarProperty Name="kittaNo" ColumnName="kittaNo" />
                 <ScalarProperty Name="gharNo" ColumnName="gharNo" />
                 <ScalarProperty Name="ward" ColumnName="ward" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GharjaggakarFiles">
+            <EntityTypeMapping TypeName="SifarishModel.GharjaggakarFile">
+              <MappingFragment StoreEntitySet="GharjaggakarFiles">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="GhraJaggaKarId" ColumnName="GhraJaggaKarId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

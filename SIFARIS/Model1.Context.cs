@@ -48,5 +48,6 @@ namespace SIFARIS
         public virtual DbSet<Demolition> Demolitions { get; set; }
         public virtual DbSet<gharBato> gharBatoes { get; set; }
         public virtual DbSet<GharJaggaKar> GharJaggaKars { get; set; }
+        public virtual DbSet<GharjaggakarFile> GharjaggakarFiles { get; set; }
     }
 }

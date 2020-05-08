@@ -1,0 +1,63 @@
+﻿@model SifarishView.Areas.GharJagga.Models.GhraJaggaKarFileViewModle
+@{
+    ViewBag.Title = "AddOrEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="header">
+
+        <h3>घर जग्गा कर</h3>
+
+
+
+
+    </div>
+    <div class="header">
+        
+        <h5>संलग्न कागजातहरु :- </h5>
+       
+
+
+
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-4">
+                @using (Html.BeginForm("Create", "GharJaggaKar", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FileName, htmlAttributes: new { @class = "control-label " })
+                        @Html.HiddenFor(model => model.GhraJaggaKarId)
+                        @*@Html.TextBoxFor(model => model.FileName, "", new { @type = "file", @multiple = "multiple" })*@
+
+                        <input type="file" id="files" name="files" multiple="multiple" class="form-control" required />
+                    </div>
+                    <button class="btn btn-info btn-fill pull-right" type="submit">Upload files</button>
+                }
+            </div>
+
+            </div>
+        <div class="typography-line">
+          
+            
+            <p>
+                जग्गा धनी प्रमाण पूर्जाको प्रतिलिपि         –१
+            </p>
+            <p>
+                मालपोत/भूमिकर तिरेको रसिदको प्रतिलिपि        –१
+            </p>
+          
+
+            <p >कर कार्यालयको कागज (कर कार्यालयमा तिरेको भएमा) को प्रलिलिपि     –१</p>
+            <p >नक्सा पास प्रमाण पत्र नक्साको प्रतिलिपि        –१ </p>
+            <p > तल्ला थप भएका पुरानो नक्सा पास समेतको प्रतिलिपि       –१ </p>
+
+            <p > मालपोत कार्यालयमा रजिष्ट्रशन पास पत्रको प्रतिलिपि       –१ </p>
+
+            <p> नगरपालिका हुनु अगावै बनेको घर भएमा सम्बन्धित वडाको स्थलगत निरीक्षण सहितको प्रतिवेदन सक्कल प्रति –१ </p>
+
+        </div>
+
+    </div>
+    </div>

@@ -409,5 +409,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="GharjaggakarFiles">
+      <EntityTypeMapping TypeName="SifarishModel.GharjaggakarFile">
+        <MappingFragment StoreEntitySet="GharjaggakarFiles">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="GhraJaggaKarId" ColumnName="GhraJaggaKarId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

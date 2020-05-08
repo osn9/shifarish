@@ -91,6 +91,11 @@
     <EntitySet Name="Demolitions" EntityType="SifarishModel.Demolition" />
     <EntitySet Name="gharBatoes" EntityType="SifarishModel.gharBato" />
     <EntitySet Name="GharJaggaKars" EntityType="SifarishModel.GharJaggaKar" />
+    <EntitySet Name="GharjaggakarFiles" EntityType="SifarishModel.GharjaggakarFile" />
+    <AssociationSet Name="FK_GharjaggakarFiles_GharJaggaKar" Association="SifarishModel.FK_GharjaggakarFiles_GharJaggaKar">
+      <End Role="GharJaggaKar" EntitySet="GharJaggaKars" />
+      <End Role="GharjaggakarFile" EntitySet="GharjaggakarFiles" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="JaagaTarfa">
     <Key>
@@ -633,5 +638,29 @@
     <Property Name="updateBy" Type="Int32" />
     <Property Name="createby" Type="Int32" />
     <Property Name="deletedby" Type="Int32" />
+    <NavigationProperty Name="GharjaggakarFiles" Relationship="SifarishModel.FK_GharjaggakarFiles_GharJaggaKar" FromRole="GharJaggaKar" ToRole="GharjaggakarFile" />
   </EntityType>
+  <EntityType Name="GharjaggakarFile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GhraJaggaKarId" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="GharJaggaKar" Relationship="SifarishModel.FK_GharjaggakarFiles_GharJaggaKar" FromRole="GharjaggakarFile" ToRole="GharJaggaKar" />
+  </EntityType>
+  <Association Name="FK_GharjaggakarFiles_GharJaggaKar">
+    <End Type="SifarishModel.GharJaggaKar" Role="GharJaggaKar" Multiplicity="0..1" />
+    <End Type="SifarishModel.GharjaggakarFile" Role="GharjaggakarFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GharJaggaKar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="GharjaggakarFile">
+        <PropertyRef Name="GhraJaggaKarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

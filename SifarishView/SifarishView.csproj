@@ -494,6 +494,8 @@
     <Content Include="Areas\GharJagga\Views\GharJaggaKar\Index.cshtml" />
     <Content Include="Areas\GharJagga\Views\GharBato\AddOrEdit.cshtml" />
     <Content Include="Areas\GharJagga\Views\GharBato\Index.cshtml" />
+    <Content Include="Areas\GharJagga\Views\GharJaggaKar\Create.cshtml" />
+    <Content Include="Areas\GharJagga\Views\GharJaggaKar\Files.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

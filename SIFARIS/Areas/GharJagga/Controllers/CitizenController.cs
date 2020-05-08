@@ -26,7 +26,7 @@ namespace SIFARIS.Areas.GharJagga.Controllers
                 res.status = true;
                 return Ok(res);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 res.obj = data;
                 res.status = false;

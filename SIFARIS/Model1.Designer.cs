@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\SoftechDev-1\documents\visual studio 2015\Projects\SIFARIS\SIFARIS\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Projects\Sifarish\shifarish\SIFARIS\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
