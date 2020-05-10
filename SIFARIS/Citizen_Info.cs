@@ -34,6 +34,14 @@ namespace SIFARIS
         public string GrandFatherName { get; set; }
         public string CitizenShip_Date { get; set; }
         public Nullable<int> CitizinShip_Zone { get; set; }
+        public Nullable<int> DeparmentId { get; set; }
+        public string CitizenName { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
+        public Nullable<int> CreatedDate { get; set; }
+        public Nullable<System.DateTime> DeletedDate { get; set; }
+        public Nullable<int> DeletedBy { get; set; }
+        public Nullable<System.DateTime> Updatedate { get; set; }
+        public Nullable<int> UpdatedBy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Citizen_GharJagga_Info> Citizen_GharJagga_Info { get; set; }
@@ -41,5 +49,6 @@ namespace SIFARIS
         public virtual ICollection<JaagaTarfa> JaagaTarfas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Karlayatarfa> Karlayatarfas { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

@@ -75,3 +75,6 @@ C:\Users\SoftechDev-1\Documents\Visual Studio 2015\Projects\SIFARIS\SIFARIS\bin\
 C:\Users\SoftechDev-1\Documents\Visual Studio 2015\Projects\SIFARIS\SIFARIS\obj\Debug\SIFARIS.dll
 C:\Users\SoftechDev-1\Documents\Visual Studio 2015\Projects\SIFARIS\SIFARIS\obj\Debug\SIFARIS.pdb
 C:\Users\SoftechDev-1\Documents\Visual Studio 2015\Projects\SIFARIS\SIFARIS\obj\Debug\SIFARIS.csprojResolveAssemblyReference.cache
+D:\sifaris\shifarish\SIFARIS\obj\Debug\SIFARIS.csprojResolveAssemblyReference.cache
+D:\sifaris\shifarish\SIFARIS\obj\Debug\SIFARIS.dll
+D:\sifaris\shifarish\SIFARIS\obj\Debug\SIFARIS.pdb

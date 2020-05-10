@@ -12,6 +12,114 @@
         <EntityTypeShape EntityType="SifarishModel.Karlayatarfa" Width="1.5" PointX="3" PointY="10" />
         <AssociationConnector Association="SifarishModel.FK_JaagaTarfa_Citizen_Info" />
         <AssociationConnector Association="SifarishModel.FK_Karlayatarfa_Citizen_Info" />
+        <EntityTypeShape EntityType="SifarishModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="4.5" />
+        <EntityTypeShape EntityType="SifarishModel.AspNetRole" Width="1.5" PointX="0.75" PointY="21.25" />
+        <EntityTypeShape EntityType="SifarishModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="19.75" />
+        <EntityTypeShape EntityType="SifarishModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="22.5" />
+        <EntityTypeShape EntityType="SifarishModel.AspNetUser" Width="1.5" PointX="3" PointY="20.125" />
+        <EntityTypeShape EntityType="SifarishModel.Demolition" Width="1.5" PointX="5.75" PointY="7.5" />
+        <EntityTypeShape EntityType="SifarishModel.Department" Width="1.5" PointX="1.125" PointY="8.875" />
+        <EntityTypeShape EntityType="SifarishModel.District" Width="1.5" PointX="12.75" PointY="17.25" />
+        <EntityTypeShape EntityType="SifarishModel.DistrictDetail" Width="1.5" PointX="15" PointY="14" />
+        <EntityTypeShape EntityType="SifarishModel.fiscal_year" Width="1.5" PointX="19.75" PointY="13.5" />
+        <EntityTypeShape EntityType="SifarishModel.gharBato" Width="1.5" PointX="21.75" PointY="13.5" />
+        <EntityTypeShape EntityType="SifarishModel.GharJaggaKar" Width="1.5" PointX="21.75" PointY="1.875" />
+        <EntityTypeShape EntityType="SifarishModel.GharjaggakarFile" Width="1.5" PointX="24" PointY="4" />
+        <EntityTypeShape EntityType="SifarishModel.LocalLevel" Width="1.5" PointX="15" PointY="18.625" />
+        <EntityTypeShape EntityType="SifarishModel.LocalLevelDetail" Width="1.5" PointX="17.25" PointY="17.25" />
+        <EntityTypeShape EntityType="SifarishModel.Month" Width="1.5" PointX="10.75" PointY="1.5" />
+        <EntityTypeShape EntityType="SifarishModel.NirmanBebasahi" Width="1.5" PointX="12.75" PointY="22.5" />
+        <EntityTypeShape EntityType="SifarishModel.NirmanBebasahiApproval" Width="1.5" PointX="21.75" PointY="19.5" />
+        <EntityTypeShape EntityType="SifarishModel.State" Width="1.5" PointX="0.75" PointY="15.5" />
+        <EntityTypeShape EntityType="SifarishModel.StateDetail" Width="1.5" PointX="3" PointY="14.75" />
+        <EntityTypeShape EntityType="SifarishModel.tblBasaisaraiDarta" Width="1.5" PointX="8" PointY="59.125" />
+        <EntityTypeShape EntityType="SifarishModel.tblBasaisaraiDartaInformant" Width="1.5" PointX="10.25" PointY="62.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblBasaisaraiKaran" Width="1.5" PointX="17.75" PointY="1.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblBasaisaraiPersonalDetail" Width="1.5" PointX="10.25" PointY="57.25" />
+        <EntityTypeShape EntityType="SifarishModel.tblDepartment" Width="1.5" PointX="19.5" PointY="9.875" />
+        <EntityTypeShape EntityType="SifarishModel.tblDistrict" Width="1.5" PointX="15" PointY="9.625" />
+        <EntityTypeShape EntityType="SifarishModel.tblDivorceDarta" Width="1.5" PointX="8" PointY="75.375" />
+        <EntityTypeShape EntityType="SifarishModel.tblDivorceDartaInformant" Width="1.5" PointX="10.25" PointY="67.375" />
+        <EntityTypeShape EntityType="SifarishModel.tblDivorceeHusbandDetail" Width="1.5" PointX="10.25" PointY="72.375" />
+        <EntityTypeShape EntityType="SifarishModel.tblDivorceeWifeDetail" Width="1.5" PointX="10.25" PointY="80.25" />
+        <EntityTypeShape EntityType="SifarishModel.tblEducation" Width="1.5" PointX="14.75" PointY="23.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblEmployee" Width="1.5" PointX="17.25" PointY="3.75" />
+        <EntityTypeShape EntityType="SifarishModel.tblFiscalYear" Width="1.5" PointX="16.75" PointY="23.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblGender" Width="1.5" PointX="18.75" PointY="23.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblJaggaCharKillaBibaran" Width="1.5" PointX="8" PointY="1.625" />
+        <EntityTypeShape EntityType="SifarishModel.tblJaggaDhaniBibaran" Width="1.5" PointX="23.75" PointY="7.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblJaggaThaunBibaran" Width="1.5" PointX="5.75" PointY="1.75" />
+        <EntityTypeShape EntityType="SifarishModel.tblJanmadaMaddat" Width="1.5" PointX="23.75" PointY="1.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblJanmaDarta" Width="1.5" PointX="8" PointY="45.125" />
+        <EntityTypeShape EntityType="SifarishModel.tblJanmaDartaFatherDetail" Width="1.5" PointX="10.25" PointY="50.25" />
+        <EntityTypeShape EntityType="SifarishModel.tblJanmaDartaInformant" Width="1.5" PointX="10.25" PointY="39.25" />
+        <EntityTypeShape EntityType="SifarishModel.tblJanmaDartaMotherDetail" Width="1.5" PointX="10.25" PointY="44.25" />
+        <EntityTypeShape EntityType="SifarishModel.tblJanmaKisim" Width="1.5" PointX="23.75" PointY="13.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblJanmaSthaan" Width="1.5" PointX="23.75" PointY="16.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblMrityuDarta" Width="1.5" PointX="8" PointY="30.375" />
+        <EntityTypeShape EntityType="SifarishModel.tblMrityuDartaInformant" Width="1.5" PointX="10.25" PointY="26.625" />
+        <EntityTypeShape EntityType="SifarishModel.tblMrityuDartaPersonalDetail" Width="1.5" PointX="10.25" PointY="31.75" />
+        <EntityTypeShape EntityType="SifarishModel.tblOccupation" Width="1.5" PointX="23.75" PointY="19.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblPadha" Width="1.5" PointX="15" PointY="4.625" />
+        <EntityTypeShape EntityType="SifarishModel.tblPalika" Width="1.5" PointX="23.75" PointY="22.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblPanjika" Width="1.5" PointX="5.75" PointY="42.875" />
+        <EntityTypeShape EntityType="SifarishModel.tblRelation" Width="1.5" PointX="0.75" PointY="25.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblShakha" Width="1.5" PointX="21.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SifarishModel.tblShreni" Width="1.5" PointX="12.75" PointY="4.625" />
+        <EntityTypeShape EntityType="SifarishModel.tblSifarisType" Width="1.5" PointX="2.75" PointY="25.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblState" Width="1.5" PointX="12.75" PointY="9.625" />
+        <EntityTypeShape EntityType="SifarishModel.tblUserProfile" Width="1.5" PointX="19.5" PointY="5.125" />
+        <EntityTypeShape EntityType="SifarishModel.tblUserType" Width="1.5" PointX="15" PointY="0.75" />
+        <EntityTypeShape EntityType="SifarishModel.tblVivahBrideDetail" Width="1.5" PointX="10.25" PointY="10.375" />
+        <EntityTypeShape EntityType="SifarishModel.tblVivahDarta" Width="1.5" PointX="8" PointY="13.625" />
+        <EntityTypeShape EntityType="SifarishModel.tblVivahDartaInformant" Width="1.5" PointX="10.25" PointY="5.625" />
+        <EntityTypeShape EntityType="SifarishModel.tblVivahGroomDetail" Width="1.5" PointX="10.25" PointY="18.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblVivahKisim" Width="1.5" PointX="4.75" PointY="25.5" />
+        <EntityTypeShape EntityType="SifarishModel.tblWorkOffice" Width="1.5" PointX="17.25" PointY="9.625" />
+        <EntityTypeShape EntityType="SifarishModel.Ward" Width="1.5" PointX="17.25" PointY="20.5" />
+        <EntityTypeShape EntityType="SifarishModel.WardDetail" Width="1.5" PointX="19.5" PointY="20.375" />
+        <EntityTypeShape EntityType="SifarishModel.Year" Width="1.5" PointX="6.75" PointY="25.5" />
+        <AssociationConnector Association="SifarishModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SifarishModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SifarishModel.FK_Citizen_Info_Department" />
+        <AssociationConnector Association="SifarishModel.FK_DistrictDetails_District" />
+        <AssociationConnector Association="SifarishModel.FK_LocalLevel_District" />
+        <AssociationConnector Association="SifarishModel.FK_GharjaggakarFiles_GharJaggaKar" />
+        <AssociationConnector Association="SifarishModel.FK_LocalLevelDetails_LocalLevel" />
+        <AssociationConnector Association="SifarishModel.FK_Ward_LocalLevel" />
+        <AssociationConnector Association="SifarishModel.FK_StateDetails_State" />
+        <AssociationConnector Association="SifarishModel.FK_tblBasaisaraiDarta_tblPanjika" />
+        <AssociationConnector Association="SifarishModel.FK_tblBasaisaraiDartaInformant_tblBasaisaraiDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblBasaisaraiPersonalDetails_tblBasaisaraiDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblDepartment_tblDepartment" />
+        <AssociationConnector Association="SifarishModel.FK_tblShakha_tblDepartment" />
+        <AssociationConnector Association="SifarishModel.FK_tblDistrict_tblDistrict" />
+        <AssociationConnector Association="SifarishModel.FK_tblWarehouse_tblDistrict" />
+        <AssociationConnector Association="SifarishModel.FK_tblDivorceDarta_tblPanjika" />
+        <AssociationConnector Association="SifarishModel.FK_tblDivorceDartaInformant_tblDivorceDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblDivorceeHusbandDetails_tblDivorceDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblDivorceeWifeDetails_tblDivorceDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblEmployee_tblEmployee" />
+        <AssociationConnector Association="SifarishModel.FK_tblEmployee_tblPadha" />
+        <AssociationConnector Association="SifarishModel.FK_tblEmployee_tblShreni" />
+        <AssociationConnector Association="SifarishModel.FK_tblUserProfile_tblEmployee" />
+        <AssociationConnector Association="SifarishModel.FK_tblJaggaCharKillaBibaran_tblJaggaCharKillaBibaran" />
+        <AssociationConnector Association="SifarishModel.FK_tblJanmaDarta_tblPanjika" />
+        <AssociationConnector Association="SifarishModel.FK_tblJanmaDartaFatherDetails_tblJanmaDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblJanmaDartaInformant_tblJanmaDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblJanmaDartaMotherDetails_tblJanmaDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblMrityuDarta_tblPanjika" />
+        <AssociationConnector Association="SifarishModel.FK_tblMrityuDartaInformant_tblMrityuDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblMrityuDartaPersonalDetails_tblMrityuDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblPadha_tblShreni" />
+        <AssociationConnector Association="SifarishModel.FK_tblVivahDarta_tblPanjika" />
+        <AssociationConnector Association="SifarishModel.FK_tblShakha_tblWorkOffice" />
+        <AssociationConnector Association="SifarishModel.FK_tblState_tblState" />
+        <AssociationConnector Association="SifarishModel.FK_tblVivahBrideDetails_tblVivahDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblVivahDartaInformant_tblVivahDarta" />
+        <AssociationConnector Association="SifarishModel.FK_tblVivahGroomDetails_tblVivahDarta" />
+        <AssociationConnector Association="SifarishModel.FK_WardDetails_Ward" />
+        <AssociationConnector Association="SifarishModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
