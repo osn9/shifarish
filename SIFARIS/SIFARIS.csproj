@@ -186,6 +186,10 @@
     <Compile Include="Areas\Darta\Models\DivorceDartaModel.cs" />
     <Compile Include="Areas\Darta\Models\MrityuDartaModel.cs" />
     <Compile Include="Areas\Darta\Models\VivahDartaModel.cs" />
+    <Compile Include="Areas\Darta\Provider\BasaisaraiDartaProvider.cs" />
+    <Compile Include="Areas\Darta\Provider\DivorceDartaProvider.cs" />
+    <Compile Include="Areas\Darta\Provider\MrityuDartaProvider.cs" />
+    <Compile Include="Areas\Darta\Provider\VivahDartaProvider.cs" />
     <Compile Include="Areas\GharJagga\Controllers\CitizenController.cs" />
     <Compile Include="Areas\GharJagga\GharJaggaAreaRegistration.cs" />
     <Compile Include="Areas\GharJagga\Models\CitizenInfoViewModel.cs" />

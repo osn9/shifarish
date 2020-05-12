@@ -13,17 +13,47 @@ namespace SIFARIS.Areas.GharJagga.Controllers
     public class CitizenController : ApiController
     {
         private CitizeninfoProvier pro = new CitizeninfoProvier();
-
+        Server_Response res = new Server_Response();
         // GET: api/Citizen
-        public IEnumerable<CitizenInfoViewModel> Get()
+        // [Authorize]
+        public IHttpActionResult Get()
         {
-            return  pro.GetAll(); 
+            List<CitizenInfoViewModel> data = new List<CitizenInfoViewModel>();
+            try
+            {
+                data = pro.GetAll();
+                res.obj = data;
+                res.status = true;
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                res.obj = data;
+                res.status = false;
+                return Ok(res);
+                throw;
+            }
+
         }
 
         // GET: api/Citizen/5
-        public CitizenInfoViewModel Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return pro.GetById(id);
+            CitizenInfoViewModel model = new CitizenInfoViewModel();
+            try
+            {
+                model = pro.GetById(id);
+                res.obj = model;
+                res.status = true;
+                return Ok(res);
+            }
+            catch (Exception)
+            {
+                res.obj = model;
+                res.status = false;
+                return Ok(res);
+                throw;
+            }
         }
 
         // POST: api/Citizen
@@ -66,7 +96,7 @@ namespace SIFARIS.Areas.GharJagga.Controllers
             {
                 status = pro.Insert(model);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return BadRequest();
             }
