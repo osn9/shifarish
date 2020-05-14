@@ -19,7 +19,7 @@ namespace SIFARIS
         {
             if (RomanDate == null)
                 return "";
-            var ent = new SifarishEntities() ;
+            var ent = new SifarishEntities();
             string NepaliDate = ent.sp_GetLocalDate(RomanDate, format).Single();
             return NepaliDate;
         }

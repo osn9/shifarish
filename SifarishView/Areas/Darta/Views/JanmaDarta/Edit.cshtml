@@ -1,0 +1,26 @@
+﻿@model SifarishView.Areas.Darta.Models.JanmaDartaViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="well well-small">
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.PanjiId)
+        @Html.HiddenFor(model => model.NewbornId)
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        //<div class="btn pull-right"> @Html.ActionLink("Change Password", "Register", "Account")</div>
+        Html.RenderPartial("VUC_Add");
+        <br />
+
+        <input type="submit" value="सम्पादन गर्नुहोस" class="btn" />
+        <div class="btn">  @Html.ActionLink("पछाडी फर्कनुहोस्", "Index")</div>
+
+    }
+</div>
+
+
