@@ -73,11 +73,11 @@ namespace SIFARIS.Areas.Darta.Models
         public string HusbandBabukoFullName { get; set; }
         public string HusbandAamakoNaamThar { get; set; }
         public string HusbandAamakoFullName { get; set; }
-        public string HusbandVivahMiti { get; set; }
-        public string HusbandVivahDate { get; set; }
+        public string VivahMiti { get; set; }
+        public string VivahDate { get; set; }
         public Nullable<int> TotalChildBorn { get; set; }
         public Nullable<int> TotalLiveChild { get; set; }
-        public Nullable<int> ChildLivingWith { get; set; }
+        public Nullable<int> HusbandChildLivingWith { get; set; }
         public Nullable<int> HusbandSonLivingWith { get; set; }
         public Nullable<int> HusbandDaughterLivingWith { get; set; }
         //divorcee wife

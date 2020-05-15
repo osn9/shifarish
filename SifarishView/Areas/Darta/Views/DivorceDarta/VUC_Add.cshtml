@@ -1,0 +1,546 @@
+﻿@model SifarishView.Areas.Darta.Models.DivorceDartaViewModel
+
+<script src="@Url.Content("~/Scripts/jquery-1.7.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<script>
+    var s = jQuery.noConflict();
+    //panji
+    s(document).ready(function () {
+        s("#PanjiState").change(function () {
+            debugger;
+            var stateId = parseInt(s("#PanjiState").val());
+            var districtId = s("#PanjiDistrict");
+        districtId.empty(); // this line is for clear all items from State dropdown
+        districtId.append($("<option></option>").val("").html("-Please Select-"));
+        if (!isNaN(stateId)) {
+            s.ajax({
+                url: '@Url.Action("GetDistrict", "AjaxRequest")',
+                data: { 'ID': stateId },
+                method: 'get',
+                dataType: 'json',
+                success: function (data) {
+                    debugger;
+                    var items = [];
+                    items.push("<option  value=0 >" + "-जिल्ला छान्नुहोस्-" + "</option>"); //first item
+                    for (var i = 0; i < data.length; i++) {
+                        items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                    }                                         //all data from the team table push into array
+                    s("#PanjiDistrict").html(items.join(' '));
+
+                },
+                error: function (err) {
+                    alert(err);
+                }
+
+            })
+        }
+
+    });
+        s("#PanjiDistrict").change(function () {
+            var districtId = parseInt(s("#PanjiDistrict").val());
+            var palikaId = s("#PanjiPalika");
+        palikaId.empty(); // this line is for clear all items from State dropdown
+        palikaId.append($("<option></option>").val("").html("-Please Select-"));
+        if (!isNaN(districtId)) {
+            s.ajax({
+                url: '@Url.Action("GetPalika", "AjaxRequest")',
+                data: { 'ID': districtId },
+                method: 'get',
+                dataType: 'json',
+                success: function (data) {
+
+                    var items = [];
+                    items.push("<option  value=0 >" + "-पालिका छान्नुहोस्-" + "</option>"); //first item
+                    for (var i = 0; i < data.length; i++) {
+                        items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                    }                                         //all data from the team table push into array
+                    s("#PanjiPalika").html(items.join(' '));
+
+                },
+                error: function (err) {
+                    alert(err);
+                }
+
+            })
+        }
+        });
+
+        //husband
+ 
+        s("#HusbandDistrict").change(function () {
+            var districtId = parseInt(s("#HusbandDistrict").val());
+            var palikaId = s("#HusbandPalika");
+            palikaId.empty(); // this line is for clear all items from State dropdown
+            palikaId.append($("<option></option>").val("").html("-Please Select-"));
+            if (!isNaN(districtId)) {
+                s.ajax({
+                    url: '@Url.Action("GetPalika", "AjaxRequest")',
+                    data: { 'ID': districtId },
+                    method: 'get',
+                    dataType: 'json',
+                    success: function (data) {
+
+                        var items = [];
+                        items.push("<option  value=0 >" + "-पालिका छान्नुहोस्-" + "</option>"); //first item
+                        for (var i = 0; i < data.length; i++) {
+                            items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                        }                                         //all data from the team table push into array
+                        s("#HusbandPalika").html(items.join(' '));
+
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+
+                })
+            }
+        });
+            //wife
+
+        
+        s("#WifeDistrict").change(function () {
+            var districtId = parseInt(s("#WifeDistrict").val());
+            var palikaId = s("#WifePalika");
+                    palikaId.empty(); // this line is for clear all items from State dropdown
+                    palikaId.append($("<option></option>").val("").html("-Please Select-"));
+                    if (!isNaN(districtId)) {
+                        s.ajax({
+                            url: '@Url.Action("GetPalika", "AjaxRequest")',
+                            data: { 'ID': districtId },
+                            method: 'get',
+                            dataType: 'json',
+                            success: function (data) {
+
+                                var items = [];
+                                items.push("<option  value=0 >" + "-पालिका छान्नुहोस्-" + "</option>"); //first item
+                                for (var i = 0; i < data.length; i++) {
+                                    items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                                }                                         //all data from the team table push into array
+                                s("#WifePalika").html(items.join(' '));
+
+                            },
+                            error: function (err) {
+                                alert(err);
+                            }
+
+                        })
+                    }
+                });
+                
+                    //suchakko
+
+                        s("#InfState").change(function () {
+                            debugger;
+                            var stateId = parseInt(s("#InfState").val());
+                            var districtId = s("#InfDistrict");
+                            districtId.empty(); // this line is for clear all items from State dropdown
+                            districtId.append($("<option></option>").val("").html("-Please Select-"));
+                            if (!isNaN(stateId)) {
+                                s.ajax({
+                                    url: '@Url.Action("GetDistrict", "AjaxRequest")',
+                                    data: { 'ID': stateId },
+                                    method: 'get',
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        debugger;
+                                        var items = [];
+                                        items.push("<option  value=0 >" + "-जिल्ला छान्नुहोस्-" + "</option>"); //first item
+                                        for (var i = 0; i < data.length; i++) {
+                                            items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                                        }                                         //all data from the team table push into array
+                                        s("#InfDistrict").html(items.join(' '));
+
+                                    },
+                                    error: function (err) {
+                                        alert(err);
+                                    }
+
+                                })
+                            }
+
+                        });
+                        s("#InfDistrict").change(function () {
+                            var districtId = parseInt(s("#InfDistrict").val());
+                            var palikaId = s("#InfPalika");
+                            palikaId.empty(); // this line is for clear all items from State dropdown
+                            palikaId.append($("<option></option>").val("").html("-Please Select-"));
+                            if (!isNaN(districtId)) {
+                                s.ajax({
+                                    url: '@Url.Action("GetPalika", "AjaxRequest")',
+                                    data: { 'ID': districtId },
+                                    method: 'get',
+                                    dataType: 'json',
+                                    success: function (data) {
+
+                                        var items = [];
+                                        items.push("<option  value=0 >" + "-पालिका छान्नुहोस्-" + "</option>"); //first item
+                                        for (var i = 0; i < data.length; i++) {
+                                            items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                                        }                                         //all data from the team table push into array
+                                        s("#InfPalika").html(items.join(' '));
+
+                                    },
+                                    error: function (err) {
+                                        alert(err);
+                                    }
+
+                                })
+                            }
+                        });
+    });
+</script>
+<fieldset>
+    <legend>जन्म दर्ता</legend>
+
+    @Html.HiddenFor(model => model.PanjiId)
+    @Html.HiddenFor(model => model.DivorceId)
+    @Html.HiddenFor(model => model.DivorceeHusbandId)
+    @Html.HiddenFor(model => model.DivorceeWifeId)
+    @Html.HiddenFor(model => model.DivorceInformantId)
+    <div class="well well-small">
+        <h6>(स्थानीय पन्जिकाधिकारीले भर्ने)</h6>
+        <table style="width:100%">
+            <tr style="text-align:left;">
+                <td>
+                    <table>
+                        <tr>
+                            <th>@Html.LabelFor(model => model.PanjiState)</th>
+                            <td>@Html.DropDownListFor(model => model.PanjiState, @SifarishView.Utility.GetAllState(), "छान्नुहोस्")</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.LabelFor(model => model.PanjiDistrict)</th>
+                            <td>@Html.DropDownListFor(model => model.PanjiDistrict, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्")</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.LabelFor(model => model.PanjiPalika)</th>
+                            <td>@Html.DropDownListFor(model => model.PanjiPalika, @SifarishView.Utility.GetAllPalika(), "छान्नुहोस्")</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.LabelFor(model => model.PanjiWardNo)</th>
+                            <td>@Html.TextBoxFor(model => model.PanjiWardNo, new { @class = "input-mini", @type = "number" })</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="pull-right">
+                        <tr>
+                            <th>स्थानीय पन्जिकाधिकारीको नाम</th>
+                            <td>@Html.TextBoxFor(model => model.PanjiName, new { @class = "langtranslate" })</td>
+                        </tr>
+                        <tr>
+                            <th>स्थानीय पन्जिकाधिकारीको नाम(In English)</th>
+                            <td>@Html.TextBoxFor(model => model.PanjiName_Eng, new { @class = "form-control nep" })</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.LabelFor(model => model.Panji_INVId)</th>
+                            <td>@Html.TextBoxFor(model => model.Panji_INVId, new { @class = "form-control nep" })</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.LabelFor(model => model.DivorceFaramDartaNo)</th>
+                            <td>@Html.TextBoxFor(model => model.DivorceFaramDartaNo, new { @class = "form-control nep", @readonly = "readonly" })</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.LabelFor(model => model.FaramDartaMiti)</th>
+                            <td>@Html.TextBoxFor(model => model.FaramDartaMiti, new { @class = "nepali-calendar", @placeholder = "मिति हाल्नुहोस" })</td>
+                        </tr>
+                        <tr>
+                            <th>परिवार लगत फाराम नं</th>
+                            <td>@Html.TextBoxFor(model => model.PariwarLagatFaramNo, new { @class = "form-control nep" })</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="row">
+        <p>
+            (सूचकले भर्ने )
+            श्री स्थानीय पन्जिकाधिकारीज्यू,
+            स्थानीय पन्जिकाधिकारीको कार्यालय,
+            वडा नं......,.................... महा/उप/नगरपालिका वा गाउँपालिका,
+            ..................जिल्ला,................ प्रदेश
+            महोदय,
+            निम्न लिखित विवरण खुलाई नवजात शिशु जन्मको सूचना दिन आएको छु| कानून अनुसार जन्म दर्ता गरि पाउँ |
+        </p>
+        <h5>१. सम्बन्ध बिच्छेद सम्बन्धि विवरण</h5>
+        <div class="row">
+            <div class="span11">
+                <div class="span3">
+                    @Html.LabelFor(model => model.CourtType)
+                </div>
+                <div class="span7">
+                    @Html.DropDownListFor(model => model.CourtType, @SifarishView.Utility.GetCourtType(), "छान्नुहोस्")
+                    @Html.ValidationMessageFor(model => model.CourtType)
+
+                </div>
+            </div>
+            <div class="span11">
+                <div class="span3">
+                    @Html.LabelFor(model => model.District)
+                </div>
+                <div class="span7">
+                    @Html.DropDownListFor(model => model.District, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्")
+                    @Html.ValidationMessageFor(model => model.District)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span11">
+                <div class="span3">
+                    @Html.LabelFor(model => model.NirnayaNo)
+                </div>
+                <div class="span7">
+                    @Html.TextBoxFor(model => model.NirnayaNo, new { @class = "input-mini" })
+                    @Html.ValidationMessageFor(model => model.NirnayaNo)
+                </div>
+            </div>
+            <div class="span11">
+                <div class="span3">
+                  @Html.LabelFor(model => model.NinayaMiti)
+                </div>
+                <div class="span7">
+                    @Html.TextBoxFor(model => model.NinayaMiti, new { @class = "nepali-calendar", @placeholder = "मिति हाल्नुहोस" })
+                    @Html.ValidationMessageFor(model => model.NinayaMiti)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span11">
+                <div class="span3">
+                    @Html.LabelFor(model => model.VivahDartaNo)
+                </div>
+                <div class="span7">
+                    @Html.TextBoxFor(model => model.VivahDartaNo, new { @class = "input-mini" })
+                    @Html.ValidationMessageFor(model => model.VivahDartaNo)
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <h5>२. पति पत्नीको विवरण</h5>
+        <table class="table table-bordered table-striped">
+
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>पतिको विवरण</th>
+                    <th>पत्नीको विवरण</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>पूरा नाम थर</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandNaamThar)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeNaamThar)</td>
+                </tr>
+                <tr>
+                    <td>पूरा नाम थर(In English)</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandFullName)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeFullName)</td>
+                </tr>
+                <tr>
+                    <td>जन्म मिति</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandJanmaMiti, new { @class = "nepali-calendar", @placeholder = "मिति हाल्नुहोस" })</td>
+                    <td>@Html.TextBoxFor(model => model.WifeJanmaMiti, new { @class = "nepali-calendar", @placeholder = "मिति हाल्नुहोस" })</td>
+                </tr>
+                <tr>
+                    <td>जन्म दर्ता नं.</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandJanmaDartaNo)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeJanmaDartaNo)</td>
+                </tr>
+                <tr>
+                    <td>जन्म भएको देश</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandJanmaDesh)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeJanmaDesh)</td>
+                </tr>
+                <tr>
+                    <td>नागरिकता प्रमाणपत्र नं.</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandNagariktaPraPaNo)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeNagariktaPraPaNo)</td>
+                </tr>
+                <tr>
+                    <td>प्रमाणपत्र जारी मिति</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandNagariktaIssueDate, new { @class = "nepali-calendar", @placeholder = "मिति हाल्नुहोस" })</td>
+                    <td>@Html.TextBoxFor(model => model.WifeNagariktaIssueDate, new { @class = "nepali-calendar", @placeholder = "मिति हाल्नुहोस" })</td>
+                </tr>
+                <tr>
+                    <td>नागरिकता प्रमाणपत्र जारी जिल्ला</td>
+                    <td>@Html.DropDownListFor(model => model.HusbandNagariktaIssueDistrict, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्")</td>
+                    <td>@Html.DropDownListFor(model => model.WifeNagariktaIssueDistrict, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्")</td>
+                </tr>
+                <tr>
+                    <td>विदेशी भएमा पासपोर्ट नं र देशको नाम</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandBideshPassport_Desh)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeBideshPassport_Desh)</td>
+                </tr>
+                <tr>
+                    <th>सम्बन्ध बिच्छेद हुनु अघिको स्थायी ठेगाना</th>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>जिल्ला</td>
+                    <td>@Html.DropDownListFor(model => model.HusbandDistrict, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्")</td>
+                    <td>@Html.DropDownListFor(model => model.WifeDistrict, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्")</td>
+                </tr>
+                <tr>
+                    <td>गा.पा./न.पा.</td>
+                    <td>@Html.DropDownListFor(model => model.HusbandPalika, @SifarishView.Utility.GetAllPalika(), "छान्नुहोस्")</td>
+                    <td>@Html.DropDownListFor(model => model.WifePalika, @SifarishView.Utility.GetAllPalika(), "छान्नुहोस्")</td>
+                </tr>
+                <tr>
+                    <td>वडा नं.</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandWardNo)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeWardNo)</td>
+                </tr>
+                <tr>
+                    <td>जातजाति</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandJaatJati)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeJaatJati)</td>
+                </tr>
+                
+                <tr>
+                    <td>शिक्षाको स्थर(उतिर्ण तह)</td>
+                    <td>@Html.DropDownListFor(model => model.HusbandShikshaSthar, @SifarishView.Utility.GetEducation(), "छान्नुहोस्")</td>
+                    <td>@Html.DropDownListFor(model => model.WifeShikshaSthar, @SifarishView.Utility.GetEducation(), "छान्नुहोस्")</td>
+                </tr>
+                
+                <tr>
+                    <td>धर्म</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandDharma)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeDharma)</td>
+                </tr>
+                <tr>
+                    <td>मातृभाषा</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandMatriBhasa)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeMatriBhasa)</td>
+                </tr>
+                <tr>
+                    <td>बाजेको नाम थर</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandBaajekoNaamThar)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeBaajekoNaamThar)</td>
+                </tr>
+                <tr>
+                    <td>बाजेको नाम थर(In English)</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandBaajekoFullName)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeBaajekoFullName)</td>
+                </tr>
+                <tr>
+                    <td>बाबुको नाम थर</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandBabukoNaamThar)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeBabukoNaamThar)</td>
+                </tr>
+                <tr>
+                    <td>बाबुको नाम थर(In English)</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandBabukoFullName)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeBabukoFullName)</td>
+                </tr>
+                <tr>
+                    <td>आमाको नाम थर</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandAamakoNaamThar)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeAamakoNaamThar)</td>
+                </tr>
+                <tr>
+                    <td>आमाको नाम थर(In English)</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandAamakoFullName)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeAamakoFullName)</td>
+                </tr>
+                <tr>
+                    <td>विवाह भएको मिति</td>
+                    <td>@Html.TextBoxFor(model => model.VivahMiti, new { @class = "nepali-calendar", @placeholder = "मिति हाल्नुहोस" })</td>
+                </tr>
+                <tr>
+                    <td>वैवाहिक सम्बन्धबाट पाएको सन्तान संख्या</td>
+                    <td>@Html.TextBoxFor(model => model.TotalChildBorn)</td>
+                </tr>
+                <tr>
+                    <td>हालसम्म जीवित सन्तान संख्या</td>
+                    <td>@Html.TextBoxFor(model => model.TotalLiveChild)</td>
+
+                </tr>
+                <tr>
+                    <td>आमा बाबुसंग बसेको सन्तान संख्या</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandChildLivingWith)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeChildLivingWith)</td>
+                </tr>
+                <tr>
+                    <td>छोरा</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandSonLivingWith)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeSonLivingWith)</td>
+                </tr>
+                <tr>
+                    <td>छोरी</td>
+                    <td>@Html.TextBoxFor(model => model.HusbandDaughterLivingWith)</td>
+                    <td>@Html.TextBoxFor(model => model.WifeDaughterLivingWith)</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</fieldset>
+<fieldset>
+    <div class="row">
+        <h5>४. सूचकको विवरण</h5>
+        <table class="table table-bordered table-striped table-condensed">
+            <tbody style="text-align:left;">
+                <tr>
+                    <th>पूरा नाम थर</th>
+                    <td>@Html.TextBoxFor(model => model.InfNaamThar)</td>
+                </tr>
+                <tr>
+                    <th>पूरा नाम थर(In English)</th>
+                    <td>@Html.TextBoxFor(model => model.InfFullName)</td>
+                </tr>
+                <tr>
+                    <th>ठेगाना</th>
+                </tr>
+                <tr>
+                    <th>प्रदेश</th>
+                    <td>@Html.DropDownListFor(model => model.InfState, @SifarishView.Utility.GetAllState(), "छान्नुहोस्")</td>
+                    <th>जिल्ला</th>
+                    <td>@Html.DropDownListFor(model => model.InfDistrict, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्")</td>
+                    <th>गा.पा./न.पा.</th>
+                    <td>@Html.DropDownListFor(model => model.InfPalika, @SifarishView.Utility.GetAllPalika(), "छान्नुहोस्")</td>
+                </tr>
+                <tr>
+                    <th>वडा नं.</th>
+                    <td>@Html.TextBoxFor(model => model.InfWardNo)</td>
+                    <th>गाउँ टोल</th>
+                    <td>@Html.TextBoxFor(model => model.InfGaunTole)</td>
+                    <th>घर नं.</th>
+                    <td>@Html.TextBoxFor(model => model.InfGharNo)</td>
+                </tr>
+                <tr>
+                    <th>नागरिकता</th>
+                </tr>
+                <tr>
+                    <th>नागरिकता प्रमाणपत्र नं.</th>
+                    <td>@Html.TextBoxFor(model => model.InfNagariktaPraPaNo)</td>
+                </tr>
+                <tr>
+                    <th>नागरिकता प्रमाणपत्र जारी गरेको मिति</th>
+                    <td>@Html.TextBoxFor(model => model.InfNagariktaIssueDate, new { @class = "nepali-calendar" })</td>
+                </tr>
+                <tr>
+                    <th>नागरिकता प्रमाणपत्र जारी जिल्ला</th>
+                    <td>@Html.DropDownListFor(model => model.InfState, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्")</td>
+                </tr>
+
+                <tr>
+                    <th>विदेशी भएमा पासपोर्ट नं र देशको नाम</th>
+                    <td>@Html.TextBoxFor(model => model.InfPassportNo_Desh)</td>
+                </tr>
+                <tr>
+                    <th>फाराम भएको मिति</th>
+                    <td>@Html.TextBoxFor(model => model.Miti, new { @class = "nepali-calendar", @placeholder = "मिति हाल्नुहोस" })</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</fieldset>

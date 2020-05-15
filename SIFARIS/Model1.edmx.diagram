@@ -120,6 +120,7 @@
         <AssociationConnector Association="SifarishModel.FK_tblVivahGroomDetails_tblVivahDarta" />
         <AssociationConnector Association="SifarishModel.FK_WardDetails_Ward" />
         <AssociationConnector Association="SifarishModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="SifarishModel.tblCourtType" Width="1.5" PointX="7.375" PointY="18.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -313,6 +313,7 @@
       <Parameter Name="LocalMonth" Mode="In" Type="Int32" />
       <Parameter Name="LocalDay" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="tblCourtTypes" EntityType="SifarishModel.tblCourtType" />
   </EntityContainer>
   <EntityType Name="JaagaTarfa">
     <Key>
@@ -2010,4 +2011,12 @@
     <End Type="SifarishModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
     <End Type="SifarishModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
   </Association>
+  <EntityType Name="tblCourtType">
+    <Key>
+      <PropertyRef Name="CourtTypeId" />
+    </Key>
+    <Property Name="CourtTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourtType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CourtType_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

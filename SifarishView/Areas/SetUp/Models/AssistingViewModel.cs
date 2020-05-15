@@ -56,4 +56,10 @@ namespace SifarishView.Areas.SetUp.Models
         public int BasaisaraiKaranId { get; set; }
         public string BasaisaraiKaran { get; set; }
     }
+    public class CourtTypeViewModel
+    {
+        public int CourtTypeId { get; set; }
+        public string CourtType { get; set; }
+        public string CourtType_Nep { get; set; }
+    }
 }

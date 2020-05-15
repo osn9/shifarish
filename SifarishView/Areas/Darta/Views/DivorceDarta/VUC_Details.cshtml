@@ -1,0 +1,61 @@
+﻿@model SifarishView.Areas.Darta.Models.DivorceDartaViewModel
+@using SifarishView.Converter
+@{
+    ViewBag.Title = "सम्बन्ध बिच्छेद दर्ता-विवरण";
+    Layout = null;
+}
+
+<div>
+
+    <dl class="span9">
+        <dt class="span3">
+            @Html.HiddenFor(model => model.DivorceId)
+        </dt>
+        <dd class="span5">
+            @Html.HiddenFor(model => model.DivorceId)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.HusbandNaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.HusbandNaamThar)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.WifeNaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.WifeNaamThar)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.NinayaMiti)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.NinayaMiti, SifarishView.Converter.UnicodeConverter.Default(Model.NinayaMiti))
+        </dd>
+    </dl>
+    
+
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.CourtType)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.CourtType,SifarishView.Utility.GetCourtTypeById(Model.CourtType))
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.District)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.District, SifarishView.Utility.GetDistrictById(Model.District))
+        </dd>
+    </dl>
+    
+</div>

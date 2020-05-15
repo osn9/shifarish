@@ -188,5 +188,35 @@ namespace SIFARIS.Areas.SetUp.Provider
 
             return model;
         }
+        public List<CourtTypeModel> GetCourtTypeList()
+        {
+            var model = new List<CourtTypeModel>();
+
+            model = (from gen in ent.tblCourtTypes
+                     select new CourtTypeModel
+                     {
+                         CourtTypeId=gen.CourtTypeId,
+                         CourtType=gen.CourtType,
+                         CourtType_Nep=gen.CourtType_Nep
+
+                     }).ToList();
+
+            return model;
+        }
+        public CourtTypeModel GetCourtTypeRecords(int? id)
+        {
+            CourtTypeModel model = (from gen in ent.tblCourtTypes
+                                          where gen.CourtTypeId == id
+                                          select new CourtTypeModel
+                                          {
+                                              CourtTypeId = gen.CourtTypeId,
+                                              CourtType = gen.CourtType,
+                                              CourtType_Nep = gen.CourtType_Nep
+
+
+                                          }).SingleOrDefault();
+
+            return model;
+        }
     }
 }

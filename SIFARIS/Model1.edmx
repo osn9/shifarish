@@ -379,26 +379,6 @@
           <Property Name="UpdatedDate" Type="date" />
           <Property Name="updateby" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'Sifarish.dbo.NpCalDb' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="NpCalDb">
-          <Property Name="NCAL_YEAR" Type="nvarchar" MaxLength="4" />
-          <Property Name="STRT_DATE" Type="datetime" />
-          <Property Name="STOP_DATE" Type="datetime" />
-          <Property Name="MONTH_1" Type="smallint" />
-          <Property Name="MONTH_2" Type="smallint" />
-          <Property Name="MONTH_3" Type="smallint" />
-          <Property Name="MONTH_4" Type="smallint" />
-          <Property Name="MONTH_5" Type="smallint" />
-          <Property Name="MONTH_6" Type="smallint" />
-          <Property Name="MONTH_7" Type="smallint" />
-          <Property Name="MONTH_8" Type="smallint" />
-          <Property Name="MONTH_9" Type="smallint" />
-          <Property Name="MONTH_10" Type="smallint" />
-          <Property Name="MONTH_11" Type="smallint" />
-          <Property Name="MONTH_12" Type="smallint" />
-          <Property Name="BranchId" Type="int" />
-        </EntityType>-->
         <EntityType Name="State">
           <Key>
             <PropertyRef Name="Id" />
@@ -494,6 +474,14 @@ warning 6013: The table/view 'Sifarish.dbo.NpCalDb' does not have a primary key 
           <Property Name="NagariktaIssueDistrict" Type="int" />
           <Property Name="AnyRecords" Type="nvarchar(max)" />
           <Property Name="RelationTo" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCourtType">
+          <Key>
+            <PropertyRef Name="CourtTypeId" />
+          </Key>
+          <Property Name="CourtTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourtType" Type="nvarchar" MaxLength="50" />
+          <Property Name="CourtType_Nep" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblDepartment">
           <Key>
@@ -1760,6 +1748,7 @@ warning 6013: The table/view 'Sifarish.dbo.NpCalDb' does not have a primary key 
           <EntitySet Name="tblBasaisaraiDartaInformant" EntityType="Self.tblBasaisaraiDartaInformant" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblBasaisaraiKaran" EntityType="Self.tblBasaisaraiKaran" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblBasaisaraiPersonalDetails" EntityType="Self.tblBasaisaraiPersonalDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCourtType" EntityType="Self.tblCourtType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblDepartment" EntityType="Self.tblDepartment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblDistrict" EntityType="Self.tblDistrict" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblDivorceDarta" EntityType="Self.tblDivorceDarta" Schema="dbo" store:Type="Tables" />
@@ -2301,6 +2290,7 @@ warning 6013: The table/view 'Sifarish.dbo.NpCalDb' does not have a primary key 
             <Parameter Name="LocalMonth" Mode="In" Type="Int32" />
             <Parameter Name="LocalDay" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="tblCourtTypes" EntityType="SifarishModel.tblCourtType" />
         </EntityContainer>
         <EntityType Name="JaagaTarfa">
           <Key>
@@ -3998,6 +3988,14 @@ warning 6013: The table/view 'Sifarish.dbo.NpCalDb' does not have a primary key 
           <End Type="SifarishModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
           <End Type="SifarishModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
         </Association>
+        <EntityType Name="tblCourtType">
+          <Key>
+            <PropertyRef Name="CourtTypeId" />
+          </Key>
+          <Property Name="CourtTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourtType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CourtType_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5222,6 +5220,15 @@ warning 6013: The table/view 'Sifarish.dbo.NpCalDb' does not have a primary key 
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="sp_GetLocalDate" FunctionName="SifarishModel.Store.sp_GetLocalDate" />
           <FunctionImportMapping FunctionImportName="sp_GetRomanDate" FunctionName="SifarishModel.Store.sp_GetRomanDate" />
+          <EntitySetMapping Name="tblCourtTypes">
+            <EntityTypeMapping TypeName="SifarishModel.tblCourtType">
+              <MappingFragment StoreEntitySet="tblCourtType">
+                <ScalarProperty Name="CourtType_Nep" ColumnName="CourtType_Nep" />
+                <ScalarProperty Name="CourtType" ColumnName="CourtType" />
+                <ScalarProperty Name="CourtTypeId" ColumnName="CourtTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

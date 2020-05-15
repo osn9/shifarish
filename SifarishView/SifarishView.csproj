@@ -202,11 +202,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Darta\Controllers\AjaxRequestController.cs" />
+    <Compile Include="Areas\Darta\Controllers\BasaisaraiDartaController.cs" />
+    <Compile Include="Areas\Darta\Controllers\DivorceDartaController.cs" />
     <Compile Include="Areas\Darta\Controllers\JanmaDartaController.cs" />
     <Compile Include="Areas\Darta\Controllers\MrityuDartaController.cs" />
+    <Compile Include="Areas\Darta\Controllers\VivahDartaController.cs" />
     <Compile Include="Areas\Darta\DartaAreaRegistration.cs" />
+    <Compile Include="Areas\Darta\Models\BasaisaraiDartaViewModel.cs" />
+    <Compile Include="Areas\Darta\Models\DivorceDartaViewModel.cs" />
     <Compile Include="Areas\Darta\Models\JanmaDartaViewModel.cs" />
     <Compile Include="Areas\Darta\Models\MrityuDartaViewModel.cs" />
+    <Compile Include="Areas\Darta\Models\VivahDartaViewModel.cs" />
     <Compile Include="Areas\SetUp\Controllers\DistrictController.cs" />
     <Compile Include="Areas\SetUp\Controllers\FiscalYearController.cs" />
     <Compile Include="Areas\SetUp\Controllers\PalikaController.cs" />
@@ -225,6 +231,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="GlobalVariables.cs" />
+    <Compile Include="Helpers\FormCollectionHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -303,6 +310,31 @@
     <Content Include="Areas\Darta\Views\JanmaDarta\_Report.cshtml" />
     <Content Include="Areas\Darta\Views\MrityuDarta\Report.cshtml" />
     <Content Include="Areas\Darta\Views\MrityuDarta\_Report.cshtml" />
+    <Content Include="Areas\Darta\Views\VivahDarta\VUC_Details.cshtml" />
+    <Content Include="Areas\Darta\Views\VivahDarta\VUC_Add.cshtml" />
+    <Content Include="Areas\Darta\Views\VivahDarta\_PrintDarta.cshtml" />
+    <Content Include="Areas\Darta\Views\VivahDarta\_Report.cshtml" />
+    <Content Include="Areas\Darta\Views\VivahDarta\Report.cshtml" />
+    <Content Include="Areas\Darta\Views\VivahDarta\Edit.cshtml" />
+    <Content Include="Areas\Darta\Views\VivahDarta\Create.cshtml" />
+    <Content Include="Areas\Darta\Views\VivahDarta\Index.cshtml" />
+    <Content Include="Areas\Darta\Views\BasaisaraiDarta\Index.cshtml" />
+    <Content Include="Areas\Darta\Views\BasaisaraiDarta\Create.cshtml" />
+    <Content Include="Areas\Darta\Views\BasaisaraiDarta\Edit.cshtml" />
+    <Content Include="Areas\Darta\Views\BasaisaraiDarta\Report.cshtml" />
+    <Content Include="Areas\Darta\Views\BasaisaraiDarta\VUC_Add.cshtml" />
+    <Content Include="Areas\Darta\Views\BasaisaraiDarta\VUC_Details.cshtml" />
+    <Content Include="Areas\Darta\Views\BasaisaraiDarta\_PrintDarta.cshtml" />
+    <Content Include="Areas\Darta\Views\BasaisaraiDarta\_Report.cshtml" />
+    <Content Include="Areas\Darta\Views\BasaisaraiDarta\AddPersonalDetails.cshtml" />
+    <Content Include="Areas\Darta\Views\DivorceDarta\Index.cshtml" />
+    <Content Include="Areas\Darta\Views\DivorceDarta\Create.cshtml" />
+    <Content Include="Areas\Darta\Views\DivorceDarta\Edit.cshtml" />
+    <Content Include="Areas\Darta\Views\DivorceDarta\Report.cshtml" />
+    <Content Include="Areas\Darta\Views\DivorceDarta\VUC_Add.cshtml" />
+    <Content Include="Areas\Darta\Views\DivorceDarta\VUC_Details.cshtml" />
+    <Content Include="Areas\Darta\Views\DivorceDarta\_PrintDarta.cshtml" />
+    <Content Include="Areas\Darta\Views\DivorceDarta\_Report.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />

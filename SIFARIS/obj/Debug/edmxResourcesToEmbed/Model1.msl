@@ -1219,5 +1219,14 @@
     </AssociationSetMapping>
     <FunctionImportMapping FunctionImportName="sp_GetLocalDate" FunctionName="SifarishModel.Store.sp_GetLocalDate" />
     <FunctionImportMapping FunctionImportName="sp_GetRomanDate" FunctionName="SifarishModel.Store.sp_GetRomanDate" />
+    <EntitySetMapping Name="tblCourtTypes">
+      <EntityTypeMapping TypeName="SifarishModel.tblCourtType">
+        <MappingFragment StoreEntitySet="tblCourtType">
+          <ScalarProperty Name="CourtType_Nep" ColumnName="CourtType_Nep" />
+          <ScalarProperty Name="CourtType" ColumnName="CourtType" />
+          <ScalarProperty Name="CourtTypeId" ColumnName="CourtTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

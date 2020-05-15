@@ -227,6 +227,7 @@
     <Compile Include="Areas\Darta\Models\JanmaDartaModel.cs" />
     <Compile Include="Areas\Darta\Provider\JanmaDartaProvider.cs" />
     <Compile Include="Areas\SetUp\Controllers\BasaisaraiKaranController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\CourtTypeController.cs" />
     <Compile Include="Areas\SetUp\Controllers\EducationController.cs" />
     <Compile Include="Areas\SetUp\Controllers\FiscalYearController.cs" />
     <Compile Include="Areas\SetUp\Controllers\GenderController.cs" />
@@ -366,6 +367,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblBasaisaraiPersonalDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCourtType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblDepartment.cs">

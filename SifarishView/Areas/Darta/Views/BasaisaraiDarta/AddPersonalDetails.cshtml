@@ -1,0 +1,30 @@
+﻿@model SifarishView.Areas.Darta.Models.BasaisaraiPersonalDetailsViewModel
+
+@using SifarishView.Helpers
+
+<tr class="">
+    @using (Html.BeginCollectionItem("BasaisaraiPersonalDetailsModelList"))
+    {
+        @Html.HiddenFor(model => model.MapPersonNewMigrationId)
+        @Html.HiddenFor(model => model.BasaisaraiDetailsId)
+
+        <td class="sno"></td>
+        <td>@Html.TextBoxFor(model => model.JanmaDartaNo, new { @class = "input-mini" })</td>
+        <td>@Html.TextBoxFor(model => model.NaamThar, new { @class = "span3" })</td>
+        <td>@Html.TextBoxFor(model => model.FullName, new { @class = "span3" })</td>
+        <td>@Html.TextBoxFor(model => model.JanmaMiti, new { @class = "nepali-calendar span2", @placeholder = "मिति हाल्नुहोस्" })</td>
+        <td>@Html.DropDownListFor(model => model.Gender, @SifarishView.Utility.GetGender(), "छान्नुहोस्", new { @class = "input-mini" })</td>
+        <td>@Html.DropDownListFor(model => model.JanmaPradesh, @SifarishView.Utility.GetAllState(), "छान्नुहोस्", new { @class = "span2 pradesh" })</td>
+        <td>@Html.DropDownListFor(model => model.JanmaJilla, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्", new { @class = "span2 jilla" })</td>
+        <td>@Html.DropDownListFor(model => model.JanmaPalika, @SifarishView.Utility.GetAllPalika(), "छान्नुहोस्", new { @class = "span2 palika" })</td>
+        <td>@Html.TextBoxFor(model => model.JanmaWardNo, new { @class = "span1", @type = "number" })</td>
+        <td>@Html.TextBoxFor(model => model.NagariktaPraPaNo, new { @class = "span2" })</td>
+        <td>@Html.TextBoxFor(model => model.NagaritaIssueDate, new { @class = "nepali-calendar span2", @placeholder = "मिति हाल्नुहोस्" })</td>
+        <td>@Html.DropDownListFor(model => model.NagariktaIssueDistrict, @SifarishView.Utility.GetAllDistrict(), "छान्नुहोस्", new { @class = "span2 select2" })</td>
+        <td>@Html.TextBoxFor(model => model.AnyRecords, new { @class = "span3" })</td>
+        <td>@Html.DropDownListFor(model => model.RelationTo, @SifarishView.Utility.GetRelation(), "छान्नुहोस्", new { @class = "span2" })</td>
+
+        <td><button type="button" class="btn btn-danger remove">-</button></td>
+        <td><button type="button" class="btn btn-success Add">+</button></td>
+    }
+</tr>

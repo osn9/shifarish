@@ -98,6 +98,7 @@ namespace SIFARIS
         public virtual DbSet<Ward> Wards { get; set; }
         public virtual DbSet<WardDetail> WardDetails { get; set; }
         public virtual DbSet<Year> Years { get; set; }
+        public virtual DbSet<tblCourtType> tblCourtTypes { get; set; }
     
         public virtual ObjectResult<string> sp_GetLocalDate(Nullable<System.DateTime> romanDate, Nullable<int> format)
         {

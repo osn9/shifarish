@@ -257,5 +257,34 @@ namespace SifarishView
 
 
         }
+        public static SelectList GetCourtType()
+        {
+            IEnumerable<CourtTypeViewModel> CourtTypeList;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("CourtType").Result;
+            CourtTypeList = response.Content.ReadAsAsync<IEnumerable<CourtTypeViewModel>>().Result;
+            return new SelectList(CourtTypeList, "CourtTypeId", "CourtType_Nep");
+
+        }
+        public static string GetCourtTypeById(int? id)
+        {
+            CourtTypeViewModel obj;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("CourtType/" + id.ToString()).Result;
+            obj = response.Content.ReadAsAsync<CourtTypeViewModel>().Result;
+
+            if (obj != null)
+                return obj.CourtType_Nep;
+            else
+                return "";
+        }
+        public static string GetCourtTypeName(int? id)
+        {
+            CourtTypeViewModel obj;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("CourtType/" + id.ToString()).Result;
+            obj = response.Content.ReadAsAsync<CourtTypeViewModel>().Result;
+            if (obj != null)
+                return obj.CourtType;
+            else
+                return "";
+        }
     }
 }
