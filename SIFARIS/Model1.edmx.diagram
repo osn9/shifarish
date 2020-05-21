@@ -121,6 +121,15 @@
         <AssociationConnector Association="SifarishModel.FK_WardDetails_Ward" />
         <AssociationConnector Association="SifarishModel.AspNetUserRoles" />
         <EntityTypeShape EntityType="SifarishModel.tblCourtType" Width="1.5" PointX="7.375" PointY="18.75" />
+        <EntityTypeShape EntityType="SifarishModel.tblNabalakRelativeDetail" Width="1.5" PointX="28.625" PointY="8.125" />
+        <EntityTypeShape EntityType="SifarishModel.tblNabalakSifari" Width="1.5" PointX="26.375" PointY="7.125" />
+        <EntityTypeShape EntityType="SifarishModel.tblNagariktaRelativeDetail" Width="1.5" PointX="28.625" PointY="1.25" />
+        <EntityTypeShape EntityType="SifarishModel.tblNagariktaSifari" Width="1.5" PointX="26.375" PointY="1.125" />
+        <EntityTypeShape EntityType="SifarishModel.tblNataPersonalDetail" Width="1.5" PointX="26.625" PointY="27.125" />
+        <EntityTypeShape EntityType="SifarishModel.tblNataPramanit" Width="1.5" PointX="24.375" PointY="26" />
+        <AssociationConnector Association="SifarishModel.FK_tblNabalakRelativeDetails_tblNabalakSifaris" />
+        <AssociationConnector Association="SifarishModel.FK_tblNagariktaRelativeDetails_tblNagariktaSifaris" />
+        <AssociationConnector Association="SifarishModel.FK_tblNataPersonalDetails_tblNataPramanit" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

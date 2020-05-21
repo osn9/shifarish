@@ -880,6 +880,126 @@
     <Property Name="SpouseName" Type="nvarchar" MaxLength="100" />
     <Property Name="MrityuKaran" Type="nvarchar" MaxLength="500" />
   </EntityType>
+  <EntityType Name="tblNabalakRelativeDetails">
+    <Key>
+      <PropertyRef Name="NabalkRelativeInfoId" />
+    </Key>
+    <Property Name="NabalkRelativeInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NabalakId" Type="int" Nullable="false" />
+    <Property Name="BabukoNaamThar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BabukoFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AamakoNaamThar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AamakoFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SamrakshakNaamThar" Type="nvarchar" MaxLength="50" />
+    <Property Name="GuardianFullName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblNabalakSifaris">
+    <Key>
+      <PropertyRef Name="NabalakId" />
+    </Key>
+    <Property Name="NabalakId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NabalakFaramNo" Type="int" Nullable="false" />
+    <Property Name="NaamThar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="JanmaMiti" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JanmaDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="JanmaPradesh" Type="int" />
+    <Property Name="JanmaJilla" Type="int" />
+    <Property Name="JanmaPalika" Type="int" />
+    <Property Name="JanmaWard" Type="int" />
+    <Property Name="PermaPradesh" Type="int" />
+    <Property Name="PermaJilla" Type="int" />
+    <Property Name="PermaPalika" Type="int" />
+    <Property Name="PermaWard" Type="int" />
+    <Property Name="Gender" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkOffice" Type="int" />
+    <Property Name="FiscalYear" Type="int" />
+  </EntityType>
+  <EntityType Name="tblNagariktaRelativeDetails">
+    <Key>
+      <PropertyRef Name="NagariktaRelativeInfoId" />
+    </Key>
+    <Property Name="NagariktaRelativeInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NagariktaId" Type="int" Nullable="false" />
+    <Property Name="BabukoNaamThar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BabukoFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BabuNagariktaNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="BabuNagariktaIssueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="BabuNagariktaIssueDistrict" Type="int" />
+    <Property Name="AamakoNaamThar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AamakoFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AamaNagariktaNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AamaNagariktaIssueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="AamaNagariktaIssueDistrict" Type="int" />
+    <Property Name="PatikoNaamThar" Type="nvarchar" MaxLength="50" />
+    <Property Name="PatikoFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PatiNagariktaNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="PatiNagariktaIssueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="PatiNagariktaIssueDistrict" Type="int" />
+  </EntityType>
+  <EntityType Name="tblNagariktaSifaris">
+    <Key>
+      <PropertyRef Name="NewNagariktaId" />
+    </Key>
+    <Property Name="NewNagariktaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NagariktaFaramNo" Type="int" Nullable="false" />
+    <Property Name="NaamThar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="JanmaMiti" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JanmaDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="JanmaPradesh" Type="int" />
+    <Property Name="JanmaJilla" Type="int" />
+    <Property Name="JanmaPalika" Type="int" />
+    <Property Name="JanmaWard" Type="int" />
+    <Property Name="PermaPradesh" Type="int" />
+    <Property Name="PermaJilla" Type="int" />
+    <Property Name="PermaPalika" Type="int" />
+    <Property Name="PermaWard" Type="int" />
+    <Property Name="Gender" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkOffice" Type="int" />
+    <Property Name="FiscalYear" Type="int" />
+  </EntityType>
+  <EntityType Name="tblNataPersonalDetails">
+    <Key>
+      <PropertyRef Name="NataPersonId" />
+    </Key>
+    <Property Name="NataPersonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NataId" Type="int" Nullable="false" />
+    <Property Name="NaamThar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="RelatonTo" Type="int" />
+  </EntityType>
+  <EntityType Name="tblNataPramanit">
+    <Key>
+      <PropertyRef Name="NewNataId" />
+    </Key>
+    <Property Name="NewNataId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NaamThar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="int" Nullable="false" />
+    <Property Name="PermaState" Type="int" />
+    <Property Name="PermaDistrict" Type="int" />
+    <Property Name="PermaPalika" Type="int" />
+    <Property Name="PermaWard" Type="int" />
+    <Property Name="NagariktaPraPaNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="NagariktaIssueDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="NagariktaIssueDistrict" Type="int" />
+    <Property Name="NataPramanitFaramNo" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkOffice" Type="int" />
+    <Property Name="FiscalYear" Type="int" />
+  </EntityType>
   <EntityType Name="tblOccupation">
     <Key>
       <PropertyRef Name="OcupationId" />
@@ -1560,6 +1680,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblNabalakRelativeDetails_tblNabalakSifaris">
+    <End Role="tblNabalakSifaris" Type="Self.tblNabalakSifaris" Multiplicity="1" />
+    <End Role="tblNabalakRelativeDetails" Type="Self.tblNabalakRelativeDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNabalakSifaris">
+        <PropertyRef Name="NabalakId" />
+      </Principal>
+      <Dependent Role="tblNabalakRelativeDetails">
+        <PropertyRef Name="NabalakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNagariktaRelativeDetails_tblNagariktaSifaris">
+    <End Role="tblNagariktaSifaris" Type="Self.tblNagariktaSifaris" Multiplicity="1" />
+    <End Role="tblNagariktaRelativeDetails" Type="Self.tblNagariktaRelativeDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNagariktaSifaris">
+        <PropertyRef Name="NewNagariktaId" />
+      </Principal>
+      <Dependent Role="tblNagariktaRelativeDetails">
+        <PropertyRef Name="NagariktaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNataPersonalDetails_tblNataPramanit">
+    <End Role="tblNataPramanit" Type="Self.tblNataPramanit" Multiplicity="1" />
+    <End Role="tblNataPersonalDetails" Type="Self.tblNataPersonalDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNataPramanit">
+        <PropertyRef Name="NewNataId" />
+      </Principal>
+      <Dependent Role="tblNataPersonalDetails">
+        <PropertyRef Name="NataId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblPadha_tblShreni">
     <End Role="tblShreni" Type="Self.tblShreni" Multiplicity="1" />
     <End Role="tblPadha" Type="Self.tblPadha" Multiplicity="*" />
@@ -1767,6 +1923,12 @@
     <EntitySet Name="tblMrityuDarta" EntityType="Self.tblMrityuDarta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblMrityuDartaInformant" EntityType="Self.tblMrityuDartaInformant" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblMrityuDartaPersonalDetails" EntityType="Self.tblMrityuDartaPersonalDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNabalakRelativeDetails" EntityType="Self.tblNabalakRelativeDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNabalakSifaris" EntityType="Self.tblNabalakSifaris" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNagariktaRelativeDetails" EntityType="Self.tblNagariktaRelativeDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNagariktaSifaris" EntityType="Self.tblNagariktaSifaris" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNataPersonalDetails" EntityType="Self.tblNataPersonalDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNataPramanit" EntityType="Self.tblNataPramanit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblOccupation" EntityType="Self.tblOccupation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblPadha" EntityType="Self.tblPadha" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblPalika" EntityType="Self.tblPalika" Schema="dbo" store:Type="Tables" />
@@ -1918,6 +2080,18 @@
     <AssociationSet Name="FK_tblMrityuDartaPersonalDetails_tblMrityuDarta" Association="Self.FK_tblMrityuDartaPersonalDetails_tblMrityuDarta">
       <End Role="tblMrityuDarta" EntitySet="tblMrityuDarta" />
       <End Role="tblMrityuDartaPersonalDetails" EntitySet="tblMrityuDartaPersonalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNabalakRelativeDetails_tblNabalakSifaris" Association="Self.FK_tblNabalakRelativeDetails_tblNabalakSifaris">
+      <End Role="tblNabalakSifaris" EntitySet="tblNabalakSifaris" />
+      <End Role="tblNabalakRelativeDetails" EntitySet="tblNabalakRelativeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNagariktaRelativeDetails_tblNagariktaSifaris" Association="Self.FK_tblNagariktaRelativeDetails_tblNagariktaSifaris">
+      <End Role="tblNagariktaSifaris" EntitySet="tblNagariktaSifaris" />
+      <End Role="tblNagariktaRelativeDetails" EntitySet="tblNagariktaRelativeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNataPersonalDetails_tblNataPramanit" Association="Self.FK_tblNataPersonalDetails_tblNataPramanit">
+      <End Role="tblNataPramanit" EntitySet="tblNataPramanit" />
+      <End Role="tblNataPersonalDetails" EntitySet="tblNataPersonalDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_tblPadha_tblShreni" Association="Self.FK_tblPadha_tblShreni">
       <End Role="tblShreni" EntitySet="tblShreni" />

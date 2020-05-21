@@ -1,0 +1,19 @@
+﻿@model SifarishView.Areas.DartaSupplement.Models.NataPramanitPersonalDetailViewModel
+
+@using SifarishView.Helpers
+
+<tr class="">
+    @using (Html.BeginCollectionItem("NataPramanitPersonalDetailsModelList"))
+    {
+        @Html.HiddenFor(model => model.NataId)
+        @Html.HiddenFor(model => model.NataPersonId)
+
+        <td class="sno"></td>
+        <td>@Html.TextBoxFor(model => model.NaamThar, new { @class = "span3" })</td>
+        <td>@Html.TextBoxFor(model => model.FullName, new { @class = "span3" })</td>
+        <td>@Html.DropDownListFor(model => model.RelatonTo, @SifarishView.Utility.GetRelation(), "छान्नुहोस्", new { @class = "span2" })</td>
+
+        <td><button type="button" class="btn btn-danger remove">-</button></td>
+        <td><button type="button" class="btn btn-success Add">+</button></td>
+    }
+</tr>

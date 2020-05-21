@@ -314,6 +314,24 @@
       <Parameter Name="LocalDay" Mode="In" Type="Int32" />
     </FunctionImport>
     <EntitySet Name="tblCourtTypes" EntityType="SifarishModel.tblCourtType" />
+    <EntitySet Name="tblNabalakRelativeDetails" EntityType="SifarishModel.tblNabalakRelativeDetail" />
+    <EntitySet Name="tblNabalakSifaris" EntityType="SifarishModel.tblNabalakSifari" />
+    <EntitySet Name="tblNagariktaRelativeDetails" EntityType="SifarishModel.tblNagariktaRelativeDetail" />
+    <EntitySet Name="tblNagariktaSifaris" EntityType="SifarishModel.tblNagariktaSifari" />
+    <EntitySet Name="tblNataPersonalDetails" EntityType="SifarishModel.tblNataPersonalDetail" />
+    <EntitySet Name="tblNataPramanits" EntityType="SifarishModel.tblNataPramanit" />
+    <AssociationSet Name="FK_tblNabalakRelativeDetails_tblNabalakSifaris" Association="SifarishModel.FK_tblNabalakRelativeDetails_tblNabalakSifaris">
+      <End Role="tblNabalakSifari" EntitySet="tblNabalakSifaris" />
+      <End Role="tblNabalakRelativeDetail" EntitySet="tblNabalakRelativeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNagariktaRelativeDetails_tblNagariktaSifaris" Association="SifarishModel.FK_tblNagariktaRelativeDetails_tblNagariktaSifaris">
+      <End Role="tblNagariktaSifari" EntitySet="tblNagariktaSifaris" />
+      <End Role="tblNagariktaRelativeDetail" EntitySet="tblNagariktaRelativeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNataPersonalDetails_tblNataPramanit" Association="SifarishModel.FK_tblNataPersonalDetails_tblNataPramanit">
+      <End Role="tblNataPramanit" EntitySet="tblNataPramanits" />
+      <End Role="tblNataPersonalDetail" EntitySet="tblNataPersonalDetails" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="JaagaTarfa">
     <Key>
@@ -2019,4 +2037,166 @@
     <Property Name="CourtType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CourtType_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="tblNabalakRelativeDetail">
+    <Key>
+      <PropertyRef Name="NabalkRelativeInfoId" />
+    </Key>
+    <Property Name="NabalkRelativeInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NabalakId" Type="Int32" Nullable="false" />
+    <Property Name="BabukoNaamThar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabukoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoNaamThar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SamrakshakNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GuardianFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblNabalakSifari" Relationship="SifarishModel.FK_tblNabalakRelativeDetails_tblNabalakSifaris" FromRole="tblNabalakRelativeDetail" ToRole="tblNabalakSifari" />
+  </EntityType>
+  <EntityType Name="tblNabalakSifari">
+    <Key>
+      <PropertyRef Name="NabalakId" />
+    </Key>
+    <Property Name="NabalakId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NabalakFaramNo" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaPradesh" Type="Int32" />
+    <Property Name="JanmaJilla" Type="Int32" />
+    <Property Name="JanmaPalika" Type="Int32" />
+    <Property Name="JanmaWard" Type="Int32" />
+    <Property Name="PermaPradesh" Type="Int32" />
+    <Property Name="PermaJilla" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWard" Type="Int32" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblNabalakRelativeDetails" Relationship="SifarishModel.FK_tblNabalakRelativeDetails_tblNabalakSifaris" FromRole="tblNabalakSifari" ToRole="tblNabalakRelativeDetail" />
+    <Property Name="WorkOffice" Type="Int32" />
+    <Property Name="FiscalYear" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblNagariktaRelativeDetail">
+    <Key>
+      <PropertyRef Name="NagariktaRelativeInfoId" />
+    </Key>
+    <Property Name="NagariktaRelativeInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NagariktaId" Type="Int32" Nullable="false" />
+    <Property Name="BabukoNaamThar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabukoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabuNagariktaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabuNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabuNagariktaIssueDistrict" Type="Int32" />
+    <Property Name="AamakoNaamThar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamaNagariktaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamaNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamaNagariktaIssueDistrict" Type="Int32" />
+    <Property Name="PatikoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PatikoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PatiNagariktaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PatiNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PatiNagariktaIssueDistrict" Type="Int32" />
+    <NavigationProperty Name="tblNagariktaSifari" Relationship="SifarishModel.FK_tblNagariktaRelativeDetails_tblNagariktaSifaris" FromRole="tblNagariktaRelativeDetail" ToRole="tblNagariktaSifari" />
+  </EntityType>
+  <EntityType Name="tblNagariktaSifari">
+    <Key>
+      <PropertyRef Name="NewNagariktaId" />
+    </Key>
+    <Property Name="NewNagariktaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NagariktaFaramNo" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaPradesh" Type="Int32" />
+    <Property Name="JanmaJilla" Type="Int32" />
+    <Property Name="JanmaPalika" Type="Int32" />
+    <Property Name="JanmaWard" Type="Int32" />
+    <Property Name="PermaPradesh" Type="Int32" />
+    <Property Name="PermaJilla" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWard" Type="Int32" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblNagariktaRelativeDetails" Relationship="SifarishModel.FK_tblNagariktaRelativeDetails_tblNagariktaSifaris" FromRole="tblNagariktaSifari" ToRole="tblNagariktaRelativeDetail" />
+    <Property Name="WorkOffice" Type="Int32" />
+    <Property Name="FiscalYear" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblNataPersonalDetail">
+    <Key>
+      <PropertyRef Name="NataPersonId" />
+    </Key>
+    <Property Name="NataPersonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NataId" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RelatonTo" Type="Int32" />
+    <NavigationProperty Name="tblNataPramanit" Relationship="SifarishModel.FK_tblNataPersonalDetails_tblNataPramanit" FromRole="tblNataPersonalDetail" ToRole="tblNataPramanit" />
+  </EntityType>
+  <EntityType Name="tblNataPramanit">
+    <Key>
+      <PropertyRef Name="NewNataId" />
+    </Key>
+    <Property Name="NewNataId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NaamThar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="PermaState" Type="Int32" />
+    <Property Name="PermaDistrict" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWard" Type="Int32" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDistrict" Type="Int32" />
+    <Property Name="NataPramanitFaramNo" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblNataPersonalDetails" Relationship="SifarishModel.FK_tblNataPersonalDetails_tblNataPramanit" FromRole="tblNataPramanit" ToRole="tblNataPersonalDetail" />
+    <Property Name="WorkOffice" Type="Int32" />
+    <Property Name="FiscalYear" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_tblNabalakRelativeDetails_tblNabalakSifaris">
+    <End Type="SifarishModel.tblNabalakSifari" Role="tblNabalakSifari" Multiplicity="1" />
+    <End Type="SifarishModel.tblNabalakRelativeDetail" Role="tblNabalakRelativeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNabalakSifari">
+        <PropertyRef Name="NabalakId" />
+      </Principal>
+      <Dependent Role="tblNabalakRelativeDetail">
+        <PropertyRef Name="NabalakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNagariktaRelativeDetails_tblNagariktaSifaris">
+    <End Type="SifarishModel.tblNagariktaSifari" Role="tblNagariktaSifari" Multiplicity="1" />
+    <End Type="SifarishModel.tblNagariktaRelativeDetail" Role="tblNagariktaRelativeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNagariktaSifari">
+        <PropertyRef Name="NewNagariktaId" />
+      </Principal>
+      <Dependent Role="tblNagariktaRelativeDetail">
+        <PropertyRef Name="NagariktaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNataPersonalDetails_tblNataPramanit">
+    <End Type="SifarishModel.tblNataPramanit" Role="tblNataPramanit" Multiplicity="1" />
+    <End Type="SifarishModel.tblNataPersonalDetail" Role="tblNataPersonalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNataPramanit">
+        <PropertyRef Name="NewNataId" />
+      </Principal>
+      <Dependent Role="tblNataPersonalDetail">
+        <PropertyRef Name="NataId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

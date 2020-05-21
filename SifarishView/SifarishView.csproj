@@ -201,6 +201,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\AjaxRequestController.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\NabalakSifarisController.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\NagariktaSifarisController.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\NataPramanitSifarisController.cs" />
+    <Compile Include="Areas\DartaSupplement\DartaSupplementAreaRegistration.cs" />
+    <Compile Include="Areas\DartaSupplement\Models\NabalakSifarisViewModel.cs" />
+    <Compile Include="Areas\DartaSupplement\Models\NagariktaSifarisViewModel.cs" />
+    <Compile Include="Areas\DartaSupplement\Models\NataPramanitSifarisViewModel.cs" />
     <Compile Include="Areas\Darta\Controllers\AjaxRequestController.cs" />
     <Compile Include="Areas\Darta\Controllers\BasaisaraiDartaController.cs" />
     <Compile Include="Areas\Darta\Controllers\DivorceDartaController.cs" />
@@ -335,6 +343,32 @@
     <Content Include="Areas\Darta\Views\DivorceDarta\VUC_Details.cshtml" />
     <Content Include="Areas\Darta\Views\DivorceDarta\_PrintDarta.cshtml" />
     <Content Include="Areas\Darta\Views\DivorceDarta\_Report.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\web.config" />
+    <Content Include="Areas\DartaSupplement\Views\NabalakSifaris\VUC_Add.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NabalakSifaris\VUC_Details.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NabalakSifaris\_PrintDarta.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NabalakSifaris\_Report.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NabalakSifaris\Index.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NabalakSifaris\Create.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NabalakSifaris\Edit.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NabalakSifaris\Report.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NagariktaSifaris\Index.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NagariktaSifaris\Create.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NagariktaSifaris\Edit.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NagariktaSifaris\Report.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NagariktaSifaris\VUC_Add.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NagariktaSifaris\VUC_Details.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NagariktaSifaris\_PrintDarta.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NagariktaSifaris\_Report.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NataPramanitSifaris\VUC_Add.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NataPramanitSifaris\VUC_Details.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NataPramanitSifaris\_PrintDarta.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NataPramanitSifaris\_Report.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NataPramanitSifaris\Index.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NataPramanitSifaris\Create.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NataPramanitSifaris\Edit.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NataPramanitSifaris\Report.cshtml" />
+    <Content Include="Areas\DartaSupplement\Views\NataPramanitSifaris\AddPersonalDetails.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
@@ -396,6 +430,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\DartaSupplement\Views\AjaxRequest\" />
+    <Folder Include="Areas\DartaSupplement\Views\Shared\" />
     <Folder Include="Areas\Darta\Views\AjaxRequest\" />
     <Folder Include="Areas\Darta\Views\Shared\" />
     <Folder Include="Areas\SetUp\Views\District\" />

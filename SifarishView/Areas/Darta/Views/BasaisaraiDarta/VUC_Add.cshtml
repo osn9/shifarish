@@ -520,7 +520,7 @@
 
     </div>
     <div id="personaldetails" class="well well-small">
-        <h4>३. बसाई सराईगरी जाने व्यक्तिको विवरण</h4>
+        <h5>३. बसाई सराईगरी जाने व्यक्तिको विवरण</h5>
         <table id="multirecodtable" class="table table-bordered table-responsive table-hover">
             <thead>
                 <tr style="font-size: medium">
@@ -626,7 +626,7 @@
     $('#MultiRecordList').on('click', '.Add', AddRow)
     function AddRow() {
         $.ajax({
-            url: '@Url.Content("~/BasaisaraiDarta/AddMultiRecord")',
+            url: '@Url.Content("~/Darta/BasaisaraiDarta/AddMultiRecord")',
             success: function (result) {
                 if (result) {
                     $('#MultiRecordList').append(result)

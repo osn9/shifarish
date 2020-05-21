@@ -1,0 +1,60 @@
+﻿@model SifarishView.Areas.DartaSupplement.Models.NabalakSifarisViewModel
+@using SifarishView.Converter
+@{
+    ViewBag.Title = "नाबालक-विवरण";
+    Layout = null;
+}
+
+<div>
+
+    <dl class="span9">
+        <dt class="span3">
+            @Html.HiddenFor(model => model.NabalakId)
+        </dt>
+        <dd class="span5">
+            @Html.HiddenFor(model => model.NabalakId)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.NaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.NaamThar)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.JanmaMiti)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.JanmaMiti, SifarishView.Converter.UnicodeConverter.Default(Model.JanmaMiti))
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.BabukoNaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.BabukoNaamThar)
+        </dd>
+    </dl>
+
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.AamakoNaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.AamakoNaamThar)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.PermanentAddress)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.PermanentAddress)
+        </dd>
+    </dl>
+    
+</div>

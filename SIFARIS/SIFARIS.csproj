@@ -178,6 +178,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\NabalakSifarisController.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\NagariktaSifarisController.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\NataPramanitSifarisController.cs" />
+    <Compile Include="Areas\DartaSupplement\DartaSupplementAreaRegistration.cs" />
+    <Compile Include="Areas\DartaSupplement\Models\NabalakSifarisModel.cs" />
+    <Compile Include="Areas\DartaSupplement\Models\NagariktaSifarisModel.cs" />
+    <Compile Include="Areas\DartaSupplement\Models\NataPramanitSifarisModel.cs" />
+    <Compile Include="Areas\DartaSupplement\Provider\NabalakSifarisProvider.cs" />
+    <Compile Include="Areas\DartaSupplement\Provider\NagariktaSifarisProvider.cs" />
+    <Compile Include="Areas\DartaSupplement\Provider\NataPramanitSifarisProvider.cs" />
     <Compile Include="Areas\Darta\Controllers\BasaisaraiDartaController.cs" />
     <Compile Include="Areas\Darta\Controllers\DivorceDartaController.cs" />
     <Compile Include="Areas\Darta\Controllers\MrityuDartaController.cs" />
@@ -441,6 +451,24 @@
     <Compile Include="tblMrityuDartaPersonalDetail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="tblNabalakRelativeDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNabalakSifari.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNagariktaRelativeDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNagariktaSifari.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNataPersonalDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNataPramanit.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="tblOccupation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -551,6 +579,7 @@
     </Content>
     <Content Include="Areas\Darta\Views\web.config" />
     <Content Include="Areas\SetUp\Views\web.config" />
+    <Content Include="Areas\DartaSupplement\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -582,6 +611,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\DartaSupplement\Views\Shared\" />
     <Folder Include="Areas\Darta\Views\Shared\" />
     <Folder Include="Areas\GharJagga\Views\Shared\" />
     <Folder Include="Areas\SetUp\Views\Shared\" />

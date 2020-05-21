@@ -19,7 +19,7 @@ namespace SifarishView.Areas.Darta.Controllers
             List<SelectListItem> districtList = new List<SelectListItem>();
 
             var projectList = DataList.Where(x => x.StateId_val == ID).ToList();
-            foreach (var item in DataList)
+            foreach (var item in projectList)
             {
                 districtList.Add(new SelectListItem { Text = item.DistrictName_Nep, Value = item.DistrictId_val.ToString() });
             }

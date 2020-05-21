@@ -99,6 +99,12 @@ namespace SIFARIS
         public virtual DbSet<WardDetail> WardDetails { get; set; }
         public virtual DbSet<Year> Years { get; set; }
         public virtual DbSet<tblCourtType> tblCourtTypes { get; set; }
+        public virtual DbSet<tblNabalakRelativeDetail> tblNabalakRelativeDetails { get; set; }
+        public virtual DbSet<tblNabalakSifari> tblNabalakSifaris { get; set; }
+        public virtual DbSet<tblNagariktaRelativeDetail> tblNagariktaRelativeDetails { get; set; }
+        public virtual DbSet<tblNagariktaSifari> tblNagariktaSifaris { get; set; }
+        public virtual DbSet<tblNataPersonalDetail> tblNataPersonalDetails { get; set; }
+        public virtual DbSet<tblNataPramanit> tblNataPramanits { get; set; }
     
         public virtual ObjectResult<string> sp_GetLocalDate(Nullable<System.DateTime> romanDate, Nullable<int> format)
         {

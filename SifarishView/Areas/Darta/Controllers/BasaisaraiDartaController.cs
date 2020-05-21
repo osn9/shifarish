@@ -70,6 +70,10 @@ namespace SifarishView.Areas.Darta.Controllers
             model = response.Content.ReadAsAsync<BasaisaraiDartaViewModel>().Result;
             return PartialView("_PrintDarta", model);
         }
+        public ActionResult AddMultiRecord()
+        {
+            return PartialView("AddPersonalDetails", new BasaisaraiPersonalDetailsViewModel());
+        }
         public ActionResult Report()
         {
             var model = new BasaisaraiDartaViewModel();

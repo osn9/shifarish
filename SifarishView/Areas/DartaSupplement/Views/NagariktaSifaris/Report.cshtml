@@ -1,0 +1,69 @@
+﻿@model SifarishView.Areas.DartaSupplement.Models.NagariktaSifarisViewModel
+
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="@Url.Content("~/Scripts/jquery-1.7.1.js")" type="text/javascript"></script>
+<script src="~/Scripts/DataTable/datatables.min.js"></script>
+<link href="~/Scripts/DataTable/datatables.min.css" rel="stylesheet" />
+<script>
+    $(document).ready(function () {
+        $("#FiscalYear").val(@Utility.GetCurrentFisicalYear());
+    });
+</script>
+<div class="well well-small">
+    <div class="row">
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.FaramNo)
+            </div>
+            <div class="span7">
+                @Html.TextBoxFor(model => model.FaramNo, new { @class = "dartano", @placeholder = " दर्ता नं." })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span11">
+            <div class="span3">
+                @Html.Label("आर्थिक वर्ष")
+            </div>
+            <div class="span7">
+                @Html.DropDownListFor(model => model.FiscalYear, new SelectList(@SifarishView.Utility.GetFiscalYears(), "FiscalyearId", "FiscalYear"), "आर्थिक वर्ष")
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button id="Search" class="btn" type="button"><i class="fa fa-search-plus"></i>Search</button>
+        @*<button id="btnPrint" class="btn" type="button"><i class="fa fa-print"></i></button>*@
+        <button id="btnPrintAll" class="btn" type="button"><i class="fa fa-align-justify"></i> <i class="fa fa-print"></i></button>
+    </div>
+</div>
+<div id="ResultDisplay"></div>
+
+<script>
+    $("#Search").click(function () {
+        var faramno = $("#FaramNo").val();
+        var fiscalyear = $("#FiscalYear").val();
+        $.ajax({
+            url: '@Url.Action("GetReport","NagariktaSifaris")',
+            data:{faramno:faramno,fiscalyear:fiscalyear},
+            type:'GET',
+            success: function (data) {
+                $('#ResultDisplay').html(data);
+                //var table = $('#ResultDisplay').find("#reportTable").DataTable();
+            }
+
+        })
+    });
+
+    $("#btnPrintAll").click(function () {
+        var faramno = $("#FaramNo").val();
+        var fiscalyear = $("#FiscalYear").val();
+        var url = '@Url.Action("PrintReport", "NagariktaSifaris")' + '?faramno=' + faramno + '&fiscalyearid=' + fiscalyear;
+        var win = window.open(url, "_blank");
+        win.focus();
+    });
+</script>
+
