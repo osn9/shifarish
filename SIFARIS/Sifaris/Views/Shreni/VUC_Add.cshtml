@@ -1,0 +1,28 @@
+﻿@model Sifaris.Models.ShreniModel
+
+<fieldset>
+    <legend>कर्मचारी श्रेणी</legend>
+
+    @Html.HiddenFor(model => model.ShreniId)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+
+    <div class="span24">
+        <div class="span4">
+            @Html.LabelFor(model => model.ShreniScheduleId)
+        </div>
+        <div class="span19">
+            @Html.TextBoxFor(model => model.ShreniScheduleId, new { @class = "span6" })
+            @Html.ValidationMessageFor(model => model.ShreniScheduleId)
+        </div>
+    </div>
+    <div class="span24">
+        <div class="span4">
+            @Html.LabelFor(model => model.ShreniName)
+        </div>
+        <div class="span19">
+            @Html.TextBoxFor(model => model.ShreniName, new { @class = "span6" })
+            @Html.ValidationMessageFor(model => model.ShreniName)
+        </div>
+    </div>
+</fieldset>

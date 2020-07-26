@@ -1,0 +1,137 @@
+﻿/* DEMO TABLE */
+body 
+{
+   
+    font-size: 100%;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+    width:auto;
+    
+}
+table { border-spacing:0; border:1px solid gray;}
+table.tablesorter thead tr .header {
+	background-image: url("/Content/images/bg.png");
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+	
+  
+}
+table.tablesorter tbody td 
+{
+    padding-top:50px;
+	color: #3D3D3D;
+	padding: 4px;
+	background-color: #FFF;
+	vertical-align: top;
+	
+}
+table.tablesorter tbody tr.odd td 
+{
+   
+	background-color:#F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url("/Content/images/asc.png");
+	
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url("/Content/images/desc.png");
+	
+	
+}
+table th { width:200px; 
+           border:1px outset gray; 
+           background-color:#255882; 
+           color:white; 
+           cursor:pointer;
+           font-size:medium;
+          
+}
+table thead th:hover { background-color:#69C579; color:black;}
+table td { width:200px; border:1px solid gray;}
+
+/*.............................................................*/
+.tooltip:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+    
+}
+#Delete1
+{
+    background-image:Url(/Content/Images/Delete.png);
+    background-repeat:no-repeat;
+    width:23px;
+    height:22px;
+    float:left;
+    border-radius:5px;
+    moz-border-radius:5px; 
+    border:1px solid red;
+   
+ }
+ #Delete1:hover
+ {
+   border:2px solid #87040A;
+    border-radius:0px;
+    moz-border-radius:0px; 
+ }
+#Edit1
+{
+    background-image:Url(/Content/Images/Edit.png);
+    width:23px;
+    height:22px;
+    float:left;
+    margin-left:50px;
+    border-radius:5px;
+    moz-border-radius:5px; 
+    border:1px solid #F6F868;
+   }
+   #Edit1:hover
+   {
+    border:2px solid #E0A43C;
+    border-radius:0px;
+    moz-border-radius:0px; 
+   }
+ .Add1
+  {
+    background-image:Url(/Content/Images/Add.png);
+    width:70px;
+    height:30px;
+    float:right;
+    margin-right:0px;
+    margin-bottom:0PX;
+    display:block;
+    border:1px solid green;
+    border-radius:5px;
+    moz-border-radius:5px; 
+   
+    
+  }
+.Add1:hover
+    {
+    border:2px solid #8EED1E;
+    border-radius:0px;
+    moz-border-radius:0px; 
+    
+    
+    }
+.line
+{
+    width:auto;
+    height:100px;
+    background-color:white;
+    font-size:large;
+    margin-bottom:2px;
+}
+
+

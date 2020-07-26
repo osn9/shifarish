@@ -1,0 +1,51 @@
+﻿@model Sifaris.Models.VivahDartaModel
+@using Sifaris.Converter
+
+@{
+    ViewBag.Title = "विवाह दर्ता-विवरण";
+    Layout = null;
+}
+<div>
+
+    <dl class="span9">
+        <dt class="span3">
+            @Html.HiddenFor(model => model.NewMarriageId)
+        </dt>
+        <dd class="span5">
+            @Html.HiddenFor(model => model.NewMarriageId)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.GroomNaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.GroomNaamThar)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.BrideNaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.BrideNaamThar)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.VivahBhayekoMiti)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.VivahBhayekoMiti,Sifaris.Converter.UnicodeConverter.Default(Model.VivahBhayekoMiti))
+        </dd>
+    </dl>
+   
+    @* <dl class="span9">
+            <dt class="span3">
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </dt>
+            <dd class="span5">
+                @Html.LabelFor(model => model.EmployeeId, PropertyManagement.Utility.GetEmployeeName(Model.EmployeeId))
+            </dd>
+        </dl>*@
+</div>

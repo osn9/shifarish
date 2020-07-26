@@ -1,0 +1,250 @@
+﻿@model Sifaris.Models.EmployeesModel
+
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script type="text/javascript">
+
+    var k = jQuery.noConflict();
+    k(document).ready(function () {
+       k("#WarehouseId").change(function () {
+
+                // this will call when Project Dropdown select change
+                var warehouseId = parseInt(k("#WarehouseId").val());
+                var documentId = k("#DepartmentId");
+                documentId.empty(); // this line is for clear all items from State dropdown
+                documentId.append($("<option></option>").val("").html("-Please Select-"));
+                if (!isNaN(warehouseId)) {
+                    k.ajax({
+                        url: '@Url.Action("GetDepartment", "Employees")',
+                        data: { 'ID': warehouseId },
+                        method: 'get',
+                        dataType: 'json',
+                        success: function (data) {
+
+                            var items = [];
+                            items.push("<option  value=0 >" + "-महाशाखा छान्नुहोस्-" + "</option>"); //first item
+                            for (var i = 0; i < data.length; i++) {
+                                items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                            }                                         //all data from the team table push into array
+                            k("#DepartmentId").html(items.join(' '));
+
+                        },
+                        error: function (err) {
+                            alert(err);
+                        }
+
+                    })
+                }
+       });
+
+       k("#DepartmentId").change(function () {
+           // this will call when Country Dropdown select change
+           var departmentId = parseInt(k("#DepartmentId").val());
+           var shakhaId = k("#ShakhaId");
+           shakhaId.empty(); // this line is for clear all items from State dropdown
+           shakhaId.append(k("<option></option>").val("").html("-Please Select-"));
+           if (!isNaN(departmentId)) {
+               k.ajax({
+                   url: '@Url.Action("GetShakha","Employees")',
+                   data: { 'ID': departmentId },
+                   method: 'get',
+                   dataType: 'json',
+                   success: function (data) {
+                       var items = [];
+                       items.push("<option  value=0 >" + "-शाखा छान्नुहोस्-" + "</option>"); //first item
+                       for (var i = 0; i < data.length; i++) {
+                           items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                       }                                         //all data from the team table push into array
+                       k("#ShakhaId").html(items.join(' '));
+
+                   },
+                   error: function (err) {
+                       alert(err);
+                   }
+
+               })
+           }
+       });
+       k("#ShreniId").change(function () {
+            // this will call when Project Dropdown select change
+            var shreniId = parseInt(k("#ShreniId").val());
+            var documentId = k("#PadhaId");
+            documentId.empty(); // this line is for clear all items from State dropdown
+            documentId.append($("<option></option>").val("").html("-Please Select-"));
+            if (!isNaN(shreniId)) {
+                k.ajax({
+                    url: '@Url.Action("GetPadha", "Employees")',
+                    data: { 'ID': shreniId },
+                    method: 'get',
+                    dataType: 'json',
+                    success: function (data) {
+
+                        var items = [];
+                        items.push("<option  value=0 >" + "-पद छान्नुहोस्-" + "</option>"); //first item
+                        for (var i = 0; i < data.length; i++) {
+                            items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                        }                                         //all data from the team table push into array
+                        k("#PadhaId").html(items.join(' '));
+
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+
+                })
+            }
+       });
+
+    });
+
+</script>
+
+
+<fieldset>
+    <legend>कर्मचारी व्यवस्थापन</legend>
+    @Html.HiddenFor(model => model.EmployeeId)
+    <div class="row">
+        <div class="span3">
+            @Html.LabelFor(model => model.WorkOfficeId)
+        </div>
+        <div class="span8">
+            @*@Html.DropDownListFor(model => model.WarehouseId, @PropertyManagement.Utility.GetWarehouse(), new { @class = "span6", @required = "required" })*@
+            <strong>@Sifaris.Utility.GetWorkOfficeName(1)</strong>
+            @*@Html.ValidationMessageFor(model => model.WarehouseId)*@
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span3">
+            @Html.LabelFor(model => model.DepartmentId)
+        </div>
+        <div class="span5">
+            @Html.DropDownListFor(model => model.DepartmentId, @Sifaris.Utility.Getalldepartmet(), "महा-शाखा छान्नुहोस्")
+            @Html.ValidationMessageFor(model => model.DepartmentId)
+        </div>
+        <div class="span3">
+            @Html.LabelFor(model => model.ShakhaId)
+        </div>
+        <div class="span5">
+            @Html.DropDownListFor(model => model.ShakhaId, @Sifaris.Utility.GetShakha(), "शाखा छान्नुहोस्")
+            @Html.ValidationMessageFor(model => model.ShakhaId)
+        </div>
+
+
+        <div class="span3">
+            @Html.LabelFor(model => model.ShreniId)
+        </div>
+        <div class="span5">
+            @Html.DropDownListFor(model => model.ShreniId, @Sifaris.Utility.GetShreni(), "श्रेणी छान्नुहोस्", new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.ShreniId)
+        </div>
+
+        <div class="span3">
+            @Html.LabelFor(model => model.PadhaId)
+        </div>
+        <div class="span5">
+            @Html.DropDownListFor(model => model.PadhaId, @Sifaris.Utility.GetPadha(), "पद छान्नुहोस्", new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.PadhaId)
+        </div>
+
+
+        @*<div class="span3">
+            @Html.LabelFor(model => model.UserTypeId)
+        </div>
+        <div class="span5">
+            @Html.DropDownListFor(model => model.UserTypeId, @Sifaris.Utility.GetUserType(), "कर्मचारी किसिम छान्नुहोस्", new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.UserTypeId)
+        </div>*@
+
+        <div class="span3">
+            @Html.LabelFor(model => model.EmployeeName)
+        </div>
+        <div class="span5">
+            @Html.TextBoxFor(model => model.EmployeeName, new { @required = "required", @Placeholder = "नाम हाल्नुहोस" })
+            @Html.ValidationMessageFor(model => model.EmployeeName)
+        </div>
+
+        <div class="span3">
+            @Html.LabelFor(model => model.ContactNumber)
+        </div>
+        <div class="span5">
+            @Html.TextBoxFor(model => model.ContactNumber, new { @Placeholder = "फोन न. हाल्नुहोस" })
+            @Html.ValidationMessageFor(model => model.ContactNumber)
+        </div>
+
+        
+
+        <div class="span3">
+            @Html.LabelFor(model => model.INVId)
+        </div>
+        <div class="span5">
+            @Html.TextBoxFor(model => model.INVId, new { @Placeholder = "कर्मचारी संकेत न. हाल्नुहोस" })
+            <span id="INVIdvalidation" class='alert-danger'>
+                This INVId Already Exisists...!!!
+            </span>
+            @Html.ValidationMessageFor(model => model.INVId)
+        </div>
+
+        <div class="span3">
+            @Html.LabelFor(model => model.EmployeeAddress)
+        </div>
+        <div class="span5">
+            @Html.TextAreaFor(model => model.EmployeeAddress, new { style = "width: 605px; height:40px;" })
+            @Html.ValidationMessageFor(model => model.EmployeeAddress)
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="span3">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="span5">
+            @Html.CheckBoxFor(model => model.Status, htmlAttributes: new { @checked = true })
+        </div>
+
+        @*@if (Sifaris.Utility.IsSuper())
+        {
+            <div class="span3">
+                @Html.LabelFor(model => model.IsAdmin)
+            </div>
+            <div class="span5">
+                @Html.CheckBoxFor(model => model.IsAdmin)
+            </div>
+        }
+        else
+        {
+            Model.IsAdmin = false;
+            @Html.HiddenFor(x => x.IsAdmin)
+        }*@
+
+
+    </div>
+</fieldset>
+<script>
+$('#INVIdvalidation').hide();
+$('#INVId').on('change',function(){
+	var value=$(this).val();
+	$.ajax({
+		 url: '@Url.Action("INVIdCheck", "Employees")',
+                    data: { 'ID': shreniId },
+                    method: 'get',
+                    dataType: 'json',
+                    success: function (data) {
+						if(data==true)
+						{
+							$('#INVIdvalidation').show();
+							$('submit').attr('disabled','disabled')
+						}
+						else
+						{
+							$('#INVIdvalidation').hide();
+							$('submit').attr('disabled','')
+						}
+
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+	})
+})
+</script>

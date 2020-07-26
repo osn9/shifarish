@@ -1,0 +1,31 @@
+﻿@model Sifaris.Models.PadhaModel
+
+<fieldset>
+    <legend>कर्मचारी पद</legend>
+
+    @Html.HiddenFor(model => model.PadhaId)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+
+    <div class="span24">
+        <div class="span3">
+            @Html.LabelFor(model => model.ShreniId)
+        </div>
+        <div class="span20">
+         
+            @Html.DropDownListFor(model => model.ShreniId, Sifaris.Utility.GetShreni(), "छान्नुहोस्", new { @class = "span6", @required = "required" })
+
+            @Html.ValidationMessageFor(model => model.ShreniId)
+        </div>
+    </div>
+
+    <div class="span24">
+        <div class="span3">
+            @Html.LabelFor(model => model.PadhaName)
+        </div>
+        <div class="span20">
+            @Html.TextBoxFor(model => model.PadhaName, new { @class = "span6" })
+            @Html.ValidationMessageFor(model => model.PadhaName)
+        </div>
+    </div>
+</fieldset>

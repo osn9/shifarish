@@ -1,0 +1,102 @@
+﻿@using Sifaris
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/chosen.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrapcss")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap/all.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrapjq")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/chosen.jquery.min.js"></script>
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/json.cycle.js"></script>
+    <script src="~/Scripts/nepali.datepicker.js"></script>
+    <link href="~/Content/nepali.datepicker.css" rel="stylesheet" />
+    <script src="~/Scripts/select2.full.js"></script>
+    <link href="~/Scripts/select2.css" rel="stylesheet" />
+    <link href="~/Content/alertifyjs/alertify.min.css" rel="stylesheet" />
+    <link href="~/Content/alertifyjs/themes/default.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header style="padding:5px;">
+        <div class="row">
+            <div class="span2">
+                <a href="/Home/Index">
+                    <img src="~/Content/img/logo.png" style="max-width:77%;" />
+                </a>
+            </div>
+            <div class="span9" style="margin-left:-15px;">
+                <h5 style="margin:3px 0 0;">नेपाल सरकार</h5>
+                <h4 style="margin:0 0 3px 0;">सिफारिस</h4>
+                @*<h5 style="margin:0 0 3px 0;">@PropertyManagement.Utility.GetWarehouseName(),@PropertyManagement.Utility.GetWarehouseDistrict()</h5>
+                    <h5 style="margin:3px 0;">@PropertyManagement.Utility.GetWarehouseAddress()</h5>
+                    <h5 style="margin:3px 0;">@PropertyManagement.Utility.GetApplicationName()</h5>*@
+            </div>
+            <div class="span10 pull-right">
+                <h4><span>आजको मिति:</span>@Sifaris.Utility.GetNepaliDateInUnicode(DateTime.Now, 3)</h4>
+            </div>
+        </div>
+
+
+    </header>
+    @Html.Partial("Header")
+    <div id="body">
+        <section class="content-wrapper main-content clear-fix" style="min-height: 400px;">
+            @*@Html.Partial("Message")*@
+            @RenderBody()
+        </section>
+    </div>
+</body>
+
+</html>
+@*nepalt datepicker*@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.nepali-calendar').nepaliDatePicker(
+            {
+                date: "dd/mm/yyyy"
+            }
+        );
+
+        //alert(getNepaliDate())
+        $('#DisplayTodayDate').html(getNepaliDate())
+        $('#submit')[0].reset();
+        $(window).on('popstate', function () {
+            location.reload(true);
+        });
+
+    });
+
+</script>
+@* language translation*@
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+    google.load("elements", "1", {
+        packages: "transliteration"
+    });
+
+    function onLoad() {
+        var options = {
+            sourceLanguage: google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage: [google.elements.transliteration.LanguageCode.NEPALI],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        var control = new google.elements.transliteration.TransliterationControl(options);
+        control.makeTransliteratable(['.langtranslate']);       
+    }
+    google.setOnLoadCallback(onLoad);
+</script>

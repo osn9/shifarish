@@ -1,0 +1,58 @@
+﻿@model Sifaris.Models.MrityuDartaModel
+@using Sifaris.Converter
+
+@{
+    ViewBag.Title = "मृत्यु दर्ता-विवरण";
+    Layout = null;
+}
+<div>
+
+    <dl class="span9">
+        <dt class="span3">
+            @Html.HiddenFor(model => model.NewDeathId)
+        </dt>
+        <dd class="span5">
+            @Html.HiddenFor(model => model.NewDeathId)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.NaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.NaamThar)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.JanmaMiti)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.JanmaMiti, Sifaris.Converter.UnicodeConverter.Default(Model.JanmaMiti))
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.MrityuMiti)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.MrityuMiti, Sifaris.Converter.UnicodeConverter.Default(Model.MrityuMiti))
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.PermanentAddress)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.PermanentAddress)
+        </dd>
+    </dl>
+    @* <dl class="span9">
+            <dt class="span3">
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </dt>
+            <dd class="span5">
+                @Html.LabelFor(model => model.EmployeeId, PropertyManagement.Utility.GetEmployeeName(Model.EmployeeId))
+            </dd>
+        </dl>*@
+</div>

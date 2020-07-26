@@ -75,21 +75,21 @@ namespace SifarishView.Areas.Darta.Controllers
             var model = new JanmaDartaViewModel();
             return View(model);
         }
-        //public ActionResult GetReport(int? faramno, int? fiscalyear, int page = 1)
-        //{
-        //    var model = new JanmaDartaViewModel();
-        //    HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("JanmaDarta").Result;
-        //    model.JanmaDartaViewModelList = response.Content.ReadAsAsync<List<JanmaDartaViewModel>>().Result;
-        //    ViewBag.currentPage = page;
-        //    return PartialView("_Report", model);
-        //}
-        //public ActionResult PrintReport(int? faramno, int? fiscalyear, int page = 1)
-        //{
-        //    var model = new JanmaDartaViewModel();
-        //    HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("JanmaDarta").Result;
-        //    model.JanmaDartaViewModelList = response.Content.ReadAsAsync<List<JanmaDartaViewModel>>().Result;
-        //    ViewBag.currentPage = page;
-        //    return View("_Report", model);
-        //}
+        public ActionResult GetReport(int? faramno, int? fiscalyear, int page = 1)
+        {
+            var model = new JanmaDartaViewModel();
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("JanmaDarta").Result;
+            model.JanmaDartaViewModelList = response.Content.ReadAsAsync<List<JanmaDartaViewModel>>().Result;
+            ViewBag.currentPage = page;
+            return PartialView("_Report", model);
+        }
+        public ActionResult PrintReport(int? faramno, int? fiscalyear, int page = 1)
+        {
+            var model = new JanmaDartaViewModel();
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("JanmaDarta").Result;
+            model.JanmaDartaViewModelList = response.Content.ReadAsAsync<List<JanmaDartaViewModel>>().Result;
+            ViewBag.currentPage = page;
+            return View("_Report", model);
+        }
     }
 }

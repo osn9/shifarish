@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="09041172d5fb4c50a5ea75ed5f94d171" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="SifarisModel.Month" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblBasaisaraiDarta" Width="1.5" PointX="3" PointY="26.875" />
+        <EntityTypeShape EntityType="SifarisModel.tblBasaisaraiDartaInformant" Width="1.5" PointX="5.25" PointY="25" />
+        <EntityTypeShape EntityType="SifarisModel.tblBasaisaraiKaran" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblBasaisaraiPersonalDetail" Width="1.5" PointX="5.25" PointY="29.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblDepartment" Width="1.5" PointX="16.5" PointY="1.125" />
+        <EntityTypeShape EntityType="SifarisModel.tblDistrict" Width="1.5" PointX="12" PointY="1" />
+        <EntityTypeShape EntityType="SifarisModel.tblEducation" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblEmployee" Width="1.5" PointX="12.25" PointY="5.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblFiscalYear" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblGender" Width="1.5" PointX="7.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblJaggaCharKillaBibaran" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="SifarisModel.tblJaggaDhaniBibaran" Width="1.5" PointX="9.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblJaggaThaunBibaran" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="SifarisModel.tblJanmadaMaddat" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblJanmaDarta" Width="1.5" PointX="3" PointY="53.5" />
+        <EntityTypeShape EntityType="SifarisModel.tblJanmaDartaFatherDetail" Width="1.5" PointX="5.25" PointY="58.625" />
+        <EntityTypeShape EntityType="SifarisModel.tblJanmaDartaInformant" Width="1.5" PointX="5.25" PointY="53.625" />
+        <EntityTypeShape EntityType="SifarisModel.tblJanmaDartaMotherDetail" Width="1.5" PointX="5.25" PointY="47.625" />
+        <EntityTypeShape EntityType="SifarisModel.tblJanmaKisim" Width="1.5" PointX="14.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblJanmaSthaan" Width="1.5" PointX="11.75" PointY="14.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblMrityuDarta" Width="1.5" PointX="3" PointY="38.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblMrityuDartaInformant" Width="1.5" PointX="5.25" PointY="35" />
+        <EntityTypeShape EntityType="SifarisModel.tblMrityuDartaPersonalDetail" Width="1.5" PointX="5.25" PointY="40.125" />
+        <EntityTypeShape EntityType="SifarisModel.tblOccupation" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblPadha" Width="1.5" PointX="10" PointY="9.375" />
+        <EntityTypeShape EntityType="SifarisModel.tblPalika" Width="1.5" PointX="13.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblPanjika" Width="1.5" PointX="0.75" PointY="31.375" />
+        <EntityTypeShape EntityType="SifarisModel.tblRelation" Width="1.5" PointX="15.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblShakha" Width="1.5" PointX="18.75" PointY="1" />
+        <EntityTypeShape EntityType="SifarisModel.tblShreni" Width="1.5" PointX="7.75" PointY="4" />
+        <EntityTypeShape EntityType="SifarisModel.tblSifarisType" Width="1.5" PointX="16.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblState" Width="1.5" PointX="9.75" PointY="1" />
+        <EntityTypeShape EntityType="SifarisModel.tblUserProfile" Width="1.5" PointX="14.5" PointY="7.125" />
+        <EntityTypeShape EntityType="SifarisModel.tblUserType" Width="1.5" PointX="10" PointY="5.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblVivahBrideDetail" Width="1.5" PointX="5.25" PointY="12" />
+        <EntityTypeShape EntityType="SifarisModel.tblVivahDarta" Width="1.5" PointX="3" PointY="11.875" />
+        <EntityTypeShape EntityType="SifarisModel.tblVivahDartaInformant" Width="1.5" PointX="5.25" PointY="20.125" />
+        <EntityTypeShape EntityType="SifarisModel.tblVivahGroomDetail" Width="1.5" PointX="5.25" PointY="3.875" />
+        <EntityTypeShape EntityType="SifarisModel.tblVivahKisim" Width="1.5" PointX="16.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SifarisModel.tblWorkOffice" Width="1.5" PointX="14.25" PointY="1" />
+        <EntityTypeShape EntityType="SifarisModel.Year" Width="1.5" PointX="16.75" PointY="10.75" />
+        <AssociationConnector Association="SifarisModel.FK_tblBasaisaraiDarta_tblPanjika" />
+        <AssociationConnector Association="SifarisModel.FK_tblBasaisaraiDartaInformant_tblBasaisaraiDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblBasaisaraiPersonalDetails_tblBasaisaraiDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblDepartment_tblDepartment" />
+        <AssociationConnector Association="SifarisModel.FK_tblShakha_tblDepartment" />
+        <AssociationConnector Association="SifarisModel.FK_tblDistrict_tblDistrict" />
+        <AssociationConnector Association="SifarisModel.FK_tblWarehouse_tblDistrict" />
+        <AssociationConnector Association="SifarisModel.FK_tblEmployee_tblEmployee" />
+        <AssociationConnector Association="SifarisModel.FK_tblEmployee_tblPadha" />
+        <AssociationConnector Association="SifarisModel.FK_tblEmployee_tblShreni" />
+        <AssociationConnector Association="SifarisModel.FK_tblUserProfile_tblEmployee" />
+        <AssociationConnector Association="SifarisModel.FK_tblJaggaCharKillaBibaran_tblJaggaCharKillaBibaran" />
+        <AssociationConnector Association="SifarisModel.FK_tblJanmaDarta_tblPanjika" />
+        <AssociationConnector Association="SifarisModel.FK_tblJanmaDartaFatherDetails_tblJanmaDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblJanmaDartaInformant_tblJanmaDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblJanmaDartaMotherDetails_tblJanmaDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblMrityuDarta_tblPanjika" />
+        <AssociationConnector Association="SifarisModel.FK_tblMrityuDartaInformant_tblMrityuDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblMrityuDartaPersonalDetails_tblMrityuDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblPadha_tblShreni" />
+        <AssociationConnector Association="SifarisModel.FK_tblVivahDarta_tblPanjika" />
+        <AssociationConnector Association="SifarisModel.FK_tblShakha_tblWorkOffice" />
+        <AssociationConnector Association="SifarisModel.FK_tblState_tblState" />
+        <AssociationConnector Association="SifarisModel.FK_tblVivahBrideDetails_tblVivahDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblVivahDartaInformant_tblVivahDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblVivahGroomDetails_tblVivahDarta" />
+        <EntityTypeShape EntityType="SifarisModel.tblDivorceDarta" Width="1.5" PointX="3" PointY="74" />
+        <EntityTypeShape EntityType="SifarisModel.tblDivorceDartaInformant" Width="1.5" PointX="5.25" PointY="65.875" />
+        <EntityTypeShape EntityType="SifarisModel.tblDivorceeHusbandDetail" Width="1.5" PointX="5.25" PointY="70.875" />
+        <EntityTypeShape EntityType="SifarisModel.tblDivorceeWifeDetail" Width="1.5" PointX="5.25" PointY="78.875" />
+        <AssociationConnector Association="SifarisModel.FK_tblDivorceDarta_tblPanjika" />
+        <AssociationConnector Association="SifarisModel.FK_tblDivorceDartaInformant_tblDivorceDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblDivorceeHusbandDetails_tblDivorceDarta" />
+        <AssociationConnector Association="SifarisModel.FK_tblDivorceeWifeDetails_tblDivorceDarta" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

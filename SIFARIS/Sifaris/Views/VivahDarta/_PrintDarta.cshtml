@@ -1,0 +1,241 @@
+﻿@model Sifaris.Models.VivahDartaModel
+@using Sifaris.Converter
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+@{
+    Layout = "~/Views/Shared/_Layout.Blank.cshtml";
+}
+<script>
+    window.print();
+</script>
+<style>
+    @@media print {
+        .print {
+            margin-left: 50px;
+            /*margin-right: -20px;*/
+        }
+
+        tr, th, td {
+            border-color: #000 !important;
+        }
+    }
+
+    .Page {
+        page-break-after: always;
+    }
+
+    .write {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+    }
+</style>
+
+<div class="Page print">
+    @*nepali format*@
+    <div class="hidden" style="position: absolute; top:6mm; left: 12mm">
+        <img src="~/Content/img/logo.png" width="60" height="60" />
+    </div>
+    <table style="width: 100%;">
+        <tr>
+            <td>
+                <table class="pull-right">
+                    <tr><th style="margin-bottom: 0px; line-height: 16px; color: red;">अनुसूची-१४</th></tr>
+                    <tr><th style="margin-bottom: 0px; line-height: 16px; color: red;">(नियम ७ संग सम्बन्धित)</th> </tr>
+                </table>
+            </td>
+        </tr>
+    </table>   
+    <div style="text-align:center">       
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">नेपाल सरकार</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">संघिय मामिला तथा स्थानीय विकास मन्त्रालय</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">केन्द्रिय पन्जिकरण विभाग</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">स्थानीय पन्जिकाधिकारीको कार्यालय</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">@UnicodeConverter.Default(Model.PanjiWardNo) नं. वडा, कार्यालय ............. , @Utility.GetPalikaById(Model.PanjiPalika) नगरपालिका</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">@Utility.GetDistrictById(Model.PanjiDistrict) जिल्ला, @Utility.GetStateById(Model.PanjiState) ,नेपाल</h4>
+
+        @*<h4 style="margin-bottom: 0px; line-height: 25px;">@Utility.GetWarehouseName().TrimStart()</h4>
+            <h4 style="margin-bottom: 0px; line-height: 20px;">@Utility.GetWarehouseAddress().TrimStart()</h4>*@
+    </div>
+    <div style="text-align:center; margin-top: 10px;">
+        <h2 style="margin-bottom: 0px; line-height: 25px;font-size:18px;">
+            <u>विवाह दर्ताको प्रमाण-पत्र</u>
+
+        </h2>
+
+    </div>
+    <br />
+    <table style="width:100%">
+        <tr style="text-align:left;" class="row header">
+            <td>
+                <table>
+                    <tr>
+                        <th>दर्ता नं.:</th>
+                        <td>@UnicodeConverter.Default(Model.VivahFaramDartaNo)</td>
+                    </tr>
+
+                </table>
+
+            </td>
+            <td>
+                <table class="pull-right">
+                    <tr>
+                        <th>दर्ता मिति:</th>
+                        <td>@UnicodeConverter.Default(Model.FaramDartaMiti)</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr style="text-align:left;">
+            <td>
+                <table>
+                    <tr>
+                        <th>पारिवारिक लगत फाराम नं.:</th>
+                        <td>@UnicodeConverter.Default(Model.PariwarLagatFaramNo)</td>
+                    </tr>
+                </table>
+            </td>
+
+        </tr>
+
+    </table>
+    <br />
+    <div class="row"style="text-justify:auto">
+        <span style="font-size:16px;">यस कार्यालयमा खडा गरिएको विवाह दर्ता किताब अनुसार प्रमाणित गरिन्छ कि सूचक श्री <u><b>@Model.GroomNaamThar</b></u> तथा श्रीमती <u><b>@Model.BrideNaamThar</b></u> </span>
+        <span style="font-size:16px;"> ले भरेको अनुसूची-४ को सूचना फाराम बमोजिम श्री <u><b>@Model.GroomBajekoNaam</b></u> को नाती श्री <u><b>@Model.GroomBabukoNaam</b></u> को छोरा </span>
+        <span style="font-size:16px;"> <u><b>@Utility.GetStateById(Model.GroomPermaState)</b></u> प्रदेश <u><b>@Utility.GetDistrictById(Model.GroomPermaDistrict)</b></u> जिल्ला <u><b>@Utility.GetPalikaById(Model.GroomPermaPalika)</b></u> गाउँपालिका/नगरपालिका</span>
+        <span style="font-size:16px;"> वार्ड नं. <u><b>@UnicodeConverter.Default(Model.GroomPermaWardNo)</b></u> मा बस्ने वर्ष <u><b>@UnicodeConverter.Default(Model.GroomVivahGardaAge)</b></u> को श्री <u><b>@Model.GroomNaamThar</b></u> संग <u><b>@Model.BrideBajekoNaam</b></u> को नातिनी श्री <u><b>@Model.BrideBabukoNaam</b></u> को छोरी</span>
+        <span style="font-size:16px;"> <u><b>@Utility.GetStateById(Model.BridePermaState)</b></u> प्रदेश <u><b>@Utility.GetDistrictById(Model.BridePermaDistrict)</b></u> जिल्ला <u><b>@Utility.GetPalikaById(Model.BridePermaPalika)</b></u> गाउँपालिका/नगरपालिका</span>
+        <span style="font-size:16px;"> वार्ड नं. <u><b>@UnicodeConverter.Default(Model.BridePermaWardNo)</b></u> मा बस्ने वर्ष <u><b>@UnicodeConverter.Default(Model.BrideVivahGardaAge)</b></u> की <u><b>@Model.BrideNaamThar</b></u></span>
+        <span style="font-size:16px;"> को मिति वि.स.<u><b> @UnicodeConverter.Default(Model.VivahBhayekoMiti)</b></u> (<u><b>@UnicodeConverter.Default(Convert.ToDateTime(Model.VivahBhayekoDate).ToShortDateString())</b></u> ई.स)मा <u><b>@Utility.GetVivahKisimById(Model.VivahKisim)</b></u> अनुसार विवाह भएको हो |</span>
+
+    </div>
+    <br />
+    <table style="width:100%">
+        <tr style="text-align:left;">
+            <td>
+                <table>
+                    <tr><th>नागरिकता लिएको भए </th></tr>
+                    <tr><th>नागरिकता प्र.प नं.,जारी मिति र जिल्ला</th></tr>
+                    <tr><th>क. दुलहाको:</th><td>@UnicodeConverter.Default(Model.GroomNagariktaPraPaNo),(@UnicodeConverter.Default(Model.GroomNagariktaIssueDate),@Utility.GetDistrictById(Model.GroomNagariktaIsssueDistrict))</td></tr>
+                    <tr><th>ख. दुलहीको:</th><td>@UnicodeConverter.Default(Model.BrideNagariktaPraPaNo),(@UnicodeConverter.Default(Model.BrideNagariktaIssueDate),@Utility.GetDistrictById(Model.BrideNagariktaIsssueDistrict))</td></tr>
+
+                </table>
+            </td>
+            <td>
+                <table class="pull-right">
+                    <tr><th>स्थानीय पन्जिकाधिकारीको</th></tr>
+                    <tr><th>सही:</th></tr>
+                    <tr><th>नाम,थर:</th><td>@Model.PanjiName</td></tr>
+                    <tr><th>मिति:</th><td>@UnicodeConverter.Default(Model.FaramDartaMiti)</td></tr>
+                </table>
+            </td>
+        </tr>
+
+    </table>
+    <br />
+    @* english format *@
+    <table style="width: 100%;">
+        <tr>
+            <td>
+                <table class="pull-right">
+                    <tr><th style="margin-bottom: 0px; line-height: 16px; color: red;">Schedule-14</th></tr>
+                    <tr><th style="margin-bottom: 0px; line-height: 16px; color: red;">(Related with Rule 7)</th> </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align:center;top:6mm;">
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Government of Nepal</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Ministry of Federal Affairs and Local Development</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Department of Civil Regestration</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Office of Local Registrar</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Ward No. @Model.PanjiWardNo , Office .......... , @Utility.GetPalikaName(Model.PanjiPalika) Municipality</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">@Utility.GetDistrictName(Model.PanjiDistrict) District, @Utility.GetStateName(Model.PanjiState) ,Nepal</h4>
+
+        @*<h4 style="margin-bottom: 0px; line-height: 25px;">@Utility.GetWarehouseName().TrimStart()</h4>
+            <h4 style="margin-bottom: 0px; line-height: 20px;">@Utility.GetWarehouseAddress().TrimStart()</h4>*@
+    </div>
+    <div style="text-align:center; margin-top: 10px;">
+        <h2 style="margin-bottom: 0px; line-height: 25px;font-size:18px;">
+            <u>Marriage Registration Certificate</u>
+
+        </h2>
+
+    </div>
+    <br />
+    <table style="width:100%">
+        <tr style="text-align:left;" class="row header">
+            <td>
+                <table>
+                    <tr>
+                        <th>Registration No.:</th>
+                        <td>@Model.VivahFaramDartaNo</td>
+                    </tr>
+
+                </table>
+
+            </td>
+
+            <td>
+                <table class="pull-right">
+                    <tr>
+                        <th>Date of Regisration:</th>
+                        <td>@Model.FaramDartaMiti</td>
+                    </tr>
+
+                </table>
+            </td>
+
+        </tr>
+    </table>
+    <table>
+        <tr style="text-align:left;">
+            <td>
+                <table>
+                    <tr>
+                        <th>Family Record Form No.:</th>
+                        <td>@Model.PariwarLagatFaramNo</td>
+                    </tr>
+                </table>
+            </td>
+
+        </tr>
+
+    </table>
+    <br />
+    <div class="row" style="text-justify:auto">
+        <span style="font-size:16px;">This is to certify, as per the marriage register maintained at this office and the information provided by</span>
+        <span style="font-size:16px;">Mr. <u><b>@Model.GroomFullName</b></u> and Mrs. <u><b>@Model.BrideFullName</b></u> in the information form of schedule 4,that</span>
+        <span style="font-size:16px;">Mr. <u><b>@Model.GroomFullName</b></u> , aged <u><b>@Model.GroomVivahGardaAge</b></u> , son of Mr. <u><b>@Model.GroomFatherName</b></u> , grandson of Mr. <u><b>@Model.GroomGrandfather</b></u></span>
+        <span style="font-size:16px;">a resident of Ward No. <u><b>@Model.GroomPermaWardNo</b></u> , <u><b>@Utility.GetPalikaName(Model.GroomPermaPalika)</b></u> Rural Municipality/Municipality, <u><b>@Utility.GetDistrictName(Model.GroomPermaDistrict)</b></u> District, <u><b>@Utility.GetStateName(Model.GroomPermaState) State,</b></u></span>
+        <span style="font-size:16px;">married Miss. <u><b>@Model.BrideFullName</b></u> ,aged <u><b>@Model.BrideVivahGardaAge</b></u> , daughter of <u><b>@Model.BrideFatherName</b></u> , granddaughter of Mr. <u><b>@Model.BrideGrandfather</b></u></span>
+        <span style="font-size:16px;">a resident of Ward No. <u><b>@Model.BridePermaWardNo</b></u> , <u><b>@Utility.GetPalikaName(Model.BridePermaPalika)</b></u> Rural Municipality/Municipality, <u><b>@Utility.GetDistrictName(Model.BridePermaDistrict)</b></u> District, <u><b>@Utility.GetStateName(Model.BridePermaState) State,</b></u></span>
+        <span style="font-size:16px;">on <u><b>@Model.VivahBhayekoMiti</b></u> B.S.(<u><b>@UnicodeConverter.Default(Convert.ToDateTime(Model.VivahBhayekoDate).ToShortDateString())</b></u> A.D.) in accordance with the <u><b>@Utility.GetVivahKisimName(Model.VivahKisim)</b></u> .</span>
+    </div>
+    <br />
+    <table style="width:100%">
+        <tr style="text-align:left;">
+            <td>
+                <table>
+                    <tr><th>Date,District and Citizenship No. if</th></tr>
+                    <tr><th>Citizenship Certificate is issued to:</th></tr>
+                    <tr><th>A. Bride's:</th><td>@Model.GroomNagariktaPraPaNo,(@Model.GroomNagariktaIssueDate,@Utility.GetDistrictName(Model.GroomNagariktaIsssueDistrict))</td></tr>
+                    <tr><th>B. BrideGroom's:</th><td>@Model.BrideNagariktaPraPaNo,(@Model.BrideNagariktaIssueDate,@Utility.GetDistrictName(Model.BrideNagariktaIsssueDistrict))</td></tr>
+
+                </table>
+            </td>
+            <td>
+                <table class="pull-right">
+                    <tr><th>Local Registrar's</th></tr>
+                    <tr><th>Signature:</th></tr>
+                    <tr><th>Name and Surnmae:</th><td>@Model.PanjiName_Eng</td></tr>
+                    <tr><th>Date:</th><td>@Model.FaramDartaMiti</td></tr>
+                </table>
+            </td>
+        </tr>
+
+    </table>
+</div>

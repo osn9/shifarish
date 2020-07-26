@@ -1,0 +1,118 @@
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Sifaris.dll.config
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Sifaris.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Sifaris.pdb
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Antlr3.Runtime.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\EntityFramework.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\EntityFramework.SqlServer.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Newtonsoft.Json.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Owin.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\PagedList.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\PagedList.Mvc.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.Helpers.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.Mvc.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.Optimization.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.Razor.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.WebPages.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.WebPages.Razor.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\WebGrease.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\PagedList.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\PagedList.Mvc.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.Helpers.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.Mvc.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.Optimization.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.Razor.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.WebPages.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\System.Web.WebPages.Razor.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Newtonsoft.Json.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Antlr3.Runtime.pdb
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\EntityFramework.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\EntityFramework.SqlServer.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\obj\Debug\Sifaris.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\obj\Debug\Sifaris.dll
+C:\Users\Acer\Documents\Visual Studio 2013\Projects\Sifaris\Sifaris\obj\Debug\Sifaris.pdb
+F:\Sifaris\Sifaris\obj\Debug\Sifaris.csprojResolveAssemblyReference.cache
+F:\Sifaris\Sifaris\obj\Debug\Sifaris.dll
+F:\Sifaris\Sifaris\obj\Debug\Sifaris.pdb
+F:\Sifaris\Sifaris\bin\Sifaris.dll.config
+F:\Sifaris\Sifaris\bin\Sifaris.dll
+F:\Sifaris\Sifaris\bin\Sifaris.pdb
+F:\Sifaris\Sifaris\bin\Antlr3.Runtime.dll
+F:\Sifaris\Sifaris\bin\EntityFramework.dll
+F:\Sifaris\Sifaris\bin\EntityFramework.SqlServer.dll
+F:\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Google.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Sifaris\Sifaris\bin\Microsoft.Web.Infrastructure.dll
+F:\Sifaris\Sifaris\bin\Newtonsoft.Json.dll
+F:\Sifaris\Sifaris\bin\Owin.dll
+F:\Sifaris\Sifaris\bin\PagedList.dll
+F:\Sifaris\Sifaris\bin\PagedList.Mvc.dll
+F:\Sifaris\Sifaris\bin\System.Web.Helpers.dll
+F:\Sifaris\Sifaris\bin\System.Web.Mvc.dll
+F:\Sifaris\Sifaris\bin\System.Web.Optimization.dll
+F:\Sifaris\Sifaris\bin\System.Web.Razor.dll
+F:\Sifaris\Sifaris\bin\System.Web.WebPages.Deployment.dll
+F:\Sifaris\Sifaris\bin\System.Web.WebPages.dll
+F:\Sifaris\Sifaris\bin\System.Web.WebPages.Razor.dll
+F:\Sifaris\Sifaris\bin\WebGrease.dll
+F:\Sifaris\Sifaris\bin\PagedList.xml
+F:\Sifaris\Sifaris\bin\PagedList.Mvc.xml
+F:\Sifaris\Sifaris\bin\System.Web.Helpers.xml
+F:\Sifaris\Sifaris\bin\System.Web.Mvc.xml
+F:\Sifaris\Sifaris\bin\System.Web.Optimization.xml
+F:\Sifaris\Sifaris\bin\System.Web.Razor.xml
+F:\Sifaris\Sifaris\bin\System.Web.WebPages.xml
+F:\Sifaris\Sifaris\bin\System.Web.WebPages.Deployment.xml
+F:\Sifaris\Sifaris\bin\System.Web.WebPages.Razor.xml
+F:\Sifaris\Sifaris\bin\Newtonsoft.Json.xml
+F:\Sifaris\Sifaris\bin\Antlr3.Runtime.pdb
+F:\Sifaris\Sifaris\bin\EntityFramework.xml
+F:\Sifaris\Sifaris\bin\EntityFramework.SqlServer.xml
+F:\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Sifaris\Sifaris\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.xml
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.xml
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Google.xml
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Sifaris\Sifaris\bin\Microsoft.Owin.Security.MicrosoftAccount.xml

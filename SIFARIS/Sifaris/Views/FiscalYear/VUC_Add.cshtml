@@ -1,0 +1,45 @@
+﻿@model Sifaris.Models.FiscalYearModel
+
+<div class="form-group">
+    <div class="col-sm-2 label-padding star">
+        @Html.LabelFor(model => model.FiscalYear)
+    </div>
+    <div class="col-sm-2">
+        @Html.TextBoxFor(model => model.FiscalYear, new { @class = "form-control nepalidatemaskinput1", @required = "required", @placeholder = "0000/00", @onchange = "CheckFiscalYr(this.value,'txtuser','/AjaxRequest/FiscalYr/')" })
+        @Html.ValidationMessageFor(model => model.FiscalYear)
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-2 label-padding star">
+        @Html.LabelFor(model => model.StartDateN)
+    </div>
+    <div class="col-sm-2">
+        @Html.TextBoxFor(model => model.StartDateN, new { @class = "form-control nepalidatepicker" })
+        @Html.ValidationMessageFor(model => model.StartDateN)
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-2 label-padding star">
+        @Html.LabelFor(model => model.EndDateN)
+    </div>
+    <div class="col-sm-2">
+        @Html.TextBoxFor(model => model.EndDateN, new { @class = "form-control nepalidatepicker" })
+        @Html.ValidationMessageFor(model => model.EndDateN)
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-2 label-padding">
+        @Html.LabelFor(model => model.STATUS)
+        @Html.CheckBoxFor(model => model.STATUS)
+    </div>
+
+</div>
+
+
+
+
+
+

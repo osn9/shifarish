@@ -1,0 +1,136 @@
+﻿@model Sifaris.Models.FiscalYearModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+@*@{
+    int empId = Utility.GetEmployeeId(Utility.GetCurrentLoginUser());
+    int UserTypeId = Utility.GetEmployeeUserTypeId(empId);
+}*@
+
+<style>
+    .form-control {
+        width: 200px;
+        height: 35px;
+    }
+</style>
+<br />
+<div class="row">
+    <div class="span4">
+        <h4>आर्थिक वर्ष </h4>
+    </div>
+    <div class="pull-right">
+        <a class="btn btn-primary" href="@Url.Action("Create", "FiscalYear")">
+            नयाँ बनाउने
+        </a>
+    </div>
+    @*@if (Utility.CheckCreateRightsForLoggedInUser("FISCALYEAR", UserTypeId))
+    {
+
+        <div class="pull-right">
+            <a class="btn btn-primary" href="@Url.Action("Create", "FISCALYEAR")">
+                नयाँ बनाउने
+            </a>
+            <a href="/Vehicles/Print" class="btn btn-primary" target="_blank" title="प्रिन्ट गर्नुहोस्"><i class="fa fa-print" style="color: blue;"></i></a>
+            <a download="Vehicles.xls" class="btn btn-success" href="#" onclick="return InventoryItems.excel(this, 'strid', 'Sheet Name Here');" onmouseover="AcionHide()">Excel मा लैजानुहोस् </a>
+        </div>
+    }*@
+</div>
+<br />
+<div class="well well-small">
+    @if (Model.FiscalYearModelList.Count > 0)
+    {
+
+        <table class="table table-bordered table-striped table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>क.सं.</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FiscalYear)
+                    </th>
+                    <th>सक्रीय</th>
+                    @*@if (Utility.CheckCreateRightsForLoggedInUser("FISCALYEAR", UserTypeId))
+                    {
+                        <th></th>
+                        <th></th>
+                    }*@
+
+                </tr>
+            </thead>
+            <tbody id="fiscalYearBody" class="searchable">
+                @foreach (var item in Model.FiscalYearModelList)
+                {
+
+                    <tr>
+                        <td>@i</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FiscalYear)
+                        </td>
+                        <td style="text-align: center; width: 36px;">@Html.CheckBoxFor(model => item.STATUS, new { @disabled = "disabled" })</td>
+                        @*@if (Utility.CheckCreateRightsForLoggedInUser("FISCALYEAR", UserTypeId))
+                        {
+                            <td>
+                                <button class="btn btn-success Active" data-id="@item.PhysicalYearId"> Set Active</button>
+                            </td>
+                            <td>
+                                @if (item.StartDate <= DateTime.Now && item.EndDate >= DateTime.Now)
+                                {
+                                    <button class="btn btn-danger ActiveAndStock" data-id="@item.PhysicalYearId">Set as Active and Change Current Stock to Opening Stock</button>
+                                }
+
+                            </td>
+                        }*@
+                    </tr>
+
+                        i++;
+                }
+            </tbody>            
+        </table>
+
+    }
+    else
+    {
+        <h4 style="text-align: center;">कुनै पनि रेकड फेला परेन!</h4>
+    }
+</div>
+<script>
+    $('#fiscalYearBody').on('click', '.Active', function (data) {
+        var data = $(this).attr('data-id');
+        var url = '@Url.Action("SetActive", "FiscalYear")'
+        $.get(url, { id: data }, function (data) {
+            if (data.success == true) {
+                alertify.success('Successfully Upadted ');
+            }
+            else
+                alertify.error('Error updating');
+            location.reload();
+        })
+    })
+
+
+    $('#fiscalYearBody').on('click', '.ActiveAndStock', function (data) {
+        var data = $(this).attr('data-id');
+        if (confirm("Are you sure you want to proceed?"))
+            $('<div class="modal-backdrop"><i class="fa fa-spinner fa-spin" style="font-size:42px;color:white;margin:25%;margin-left:50%;margin-right:50%"></i>Loading</div>').appendTo(document.body);
+        else
+            return;
+
+        var url = '@Url.Action("SetActiveAndConvertStock", "FiscalYear")'
+        $.get(url, { id: data }, function (data) {
+            $(".modal-backdrop").remove();
+            if (data.success == true) {
+                alertify.success('Successfully Upadted ');
+            }
+            else
+                alertify.error('Error updating');
+            location.reload();
+        }).error(function () { $(".modal-backdrop").remove(); });
+    })
+</script>
+
+
+
+
+
