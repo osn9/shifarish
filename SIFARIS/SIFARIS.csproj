@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -228,6 +229,32 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\NabalakSifarisController.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\NagariktaSifarisController.cs" />
+    <Compile Include="Areas\DartaSupplement\Controllers\NataPramanitSifarisController.cs" />
+    <Compile Include="Areas\DartaSupplement\DartaSupplementAreaRegistration.cs" />
+    <Compile Include="Areas\DartaSupplement\Models\NabalakSifarisModel.cs" />
+    <Compile Include="Areas\DartaSupplement\Models\NagariktaSifarisModel.cs" />
+    <Compile Include="Areas\DartaSupplement\Models\NataPramanitSifarisModel.cs" />
+    <Compile Include="Areas\DartaSupplement\Provider\NabalakSifarisProvider.cs" />
+    <Compile Include="Areas\DartaSupplement\Provider\NagariktaSifarisProvider.cs" />
+    <Compile Include="Areas\DartaSupplement\Provider\NataPramanitSifarisProvider.cs" />
+    <Compile Include="Areas\Darta\Controllers\BasaisaraiDartaController.cs" />
+    <Compile Include="Areas\Darta\Controllers\DivorceDartaController.cs" />
+    <Compile Include="Areas\Darta\Controllers\JanmaDartaController.cs" />
+    <Compile Include="Areas\Darta\Controllers\MrityuDartaController.cs" />
+    <Compile Include="Areas\Darta\Controllers\VivahDartaController.cs" />
+    <Compile Include="Areas\Darta\DartaAreaRegistration.cs" />
+    <Compile Include="Areas\Darta\Models\BasaisaraiDartaModel.cs" />
+    <Compile Include="Areas\Darta\Models\DivorceDartaModel.cs" />
+    <Compile Include="Areas\Darta\Models\JanmaDartaModel.cs" />
+    <Compile Include="Areas\Darta\Models\MrityuDartaModel.cs" />
+    <Compile Include="Areas\Darta\Models\VivahDartaModel.cs" />
+    <Compile Include="Areas\Darta\Provider\BasaisaraiDartaProvider.cs" />
+    <Compile Include="Areas\Darta\Provider\DivorceDartaProvider.cs" />
+    <Compile Include="Areas\Darta\Provider\JanmaDartaProvider.cs" />
+    <Compile Include="Areas\Darta\Provider\MrityuDartaProvider.cs" />
+    <Compile Include="Areas\Darta\Provider\VivahDartaProvider.cs" />
     <Compile Include="Areas\GharJagga\Controllers\CitizenController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\DistrictController.cs" />
@@ -309,6 +336,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Converter\UnicodeConverter.cs" />
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Demolition.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -366,6 +397,9 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Month.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="NirmanBebasahi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -383,10 +417,167 @@
     <Compile Include="StateDetail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="tblBasaisaraiDarta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBasaisaraiDartaInformant.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBasaisaraiKaran.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBasaisaraiPersonalDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCourtType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDepartment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistrict.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDivorceDarta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDivorceDartaInformant.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDivorceeHusbandDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDivorceeWifeDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEducation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmployee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFiscalYear.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGender.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJaggaCharKillaBibaran.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJaggaDhaniBibaran.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJaggaThaunBibaran.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJanmadaMaddat.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJanmaDarta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJanmaDartaFatherDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJanmaDartaInformant.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJanmaDartaMotherDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJanmaKisim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJanmaSthaan.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMrityuDarta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMrityuDartaInformant.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMrityuDartaPersonalDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNabalakRelativeDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNabalakSifari.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNagariktaRelativeDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNagariktaSifari.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNataPersonalDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNataPramanit.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOccupation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPadha.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPalika.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPanjika.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRelation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblShakha.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblShreni.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSifarisType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblState.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserProfile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVivahBrideDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVivahDarta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVivahDartaInformant.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVivahGroomDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVivahKisim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWorkOffice.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
     <Compile Include="Ward.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="WardDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Year.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -437,6 +628,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="ApplicationInsights.config" />
+    <Content Include="Areas\Darta\Views\web.config" />
+    <Content Include="Areas\DartaSupplement\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -468,6 +661,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\DartaSupplement\Data\" />
+    <Folder Include="Areas\DartaSupplement\Views\NabalakSifaris\" />
+    <Folder Include="Areas\DartaSupplement\Views\NagariktaSifaris\" />
+    <Folder Include="Areas\DartaSupplement\Views\NataPramanitSifaris\" />
+    <Folder Include="Areas\DartaSupplement\Views\Shared\" />
+    <Folder Include="Areas\Darta\Data\" />
+    <Folder Include="Areas\Darta\Views\BasaisaraiDarta\" />
+    <Folder Include="Areas\Darta\Views\DivorceDarta\" />
+    <Folder Include="Areas\Darta\Views\JanmaDarta\" />
+    <Folder Include="Areas\Darta\Views\MrityuDarta\" />
+    <Folder Include="Areas\Darta\Views\Shared\" />
+    <Folder Include="Areas\Darta\Views\VivahDarta\" />
     <Folder Include="Areas\GharJagga\Views\Department\" />
     <Folder Include="Areas\GharJagga\Views\Shared\" />
   </ItemGroup>

@@ -420,5 +420,939 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="SifarishModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Months">
+      <EntityTypeMapping TypeName="SifarishModel.Month">
+        <MappingFragment StoreEntitySet="Month">
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="MonthId" ColumnName="MonthId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBasaisaraiDartas">
+      <EntityTypeMapping TypeName="SifarishModel.tblBasaisaraiDarta">
+        <MappingFragment StoreEntitySet="tblBasaisaraiDarta">
+          <ScalarProperty Name="BasaisaraiJaneGaunTole" ColumnName="BasaisaraiJaneGaunTole" />
+          <ScalarProperty Name="BasaisaraiJaneGharNo" ColumnName="BasaisaraiJaneGharNo" />
+          <ScalarProperty Name="BasaisaraiJaneWardNo" ColumnName="BasaisaraiJaneWardNo" />
+          <ScalarProperty Name="BasaisaraiJanePalika" ColumnName="BasaisaraiJanePalika" />
+          <ScalarProperty Name="BasaisaraiJaneJilla" ColumnName="BasaisaraiJaneJilla" />
+          <ScalarProperty Name="BasaisaraiJanePradesh" ColumnName="BasaisaraiJanePradesh" />
+          <ScalarProperty Name="BasaisaraiAayekoKaran" ColumnName="BasaisaraiAayekoKaran" />
+          <ScalarProperty Name="BasaisaraiAayekoDate" ColumnName="BasaisaraiAayekoDate" />
+          <ScalarProperty Name="BasaisaraiAayekoMiti" ColumnName="BasaisaraiAayekoMiti" />
+          <ScalarProperty Name="BasaisaraiAayekoGaunTole" ColumnName="BasaisaraiAayekoGaunTole" />
+          <ScalarProperty Name="BasaisaraiAayekoGharNo" ColumnName="BasaisaraiAayekoGharNo" />
+          <ScalarProperty Name="BasaisaraiAayekoWardNo" ColumnName="BasaisaraiAayekoWardNo" />
+          <ScalarProperty Name="BasaisaraiAayekoPalika" ColumnName="BasaisaraiAayekoPalika" />
+          <ScalarProperty Name="BasaisaraiAayekoJilla" ColumnName="BasaisaraiAayekoJilla" />
+          <ScalarProperty Name="BasaisaraiAayekoPradesh" ColumnName="BasaisaraiAayekoPradesh" />
+          <ScalarProperty Name="BasaisaraiAayekoDartaNo" ColumnName="BasaisaraiAayekoDartaNo" />
+          <ScalarProperty Name="GharMuliFullName" ColumnName="GharMuliFullName" />
+          <ScalarProperty Name="GharMuliNaamThar" ColumnName="GharMuliNaamThar" />
+          <ScalarProperty Name="PanjiId" ColumnName="PanjiId" />
+          <ScalarProperty Name="NewMigrationId" ColumnName="NewMigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBasaisaraiDartaInformants">
+      <EntityTypeMapping TypeName="SifarishModel.tblBasaisaraiDartaInformant">
+        <MappingFragment StoreEntitySet="tblBasaisaraiDartaInformant">
+          <ScalarProperty Name="Miti" ColumnName="Miti" />
+          <ScalarProperty Name="InfPassportNo_Desh" ColumnName="InfPassportNo_Desh" />
+          <ScalarProperty Name="InfNagariktaIssueDistrict" ColumnName="InfNagariktaIssueDistrict" />
+          <ScalarProperty Name="InfNagariktaIssueDate" ColumnName="InfNagariktaIssueDate" />
+          <ScalarProperty Name="InfNagariktaPraPaNo" ColumnName="InfNagariktaPraPaNo" />
+          <ScalarProperty Name="InfGaunTole" ColumnName="InfGaunTole" />
+          <ScalarProperty Name="InfGharNo" ColumnName="InfGharNo" />
+          <ScalarProperty Name="InfWardNo" ColumnName="InfWardNo" />
+          <ScalarProperty Name="InfPalika" ColumnName="InfPalika" />
+          <ScalarProperty Name="InfDistrict" ColumnName="InfDistrict" />
+          <ScalarProperty Name="InfState" ColumnName="InfState" />
+          <ScalarProperty Name="InfFullName" ColumnName="InfFullName" />
+          <ScalarProperty Name="InfNaamThar" ColumnName="InfNaamThar" />
+          <ScalarProperty Name="NewMigrationId" ColumnName="NewMigrationId" />
+          <ScalarProperty Name="NewMigrationInformantId" ColumnName="NewMigrationInformantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBasaisaraiKarans">
+      <EntityTypeMapping TypeName="SifarishModel.tblBasaisaraiKaran">
+        <MappingFragment StoreEntitySet="tblBasaisaraiKaran">
+          <ScalarProperty Name="BasaisaraiKaran" ColumnName="BasaisaraiKaran" />
+          <ScalarProperty Name="BasaisaraiKaranId" ColumnName="BasaisaraiKaranId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBasaisaraiPersonalDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblBasaisaraiPersonalDetail">
+        <MappingFragment StoreEntitySet="tblBasaisaraiPersonalDetails">
+          <ScalarProperty Name="RelationTo" ColumnName="RelationTo" />
+          <ScalarProperty Name="AnyRecords" ColumnName="AnyRecords" />
+          <ScalarProperty Name="NagariktaIssueDistrict" ColumnName="NagariktaIssueDistrict" />
+          <ScalarProperty Name="NagaritaIssueDate" ColumnName="NagaritaIssueDate" />
+          <ScalarProperty Name="NagariktaPraPaNo" ColumnName="NagariktaPraPaNo" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="JanmaWardNo" ColumnName="JanmaWardNo" />
+          <ScalarProperty Name="JanmaPalika" ColumnName="JanmaPalika" />
+          <ScalarProperty Name="JanmaJilla" ColumnName="JanmaJilla" />
+          <ScalarProperty Name="JanmaPradesh" ColumnName="JanmaPradesh" />
+          <ScalarProperty Name="JanmaDate" ColumnName="JanmaDate" />
+          <ScalarProperty Name="JanmaMiti" ColumnName="JanmaMiti" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="JanmaDartaNo" ColumnName="JanmaDartaNo" />
+          <ScalarProperty Name="NewMigrationId" ColumnName="NewMigrationId" />
+          <ScalarProperty Name="BasaisaraiDetailsId" ColumnName="BasaisaraiDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourtTypes">
+      <EntityTypeMapping TypeName="SifarishModel.tblCourtType">
+        <MappingFragment StoreEntitySet="tblCourtType">
+          <ScalarProperty Name="CourtType_Nep" ColumnName="CourtType_Nep" />
+          <ScalarProperty Name="CourtType" ColumnName="CourtType" />
+          <ScalarProperty Name="CourtTypeId" ColumnName="CourtTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDepartments">
+      <EntityTypeMapping TypeName="SifarishModel.tblDepartment">
+        <MappingFragment StoreEntitySet="tblDepartment">
+          <ScalarProperty Name="WorkOfficeId" ColumnName="WorkOfficeId" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDistricts">
+      <EntityTypeMapping TypeName="SifarishModel.tblDistrict">
+        <MappingFragment StoreEntitySet="tblDistrict">
+          <ScalarProperty Name="DistrictName_Nep" ColumnName="DistrictName_Nep" />
+          <ScalarProperty Name="StateId_val" ColumnName="StateId_val" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="DistrictId_val" ColumnName="DistrictId_val" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDivorceDartas">
+      <EntityTypeMapping TypeName="SifarishModel.tblDivorceDarta">
+        <MappingFragment StoreEntitySet="tblDivorceDarta">
+          <ScalarProperty Name="VivahDartaNo" ColumnName="VivahDartaNo" />
+          <ScalarProperty Name="NinayaMiti" ColumnName="NinayaMiti" />
+          <ScalarProperty Name="NirnayaNo" ColumnName="NirnayaNo" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="CourtType" ColumnName="CourtType" />
+          <ScalarProperty Name="PanjiId" ColumnName="PanjiId" />
+          <ScalarProperty Name="DivorceId" ColumnName="DivorceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDivorceDartaInformants">
+      <EntityTypeMapping TypeName="SifarishModel.tblDivorceDartaInformant">
+        <MappingFragment StoreEntitySet="tblDivorceDartaInformant">
+          <ScalarProperty Name="Miti" ColumnName="Miti" />
+          <ScalarProperty Name="InfPassportNo_Desh" ColumnName="InfPassportNo_Desh" />
+          <ScalarProperty Name="InfNagariktaIssueDistrict" ColumnName="InfNagariktaIssueDistrict" />
+          <ScalarProperty Name="InfNagariktaIssueDate" ColumnName="InfNagariktaIssueDate" />
+          <ScalarProperty Name="InfNagariktaPraPaNo" ColumnName="InfNagariktaPraPaNo" />
+          <ScalarProperty Name="InfGharNo" ColumnName="InfGharNo" />
+          <ScalarProperty Name="InfGaunTole" ColumnName="InfGaunTole" />
+          <ScalarProperty Name="InfWardNo" ColumnName="InfWardNo" />
+          <ScalarProperty Name="InfPalika" ColumnName="InfPalika" />
+          <ScalarProperty Name="InfDistrict" ColumnName="InfDistrict" />
+          <ScalarProperty Name="InfState" ColumnName="InfState" />
+          <ScalarProperty Name="InfRelationToDivorcee" ColumnName="InfRelationToDivorcee" />
+          <ScalarProperty Name="InfFullName" ColumnName="InfFullName" />
+          <ScalarProperty Name="InfNaamThar" ColumnName="InfNaamThar" />
+          <ScalarProperty Name="DivorceId" ColumnName="DivorceId" />
+          <ScalarProperty Name="DivorceInformantId" ColumnName="DivorceInformantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDivorceeHusbandDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblDivorceeHusbandDetail">
+        <MappingFragment StoreEntitySet="tblDivorceeHusbandDetails">
+          <ScalarProperty Name="DaughterLivingWith" ColumnName="DaughterLivingWith" />
+          <ScalarProperty Name="SonLivingWith" ColumnName="SonLivingWith" />
+          <ScalarProperty Name="ChildLivingWith" ColumnName="ChildLivingWith" />
+          <ScalarProperty Name="TotalLiveChild" ColumnName="TotalLiveChild" />
+          <ScalarProperty Name="TotalChildBorn" ColumnName="TotalChildBorn" />
+          <ScalarProperty Name="VivahDate" ColumnName="VivahDate" />
+          <ScalarProperty Name="VivahMiti" ColumnName="VivahMiti" />
+          <ScalarProperty Name="AamakoFullName" ColumnName="AamakoFullName" />
+          <ScalarProperty Name="AamakoNaamThar" ColumnName="AamakoNaamThar" />
+          <ScalarProperty Name="BabukoFullName" ColumnName="BabukoFullName" />
+          <ScalarProperty Name="BabukoNaamThar" ColumnName="BabukoNaamThar" />
+          <ScalarProperty Name="BaajekoFullName" ColumnName="BaajekoFullName" />
+          <ScalarProperty Name="BaajekoNaamThar" ColumnName="BaajekoNaamThar" />
+          <ScalarProperty Name="MatriBhasa" ColumnName="MatriBhasa" />
+          <ScalarProperty Name="Dharma" ColumnName="Dharma" />
+          <ScalarProperty Name="ShikshaSthar" ColumnName="ShikshaSthar" />
+          <ScalarProperty Name="JaatJati" ColumnName="JaatJati" />
+          <ScalarProperty Name="WardNo" ColumnName="WardNo" />
+          <ScalarProperty Name="Palika" ColumnName="Palika" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="BideshPassport_Desh" ColumnName="BideshPassport_Desh" />
+          <ScalarProperty Name="NagariktaIssueDistrict" ColumnName="NagariktaIssueDistrict" />
+          <ScalarProperty Name="NagariktaIssueDate" ColumnName="NagariktaIssueDate" />
+          <ScalarProperty Name="NagariktaPraPaNo" ColumnName="NagariktaPraPaNo" />
+          <ScalarProperty Name="JanmaDesh" ColumnName="JanmaDesh" />
+          <ScalarProperty Name="JanmaDartaNo" ColumnName="JanmaDartaNo" />
+          <ScalarProperty Name="JanmaMiti" ColumnName="JanmaMiti" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="DivorceId" ColumnName="DivorceId" />
+          <ScalarProperty Name="DivorceeHusbandId" ColumnName="DivorceeHusbandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDivorceeWifeDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblDivorceeWifeDetail">
+        <MappingFragment StoreEntitySet="tblDivorceeWifeDetails">
+          <ScalarProperty Name="DaughterLivingWith" ColumnName="DaughterLivingWith" />
+          <ScalarProperty Name="SonLivingWith" ColumnName="SonLivingWith" />
+          <ScalarProperty Name="ChildLivingWith" ColumnName="ChildLivingWith" />
+          <ScalarProperty Name="AamakoFullName" ColumnName="AamakoFullName" />
+          <ScalarProperty Name="AamakoNaamThar" ColumnName="AamakoNaamThar" />
+          <ScalarProperty Name="BabukoFullName" ColumnName="BabukoFullName" />
+          <ScalarProperty Name="BabukoNaamThar" ColumnName="BabukoNaamThar" />
+          <ScalarProperty Name="BaajekoFullName" ColumnName="BaajekoFullName" />
+          <ScalarProperty Name="BaajekoNaamThar" ColumnName="BaajekoNaamThar" />
+          <ScalarProperty Name="MatriBhasa" ColumnName="MatriBhasa" />
+          <ScalarProperty Name="Dharma" ColumnName="Dharma" />
+          <ScalarProperty Name="ShikshaSthar" ColumnName="ShikshaSthar" />
+          <ScalarProperty Name="JaatJati" ColumnName="JaatJati" />
+          <ScalarProperty Name="WardNo" ColumnName="WardNo" />
+          <ScalarProperty Name="Palika" ColumnName="Palika" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="BideshPassport_Desh" ColumnName="BideshPassport_Desh" />
+          <ScalarProperty Name="NagariktaIssueDistrict" ColumnName="NagariktaIssueDistrict" />
+          <ScalarProperty Name="NagariktaIssueDate" ColumnName="NagariktaIssueDate" />
+          <ScalarProperty Name="NagariktaPraPaNo" ColumnName="NagariktaPraPaNo" />
+          <ScalarProperty Name="JanmaDesh" ColumnName="JanmaDesh" />
+          <ScalarProperty Name="JanmaDartaNo" ColumnName="JanmaDartaNo" />
+          <ScalarProperty Name="JanmaMiti" ColumnName="JanmaMiti" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="DivorceId" ColumnName="DivorceId" />
+          <ScalarProperty Name="DivorceeWifeId" ColumnName="DivorceeWifeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEducations">
+      <EntityTypeMapping TypeName="SifarishModel.tblEducation">
+        <MappingFragment StoreEntitySet="tblEducation">
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="EducationId" ColumnName="EducationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployees">
+      <EntityTypeMapping TypeName="SifarishModel.tblEmployee">
+        <MappingFragment StoreEntitySet="tblEmployee">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="INVId" ColumnName="INVId" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+          <ScalarProperty Name="PadhaId" ColumnName="PadhaId" />
+          <ScalarProperty Name="ShreniId" ColumnName="ShreniId" />
+          <ScalarProperty Name="WorkOfficeId" ColumnName="WorkOfficeId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EmployeeContact" ColumnName="EmployeeContact" />
+          <ScalarProperty Name="EmployeeAddress" ColumnName="EmployeeAddress" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFiscalYears">
+      <EntityTypeMapping TypeName="SifarishModel.tblFiscalYear">
+        <MappingFragment StoreEntitySet="tblFiscalYear">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FiscalYearId" ColumnName="FiscalYearId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGenders">
+      <EntityTypeMapping TypeName="SifarishModel.tblGender">
+        <MappingFragment StoreEntitySet="tblGender">
+          <ScalarProperty Name="Gender_Nep" ColumnName="Gender_Nep" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJaggaCharKillaBibarans">
+      <EntityTypeMapping TypeName="SifarishModel.tblJaggaCharKillaBibaran">
+        <MappingFragment StoreEntitySet="tblJaggaCharKillaBibaran">
+          <ScalarProperty Name="JaggaThaunBibaranId" ColumnName="JaggaThaunBibaranId" />
+          <ScalarProperty Name="JaggaDhaniBibaranId" ColumnName="JaggaDhaniBibaranId" />
+          <ScalarProperty Name="JaggaCharKillaBibaranId" ColumnName="JaggaCharKillaBibaranId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJaggaDhaniBibarans">
+      <EntityTypeMapping TypeName="SifarishModel.tblJaggaDhaniBibaran">
+        <MappingFragment StoreEntitySet="tblJaggaDhaniBibaran">
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="FiscalYearId" ColumnName="FiscalYearId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="SubmitOfficeId" ColumnName="SubmitOfficeId" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CtznIssueDistrict" ColumnName="CtznIssueDistrict" />
+          <ScalarProperty Name="CtznIssueDate" ColumnName="CtznIssueDate" />
+          <ScalarProperty Name="CitizenshipNo" ColumnName="CitizenshipNo" />
+          <ScalarProperty Name="GrandfatherName" ColumnName="GrandfatherName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="WardNo" ColumnName="WardNo" />
+          <ScalarProperty Name="PalikaId" ColumnName="PalikaId" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="JaggaDhaniName" ColumnName="JaggaDhaniName" />
+          <ScalarProperty Name="JaggaDhaniBibaranId" ColumnName="JaggaDhaniBibaranId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJaggaThaunBibarans">
+      <EntityTypeMapping TypeName="SifarishModel.tblJaggaThaunBibaran">
+        <MappingFragment StoreEntitySet="tblJaggaThaunBibaran">
+          <ScalarProperty Name="JaggaDhaniBibaranId" ColumnName="JaggaDhaniBibaranId" />
+          <ScalarProperty Name="JaggaThaunBibaranId" ColumnName="JaggaThaunBibaranId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJanmadaMaddats">
+      <EntityTypeMapping TypeName="SifarishModel.tblJanmadaMaddat">
+        <MappingFragment StoreEntitySet="tblJanmadaMaddat">
+          <ScalarProperty Name="JanmadaMaddatGarne" ColumnName="JanmadaMaddatGarne" />
+          <ScalarProperty Name="JanmadaMaddatId" ColumnName="JanmadaMaddatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJanmaDartas">
+      <EntityTypeMapping TypeName="SifarishModel.tblJanmaDarta">
+        <MappingFragment StoreEntitySet="tblJanmaDarta">
+          <ScalarProperty Name="GrandFather" ColumnName="GrandFather" />
+          <ScalarProperty Name="BajekoNaam" ColumnName="BajekoNaam" />
+          <ScalarProperty Name="JanmaForeign" ColumnName="JanmaForeign" />
+          <ScalarProperty Name="JanmaBidesh" ColumnName="JanmaBidesh" />
+          <ScalarProperty Name="JanmaWardNo" ColumnName="JanmaWardNo" />
+          <ScalarProperty Name="JanmaPalika" ColumnName="JanmaPalika" />
+          <ScalarProperty Name="JanmaJilla" ColumnName="JanmaJilla" />
+          <ScalarProperty Name="JanmaPradesh" ColumnName="JanmaPradesh" />
+          <ScalarProperty Name="JanmaJaatJati" ColumnName="JanmaJaatJati" />
+          <ScalarProperty Name="JanmaKisim" ColumnName="JanmaKisim" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="JanmadaMadatt" ColumnName="JanmadaMadatt" />
+          <ScalarProperty Name="JanmaSthaan" ColumnName="JanmaSthaan" />
+          <ScalarProperty Name="JanmaDate" ColumnName="JanmaDate" />
+          <ScalarProperty Name="JanmaMiti" ColumnName="JanmaMiti" />
+          <ScalarProperty Name="NewbornName" ColumnName="NewbornName" />
+          <ScalarProperty Name="NewbornNaam" ColumnName="NewbornNaam" />
+          <ScalarProperty Name="PanjiId" ColumnName="PanjiId" />
+          <ScalarProperty Name="NewbornId" ColumnName="NewbornId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJanmaDartaFatherDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblJanmaDartaFatherDetail">
+        <MappingFragment StoreEntitySet="tblJanmaDartaFatherDetails">
+          <ScalarProperty Name="VivahDate" ColumnName="VivahDate" />
+          <ScalarProperty Name="VivahMiti" ColumnName="VivahMiti" />
+          <ScalarProperty Name="VivahDartaNo" ColumnName="VivahDartaNo" />
+          <ScalarProperty Name="TotalLiveChild" ColumnName="TotalLiveChild" />
+          <ScalarProperty Name="TotalChild" ColumnName="TotalChild" />
+          <ScalarProperty Name="MatriBhasa" ColumnName="MatriBhasa" />
+          <ScalarProperty Name="Dharma" ColumnName="Dharma" />
+          <ScalarProperty Name="Pesha" ColumnName="Pesha" />
+          <ScalarProperty Name="ShikshaSthar" ColumnName="ShikshaSthar" />
+          <ScalarProperty Name="PassportNo_Desh" ColumnName="PassportNo_Desh" />
+          <ScalarProperty Name="NagariktaIsssueDistrict" ColumnName="NagariktaIsssueDistrict" />
+          <ScalarProperty Name="NagariktaIssueDate" ColumnName="NagariktaIssueDate" />
+          <ScalarProperty Name="NagariktaPraPaNo" ColumnName="NagariktaPraPaNo" />
+          <ScalarProperty Name="NagariktaLiyekoDesh" ColumnName="NagariktaLiyekoDesh" />
+          <ScalarProperty Name="JanmaDesh" ColumnName="JanmaDesh" />
+          <ScalarProperty Name="SisuJanmidakoUmer" ColumnName="SisuJanmidakoUmer" />
+          <ScalarProperty Name="GharNo" ColumnName="GharNo" />
+          <ScalarProperty Name="GaunTole" ColumnName="GaunTole" />
+          <ScalarProperty Name="PermaWardNo" ColumnName="PermaWardNo" />
+          <ScalarProperty Name="PermaPalika" ColumnName="PermaPalika" />
+          <ScalarProperty Name="PermaDistrict" ColumnName="PermaDistrict" />
+          <ScalarProperty Name="PermaState" ColumnName="PermaState" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="NewbornId" ColumnName="NewbornId" />
+          <ScalarProperty Name="NewbornFatherId" ColumnName="NewbornFatherId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJanmaDartaInformants">
+      <EntityTypeMapping TypeName="SifarishModel.tblJanmaDartaInformant">
+        <MappingFragment StoreEntitySet="tblJanmaDartaInformant">
+          <ScalarProperty Name="Miti" ColumnName="Miti" />
+          <ScalarProperty Name="InfPassportNo_Desh" ColumnName="InfPassportNo_Desh" />
+          <ScalarProperty Name="InfNagariktaIssueDistrict" ColumnName="InfNagariktaIssueDistrict" />
+          <ScalarProperty Name="InfNagariktaIssueDate" ColumnName="InfNagariktaIssueDate" />
+          <ScalarProperty Name="InfNagariktaPraPaNo" ColumnName="InfNagariktaPraPaNo" />
+          <ScalarProperty Name="InfGharNo" ColumnName="InfGharNo" />
+          <ScalarProperty Name="InfGaunTole" ColumnName="InfGaunTole" />
+          <ScalarProperty Name="InfWardNo" ColumnName="InfWardNo" />
+          <ScalarProperty Name="InfPalika" ColumnName="InfPalika" />
+          <ScalarProperty Name="InfDistrict" ColumnName="InfDistrict" />
+          <ScalarProperty Name="InfState" ColumnName="InfState" />
+          <ScalarProperty Name="InfRelationToNewBorn" ColumnName="InfRelationToNewBorn" />
+          <ScalarProperty Name="InfFullName" ColumnName="InfFullName" />
+          <ScalarProperty Name="InfNaamThar" ColumnName="InfNaamThar" />
+          <ScalarProperty Name="NewbornId" ColumnName="NewbornId" />
+          <ScalarProperty Name="NewBornInformantId" ColumnName="NewBornInformantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJanmaDartaMotherDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblJanmaDartaMotherDetail">
+        <MappingFragment StoreEntitySet="tblJanmaDartaMotherDetails">
+          <ScalarProperty Name="MatriBhasa" ColumnName="MatriBhasa" />
+          <ScalarProperty Name="Dharma" ColumnName="Dharma" />
+          <ScalarProperty Name="Pesha" ColumnName="Pesha" />
+          <ScalarProperty Name="ShikshaSthar" ColumnName="ShikshaSthar" />
+          <ScalarProperty Name="PassportNo_Desh" ColumnName="PassportNo_Desh" />
+          <ScalarProperty Name="NagariktaIssueDistrict" ColumnName="NagariktaIssueDistrict" />
+          <ScalarProperty Name="NagariktaIssueDate" ColumnName="NagariktaIssueDate" />
+          <ScalarProperty Name="NagariktaPraPaNo" ColumnName="NagariktaPraPaNo" />
+          <ScalarProperty Name="NagariktaLiyekoDesh" ColumnName="NagariktaLiyekoDesh" />
+          <ScalarProperty Name="JanmaDesh" ColumnName="JanmaDesh" />
+          <ScalarProperty Name="SisuJanmidakoUmer" ColumnName="SisuJanmidakoUmer" />
+          <ScalarProperty Name="GharNo" ColumnName="GharNo" />
+          <ScalarProperty Name="GaunTole" ColumnName="GaunTole" />
+          <ScalarProperty Name="PermaWardNo" ColumnName="PermaWardNo" />
+          <ScalarProperty Name="PermaPalika" ColumnName="PermaPalika" />
+          <ScalarProperty Name="PermaDistrict" ColumnName="PermaDistrict" />
+          <ScalarProperty Name="PermaState" ColumnName="PermaState" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="NewbornId" ColumnName="NewbornId" />
+          <ScalarProperty Name="NewBornMotherId" ColumnName="NewBornMotherId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJanmaKisims">
+      <EntityTypeMapping TypeName="SifarishModel.tblJanmaKisim">
+        <MappingFragment StoreEntitySet="tblJanmaKisim">
+          <ScalarProperty Name="JanmaKisimName" ColumnName="JanmaKisimName" />
+          <ScalarProperty Name="JanmaKisinId" ColumnName="JanmaKisinId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJanmaSthaans">
+      <EntityTypeMapping TypeName="SifarishModel.tblJanmaSthaan">
+        <MappingFragment StoreEntitySet="tblJanmaSthaan">
+          <ScalarProperty Name="JanmaSthaanName" ColumnName="JanmaSthaanName" />
+          <ScalarProperty Name="JanmaSthaanId" ColumnName="JanmaSthaanId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMrityuDartas">
+      <EntityTypeMapping TypeName="SifarishModel.tblMrityuDarta">
+        <MappingFragment StoreEntitySet="tblMrityuDarta">
+          <ScalarProperty Name="MrityuBhayekoSthaan" ColumnName="MrityuBhayekoSthaan" />
+          <ScalarProperty Name="MrityuGharNo" ColumnName="MrityuGharNo" />
+          <ScalarProperty Name="MrityuGaunTole" ColumnName="MrityuGaunTole" />
+          <ScalarProperty Name="MrityuWardNo" ColumnName="MrityuWardNo" />
+          <ScalarProperty Name="MrityuPalika" ColumnName="MrityuPalika" />
+          <ScalarProperty Name="MrityuJilla" ColumnName="MrityuJilla" />
+          <ScalarProperty Name="MrityuPradesh" ColumnName="MrityuPradesh" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="MrityuDate" ColumnName="MrityuDate" />
+          <ScalarProperty Name="MrityuMiti" ColumnName="MrityuMiti" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="PanjiId" ColumnName="PanjiId" />
+          <ScalarProperty Name="NewDeathId" ColumnName="NewDeathId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMrityuDartaInformants">
+      <EntityTypeMapping TypeName="SifarishModel.tblMrityuDartaInformant">
+        <MappingFragment StoreEntitySet="tblMrityuDartaInformant">
+          <ScalarProperty Name="Miti" ColumnName="Miti" />
+          <ScalarProperty Name="InfPassportNo_Desh" ColumnName="InfPassportNo_Desh" />
+          <ScalarProperty Name="InfNagariktaIssueDistrict" ColumnName="InfNagariktaIssueDistrict" />
+          <ScalarProperty Name="InfNagariktaIssueDate" ColumnName="InfNagariktaIssueDate" />
+          <ScalarProperty Name="InfNagariktaPraPaNo" ColumnName="InfNagariktaPraPaNo" />
+          <ScalarProperty Name="InfGharNo" ColumnName="InfGharNo" />
+          <ScalarProperty Name="InfGaunTole" ColumnName="InfGaunTole" />
+          <ScalarProperty Name="InfWardNo" ColumnName="InfWardNo" />
+          <ScalarProperty Name="InfPalika" ColumnName="InfPalika" />
+          <ScalarProperty Name="InfJilla" ColumnName="InfJilla" />
+          <ScalarProperty Name="InfPradesh" ColumnName="InfPradesh" />
+          <ScalarProperty Name="InfRelationToNewDeath" ColumnName="InfRelationToNewDeath" />
+          <ScalarProperty Name="InfFullName" ColumnName="InfFullName" />
+          <ScalarProperty Name="InfNaamThar" ColumnName="InfNaamThar" />
+          <ScalarProperty Name="NewdeathId" ColumnName="NewdeathId" />
+          <ScalarProperty Name="NewDeathInformantId" ColumnName="NewDeathInformantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMrityuDartaPersonalDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblMrityuDartaPersonalDetail">
+        <MappingFragment StoreEntitySet="tblMrityuDartaPersonalDetails">
+          <ScalarProperty Name="MrityuKaran" ColumnName="MrityuKaran" />
+          <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+          <ScalarProperty Name="SpouseNaam" ColumnName="SpouseNaam" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="AamaNaam" ColumnName="AamaNaam" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="BabuNaam" ColumnName="BabuNaam" />
+          <ScalarProperty Name="Grandfather" ColumnName="Grandfather" />
+          <ScalarProperty Name="BajekoNaam" ColumnName="BajekoNaam" />
+          <ScalarProperty Name="JaatJaati" ColumnName="JaatJaati" />
+          <ScalarProperty Name="Dharma" ColumnName="Dharma" />
+          <ScalarProperty Name="MatriBhasa" ColumnName="MatriBhasa" />
+          <ScalarProperty Name="ShikshaSthar" ColumnName="ShikshaSthar" />
+          <ScalarProperty Name="PassportNo_Desh" ColumnName="PassportNo_Desh" />
+          <ScalarProperty Name="NagariktaIssueDistrict" ColumnName="NagariktaIssueDistrict" />
+          <ScalarProperty Name="NagariktaIsssueDate" ColumnName="NagariktaIsssueDate" />
+          <ScalarProperty Name="NagariktaPraPaNo" ColumnName="NagariktaPraPaNo" />
+          <ScalarProperty Name="JanmaGharNo" ColumnName="JanmaGharNo" />
+          <ScalarProperty Name="JanmaGaunTole" ColumnName="JanmaGaunTole" />
+          <ScalarProperty Name="JanmaWardNo" ColumnName="JanmaWardNo" />
+          <ScalarProperty Name="JanmaPalika" ColumnName="JanmaPalika" />
+          <ScalarProperty Name="JanmaJilla" ColumnName="JanmaJilla" />
+          <ScalarProperty Name="JanmaPradesh" ColumnName="JanmaPradesh" />
+          <ScalarProperty Name="JanmaDate" ColumnName="JanmaDate" />
+          <ScalarProperty Name="JanmaMiti" ColumnName="JanmaMiti" />
+          <ScalarProperty Name="JanmaDartaNo" ColumnName="JanmaDartaNo" />
+          <ScalarProperty Name="NewDeathId" ColumnName="NewDeathId" />
+          <ScalarProperty Name="NewDeathDetailsId" ColumnName="NewDeathDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNabalakRelativeDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblNabalakRelativeDetail">
+        <MappingFragment StoreEntitySet="tblNabalakRelativeDetails">
+          <ScalarProperty Name="GuardianFullName" ColumnName="GuardianFullName" />
+          <ScalarProperty Name="SamrakshakNaamThar" ColumnName="SamrakshakNaamThar" />
+          <ScalarProperty Name="AamakoFullName" ColumnName="AamakoFullName" />
+          <ScalarProperty Name="AamakoNaamThar" ColumnName="AamakoNaamThar" />
+          <ScalarProperty Name="BabukoFullName" ColumnName="BabukoFullName" />
+          <ScalarProperty Name="BabukoNaamThar" ColumnName="BabukoNaamThar" />
+          <ScalarProperty Name="NabalakId" ColumnName="NabalakId" />
+          <ScalarProperty Name="NabalkRelativeInfoId" ColumnName="NabalkRelativeInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNabalakSifaris">
+      <EntityTypeMapping TypeName="SifarishModel.tblNabalakSifari">
+        <MappingFragment StoreEntitySet="tblNabalakSifaris">
+          <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+          <ScalarProperty Name="WorkOffice" ColumnName="WorkOffice" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PermaWard" ColumnName="PermaWard" />
+          <ScalarProperty Name="PermaPalika" ColumnName="PermaPalika" />
+          <ScalarProperty Name="PermaJilla" ColumnName="PermaJilla" />
+          <ScalarProperty Name="PermaPradesh" ColumnName="PermaPradesh" />
+          <ScalarProperty Name="JanmaWard" ColumnName="JanmaWard" />
+          <ScalarProperty Name="JanmaPalika" ColumnName="JanmaPalika" />
+          <ScalarProperty Name="JanmaJilla" ColumnName="JanmaJilla" />
+          <ScalarProperty Name="JanmaPradesh" ColumnName="JanmaPradesh" />
+          <ScalarProperty Name="JanmaDate" ColumnName="JanmaDate" />
+          <ScalarProperty Name="JanmaMiti" ColumnName="JanmaMiti" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="NabalakFaramNo" ColumnName="NabalakFaramNo" />
+          <ScalarProperty Name="NabalakId" ColumnName="NabalakId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNagariktaRelativeDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblNagariktaRelativeDetail">
+        <MappingFragment StoreEntitySet="tblNagariktaRelativeDetails">
+          <ScalarProperty Name="PatiNagariktaIssueDistrict" ColumnName="PatiNagariktaIssueDistrict" />
+          <ScalarProperty Name="PatiNagariktaIssueDate" ColumnName="PatiNagariktaIssueDate" />
+          <ScalarProperty Name="PatiNagariktaNo" ColumnName="PatiNagariktaNo" />
+          <ScalarProperty Name="PatikoFullName" ColumnName="PatikoFullName" />
+          <ScalarProperty Name="PatikoNaamThar" ColumnName="PatikoNaamThar" />
+          <ScalarProperty Name="AamaNagariktaIssueDistrict" ColumnName="AamaNagariktaIssueDistrict" />
+          <ScalarProperty Name="AamaNagariktaIssueDate" ColumnName="AamaNagariktaIssueDate" />
+          <ScalarProperty Name="AamaNagariktaNo" ColumnName="AamaNagariktaNo" />
+          <ScalarProperty Name="AamakoFullName" ColumnName="AamakoFullName" />
+          <ScalarProperty Name="AamakoNaamThar" ColumnName="AamakoNaamThar" />
+          <ScalarProperty Name="BabuNagariktaIssueDistrict" ColumnName="BabuNagariktaIssueDistrict" />
+          <ScalarProperty Name="BabuNagariktaIssueDate" ColumnName="BabuNagariktaIssueDate" />
+          <ScalarProperty Name="BabuNagariktaNo" ColumnName="BabuNagariktaNo" />
+          <ScalarProperty Name="BabukoFullName" ColumnName="BabukoFullName" />
+          <ScalarProperty Name="BabukoNaamThar" ColumnName="BabukoNaamThar" />
+          <ScalarProperty Name="NagariktaId" ColumnName="NagariktaId" />
+          <ScalarProperty Name="NagariktaRelativeInfoId" ColumnName="NagariktaRelativeInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNagariktaSifaris">
+      <EntityTypeMapping TypeName="SifarishModel.tblNagariktaSifari">
+        <MappingFragment StoreEntitySet="tblNagariktaSifaris">
+          <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+          <ScalarProperty Name="WorkOffice" ColumnName="WorkOffice" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PermaWard" ColumnName="PermaWard" />
+          <ScalarProperty Name="PermaPalika" ColumnName="PermaPalika" />
+          <ScalarProperty Name="PermaJilla" ColumnName="PermaJilla" />
+          <ScalarProperty Name="PermaPradesh" ColumnName="PermaPradesh" />
+          <ScalarProperty Name="JanmaWard" ColumnName="JanmaWard" />
+          <ScalarProperty Name="JanmaPalika" ColumnName="JanmaPalika" />
+          <ScalarProperty Name="JanmaJilla" ColumnName="JanmaJilla" />
+          <ScalarProperty Name="JanmaPradesh" ColumnName="JanmaPradesh" />
+          <ScalarProperty Name="JanmaDate" ColumnName="JanmaDate" />
+          <ScalarProperty Name="JanmaMiti" ColumnName="JanmaMiti" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="NagariktaFaramNo" ColumnName="NagariktaFaramNo" />
+          <ScalarProperty Name="NewNagariktaId" ColumnName="NewNagariktaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNataPersonalDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblNataPersonalDetail">
+        <MappingFragment StoreEntitySet="tblNataPersonalDetails">
+          <ScalarProperty Name="RelatonTo" ColumnName="RelatonTo" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="NataId" ColumnName="NataId" />
+          <ScalarProperty Name="NataPersonId" ColumnName="NataPersonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNataPramanits">
+      <EntityTypeMapping TypeName="SifarishModel.tblNataPramanit">
+        <MappingFragment StoreEntitySet="tblNataPramanit">
+          <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+          <ScalarProperty Name="WorkOffice" ColumnName="WorkOffice" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="NataPramanitFaramNo" ColumnName="NataPramanitFaramNo" />
+          <ScalarProperty Name="NagariktaIssueDistrict" ColumnName="NagariktaIssueDistrict" />
+          <ScalarProperty Name="NagariktaIssueDate" ColumnName="NagariktaIssueDate" />
+          <ScalarProperty Name="NagariktaPraPaNo" ColumnName="NagariktaPraPaNo" />
+          <ScalarProperty Name="PermaWard" ColumnName="PermaWard" />
+          <ScalarProperty Name="PermaPalika" ColumnName="PermaPalika" />
+          <ScalarProperty Name="PermaDistrict" ColumnName="PermaDistrict" />
+          <ScalarProperty Name="PermaState" ColumnName="PermaState" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="NewNataId" ColumnName="NewNataId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOccupations">
+      <EntityTypeMapping TypeName="SifarishModel.tblOccupation">
+        <MappingFragment StoreEntitySet="tblOccupation">
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="OcupationId" ColumnName="OcupationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPadhas">
+      <EntityTypeMapping TypeName="SifarishModel.tblPadha">
+        <MappingFragment StoreEntitySet="tblPadha">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="ShreniId" ColumnName="ShreniId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PadhaName" ColumnName="PadhaName" />
+          <ScalarProperty Name="PadhaId" ColumnName="PadhaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPalikas">
+      <EntityTypeMapping TypeName="SifarishModel.tblPalika">
+        <MappingFragment StoreEntitySet="tblPalika">
+          <ScalarProperty Name="PalikaName_Nep" ColumnName="PalikaName-Nep" />
+          <ScalarProperty Name="PalikaName" ColumnName="PalikaName" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="PalikaId_val" ColumnName="PalikaId_val" />
+          <ScalarProperty Name="PalikaId" ColumnName="PalikaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPanjikas">
+      <EntityTypeMapping TypeName="SifarishModel.tblPanjika">
+        <MappingFragment StoreEntitySet="tblPanjika">
+          <ScalarProperty Name="DivorceDartaFaramNo" ColumnName="DivorceDartaFaramNo" />
+          <ScalarProperty Name="MigrationDartaFaramNo" ColumnName="MigrationDartaFaramNo" />
+          <ScalarProperty Name="VivahDartaFaramNo" ColumnName="VivahDartaFaramNo" />
+          <ScalarProperty Name="MrityuDartaFaramNo" ColumnName="MrityuDartaFaramNo" />
+          <ScalarProperty Name="JanmaDartaFaramNo" ColumnName="JanmaDartaFaramNo" />
+          <ScalarProperty Name="SifarisType" ColumnName="SifarisType" />
+          <ScalarProperty Name="PariwarLagatNo" ColumnName="PariwarLagatNo" />
+          <ScalarProperty Name="FaramDartaDate" ColumnName="FaramDartaDate" />
+          <ScalarProperty Name="FaramDartaMiti" ColumnName="FaramDartaMiti" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="WorkOffice" ColumnName="WorkOffice" />
+          <ScalarProperty Name="FiscalYear" ColumnName="FiscalYear" />
+          <ScalarProperty Name="Panji_INVId" ColumnName="Panji_INVId" />
+          <ScalarProperty Name="PanjiFullName" ColumnName="PanjiFullName" />
+          <ScalarProperty Name="PanjiNaamThar" ColumnName="PanjiNaamThar" />
+          <ScalarProperty Name="PanjiWardNo" ColumnName="PanjiWardNo" />
+          <ScalarProperty Name="PanjiPalika" ColumnName="PanjiPalika" />
+          <ScalarProperty Name="PanjiDistrict" ColumnName="PanjiDistrict" />
+          <ScalarProperty Name="PanjiState" ColumnName="PanjiState" />
+          <ScalarProperty Name="PanjikaId" ColumnName="PanjikaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRelations">
+      <EntityTypeMapping TypeName="SifarishModel.tblRelation">
+        <MappingFragment StoreEntitySet="tblRelation">
+          <ScalarProperty Name="RelationName_Nep" ColumnName="RelationName_Nep" />
+          <ScalarProperty Name="RelationName" ColumnName="RelationName" />
+          <ScalarProperty Name="RelationId" ColumnName="RelationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblShakhas">
+      <EntityTypeMapping TypeName="SifarishModel.tblShakha">
+        <MappingFragment StoreEntitySet="tblShakha">
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="WorkOfficeId" ColumnName="WorkOfficeId" />
+          <ScalarProperty Name="ShakhaName" ColumnName="ShakhaName" />
+          <ScalarProperty Name="ShakhaId" ColumnName="ShakhaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblShrenis">
+      <EntityTypeMapping TypeName="SifarishModel.tblShreni">
+        <MappingFragment StoreEntitySet="tblShreni">
+          <ScalarProperty Name="ShreniScheduleId" ColumnName="ShreniScheduleId" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ShreniName" ColumnName="ShreniName" />
+          <ScalarProperty Name="ShreniId" ColumnName="ShreniId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSifarisTypes">
+      <EntityTypeMapping TypeName="SifarishModel.tblSifarisType">
+        <MappingFragment StoreEntitySet="tblSifarisType">
+          <ScalarProperty Name="SifarisType" ColumnName="SifarisType" />
+          <ScalarProperty Name="SifarisTypeId" ColumnName="SifarisTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStates">
+      <EntityTypeMapping TypeName="SifarishModel.tblState">
+        <MappingFragment StoreEntitySet="tblState">
+          <ScalarProperty Name="StateName_Nep" ColumnName="StateName_Nep" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StateId_val" ColumnName="StateId_val" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserProfiles">
+      <EntityTypeMapping TypeName="SifarishModel.tblUserProfile">
+        <MappingFragment StoreEntitySet="tblUserProfile">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserTypes">
+      <EntityTypeMapping TypeName="SifarishModel.tblUserType">
+        <MappingFragment StoreEntitySet="tblUserTypes">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVivahBrideDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblVivahBrideDetail">
+        <MappingFragment StoreEntitySet="tblVivahBrideDetails">
+          <ScalarProperty Name="VivahGardaAge" ColumnName="VivahGardaAge" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="AamakoNaam" ColumnName="AamakoNaam" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="BabukoNaam" ColumnName="BabukoNaam" />
+          <ScalarProperty Name="Grandfather" ColumnName="Grandfather" />
+          <ScalarProperty Name="BajekoNaam" ColumnName="BajekoNaam" />
+          <ScalarProperty Name="ForeignThegana" ColumnName="ForeignThegana" />
+          <ScalarProperty Name="BideshThegana" ColumnName="BideshThegana" />
+          <ScalarProperty Name="PassportNo_Desh" ColumnName="PassportNo_Desh" />
+          <ScalarProperty Name="NagariktaIsssueDistrict" ColumnName="NagariktaIsssueDistrict" />
+          <ScalarProperty Name="NagariktaIssueDate" ColumnName="NagariktaIssueDate" />
+          <ScalarProperty Name="NagariktaPraPaNo" ColumnName="NagariktaPraPaNo" />
+          <ScalarProperty Name="NagariktaLiyekoDesh" ColumnName="NagariktaLiyekoDesh" />
+          <ScalarProperty Name="JanmaDesh" ColumnName="JanmaDesh" />
+          <ScalarProperty Name="GharNo" ColumnName="GharNo" />
+          <ScalarProperty Name="GaunTole" ColumnName="GaunTole" />
+          <ScalarProperty Name="PermaWardNo" ColumnName="PermaWardNo" />
+          <ScalarProperty Name="PermaPalika" ColumnName="PermaPalika" />
+          <ScalarProperty Name="PermaDistrict" ColumnName="PermaDistrict" />
+          <ScalarProperty Name="PermaState" ColumnName="PermaState" />
+          <ScalarProperty Name="MatriBhasa" ColumnName="MatriBhasa" />
+          <ScalarProperty Name="Dharma" ColumnName="Dharma" />
+          <ScalarProperty Name="Pesha" ColumnName="Pesha" />
+          <ScalarProperty Name="ShikshaSthar" ColumnName="ShikshaSthar" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="JaatJati" ColumnName="JaatJati" />
+          <ScalarProperty Name="JanmaMiti" ColumnName="JanmaMiti" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="NewMarriageId" ColumnName="NewMarriageId" />
+          <ScalarProperty Name="NewMarriageBrideDetailsId" ColumnName="NewMarriageBrideDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVivahDartas">
+      <EntityTypeMapping TypeName="SifarishModel.tblVivahDarta">
+        <MappingFragment StoreEntitySet="tblVivahDarta">
+          <ScalarProperty Name="VivahForeign" ColumnName="VivahForeign" />
+          <ScalarProperty Name="VivahBidesh" ColumnName="VivahBidesh" />
+          <ScalarProperty Name="VivahGharNo" ColumnName="VivahGharNo" />
+          <ScalarProperty Name="VivahGaunTole" ColumnName="VivahGaunTole" />
+          <ScalarProperty Name="VivahWardNo" ColumnName="VivahWardNo" />
+          <ScalarProperty Name="VivahPalika" ColumnName="VivahPalika" />
+          <ScalarProperty Name="VivahJilla" ColumnName="VivahJilla" />
+          <ScalarProperty Name="VivahPradesh" ColumnName="VivahPradesh" />
+          <ScalarProperty Name="VivahBhayekoDate" ColumnName="VivahBhayekoDate" />
+          <ScalarProperty Name="VivahBhayekoMiti" ColumnName="VivahBhayekoMiti" />
+          <ScalarProperty Name="VivahKisim" ColumnName="VivahKisim" />
+          <ScalarProperty Name="PanjiId" ColumnName="PanjiId" />
+          <ScalarProperty Name="NewMarriageId" ColumnName="NewMarriageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVivahDartaInformants">
+      <EntityTypeMapping TypeName="SifarishModel.tblVivahDartaInformant">
+        <MappingFragment StoreEntitySet="tblVivahDartaInformant">
+          <ScalarProperty Name="Miti" ColumnName="Miti" />
+          <ScalarProperty Name="InfPassportNo_Desh" ColumnName="InfPassportNo_Desh" />
+          <ScalarProperty Name="InfNagariktaIssueDistrict" ColumnName="InfNagariktaIssueDistrict" />
+          <ScalarProperty Name="InfNagariktaIssueDate" ColumnName="InfNagariktaIssueDate" />
+          <ScalarProperty Name="InfNagariktaPraPaNo" ColumnName="InfNagariktaPraPaNo" />
+          <ScalarProperty Name="InfGharNo" ColumnName="InfGharNo" />
+          <ScalarProperty Name="InfGaunTole" ColumnName="InfGaunTole" />
+          <ScalarProperty Name="InfWardNo" ColumnName="InfWardNo" />
+          <ScalarProperty Name="InfPalika" ColumnName="InfPalika" />
+          <ScalarProperty Name="InfDistrict" ColumnName="InfDistrict" />
+          <ScalarProperty Name="InfState" ColumnName="InfState" />
+          <ScalarProperty Name="InfFullName" ColumnName="InfFullName" />
+          <ScalarProperty Name="InfNaamThar" ColumnName="InfNaamThar" />
+          <ScalarProperty Name="NewMarriageId" ColumnName="NewMarriageId" />
+          <ScalarProperty Name="NewMarriageInformantId" ColumnName="NewMarriageInformantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVivahGroomDetails">
+      <EntityTypeMapping TypeName="SifarishModel.tblVivahGroomDetail">
+        <MappingFragment StoreEntitySet="tblVivahGroomDetails">
+          <ScalarProperty Name="VivahGardaAge" ColumnName="VivahGardaAge" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="AamakoNaam" ColumnName="AamakoNaam" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="BabukoNaam" ColumnName="BabukoNaam" />
+          <ScalarProperty Name="Grandfather" ColumnName="Grandfather" />
+          <ScalarProperty Name="BajekoNaam" ColumnName="BajekoNaam" />
+          <ScalarProperty Name="ForeignThegana" ColumnName="ForeignThegana" />
+          <ScalarProperty Name="BideshThegana" ColumnName="BideshThegana" />
+          <ScalarProperty Name="PassportNo_Desh" ColumnName="PassportNo_Desh" />
+          <ScalarProperty Name="NagariktaIsssueDistrict" ColumnName="NagariktaIsssueDistrict" />
+          <ScalarProperty Name="NagariktaIssueDate" ColumnName="NagariktaIssueDate" />
+          <ScalarProperty Name="NagariktaPraPaNo" ColumnName="NagariktaPraPaNo" />
+          <ScalarProperty Name="NagariktaLiyekoDesh" ColumnName="NagariktaLiyekoDesh" />
+          <ScalarProperty Name="JanmaDesh" ColumnName="JanmaDesh" />
+          <ScalarProperty Name="GharNo" ColumnName="GharNo" />
+          <ScalarProperty Name="GaunTole" ColumnName="GaunTole" />
+          <ScalarProperty Name="PermaWardNo" ColumnName="PermaWardNo" />
+          <ScalarProperty Name="PermaPalika" ColumnName="PermaPalika" />
+          <ScalarProperty Name="PermaDistrict" ColumnName="PermaDistrict" />
+          <ScalarProperty Name="PermaState" ColumnName="PermaState" />
+          <ScalarProperty Name="MatriBhasa" ColumnName="MatriBhasa" />
+          <ScalarProperty Name="Dharma" ColumnName="Dharma" />
+          <ScalarProperty Name="Pesha" ColumnName="Pesha" />
+          <ScalarProperty Name="ShikshaSthar" ColumnName="ShikshaSthar" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="JaatJati" ColumnName="JaatJati" />
+          <ScalarProperty Name="JanmaMiti" ColumnName="JanmaMiti" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NaamThar" ColumnName="NaamThar" />
+          <ScalarProperty Name="NewMarriageId" ColumnName="NewMarriageId" />
+          <ScalarProperty Name="NewMarriageGroomDetailsId" ColumnName="NewMarriageGroomDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVivahKisims">
+      <EntityTypeMapping TypeName="SifarishModel.tblVivahKisim">
+        <MappingFragment StoreEntitySet="tblVivahKisim">
+          <ScalarProperty Name="VivahKisim_Nep" ColumnName="VivahKisim_Nep" />
+          <ScalarProperty Name="VivahKisim" ColumnName="VivahKisim" />
+          <ScalarProperty Name="VivahKisimId" ColumnName="VivahKisimId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWorkOffices">
+      <EntityTypeMapping TypeName="SifarishModel.tblWorkOffice">
+        <MappingFragment StoreEntitySet="tblWorkOffice">
+          <ScalarProperty Name="WorkOfficeAddress" ColumnName="WorkOfficeAddress" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="WorkOfficeId" ColumnName="WorkOfficeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Years">
+      <EntityTypeMapping TypeName="SifarishModel.Year">
+        <MappingFragment StoreEntitySet="Year">
+          <ScalarProperty Name="YearName" ColumnName="YearName" />
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetLocalDate" FunctionName="SifarishModel.Store.sp_GetLocalDate" />
+    <FunctionImportMapping FunctionImportName="sp_GetRomanDate" FunctionName="SifarishModel.Store.sp_GetRomanDate" />
   </EntityContainerMapping>
 </Mapping>
