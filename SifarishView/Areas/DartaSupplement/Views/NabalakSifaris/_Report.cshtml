@@ -77,7 +77,7 @@
             <thead>
                 <tr>
                     <th class="span1"><label> क्र.सं.</label> </th>
-                    <th>@Html.LabelFor(model => model.NataPramanitFaramNo)</th>
+                    <th>@Html.LabelFor(model => model.NabalakFaramNo)</th>
                     <th> @Html.Label("नाम थर")</th>
                     <th> @Html.Label("स्थायी ठेगाना")</th>
                 </tr>
@@ -87,7 +87,7 @@
                 {
                     <tr class="@(Sno++ % 2 == 0 ? "success" : "warning")">
                         <td class="span1">@UnicodeConverter.Default(@Sno.ToString())</td>
-                        <td class="span2">@UnicodeConverter.Default(item.NataPramanitFaramNo)</td>
+                        <td class="span2">@UnicodeConverter.Default(item.NabalakFaramNo)</td>
                         <td>@item.NaamThar</td>
                         <td>@item.PermanentAddress</td>
                     </tr>
