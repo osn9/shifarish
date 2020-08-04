@@ -374,6 +374,26 @@
     <Property Name="UpdatedDate" Type="date" />
     <Property Name="updateby" Type="int" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Sifarish.dbo.NpCalDb' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="NpCalDb">
+          <Property Name="NCAL_YEAR" Type="nvarchar" MaxLength="4" />
+          <Property Name="STRT_DATE" Type="datetime" />
+          <Property Name="STOP_DATE" Type="datetime" />
+          <Property Name="MONTH_1" Type="smallint" />
+          <Property Name="MONTH_2" Type="smallint" />
+          <Property Name="MONTH_3" Type="smallint" />
+          <Property Name="MONTH_4" Type="smallint" />
+          <Property Name="MONTH_5" Type="smallint" />
+          <Property Name="MONTH_6" Type="smallint" />
+          <Property Name="MONTH_7" Type="smallint" />
+          <Property Name="MONTH_8" Type="smallint" />
+          <Property Name="MONTH_9" Type="smallint" />
+          <Property Name="MONTH_10" Type="smallint" />
+          <Property Name="MONTH_11" Type="smallint" />
+          <Property Name="MONTH_12" Type="smallint" />
+          <Property Name="BranchId" Type="int" />
+        </EntityType>-->
   <EntityType Name="State">
     <Key>
       <PropertyRef Name="Id" />
@@ -641,46 +661,6 @@
     <Property Name="GenderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Gender" Type="nvarchar" MaxLength="50" />
     <Property Name="Gender_Nep" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="tblJaggaCharKillaBibaran">
-    <Key>
-      <PropertyRef Name="JaggaCharKillaBibaranId" />
-    </Key>
-    <Property Name="JaggaCharKillaBibaranId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="JaggaDhaniBibaranId" Type="int" Nullable="false" />
-    <Property Name="JaggaThaunBibaranId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="tblJaggaDhaniBibaran">
-    <Key>
-      <PropertyRef Name="JaggaDhaniBibaranId" />
-    </Key>
-    <Property Name="JaggaDhaniBibaranId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="JaggaDhaniName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="StateId" Type="int" />
-    <Property Name="DistrictId" Type="int" />
-    <Property Name="PalikaId" Type="int" />
-    <Property Name="WardNo" Type="int" />
-    <Property Name="FatherName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="GrandfatherName" Type="nvarchar" MaxLength="50" />
-    <Property Name="CitizenshipNo" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="CtznIssueDate" Type="date" />
-    <Property Name="CtznIssueDistrict" Type="int" />
-    <Property Name="CreatedBy" Type="int" Nullable="false" />
-    <Property Name="CreatedDate" Type="nvarchar" MaxLength="100" />
-    <Property Name="UpdatedBy" Type="int" />
-    <Property Name="UpdatedDate" Type="nvarchar" MaxLength="100" />
-    <Property Name="SubmitOfficeId" Type="int" Nullable="false" />
-    <Property Name="StatusId" Type="int" Nullable="false" />
-    <Property Name="FiscalYearId" Type="int" Nullable="false" />
-    <Property Name="ApprovedBy" Type="int" />
-    <Property Name="ApprovedDate" Type="date" />
-  </EntityType>
-  <EntityType Name="tblJaggaThaunBibaran">
-    <Key>
-      <PropertyRef Name="JaggaThaunBibaranId" />
-    </Key>
-    <Property Name="JaggaThaunBibaranId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="JaggaDhaniBibaranId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tblJanmadaMaddat">
     <Key>
@@ -1584,18 +1564,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblJaggaCharKillaBibaran_tblJaggaCharKillaBibaran">
-    <End Role="tblJaggaThaunBibaran" Type="Self.tblJaggaThaunBibaran" Multiplicity="1" />
-    <End Role="tblJaggaCharKillaBibaran" Type="Self.tblJaggaCharKillaBibaran" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblJaggaThaunBibaran">
-        <PropertyRef Name="JaggaThaunBibaranId" />
-      </Principal>
-      <Dependent Role="tblJaggaCharKillaBibaran">
-        <PropertyRef Name="JaggaThaunBibaranId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_tblJanmaDarta_tblPanjika">
     <End Role="tblPanjika" Type="Self.tblPanjika" Multiplicity="1" />
     <End Role="tblJanmaDarta" Type="Self.tblJanmaDarta" Multiplicity="*" />
@@ -1910,9 +1878,6 @@
     <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblFiscalYear" EntityType="Self.tblFiscalYear" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblGender" EntityType="Self.tblGender" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblJaggaCharKillaBibaran" EntityType="Self.tblJaggaCharKillaBibaran" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblJaggaDhaniBibaran" EntityType="Self.tblJaggaDhaniBibaran" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblJaggaThaunBibaran" EntityType="Self.tblJaggaThaunBibaran" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblJanmadaMaddat" EntityType="Self.tblJanmadaMaddat" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblJanmaDarta" EntityType="Self.tblJanmaDarta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblJanmaDartaFatherDetails" EntityType="Self.tblJanmaDartaFatherDetails" Schema="dbo" store:Type="Tables" />
@@ -2048,10 +2013,6 @@
     <AssociationSet Name="FK_tblEmployee_tblShreni" Association="Self.FK_tblEmployee_tblShreni">
       <End Role="tblShreni" EntitySet="tblShreni" />
       <End Role="tblEmployee" EntitySet="tblEmployee" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblJaggaCharKillaBibaran_tblJaggaCharKillaBibaran" Association="Self.FK_tblJaggaCharKillaBibaran_tblJaggaCharKillaBibaran">
-      <End Role="tblJaggaThaunBibaran" EntitySet="tblJaggaThaunBibaran" />
-      <End Role="tblJaggaCharKillaBibaran" EntitySet="tblJaggaCharKillaBibaran" />
     </AssociationSet>
     <AssociationSet Name="FK_tblJanmaDarta_tblPanjika" Association="Self.FK_tblJanmaDarta_tblPanjika">
       <End Role="tblPanjika" EntitySet="tblPanjika" />

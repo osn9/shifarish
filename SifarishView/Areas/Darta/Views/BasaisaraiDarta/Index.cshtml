@@ -1,0 +1,122 @@
+﻿@model SifarishView.Areas.Darta.Models.BasaisaraiDartaViewModel
+@using SifarishView.Converter
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Scripts/DataTable/datatables.min.css" rel="stylesheet" />
+<script src="~/Scripts/DataTable/datatables.min.js"></script>
+<div class="card">
+    @Html.HiddenFor(model => model.NewMigrationId)
+    <div class="header">
+        <div class="span4">
+            <h4>बसाई सराई दर्ता</h4>
+        </div>
+        <div class="pull-right">
+            <a class="btn btn-primary" href="~/Darta/BasaisaraiDarta/Create">
+                नयाँ बनाउने
+            </a>
+        </div>
+    </div>
+    
+    <div id="itemList" class="content table-responsive table-full-width">
+        @if (Model.BasaisaraiDartaViewModelList.Count > 0)
+        {
+            int Sno = ViewBag.currentPage == 1 ? 0 : (ViewBag.currentPage - 1) * 20;
+            <table id="DartaTable" class="table table-bordered table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th class="span1"><label> क्र.सं.</label> </th>
+                        <th>@Html.LabelFor(model => model.BasaisaraiFaramDartaNo)</th>
+                        <th> @Html.Label("घरमुली")</th>
+                        <th> @Html.Label("बसाई सरी जाने ठेगाना")</th>
+                        <th> @Html.Label("बसाई सरी आएको ठेगाना")</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.BasaisaraiDartaViewModelList)
+                    {
+                        <tr class="@(Sno++ % 2 == 0 ? "success" : "warning")">
+                            <td class="span1">@UnicodeConverter.Default(@Sno.ToString())</td>
+                            <td class="span2">@UnicodeConverter.Default(item.BasaisaraiFaramDartaNo)</td>
+                            <td>@item.GharMuliNaamThar</td>
+                            <td>@item.JanePermanentAddress</td>
+                            <td>@item.AaunePermanentAddress</td>
+                            <td>
+                                <a href="~/Darta/BasaisaraiDarta/Edit/@item.NewMigrationId" title="सम्पादन"><i class="fa fa-edit" style="color:blue;"></i></a>|
+                                <a href="~/Darta/BasaisaraiDarta/PrintDarta/@item.NewMigrationId" title="प्रिन्ट"><i class="fa fa-print" style="color:blue;"></i></a>|
+                                <a class="details" href="~/Darta/BasaisaraiDarta/Details/@item.NewMigrationId" title="विवरण हेर्नुहोस्"><i class="fa fa-pinterest" style="color:black;" data-toggle="modal" data-target="#myModal"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h4>कुनै पनि रेकड फेला परेन!</h4>
+        }
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">बसाई सराई दर्ता विवरण</h4>
+                </div>
+                <div id="ModalBody" class="modal-body">
+                    <form></form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        //datatable
+        var table = $("#DartaTable").DataTable({
+            "order": false,
+            "pageLength": 25,
+            "language": {
+                "lengthMenu": "Display _MENU_ records per page",
+                "zeroRecords": "कुनै पनि रेकड फेला परेन!",
+                "info": " पृष्ठ _PAGE_ को _PAGES_",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(filtered from _MAX_ total records)",
+                "paginate":
+                {
+                    "previous": "आघिल्लो",
+                    "next": "पछिल्लो"
+                }
+            }
+        })
+    });
+</script>
+<script>
+    $(".details").on("click", function () {
+        debugger;
+        var href = $(this).attr('href');
+        $.ajax({
+            url: href,
+            success: function (result) {
+                debugger;
+                if (result) {
+                    $("#myModal").modal('show');
+                    $('#ModalBody').html(result);
+                }
+
+            },
+            error: function (xhr, status, error) {
+                alert("Error");
+            }
+        });
+
+    });
+</script>
+
+

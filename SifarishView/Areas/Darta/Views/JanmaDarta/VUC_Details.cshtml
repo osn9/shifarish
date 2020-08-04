@@ -1,0 +1,67 @@
+﻿@model SifarishView.Areas.Darta.Models.JanmaDartaViewModel
+@using SifarishView.Converter
+@{
+    ViewBag.Title = "जन्म दर्ता-विवरण";
+    Layout = null;
+}
+
+<div>
+
+    <dl class="span9">
+        <dt class="span3">
+            @Html.HiddenFor(model => model.NewbornId)
+        </dt>
+        <dd class="span5">
+            @Html.HiddenFor(model => model.NewbornId)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.NewbornNaam)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.NewbornNaam)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.JanmaMiti)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.JanmaMiti, SifarishView.Converter.UnicodeConverter.Default(Model.JanmaMiti))
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.FatherNaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.FatherNaamThar)
+        </dd>
+    </dl>
+
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.MotherNaamThar)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.MotherNaamThar)
+        </dd>
+    </dl>
+    <dl class="span9">
+        <dt class="span3">
+            @Html.DisplayNameFor(model => model.PermanentAddress)
+        </dt>
+        <dd class="span5">
+            @Html.DisplayFor(model => model.PermanentAddress)
+        </dd>
+    </dl>
+    @*<dl class="span9">
+            <dt class="span3">
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </dt>
+            <dd class="span5">
+                @Html.LabelFor(model => model.EmployeeId, PropertyManagement.Utility.GetEmployeeName(Model.EmployeeId))
+            </dd>
+        </dl>*@
+</div>

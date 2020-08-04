@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
+using System.Web.Mvc;
+using SifarishView.Areas.SetUp.Models;
 
 namespace SifarishView
 {
@@ -16,16 +19,16 @@ namespace SifarishView
 
         public static SelectList GetAllState()
         {
-            IEnumerable<StateViewModel> StateList;
-            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("State").Result;
-            StateList = response.Content.ReadAsAsync<IEnumerable<StateViewModel>>().Result;
+            IEnumerable<StateDataViewModel> StateList;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("StateData").Result;
+            StateList = response.Content.ReadAsAsync<IEnumerable<StateDataViewModel>>().Result;
             return new SelectList(StateList, "StateId_val", "StateName_Nep");
         }
         public static string GetStateById(int? id)
         {
-            StateViewModel obj;
-            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("State/" + id.ToString()).Result;
-            obj = response.Content.ReadAsAsync<StateViewModel>().Result;
+            StateDataViewModel obj;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("StateData/" + id.ToString()).Result;
+            obj = response.Content.ReadAsAsync<StateDataViewModel>().Result;
 
             if (obj != null)
                 return obj.StateName_Nep;
@@ -34,9 +37,9 @@ namespace SifarishView
         }
         public static string GetStateName(int? id)
         {
-            StateViewModel obj;
-            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("State/" + id.ToString()).Result;
-            obj = response.Content.ReadAsAsync<StateViewModel>().Result;
+            StateDataViewModel obj;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("StateData/" + id.ToString()).Result;
+            obj = response.Content.ReadAsAsync<StateDataViewModel>().Result;
             if (obj != null)
                 return obj.StateName;
             else
@@ -44,16 +47,16 @@ namespace SifarishView
         }
         public static SelectList GetAllDistrict()
         {
-            IEnumerable<DistrictViewModel> DistrictList;
-            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("District").Result;
-            DistrictList = response.Content.ReadAsAsync<IEnumerable<DistrictViewModel>>().Result;
+            IEnumerable<DistrictDataViewModel> DistrictList;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("DistrictData").Result;
+            DistrictList = response.Content.ReadAsAsync<IEnumerable<DistrictDataViewModel>>().Result;
             return new SelectList(DistrictList, "DistrictId_val", "DistrictName_Nep");
         }
         public static string GetDistrictById(int? id)
         {
-            DistrictViewModel obj;
-            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("District/" + id.ToString()).Result;
-            obj = response.Content.ReadAsAsync<DistrictViewModel>().Result;
+            DistrictDataViewModel obj;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("DistrictData/" + id.ToString()).Result;
+            obj = response.Content.ReadAsAsync<DistrictDataViewModel>().Result;
 
             if (obj != null)
                 return obj.DistrictName_Nep;
@@ -62,9 +65,9 @@ namespace SifarishView
         }
         public static string GetDistrictName(int? id)
         {
-            DistrictViewModel obj;
-            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("District/" + id.ToString()).Result;
-            obj = response.Content.ReadAsAsync<DistrictViewModel>().Result;
+            DistrictDataViewModel obj;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("DistrictData/" + id.ToString()).Result;
+            obj = response.Content.ReadAsAsync<DistrictDataViewModel>().Result;
             if (obj != null)
                 return obj.DistrictName;
             else
@@ -72,16 +75,16 @@ namespace SifarishView
         }
         public static SelectList GetAllPalika()
         {
-            IEnumerable<PalikaViewModel> PaliakList;
-            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Palika").Result;
-            PaliakList = response.Content.ReadAsAsync<IEnumerable<PalikaViewModel>>().Result;
+            IEnumerable<PalikaDataViewModel> PaliakList;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("PalikaData").Result;
+            PaliakList = response.Content.ReadAsAsync<IEnumerable<PalikaDataViewModel>>().Result;
             return new SelectList(PaliakList, "PalikaId_val", "PalikaName_Nep");
         }
         public static string GetPalikaById(int? id)
         {
-            PalikaViewModel obj;
-            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Palika/" + id.ToString()).Result;
-            obj = response.Content.ReadAsAsync<PalikaViewModel>().Result;
+            PalikaDataViewModel obj;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("PalikaData/" + id.ToString()).Result;
+            obj = response.Content.ReadAsAsync<PalikaDataViewModel>().Result;
 
             if (obj != null)
                 return obj.PalikaName_Nep;
@@ -90,9 +93,9 @@ namespace SifarishView
         }
         public static string GetPalikaName(int? id)
         {
-            PalikaViewModel obj;
-            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("Palika/" + id.ToString()).Result;
-            obj = response.Content.ReadAsAsync<PalikaViewModel>().Result;
+            PalikaDataViewModel obj;
+            HttpResponseMessage response = GlobalVariables.webApiClient.GetAsync("PalikaData/" + id.ToString()).Result;
+            obj = response.Content.ReadAsAsync<PalikaDataViewModel>().Result;
             if (obj != null)
                 return obj.PalikaName;
             else

@@ -1,0 +1,273 @@
+﻿@model SifarishView.Areas.DartaSupplement.Models.NataPramanitSifarisViewModel
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="~/Scripts/select2.full.min.js"></script>
+<link href="~/Content/select2.css" rel="stylesheet" />
+
+<script>
+    var s = jQuery.noConflict();
+
+    s(document).ready(function () {
+        s('.select2').select2({
+            placeholder: "छान्नुहोस्",
+            allowClear: true
+        });
+    })
+    //cascade
+    s("#PermaState").change(function () {
+        debugger;
+        var stateId = parseInt(s("#PermaState").val());
+        var districtId = s("#PermaDistrict");
+        districtId.empty(); // this line is for clear all items from State dropdown
+        districtId.append($("<option></option>").val("").html("-Please Select-"));
+        if (!isNaN(stateId)) {
+            s.ajax({
+                url: '@Url.Action("GetDistrict", "AjaxRequest")',
+                data: { 'ID': stateId },
+                method: 'get',
+                dataType: 'json',
+                success: function (data) {
+                    debugger;
+                    var items = [];
+                    items.push("<option  value=0 >" + "-जिल्ला छान्नुहोस्-" + "</option>"); //first item
+                    for (var i = 0; i < data.length; i++) {
+                        items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                    }                                         //all data from the team table push into array
+                    s("#PermaDistrict").html(items.join(' '));
+
+                },
+                error: function (err) {
+                    alert(err);
+                }
+
+            })
+        }
+
+    });
+    s("#PermaDistrict").change(function () {
+        var districtId = parseInt(s("#PermaDistrict").val());
+        var palikaId = s("#PermaPalika");
+        palikaId.empty(); // this line is for clear all items from State dropdown
+        palikaId.append($("<option></option>").val("").html("-Please Select-"));
+        if (!isNaN(districtId)) {
+            s.ajax({
+                url: '@Url.Action("GetPalika", "AjaxRequest")',
+                data: { 'ID': districtId },
+                method: 'get',
+                dataType: 'json',
+                success: function (data) {
+
+                    var items = [];
+                    items.push("<option  value=0 >" + "-पालिका छान्नुहोस्-" + "</option>"); //first item
+                    for (var i = 0; i < data.length; i++) {
+                        items.push("<option value=" + data[i].Value + ">" + data[i].Text + "</option>");
+                    }                                         //all data from the team table push into array
+                    s("#PermaPalika").html(items.join(' '));
+
+                },
+                error: function (err) {
+                    alert(err);
+                }
+
+            })
+        }
+    });
+
+</script>
+<fieldset>
+    <legend>नाता प्रमाणित दर्ता</legend>
+
+    @Html.HiddenFor(model => model.NewNataId)
+    <div class="row">
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.NataPramanitFaramNo)
+            </div>
+            <div class="span7">
+                @Html.TextBoxFor(model => model.NataPramanitFaramNo, new { @class = "input-mini" })
+                @Html.ValidationMessageFor(model => model.NataPramanitFaramNo)
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.NaamThar)
+            </div>
+            <div class="span7">
+                @Html.TextBoxFor(model => model.NaamThar)
+                @Html.ValidationMessageFor(model => model.NaamThar)
+            </div>
+        </div>
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.FullName)
+            </div>
+            <div class="span7">
+                @Html.TextBoxFor(model => model.FullName)
+                @Html.ValidationMessageFor(model => model.FullName)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.Gender)
+            </div>
+            <div class="span7">
+                @Html.DropDownListFor(model => model.Gender, @SifarishView.Utility.GetGender(), "छानुहोस")
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+        </div>
+    </div>
+    <h6>स्थायी ठेगाना </h6>
+    <div class="row">
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.PermaState)
+            </div>
+            <div class="span7">
+                @Html.DropDownListFor(model => model.PermaState, @SifarishView.Utility.GetAllState(), "छानुहोस")
+                @Html.ValidationMessageFor(model => model.PermaState)
+            </div>
+        </div>
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.PermaDistrict)
+            </div>
+            <div class="span7">
+                @Html.DropDownListFor(model => model.PermaDistrict, @SifarishView.Utility.GetAllDistrict(), "छानुहोस")
+                @Html.ValidationMessageFor(model => model.PermaDistrict)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.PermaPalika)
+            </div>
+            <div class="span7">
+                @Html.DropDownListFor(model => model.PermaPalika, @SifarishView.Utility.GetAllPalika(), "छानुहोस")
+                @Html.ValidationMessageFor(model => model.PermaPalika)
+            </div>
+        </div>
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.PermaWard)
+            </div>
+            <div class="span7">
+                @Html.TextBoxFor(model => model.PermaWard, new { @class = "input-mini", @type = "number" })
+                @Html.ValidationMessageFor(model => model.PermaWard)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span11">
+            <div class="span3">
+                @Html.LabelFor(model => model.NagariktaPraPaNo)
+            </div>
+            <div class="span7">
+                @Html.TextBoxFor(model => model.NagariktaPraPaNo)
+                @Html.ValidationMessageFor(model => model.NagariktaPraPaNo)
+            </div>
+        </div>
+        <div class="span11">
+            <div class="span3">
+                @Html.Label("नागरिकता जारी मिति")
+            </div>
+            <div class="span7">
+                @Html.TextBoxFor(model => model.NagariktaIssueDate, new { @class = "nepali-calendar", @placeholder = "मिति हाल्नुहोस" })
+                @Html.ValidationMessageFor(model => model.NagariktaIssueDate)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span11">
+            <div class="span3">
+                @Html.Label("नागरिकता जारी जिल्ला")
+            </div>
+            <div class="span7">
+                @Html.DropDownListFor(model => model.NagariktaIssueDistrict, @SifarishView.Utility.GetAllDistrict(), "छानुहोस", new { @class = "select2" })
+                @Html.ValidationMessageFor(model => model.NagariktaIssueDistrict)
+            </div>
+        </div>
+    </div>
+    <div id="personaldetails" class="well well-small">
+        <h6>नाता प्रमाणित गर्नुपर्ने व्यक्तिको विवरण</h6>
+        <table id="multirecodtable" class="table table-bordered table-responsive table-hover">
+            <thead>
+                <tr style="font-size: medium">
+                    <td class="span1">क्र.सं.</td>
+                    <td class="span4 pagination-centered">पुरा नाम थर</td>
+                    <td class="span4 pagination-centered">पुरा नाम थर(In English)</td>
+                    <td class="span3 pagination-centered">निवेदक संगको नाता</td>
+                </tr>
+            </thead>
+            <tbody id="MultiRecordList">
+                @if (Model.NataPramanitPersonalDetailViewModelList != null && Model.NataPramanitPersonalDetailViewModelList.Count > 0)
+                {
+                    foreach (var item in Model.NataPramanitPersonalDetailViewModelList)
+                    {
+                        @Html.Partial("AddPersonalDetails", item)
+                    }
+                }
+                else
+                {
+                    @Html.Partial("AddPersonalDetails", new SifarishView.Areas.DartaSupplement.Models.NataPramanitPersonalDetailViewModel())
+                }
+            </tbody>
+        </table>
+    </div>
+</fieldset>
+
+<script>
+    $('#MultiRecordList').on('click', '.Add', AddRow)
+    function AddRow() {
+        $.ajax({
+            url: '@Url.Content("~/DartaSupplement/NataPramanitSifaris/AddMultiRecord")',
+            success: function (result) {
+                if (result) {
+                    $('#MultiRecordList').append(result)
+                    $('#multirecodtable').show();
+                    SnoCounter();
+                    //s('#MultiRecordList .select2').select2({
+                    //    placeholder: "छान्नुहोस्",
+                    //    allowClear: true
+                    //});
+                }
+            },
+            error: function () {
+                alert('error in calling ajax !!')
+            }
+        });
+    }
+    $('#MultiRecordList').on('click', '.remove', function () {
+        $(this).closest('tr').remove()
+        TableHeadderHide()
+    })
+    function SnoCounter() {
+
+        var counter = 1;
+        $('#MultiRecordList').find('tr').each(function (index, item) {
+
+            $(item).find('.sno').html(counter);
+            counter++;
+        });
+        if (counter == 2) {
+            $('#MultiRecordList').find('.remove').hide()
+        }
+        else {
+            $('#MultiRecordList').find('.remove').show()
+        }
+    }
+    TableHeadderHide()
+    function TableHeadderHide() {
+        if ($('#multirecodtable > tbody').find('tr').length == 0) {
+            $('#multirecodtable').hide();
+        } else {
+            SnoCounter();
+        }
+    }
+</script>

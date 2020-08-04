@@ -1,0 +1,108 @@
+﻿@model SifarishView.Areas.DartaSupplement.Models.NataPramanitSifarisViewModel
+
+@using SifarishView.Converter
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+@{
+    Layout = "~/Views/Shared/_LayoutBlank.cshtml";
+}
+<script>
+    window.print();
+</script>
+<style>
+    @@media print {
+        .print {
+            margin-left: 50px;
+            /*margin-right: -20px;*/
+        }
+
+        tr, th, td {
+            border-color: #000 !important;
+        }
+    }
+
+    .Page {
+        page-break-after: always;
+    }
+
+    .write {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+    }
+</style>
+
+<div class="Page print">
+    <div style="position: absolute; top:6mm; left: 12mm">
+        <img src="~/Content/img/logo.png" width="60" height="60" />
+    </div>
+    <div style="text-align:center;top:6mm;">
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Government of Nepal</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Ministry of Federal Affairs and Local Development</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Department of Civil Regestration</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Office of Local Registrar</h4>
+        @*<h4 style="margin-bottom: 0px; line-height: 16px; color: red;">Ward No. @Model.PanjiWardNo , Office .......... , @Utility.GetPalikaName(Model.PanjiPalika) Municipality</h4>
+            <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">@Utility.GetDistrictName(Model.PanjiDistrict) District, @Utility.GetStateName(Model.PanjiState) ,Nepal</h4>
+
+            <h4 style="margin-bottom: 0px; line-height: 25px;">@Utility.GetWarehouseName().TrimStart()</h4>
+                <h4 style="margin-bottom: 0px; line-height: 20px;">@Utility.GetWarehouseAddress().TrimStart()</h4>*@
+    </div>
+    <br />
+    <table style="width:100%">
+        <tr style="text-align:left;" class="row header">
+            <td>
+                <table>
+                    <tr>
+                        <th>पत्र संख्या/Ref.No:</th>
+                        <td> </td>
+                    </tr>
+
+                </table>
+
+            </td>
+
+            <td>
+                <table class="pull-right">
+                    <tr>
+                        <th>मिति/Date:</th>
+                        <td>@DateTime.Now.ToShortDateString()</td>
+                    </tr>
+
+                </table>
+            </td>
+
+        </tr>
+    </table>
+    <table>
+        <tr style="text-align:left;">
+            <td>
+                <table>
+                    <tr>
+                        <th>चलानी नं./Dispatch No:</th>
+                        <td> </td>
+                    </tr>
+                </table>
+            </td>
+
+        </tr>
+
+    </table>
+    <hr style="width:50%;text-align:left;margin-left:0">
+    <div style="text-align:center; margin-top: 10px;">
+        <h2 style="margin-bottom: 0px; line-height: 25px;font-size:18px;">
+            <u>Relationship Certificate</u>
+            <u>To Whom It May Concern </u>
+        </h2>
+
+    </div>
+    <br />
+    <div class="row" style="text-justify:auto">
+        <span style="font-size:16px;">This is to certify that Mr./Mrs. <u><b>@Model.NaamThar</b></u>  </span>
+        <span style="font-size:16px;">, a Permanent resident of <u><b>@Utility.GetPalikaName(Model.PermaPalika)</b></u> Rural Municipality/Municipality Ward No. <u><b>@Model.PermaWard,</b></u><u><b>@Utility.GetDistrictName(Model.PermaDistrict)</b></u></span>
+        <span style="font-size:16px;">District,<u><b>@Utility.GetStateName(Model.PermaState)</b></u> Province ,Nepal has submitted an application for the verification of relationship with his/her family members.</span>
+    </div>
+    <br />
+    <div class="row" style="text-justify:auto">
+        <span style="font-size:16px;">Whereas conducting necessary inquiries and Sarjamin(public inquiry) from this municipality </span>
+        <span style="font-size:16px;">, it has been found that the following person depict the following relationship with Mr./Mrs. <u><b>@Model.NaamThar</b></u> </span>
+    </div>
+</div>

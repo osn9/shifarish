@@ -1,0 +1,58 @@
+﻿@model SifarishView.Areas.DartaSupplement.Models.NataPramanitSifarisViewModel
+@using SifarishView.Converter
+
+@{
+    ViewBag.Title = "नाता प्रमाणित दर्ता-विवरण";
+    Layout = null;
+    int counter = 1;
+}
+<link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<fieldset>
+    <legend>बसाई सराई विवरण</legend>
+    @foreach (var item in Model.NataPramanitSifarisViewModelList)
+    {
+        <dl class="span9">
+            <dt class="span3">
+                @Html.DisplayNameFor(model => model.NaamThar)
+            </dt>
+            <dd class="span5">
+                @item.NaamThar
+            </dd>
+        </dl>
+
+        <dl class="span9">
+            <dt class="span3">
+                @Html.DisplayNameFor(model => model.PermanentAddress)
+            </dt>
+            <dd class="span5">
+                @item.PermanentAddress
+            </dd>
+        </dl>
+
+        <br />
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>क्र.सं.</th>
+                    <th>पुरा नाम थर</th>
+                    <th>निवेदक संगको नाता</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var itm in item.NataPramanitPersonalDetailViewModelList)
+                {
+                    <tr>
+                        <td>@UnicodeConverter.Default(counter)</td>
+                        <td>@itm.NaamThar</td>
+                        <td>@Utility.GetRelationById(itm.RelatonTo)</td>
+                    </tr>
+                    counter++;
+                }
+            </tbody>
+        </table>
+    }
+
+
+</fieldset>
+

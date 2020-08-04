@@ -315,6 +315,36 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Areas\SetUp\Controllers\BasaisaraiKaranController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\CourtTypeController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\DistrictDataController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\EducationController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\FiscalYearController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\GenderController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\JanmaKisimController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\JanmaMaddatController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\JanmaSthanController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\OccupationController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\PalikaDataController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\RelationController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\StateDataController.cs" />
+    <Compile Include="Areas\SetUp\Controllers\VivahKisimController.cs" />
+    <Compile Include="Areas\SetUp\Models\AssistingModel.cs" />
+    <Compile Include="Areas\SetUp\Models\DepartmentModel.cs" />
+    <Compile Include="Areas\SetUp\Models\DistrictModel.cs" />
+    <Compile Include="Areas\SetUp\Models\EmployeesModel.cs" />
+    <Compile Include="Areas\SetUp\Models\FiscalYearModel.cs" />
+    <Compile Include="Areas\SetUp\Models\LocalLevelModel.cs" />
+    <Compile Include="Areas\SetUp\Models\PadhaModel.cs" />
+    <Compile Include="Areas\SetUp\Models\ShakhaModel.cs" />
+    <Compile Include="Areas\SetUp\Models\ShreniModel.cs" />
+    <Compile Include="Areas\SetUp\Models\StateModel.cs" />
+    <Compile Include="Areas\SetUp\Provider\AssistProvider.cs" />
+    <Compile Include="Areas\SetUp\Provider\DistrictProvider.cs" />
+    <Compile Include="Areas\SetUp\Provider\FiscalYearProvider.cs" />
+    <Compile Include="Areas\SetUp\Provider\PalikaProvider.cs" />
+    <Compile Include="Areas\SetUp\Provider\StateProvider.cs" />
+    <Compile Include="Areas\SetUp\SetUpAreaRegistration.cs" />
     <Compile Include="AspNetRole.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -460,15 +490,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblGender.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblJaggaCharKillaBibaran.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblJaggaDhaniBibaran.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblJaggaThaunBibaran.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblJanmadaMaddat.cs">
@@ -620,6 +641,10 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Areas\GharJagga\Views\web.config" />
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="Areas\DartaSupplement\Views\web.config" />
+    <Content Include="Areas\Darta\Views\Web.config" />
+    <Content Include="Areas\SetUp\Views\web.config" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -627,9 +652,6 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="ApplicationInsights.config" />
-    <Content Include="Areas\Darta\Views\web.config" />
-    <Content Include="Areas\DartaSupplement\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -662,19 +684,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\DartaSupplement\Data\" />
-    <Folder Include="Areas\DartaSupplement\Views\NabalakSifaris\" />
-    <Folder Include="Areas\DartaSupplement\Views\NagariktaSifaris\" />
-    <Folder Include="Areas\DartaSupplement\Views\NataPramanitSifaris\" />
     <Folder Include="Areas\DartaSupplement\Views\Shared\" />
     <Folder Include="Areas\Darta\Data\" />
-    <Folder Include="Areas\Darta\Views\BasaisaraiDarta\" />
-    <Folder Include="Areas\Darta\Views\DivorceDarta\" />
-    <Folder Include="Areas\Darta\Views\JanmaDarta\" />
-    <Folder Include="Areas\Darta\Views\MrityuDarta\" />
     <Folder Include="Areas\Darta\Views\Shared\" />
-    <Folder Include="Areas\Darta\Views\VivahDarta\" />
     <Folder Include="Areas\GharJagga\Views\Department\" />
     <Folder Include="Areas\GharJagga\Views\Shared\" />
+    <Folder Include="Areas\SetUp\Data\" />
+    <Folder Include="Areas\SetUp\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

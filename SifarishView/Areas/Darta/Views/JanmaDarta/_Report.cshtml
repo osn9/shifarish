@@ -1,0 +1,108 @@
+﻿@model SifarishView.Areas.Darta.Models.JanmaDartaViewModel
+@using SifarishView.Converter
+@{
+
+    if (Request.IsAjaxRequest())
+    {
+        Layout = null;
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutBlank.cshtml";
+        <script>
+            window.print();
+        </script>
+        <style>
+            @@media print {
+                .print {
+                    margin-left: 50px;
+                    /*margin-right: -20px;*/
+                }
+
+                tr, th, td {
+                    border-color: #000 !important;
+                }
+            }
+
+            .Page {
+                page-break-after: always;
+            }
+        </style>
+    }
+}
+<style>
+    /*table tbody th [colspan='3'] {
+        text-align:center
+    }*/
+    table thead th[colspan]:not([colspan="1"]) {
+        text-align: center;
+    }
+
+    table thead th[rowspan]:not([rowspan='1']) {
+        vertical-align: middle;
+    }
+
+    #Hedder th {
+        text-align: left;
+        padding-right: 20px;
+    }
+
+    #reportTable {
+        width: 100%;
+    }
+</style>
+<div class="Page print">
+    <div style="text-align:center;top:6mm;">
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">नेपाल सरकार</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">संघिय मामिला तथा स्थानीय विकास मन्त्रालय</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">केन्द्रिय पन्जिकरण विभाग</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">स्थानीय पन्जिकाधिकारीको कार्यालय</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">@UnicodeConverter.Default(Model.PanjiWardNo) नं. वडा, कार्यालय ............. , @Utility.GetPalikaById(Model.PanjiPalika) नगरपालिका</h4>
+        <h4 style="margin-bottom: 0px; line-height: 16px; color: red;">@Utility.GetDistrictById(Model.PanjiDistrict) जिल्ला, @Utility.GetStateById(Model.PanjiState) ,नेपाल</h4>
+        @*<h4 style="margin-bottom: 0px; line-height: 25px;">@Utility.GetWarehouseName().TrimStart()</h4>
+            <h4 style="margin-bottom: 0px; line-height: 20px;">@Utility.GetWarehouseAddress().TrimStart()</h4>*@
+    </div>
+    <div style="text-align:center; margin-top: 10px;">
+        <h2 style="margin-bottom: 0px; line-height: 25px;font-size:18px;">
+            <u>जन्म दर्ताको प्रतिवेदन</u>
+
+        </h2>
+
+    </div>
+    <br />
+    @if (Model.JanmaDartaViewModelList.Count > 0)
+    {
+        int Sno = ViewBag.currentPage == 1 ? 0 : (ViewBag.currentPage - 1) * 20;
+        <table id="reportTable" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th class="span1"><label> क्र.सं.</label> </th>
+                    <th>@Html.LabelFor(model => model.FaramNo)</th>
+                    <th> @Html.LabelFor(model => model.NewbornNaam)</th>
+                    <th>@Html.LabelFor(model => model.Gender)</th>
+                    <th> @Html.LabelFor(model => model.FatherNaamThar)</th>
+                    <th> @Html.LabelFor(model => model.MotherNaamThar)</th>
+                    <th> @Html.LabelFor(model => model.JanmaMiti)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.JanmaDartaViewModelList)
+                {
+                    <tr class="@(Sno++ % 2 == 0 ? "success" : "warning")">
+                        <td class="span1">@UnicodeConverter.Default(@Sno.ToString())</td>
+                        <td class="span2">@UnicodeConverter.Default(item.FaramNo)</td>
+                        <td>@item.NewbornNaam</td>
+                        <td>@Utility.GetGenderById(item.Gender)</td>
+                        <td>@item.FatherNaamThar</td>
+                        <td>@item.MotherNaamThar</td>
+                        <td>@UnicodeConverter.Default(item.JanmaMiti)</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+    else
+    { <h4>कुनै पनि रेकड फेला परेन!</h4>}
+</div>
+

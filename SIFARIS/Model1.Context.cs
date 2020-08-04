@@ -27,32 +27,30 @@ namespace SIFARIS
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Citizen_GharJagga_Info> Citizen_GharJagga_Info { get; set; }
-        public virtual DbSet<JaagaTarfa> JaagaTarfas { get; set; }
-        public virtual DbSet<Karlayatarfa> Karlayatarfas { get; set; }
-        public virtual DbSet<District> Districts { get; set; }
-        public virtual DbSet<DistrictDetail> DistrictDetails { get; set; }
-        public virtual DbSet<LocalLevel> LocalLevels { get; set; }
-        public virtual DbSet<LocalLevelDetail> LocalLevelDetails { get; set; }
-        public virtual DbSet<State> States { get; set; }
-        public virtual DbSet<StateDetail> StateDetails { get; set; }
-        public virtual DbSet<Ward> Wards { get; set; }
-        public virtual DbSet<WardDetail> WardDetails { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<Citizen_GharJagga_Info> Citizen_GharJagga_Info { get; set; }
         public virtual DbSet<Citizen_Info> Citizen_Info { get; set; }
-        public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<fiscal_year> fiscal_year { get; set; }
-        public virtual DbSet<NirmanBebasahi> NirmanBebasahis { get; set; }
-        public virtual DbSet<NirmanBebasahiApproval> NirmanBebasahiApprovals { get; set; }
         public virtual DbSet<Demolition> Demolitions { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<District> Districts { get; set; }
+        public virtual DbSet<DistrictDetail> DistrictDetails { get; set; }
+        public virtual DbSet<fiscal_year> fiscal_year { get; set; }
         public virtual DbSet<gharBato> gharBatoes { get; set; }
         public virtual DbSet<GharJaggaKar> GharJaggaKars { get; set; }
         public virtual DbSet<GharjaggakarFile> GharjaggakarFiles { get; set; }
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<JaagaTarfa> JaagaTarfas { get; set; }
+        public virtual DbSet<Karlayatarfa> Karlayatarfas { get; set; }
+        public virtual DbSet<LocalLevel> LocalLevels { get; set; }
+        public virtual DbSet<LocalLevelDetail> LocalLevelDetails { get; set; }
         public virtual DbSet<Month> Months { get; set; }
+        public virtual DbSet<NirmanBebasahi> NirmanBebasahis { get; set; }
+        public virtual DbSet<NirmanBebasahiApproval> NirmanBebasahiApprovals { get; set; }
+        public virtual DbSet<State> States { get; set; }
+        public virtual DbSet<StateDetail> StateDetails { get; set; }
         public virtual DbSet<tblBasaisaraiDarta> tblBasaisaraiDartas { get; set; }
         public virtual DbSet<tblBasaisaraiDartaInformant> tblBasaisaraiDartaInformants { get; set; }
         public virtual DbSet<tblBasaisaraiKaran> tblBasaisaraiKarans { get; set; }
@@ -68,9 +66,6 @@ namespace SIFARIS
         public virtual DbSet<tblEmployee> tblEmployees { get; set; }
         public virtual DbSet<tblFiscalYear> tblFiscalYears { get; set; }
         public virtual DbSet<tblGender> tblGenders { get; set; }
-        public virtual DbSet<tblJaggaCharKillaBibaran> tblJaggaCharKillaBibarans { get; set; }
-        public virtual DbSet<tblJaggaDhaniBibaran> tblJaggaDhaniBibarans { get; set; }
-        public virtual DbSet<tblJaggaThaunBibaran> tblJaggaThaunBibarans { get; set; }
         public virtual DbSet<tblJanmadaMaddat> tblJanmadaMaddats { get; set; }
         public virtual DbSet<tblJanmaDarta> tblJanmaDartas { get; set; }
         public virtual DbSet<tblJanmaDartaFatherDetail> tblJanmaDartaFatherDetails { get; set; }
@@ -104,6 +99,8 @@ namespace SIFARIS
         public virtual DbSet<tblVivahGroomDetail> tblVivahGroomDetails { get; set; }
         public virtual DbSet<tblVivahKisim> tblVivahKisims { get; set; }
         public virtual DbSet<tblWorkOffice> tblWorkOffices { get; set; }
+        public virtual DbSet<Ward> Wards { get; set; }
+        public virtual DbSet<WardDetail> WardDetails { get; set; }
         public virtual DbSet<Year> Years { get; set; }
     
         public virtual ObjectResult<string> sp_GetLocalDate(Nullable<System.DateTime> romanDate, Nullable<int> format)

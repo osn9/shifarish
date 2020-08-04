@@ -1,0 +1,38 @@
+﻿@model SifarishView.Areas.Darta.Models.BasaisaraiDartaViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+    <html>
+    <head>
+        <title>Janma darta</title>
+    </head>
+    <body>
+        <div class="well well-small">
+            @if (TempData["message"] != null)
+            {
+                <div class="alert alert-danger text-center">
+                    @TempData["message"]
+                </div>
+            }
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(model => model.PanjiId)
+
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                @*<div class="btn pull-right"> @Html.ActionLink("Change Password","Register","Account")</div>*@
+                Html.RenderPartial("VUC_Add");
+                <br />
+                <input type="submit" value="सेभ गर्नुहोस" class="btn" />
+                @*<div class="btn"> @Html.ActionLink("पछाडी फर्कनुहोस्", "Index")</div>*@
+                <div class="btn"> @Html.ActionLink("पछाडी फर्कने", null, null, null, new { href = Request.UrlReferrer })</div>
+
+            }
+        </div>
+    </body>
+    </html>
+
