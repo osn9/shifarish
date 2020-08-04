@@ -4,7 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>D:\SifarisPublishes\</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\SifarisPublishes\sifaris_Aug042020</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -224,10 +224,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/27/2020 15:48:36</publishTime>
     </File>
     <File Include="bin/SIFARIS.dll">
-      <publishTime>08/04/2020 11:20:14</publishTime>
+      <publishTime>08/04/2020 11:37:12</publishTime>
     </File>
     <File Include="bin/SIFARIS.pdb">
-      <publishTime>08/04/2020 11:20:14</publishTime>
+      <publishTime>08/04/2020 11:37:12</publishTime>
     </File>
     <File Include="bin/System.Buffers.dll">
       <publishTime>07/27/2020 15:49:30</publishTime>

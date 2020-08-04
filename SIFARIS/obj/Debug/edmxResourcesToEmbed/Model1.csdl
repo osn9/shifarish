@@ -1,0 +1,2141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SifarishModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="Citizen_GharJagga_Info">
+    <Key>
+      <PropertyRef Name="Citizen_gharjaga_Id" />
+    </Key>
+    <Property Name="Citizen_gharjaga_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Citizen_Id" Type="Int32" />
+    <Property Name="NumberOfHouse" Type="Int32" />
+    <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Kitta_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="East" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="West" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="North" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="South" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Citizen_Info" Relationship="Self.FK_Citizen_GharJagga_Info_Citizen_Info" FromRole="Citizen_GharJagga_Info" ToRole="Citizen_Info" />
+  </EntityType>
+  <EntityType Name="Citizen_Info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeparmentId" Type="Int32" />
+    <Property Name="CitizenName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Citizen_id" Type="Int32" />
+    <Property Name="Citizenship_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="District_Id" Type="Int32" />
+    <Property Name="Zone_Id" Type="Int32" />
+    <Property Name="Mun_Ward" Type="Int32" />
+    <Property Name="Sabik_Ward" Type="Int32" />
+    <Property Name="Father_Husband_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GrandFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CitizenShip_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CitizinShip_Zone" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="Updatedate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <NavigationProperty Name="Citizen_GharJagga_Info" Relationship="Self.FK_Citizen_GharJagga_Info_Citizen_Info" FromRole="Citizen_Info" ToRole="Citizen_GharJagga_Info" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Citizen_Info_Department" FromRole="Citizen_Info" ToRole="Department" />
+    <NavigationProperty Name="JaagaTarfas" Relationship="Self.FK_JaagaTarfa_Citizen_Info" FromRole="Citizen_Info" ToRole="JaagaTarfa" />
+    <NavigationProperty Name="Karlayatarfas" Relationship="Self.FK_Karlayatarfa_Citizen_Info" FromRole="Citizen_Info" ToRole="Karlayatarfa" />
+  </EntityType>
+  <EntityType Name="Demolition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reason" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SuchakName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Relation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SuchakPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateAd" Type="DateTime" Precision="0" />
+    <Property Name="PrindDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="Updateddate" Type="DateTime" Precision="0" />
+    <Property Name="updatedBy" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DeparmentId" />
+    </Key>
+    <Property Name="DeparmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Citizen_Info" Relationship="Self.FK_Citizen_Info_Department" FromRole="Department" ToRole="Citizen_Info" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StateId" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="DistrictDetails" Relationship="Self.FK_DistrictDetails_District" FromRole="District" ToRole="DistrictDetails" />
+    <NavigationProperty Name="LocalLevels" Relationship="Self.FK_LocalLevel_District" FromRole="District" ToRole="LocalLevel" />
+  </EntityType>
+  <EntityType Name="DistrictDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistId" Type="Int64" Nullable="false" />
+    <Property Name="HeadQuater" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PDensity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Population" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="District" Relationship="Self.FK_DistrictDetails_District" FromRole="DistrictDetails" ToRole="District" />
+  </EntityType>
+  <EntityType Name="fiscal_year">
+    <Key>
+      <PropertyRef Name="FiscalId" />
+    </Key>
+    <Property Name="FiscalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nanem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartDateAd" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EndDateAd" Type="DateTime" Precision="0" />
+    <Property Name="PreviousYear" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatteBy" Type="Int32" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="gharBato">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="munOrvdcName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Ward" Type="Int32" />
+    <Property Name="Map_no" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="KittaNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="buyerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="buyerFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SellerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SellerFatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateAd" Type="DateTime" Precision="0" />
+    <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="Updatedate" Type="DateTime" Precision="0" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GharJaggaKar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ward" Type="Int32" />
+    <Property Name="gharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kittaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="BuildDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Length" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="breadth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GharDesigin" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Road" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="roadType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NibedakName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NibedakAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="marphatName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dateAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="printDateAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDae" Type="DateTime" Precision="0" />
+    <Property Name="deltedDate" Type="DateTime" Precision="0" />
+    <Property Name="updatedate" Type="DateTime" Precision="0" />
+    <Property Name="updateBy" Type="Int32" />
+    <Property Name="createby" Type="Int32" />
+    <Property Name="deletedby" Type="Int32" />
+    <NavigationProperty Name="GharjaggakarFiles" Relationship="Self.FK_GharjaggakarFiles_GharJaggaKar" FromRole="GharJaggaKar" ToRole="GharjaggakarFiles" />
+  </EntityType>
+  <EntityType Name="GharjaggakarFile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GhraJaggaKarId" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="GharJaggaKar" Relationship="Self.FK_GharjaggakarFiles_GharJaggaKar" FromRole="GharjaggakarFiles" ToRole="GharJaggaKar" />
+  </EntityType>
+  <EntityType Name="JaagaTarfa">
+    <Key>
+      <PropertyRef Name="jagaTarfa_id" />
+    </Key>
+    <Property Name="jagaTarfa_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MulSadak" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sahayakSadaK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KacchiSadak" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goreto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BatoNavaeko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CitizenId" Type="Int32" />
+    <NavigationProperty Name="Citizen_Info" Relationship="Self.FK_JaagaTarfa_Citizen_Info" FromRole="JaagaTarfa" ToRole="Citizen_Info" />
+  </EntityType>
+  <EntityType Name="Karlayatarfa">
+    <Key>
+      <PropertyRef Name="Karlayatarfa_id" />
+    </Key>
+    <Property Name="Karlayatarfa_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KardartaFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="citizen_ID" Type="Int32" />
+    <NavigationProperty Name="Citizen_Info" Relationship="Self.FK_Karlayatarfa_Citizen_Info" FromRole="Karlayatarfa" ToRole="Citizen_Info" />
+  </EntityType>
+  <EntityType Name="LocalLevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DistId" Type="Int64" Nullable="false" />
+    <Property Name="MaxWardNo" Type="Int32" />
+    <NavigationProperty Name="District" Relationship="Self.FK_LocalLevel_District" FromRole="LocalLevel" ToRole="District" />
+    <NavigationProperty Name="LocalLevelDetails" Relationship="Self.FK_LocalLevelDetails_LocalLevel" FromRole="LocalLevel" ToRole="LocalLevelDetails" />
+    <NavigationProperty Name="Wards" Relationship="Self.FK_Ward_LocalLevel" FromRole="LocalLevel" ToRole="Ward" />
+  </EntityType>
+  <EntityType Name="LocalLevelDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocalLevelId" Type="Int64" Nullable="false" />
+    <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Density" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Population" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LocalLevel" Relationship="Self.FK_LocalLevelDetails_LocalLevel" FromRole="LocalLevelDetails" ToRole="LocalLevel" />
+  </EntityType>
+  <EntityType Name="Month">
+    <Key>
+      <PropertyRef Name="MonthId" />
+    </Key>
+    <Property Name="MonthId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MonthName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NirmanBebasahi">
+    <Key>
+      <PropertyRef Name="nirmanbebasaiId" />
+    </Key>
+    <Property Name="nirmanbebasaiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="postboxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TelPhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FaxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KaralayaName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="KaralayaAddress" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
+    <Property Name="PramanPatraNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="approvalNo" Type="Int32" />
+    <Property Name="RegisterdDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterDateAd" Type="DateTime" Precision="0" />
+    <Property Name="AprovalDateAd" Type="DateTime" Precision="0" />
+    <Property Name="ApprovealDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovalKaryalaya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RenewalDatead" Type="DateTime" Precision="0" />
+    <Property Name="RenewalDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MembershipNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AmountEng" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FormName" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
+    <Property Name="FormAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SanchalakName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateAd" Type="DateTime" Precision="0" />
+    <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+    <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="CreateddDate" Type="DateTime" Precision="0" />
+    <Property Name="deletedDate" Type="DateTime" Precision="0" />
+    <Property Name="Deletedby" Type="Int32" />
+    <Property Name="updatedDate" Type="DateTime" Precision="0" />
+    <Property Name="updatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NirmanBebasahiApproval">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PostBoxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyTypr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ComapanyPersonelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyPersonelAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyPersonelPostbosNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyPersonelTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyPersonelFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyPersonelEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrarionDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationDateAd" Type="DateTime" Precision="0" />
+    <Property Name="AdhiriktaPuji" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdhirikataPujiEng" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="JariPugi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JariPujiEng" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="groups" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Technical" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NonTechnical" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Others" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintDateAd" Type="DateTime" Precision="0" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="CreateDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <Property Name="updateby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="StateDetails" Relationship="Self.FK_StateDetails_State" FromRole="State" ToRole="StateDetails" />
+  </EntityType>
+  <EntityType Name="StateDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateId" Type="Int64" Nullable="false" />
+    <Property Name="Capital" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ChiefMinister" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PDensity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Governer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Population" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TotalDist" Type="Int32" />
+    <NavigationProperty Name="State" Relationship="Self.FK_StateDetails_State" FromRole="StateDetails" ToRole="State" />
+  </EntityType>
+  <EntityType Name="tblBasaisaraiDarta">
+    <Key>
+      <PropertyRef Name="NewMigrationId" />
+    </Key>
+    <Property Name="NewMigrationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PanjiId" Type="Int32" Nullable="false" />
+    <Property Name="GharMuliNaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GharMuliFullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BasaisaraiAayekoDartaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BasaisaraiAayekoPradesh" Type="Int32" />
+    <Property Name="BasaisaraiAayekoJilla" Type="Int32" />
+    <Property Name="BasaisaraiAayekoPalika" Type="Int32" />
+    <Property Name="BasaisaraiAayekoWardNo" Type="Int32" />
+    <Property Name="BasaisaraiAayekoGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BasaisaraiAayekoGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BasaisaraiAayekoMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BasaisaraiAayekoDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BasaisaraiAayekoKaran" Type="Int32" />
+    <Property Name="BasaisaraiJanePradesh" Type="Int32" />
+    <Property Name="BasaisaraiJaneJilla" Type="Int32" />
+    <Property Name="BasaisaraiJanePalika" Type="Int32" />
+    <Property Name="BasaisaraiJaneWardNo" Type="Int32" />
+    <Property Name="BasaisaraiJaneGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BasaisaraiJaneGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblPanjika" Relationship="Self.FK_tblBasaisaraiDarta_tblPanjika" FromRole="tblBasaisaraiDarta" ToRole="tblPanjika" />
+    <NavigationProperty Name="tblBasaisaraiDartaInformants" Relationship="Self.FK_tblBasaisaraiDartaInformant_tblBasaisaraiDarta" FromRole="tblBasaisaraiDarta" ToRole="tblBasaisaraiDartaInformant" />
+    <NavigationProperty Name="tblBasaisaraiPersonalDetails" Relationship="Self.FK_tblBasaisaraiPersonalDetails_tblBasaisaraiDarta" FromRole="tblBasaisaraiDarta" ToRole="tblBasaisaraiPersonalDetails" />
+  </EntityType>
+  <EntityType Name="tblBasaisaraiDartaInformant">
+    <Key>
+      <PropertyRef Name="NewMigrationInformantId" />
+    </Key>
+    <Property Name="NewMigrationInformantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewMigrationId" Type="Int32" Nullable="false" />
+    <Property Name="InfNaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfFullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InfState" Type="Int32" />
+    <Property Name="InfDistrict" Type="Int32" />
+    <Property Name="InfPalika" Type="Int32" />
+    <Property Name="InfWardNo" Type="Int32" />
+    <Property Name="InfGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDistrict" Type="Int32" />
+    <Property Name="InfPassportNo_Desh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblBasaisaraiDarta" Relationship="Self.FK_tblBasaisaraiDartaInformant_tblBasaisaraiDarta" FromRole="tblBasaisaraiDartaInformant" ToRole="tblBasaisaraiDarta" />
+  </EntityType>
+  <EntityType Name="tblBasaisaraiKaran">
+    <Key>
+      <PropertyRef Name="BasaisaraiKaranId" />
+    </Key>
+    <Property Name="BasaisaraiKaranId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BasaisaraiKaran" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblBasaisaraiPersonalDetail">
+    <Key>
+      <PropertyRef Name="BasaisaraiDetailsId" />
+    </Key>
+    <Property Name="BasaisaraiDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewMigrationId" Type="Int32" Nullable="false" />
+    <Property Name="JanmaDartaNo" Type="Int32" />
+    <Property Name="NaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaPradesh" Type="Int32" />
+    <Property Name="JanmaJilla" Type="Int32" />
+    <Property Name="JanmaPalika" Type="Int32" />
+    <Property Name="JanmaWardNo" Type="Int32" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagaritaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDistrict" Type="Int32" />
+    <Property Name="AnyRecords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RelationTo" Type="Int32" />
+    <NavigationProperty Name="tblBasaisaraiDarta" Relationship="Self.FK_tblBasaisaraiPersonalDetails_tblBasaisaraiDarta" FromRole="tblBasaisaraiPersonalDetails" ToRole="tblBasaisaraiDarta" />
+  </EntityType>
+  <EntityType Name="tblCourtType">
+    <Key>
+      <PropertyRef Name="CourtTypeId" />
+    </Key>
+    <Property Name="CourtTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourtType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CourtType_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblDepartment">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WorkOfficeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblWorkOffice" Relationship="Self.FK_tblDepartment_tblDepartment" FromRole="tblDepartment" ToRole="tblWorkOffice" />
+    <NavigationProperty Name="tblShakhas" Relationship="Self.FK_tblShakha_tblDepartment" FromRole="tblDepartment" ToRole="tblShakha" />
+  </EntityType>
+  <EntityType Name="tblDistrict">
+    <Key>
+      <PropertyRef Name="DistrictId" />
+    </Key>
+    <Property Name="DistrictId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistrictId_val" Type="Int32" />
+    <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StateId_val" Type="Int32" />
+    <Property Name="DistrictName_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblState" Relationship="Self.FK_tblDistrict_tblDistrict" FromRole="tblDistrict" ToRole="tblState" />
+    <NavigationProperty Name="tblWorkOffices" Relationship="Self.FK_tblWarehouse_tblDistrict" FromRole="tblDistrict" ToRole="tblWorkOffice" />
+  </EntityType>
+  <EntityType Name="tblDivorceDarta">
+    <Key>
+      <PropertyRef Name="DivorceId" />
+    </Key>
+    <Property Name="DivorceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PanjiId" Type="Int32" Nullable="false" />
+    <Property Name="CourtType" Type="Int32" />
+    <Property Name="District" Type="Int32" />
+    <Property Name="NirnayaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NinayaMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VivahDartaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblPanjika" Relationship="Self.FK_tblDivorceDarta_tblPanjika" FromRole="tblDivorceDarta" ToRole="tblPanjika" />
+    <NavigationProperty Name="tblDivorceDartaInformants" Relationship="Self.FK_tblDivorceDartaInformant_tblDivorceDarta" FromRole="tblDivorceDarta" ToRole="tblDivorceDartaInformant" />
+    <NavigationProperty Name="tblDivorceeHusbandDetails" Relationship="Self.FK_tblDivorceeHusbandDetails_tblDivorceDarta" FromRole="tblDivorceDarta" ToRole="tblDivorceeHusbandDetails" />
+    <NavigationProperty Name="tblDivorceeWifeDetails" Relationship="Self.FK_tblDivorceeWifeDetails_tblDivorceDarta" FromRole="tblDivorceDarta" ToRole="tblDivorceeWifeDetails" />
+  </EntityType>
+  <EntityType Name="tblDivorceDartaInformant">
+    <Key>
+      <PropertyRef Name="DivorceInformantId" />
+    </Key>
+    <Property Name="DivorceInformantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DivorceId" Type="Int32" Nullable="false" />
+    <Property Name="InfNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfRelationToDivorcee" Type="Int32" />
+    <Property Name="InfState" Type="Int32" />
+    <Property Name="InfDistrict" Type="Int32" />
+    <Property Name="InfPalika" Type="Int32" />
+    <Property Name="InfWardNo" Type="Int32" />
+    <Property Name="InfGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDistrict" Type="Int32" />
+    <Property Name="InfPassportNo_Desh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblDivorceDarta" Relationship="Self.FK_tblDivorceDartaInformant_tblDivorceDarta" FromRole="tblDivorceDartaInformant" ToRole="tblDivorceDarta" />
+  </EntityType>
+  <EntityType Name="tblDivorceeHusbandDetail">
+    <Key>
+      <PropertyRef Name="DivorceeHusbandId" />
+    </Key>
+    <Property Name="DivorceeHusbandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DivorceId" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDartaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDistrict" Type="Int32" />
+    <Property Name="BideshPassport_Desh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="Int32" />
+    <Property Name="Palika" Type="Int32" />
+    <Property Name="WardNo" Type="Int32" />
+    <Property Name="JaatJati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShikshaSthar" Type="Int32" />
+    <Property Name="Dharma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatriBhasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BaajekoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BaajekoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabukoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabukoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VivahMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VivahDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TotalChildBorn" Type="Int32" />
+    <Property Name="TotalLiveChild" Type="Int32" />
+    <Property Name="ChildLivingWith" Type="Int32" />
+    <Property Name="SonLivingWith" Type="Int32" />
+    <Property Name="DaughterLivingWith" Type="Int32" />
+    <NavigationProperty Name="tblDivorceDarta" Relationship="Self.FK_tblDivorceeHusbandDetails_tblDivorceDarta" FromRole="tblDivorceeHusbandDetails" ToRole="tblDivorceDarta" />
+  </EntityType>
+  <EntityType Name="tblDivorceeWifeDetail">
+    <Key>
+      <PropertyRef Name="DivorceeWifeId" />
+    </Key>
+    <Property Name="DivorceeWifeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DivorceId" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDartaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDistrict" Type="Int32" />
+    <Property Name="BideshPassport_Desh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="Int32" />
+    <Property Name="Palika" Type="Int32" />
+    <Property Name="WardNo" Type="Int32" />
+    <Property Name="JaatJati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShikshaSthar" Type="Int32" />
+    <Property Name="Dharma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatriBhasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BaajekoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BaajekoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabukoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabukoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ChildLivingWith" Type="Int32" />
+    <Property Name="SonLivingWith" Type="Int32" />
+    <Property Name="DaughterLivingWith" Type="Int32" />
+    <NavigationProperty Name="tblDivorceDarta" Relationship="Self.FK_tblDivorceeWifeDetails_tblDivorceDarta" FromRole="tblDivorceeWifeDetails" ToRole="tblDivorceDarta" />
+  </EntityType>
+  <EntityType Name="tblEducation">
+    <Key>
+      <PropertyRef Name="EducationId" />
+    </Key>
+    <Property Name="EducationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Education" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="WorkOfficeId" Type="Int32" Nullable="false" />
+    <Property Name="ShreniId" Type="Int32" />
+    <Property Name="PadhaId" Type="Int32" />
+    <Property Name="UserTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="INVId" Type="Int32" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblUserType" Relationship="Self.FK_tblEmployee_tblEmployee" FromRole="tblEmployee" ToRole="tblUserTypes" />
+    <NavigationProperty Name="tblPadha" Relationship="Self.FK_tblEmployee_tblPadha" FromRole="tblEmployee" ToRole="tblPadha" />
+    <NavigationProperty Name="tblShreni" Relationship="Self.FK_tblEmployee_tblShreni" FromRole="tblEmployee" ToRole="tblShreni" />
+    <NavigationProperty Name="tblUserProfiles" Relationship="Self.FK_tblUserProfile_tblEmployee" FromRole="tblEmployee" ToRole="tblUserProfile" />
+  </EntityType>
+  <EntityType Name="tblFiscalYear">
+    <Key>
+      <PropertyRef Name="FiscalYearId" />
+    </Key>
+    <Property Name="FiscalYearId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblGender">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblJanmadaMaddat">
+    <Key>
+      <PropertyRef Name="JanmadaMaddatId" />
+    </Key>
+    <Property Name="JanmadaMaddatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JanmadaMaddatGarne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblJanmaDarta">
+    <Key>
+      <PropertyRef Name="NewbornId" />
+    </Key>
+    <Property Name="NewbornId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PanjiId" Type="Int32" Nullable="false" />
+    <Property Name="NewbornNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NewbornName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JanmaDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaSthaan" Type="Int32" />
+    <Property Name="JanmadaMadatt" Type="Int32" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="JanmaKisim" Type="Int32" />
+    <Property Name="JanmaJaatJati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaPradesh" Type="Int32" />
+    <Property Name="JanmaJilla" Type="Int32" />
+    <Property Name="JanmaPalika" Type="Int32" />
+    <Property Name="JanmaWardNo" Type="Int32" />
+    <Property Name="JanmaBidesh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaForeign" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="BajekoNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GrandFather" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblPanjika" Relationship="Self.FK_tblJanmaDarta_tblPanjika" FromRole="tblJanmaDarta" ToRole="tblPanjika" />
+    <NavigationProperty Name="tblJanmaDartaFatherDetails" Relationship="Self.FK_tblJanmaDartaFatherDetails_tblJanmaDarta" FromRole="tblJanmaDarta" ToRole="tblJanmaDartaFatherDetails" />
+    <NavigationProperty Name="tblJanmaDartaInformants" Relationship="Self.FK_tblJanmaDartaInformant_tblJanmaDarta" FromRole="tblJanmaDarta" ToRole="tblJanmaDartaInformant" />
+    <NavigationProperty Name="tblJanmaDartaMotherDetails" Relationship="Self.FK_tblJanmaDartaMotherDetails_tblJanmaDarta" FromRole="tblJanmaDarta" ToRole="tblJanmaDartaMotherDetails" />
+  </EntityType>
+  <EntityType Name="tblJanmaDartaFatherDetail">
+    <Key>
+      <PropertyRef Name="NewbornFatherId" />
+    </Key>
+    <Property Name="NewbornFatherId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewbornId" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PermaState" Type="Int32" />
+    <Property Name="PermaDistrict" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWardNo" Type="Int32" />
+    <Property Name="GaunTole" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SisuJanmidakoUmer" Type="Int32" />
+    <Property Name="JanmaDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaLiyekoDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIsssueDistrict" Type="Int32" />
+    <Property Name="PassportNo_Desh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ShikshaSthar" Type="Int32" />
+    <Property Name="Pesha" Type="Int32" />
+    <Property Name="Dharma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatriBhasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TotalChild" Type="Int32" />
+    <Property Name="TotalLiveChild" Type="Int32" />
+    <Property Name="VivahDartaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VivahMiti" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VivahDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblJanmaDarta" Relationship="Self.FK_tblJanmaDartaFatherDetails_tblJanmaDarta" FromRole="tblJanmaDartaFatherDetails" ToRole="tblJanmaDarta" />
+  </EntityType>
+  <EntityType Name="tblJanmaDartaInformant">
+    <Key>
+      <PropertyRef Name="NewBornInformantId" />
+    </Key>
+    <Property Name="NewBornInformantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewbornId" Type="Int32" Nullable="false" />
+    <Property Name="InfNaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfFullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InfRelationToNewBorn" Type="Int32" Nullable="false" />
+    <Property Name="InfState" Type="Int32" />
+    <Property Name="InfDistrict" Type="Int32" />
+    <Property Name="InfPalika" Type="Int32" />
+    <Property Name="InfWardNo" Type="Int32" />
+    <Property Name="InfGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDistrict" Type="Int32" />
+    <Property Name="InfPassportNo_Desh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblJanmaDarta" Relationship="Self.FK_tblJanmaDartaInformant_tblJanmaDarta" FromRole="tblJanmaDartaInformant" ToRole="tblJanmaDarta" />
+  </EntityType>
+  <EntityType Name="tblJanmaDartaMotherDetail">
+    <Key>
+      <PropertyRef Name="NewBornMotherId" />
+    </Key>
+    <Property Name="NewBornMotherId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewbornId" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PermaState" Type="Int32" />
+    <Property Name="PermaDistrict" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWardNo" Type="Int32" />
+    <Property Name="GaunTole" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SisuJanmidakoUmer" Type="Int32" />
+    <Property Name="JanmaDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaLiyekoDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDistrict" Type="Int32" />
+    <Property Name="PassportNo_Desh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ShikshaSthar" Type="Int32" />
+    <Property Name="Pesha" Type="Int32" />
+    <Property Name="Dharma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatriBhasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblJanmaDarta" Relationship="Self.FK_tblJanmaDartaMotherDetails_tblJanmaDarta" FromRole="tblJanmaDartaMotherDetails" ToRole="tblJanmaDarta" />
+  </EntityType>
+  <EntityType Name="tblJanmaKisim">
+    <Key>
+      <PropertyRef Name="JanmaKisinId" />
+    </Key>
+    <Property Name="JanmaKisinId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JanmaKisimName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblJanmaSthaan">
+    <Key>
+      <PropertyRef Name="JanmaSthaanId" />
+    </Key>
+    <Property Name="JanmaSthaanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JanmaSthaanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblMrityuDarta">
+    <Key>
+      <PropertyRef Name="NewDeathId" />
+    </Key>
+    <Property Name="NewDeathId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PanjiId" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="MrityuMiti" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MrityuDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="MrityuPradesh" Type="Int32" />
+    <Property Name="MrityuJilla" Type="Int32" />
+    <Property Name="MrityuPalika" Type="Int32" />
+    <Property Name="MrityuWardNo" Type="Int32" />
+    <Property Name="MrityuGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MrityuGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MrityuBhayekoSthaan" Type="Int32" />
+    <NavigationProperty Name="tblPanjika" Relationship="Self.FK_tblMrityuDarta_tblPanjika" FromRole="tblMrityuDarta" ToRole="tblPanjika" />
+    <NavigationProperty Name="tblMrityuDartaInformants" Relationship="Self.FK_tblMrityuDartaInformant_tblMrityuDarta" FromRole="tblMrityuDarta" ToRole="tblMrityuDartaInformant" />
+    <NavigationProperty Name="tblMrityuDartaPersonalDetails" Relationship="Self.FK_tblMrityuDartaPersonalDetails_tblMrityuDarta" FromRole="tblMrityuDarta" ToRole="tblMrityuDartaPersonalDetails" />
+  </EntityType>
+  <EntityType Name="tblMrityuDartaInformant">
+    <Key>
+      <PropertyRef Name="NewDeathInformantId" />
+    </Key>
+    <Property Name="NewDeathInformantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewdeathId" Type="Int32" Nullable="false" />
+    <Property Name="InfNaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfFullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InfRelationToNewDeath" Type="Int32" Nullable="false" />
+    <Property Name="InfPradesh" Type="Int32" />
+    <Property Name="InfJilla" Type="Int32" />
+    <Property Name="InfPalika" Type="Int32" />
+    <Property Name="InfWardNo" Type="Int32" />
+    <Property Name="InfGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDistrict" Type="Int32" />
+    <Property Name="InfPassportNo_Desh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblMrityuDarta" Relationship="Self.FK_tblMrityuDartaInformant_tblMrityuDarta" FromRole="tblMrityuDartaInformant" ToRole="tblMrityuDarta" />
+  </EntityType>
+  <EntityType Name="tblMrityuDartaPersonalDetail">
+    <Key>
+      <PropertyRef Name="NewDeathDetailsId" />
+    </Key>
+    <Property Name="NewDeathDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewDeathId" Type="Int32" Nullable="false" />
+    <Property Name="JanmaDartaNo" Type="Int32" />
+    <Property Name="JanmaMiti" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaPradesh" Type="Int32" />
+    <Property Name="JanmaJilla" Type="Int32" />
+    <Property Name="JanmaPalika" Type="Int32" />
+    <Property Name="JanmaWardNo" Type="Int32" />
+    <Property Name="JanmaGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIsssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDistrict" Type="Int32" />
+    <Property Name="PassportNo_Desh" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ShikshaSthar" Type="Int32" />
+    <Property Name="MatriBhasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dharma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JaatJaati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BajekoNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Grandfather" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BabuNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AamaNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MotherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MaritalStatus" Type="Boolean" />
+    <Property Name="SpouseNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SpouseName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MrityuKaran" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblMrityuDarta" Relationship="Self.FK_tblMrityuDartaPersonalDetails_tblMrityuDarta" FromRole="tblMrityuDartaPersonalDetails" ToRole="tblMrityuDarta" />
+  </EntityType>
+  <EntityType Name="tblNabalakRelativeDetail">
+    <Key>
+      <PropertyRef Name="NabalkRelativeInfoId" />
+    </Key>
+    <Property Name="NabalkRelativeInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NabalakId" Type="Int32" Nullable="false" />
+    <Property Name="BabukoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BabukoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AamakoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SamrakshakNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GuardianFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblNabalakSifari" Relationship="Self.FK_tblNabalakRelativeDetails_tblNabalakSifaris" FromRole="tblNabalakRelativeDetails" ToRole="tblNabalakSifaris" />
+  </EntityType>
+  <EntityType Name="tblNabalakSifari">
+    <Key>
+      <PropertyRef Name="NabalakId" />
+    </Key>
+    <Property Name="NabalakId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NabalakFaramNo" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JanmaDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaPradesh" Type="Int32" />
+    <Property Name="JanmaJilla" Type="Int32" />
+    <Property Name="JanmaPalika" Type="Int32" />
+    <Property Name="JanmaWard" Type="Int32" />
+    <Property Name="PermaPradesh" Type="Int32" />
+    <Property Name="PermaJilla" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWard" Type="Int32" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkOffice" Type="Int32" />
+    <Property Name="FiscalYear" Type="Int32" />
+    <NavigationProperty Name="tblNabalakRelativeDetails" Relationship="Self.FK_tblNabalakRelativeDetails_tblNabalakSifaris" FromRole="tblNabalakSifaris" ToRole="tblNabalakRelativeDetails" />
+  </EntityType>
+  <EntityType Name="tblNagariktaRelativeDetail">
+    <Key>
+      <PropertyRef Name="NagariktaRelativeInfoId" />
+    </Key>
+    <Property Name="NagariktaRelativeInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NagariktaId" Type="Int32" Nullable="false" />
+    <Property Name="BabukoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BabukoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabuNagariktaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabuNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BabuNagariktaIssueDistrict" Type="Int32" />
+    <Property Name="AamakoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AamakoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamaNagariktaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamaNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AamaNagariktaIssueDistrict" Type="Int32" />
+    <Property Name="PatikoNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PatikoFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PatiNagariktaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PatiNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PatiNagariktaIssueDistrict" Type="Int32" />
+    <NavigationProperty Name="tblNagariktaSifari" Relationship="Self.FK_tblNagariktaRelativeDetails_tblNagariktaSifaris" FromRole="tblNagariktaRelativeDetails" ToRole="tblNagariktaSifaris" />
+  </EntityType>
+  <EntityType Name="tblNagariktaSifari">
+    <Key>
+      <PropertyRef Name="NewNagariktaId" />
+    </Key>
+    <Property Name="NewNagariktaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NagariktaFaramNo" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JanmaDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaPradesh" Type="Int32" />
+    <Property Name="JanmaJilla" Type="Int32" />
+    <Property Name="JanmaPalika" Type="Int32" />
+    <Property Name="JanmaWard" Type="Int32" />
+    <Property Name="PermaPradesh" Type="Int32" />
+    <Property Name="PermaJilla" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWard" Type="Int32" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkOffice" Type="Int32" />
+    <Property Name="FiscalYear" Type="Int32" />
+    <NavigationProperty Name="tblNagariktaRelativeDetails" Relationship="Self.FK_tblNagariktaRelativeDetails_tblNagariktaSifaris" FromRole="tblNagariktaSifaris" ToRole="tblNagariktaRelativeDetails" />
+  </EntityType>
+  <EntityType Name="tblNataPersonalDetail">
+    <Key>
+      <PropertyRef Name="NataPersonId" />
+    </Key>
+    <Property Name="NataPersonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NataId" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RelatonTo" Type="Int32" />
+    <NavigationProperty Name="tblNataPramanit" Relationship="Self.FK_tblNataPersonalDetails_tblNataPramanit" FromRole="tblNataPersonalDetails" ToRole="tblNataPramanit" />
+  </EntityType>
+  <EntityType Name="tblNataPramanit">
+    <Key>
+      <PropertyRef Name="NewNataId" />
+    </Key>
+    <Property Name="NewNataId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="PermaState" Type="Int32" />
+    <Property Name="PermaDistrict" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWard" Type="Int32" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDistrict" Type="Int32" />
+    <Property Name="NataPramanitFaramNo" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkOffice" Type="Int32" />
+    <Property Name="FiscalYear" Type="Int32" />
+    <NavigationProperty Name="tblNataPersonalDetails" Relationship="Self.FK_tblNataPersonalDetails_tblNataPramanit" FromRole="tblNataPramanit" ToRole="tblNataPersonalDetails" />
+  </EntityType>
+  <EntityType Name="tblOccupation">
+    <Key>
+      <PropertyRef Name="OcupationId" />
+    </Key>
+    <Property Name="OcupationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Occupation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblPadha">
+    <Key>
+      <PropertyRef Name="PadhaId" />
+    </Key>
+    <Property Name="PadhaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PadhaName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ShreniId" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEmployees" Relationship="Self.FK_tblEmployee_tblPadha" FromRole="tblPadha" ToRole="tblEmployee" />
+    <NavigationProperty Name="tblShreni" Relationship="Self.FK_tblPadha_tblShreni" FromRole="tblPadha" ToRole="tblShreni" />
+  </EntityType>
+  <EntityType Name="tblPalika">
+    <Key>
+      <PropertyRef Name="PalikaId" />
+    </Key>
+    <Property Name="PalikaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PalikaId_val" Type="Int32" Nullable="false" />
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="PalikaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PalikaName_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblPanjika">
+    <Key>
+      <PropertyRef Name="PanjikaId" />
+    </Key>
+    <Property Name="PanjikaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PanjiState" Type="Int32" />
+    <Property Name="PanjiDistrict" Type="Int32" />
+    <Property Name="PanjiPalika" Type="Int32" />
+    <Property Name="PanjiWardNo" Type="Int32" />
+    <Property Name="PanjiNaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PanjiFullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Panji_INVId" Type="Int32" Nullable="false" />
+    <Property Name="FiscalYear" Type="Int32" />
+    <Property Name="WorkOffice" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FaramDartaMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FaramDartaDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PariwarLagatNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SifarisType" Type="Int32" Nullable="false" />
+    <Property Name="JanmaDartaFaramNo" Type="Int32" />
+    <Property Name="MrityuDartaFaramNo" Type="Int32" />
+    <Property Name="VivahDartaFaramNo" Type="Int32" />
+    <Property Name="MigrationDartaFaramNo" Type="Int32" />
+    <Property Name="DivorceDartaFaramNo" Type="Int32" />
+    <NavigationProperty Name="tblBasaisaraiDartas" Relationship="Self.FK_tblBasaisaraiDarta_tblPanjika" FromRole="tblPanjika" ToRole="tblBasaisaraiDarta" />
+    <NavigationProperty Name="tblDivorceDartas" Relationship="Self.FK_tblDivorceDarta_tblPanjika" FromRole="tblPanjika" ToRole="tblDivorceDarta" />
+    <NavigationProperty Name="tblJanmaDartas" Relationship="Self.FK_tblJanmaDarta_tblPanjika" FromRole="tblPanjika" ToRole="tblJanmaDarta" />
+    <NavigationProperty Name="tblMrityuDartas" Relationship="Self.FK_tblMrityuDarta_tblPanjika" FromRole="tblPanjika" ToRole="tblMrityuDarta" />
+    <NavigationProperty Name="tblVivahDartas" Relationship="Self.FK_tblVivahDarta_tblPanjika" FromRole="tblPanjika" ToRole="tblVivahDarta" />
+  </EntityType>
+  <EntityType Name="tblRelation">
+    <Key>
+      <PropertyRef Name="RelationId" />
+    </Key>
+    <Property Name="RelationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RelationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RelationName_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblShakha">
+    <Key>
+      <PropertyRef Name="ShakhaId" />
+    </Key>
+    <Property Name="ShakhaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShakhaName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WorkOfficeId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <NavigationProperty Name="tblDepartment" Relationship="Self.FK_tblShakha_tblDepartment" FromRole="tblShakha" ToRole="tblDepartment" />
+    <NavigationProperty Name="tblWorkOffice" Relationship="Self.FK_tblShakha_tblWorkOffice" FromRole="tblShakha" ToRole="tblWorkOffice" />
+  </EntityType>
+  <EntityType Name="tblShreni">
+    <Key>
+      <PropertyRef Name="ShreniId" />
+    </Key>
+    <Property Name="ShreniId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShreniName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ShreniScheduleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblEmployees" Relationship="Self.FK_tblEmployee_tblShreni" FromRole="tblShreni" ToRole="tblEmployee" />
+    <NavigationProperty Name="tblPadhas" Relationship="Self.FK_tblPadha_tblShreni" FromRole="tblShreni" ToRole="tblPadha" />
+  </EntityType>
+  <EntityType Name="tblSifarisType">
+    <Key>
+      <PropertyRef Name="SifarisTypeId" />
+    </Key>
+    <Property Name="SifarisTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SifarisType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblState">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateId_val" Type="Int32" />
+    <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StateName_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblDistricts" Relationship="Self.FK_tblDistrict_tblDistrict" FromRole="tblState" ToRole="tblDistrict" />
+    <NavigationProperty Name="tblState1" Relationship="Self.FK_tblState_tblState" FromRole="tblState" ToRole="tblState1" />
+    <NavigationProperty Name="tblState2" Relationship="Self.FK_tblState_tblState" FromRole="tblState1" ToRole="tblState" />
+  </EntityType>
+  <EntityType Name="tblUserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <NavigationProperty Name="tblEmployee" Relationship="Self.FK_tblUserProfile_tblEmployee" FromRole="tblUserProfile" ToRole="tblEmployee" />
+  </EntityType>
+  <EntityType Name="tblUserType">
+    <Key>
+      <PropertyRef Name="UserTypeId" />
+    </Key>
+    <Property Name="UserTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ScheduleId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEmployees" Relationship="Self.FK_tblEmployee_tblEmployee" FromRole="tblUserTypes" ToRole="tblEmployee" />
+  </EntityType>
+  <EntityType Name="tblVivahBrideDetail">
+    <Key>
+      <PropertyRef Name="NewMarriageBrideDetailsId" />
+    </Key>
+    <Property Name="NewMarriageBrideDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewMarriageId" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JaatJati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaritalStatus" Type="Boolean" />
+    <Property Name="ShikshaSthar" Type="Int32" />
+    <Property Name="Pesha" Type="Int32" />
+    <Property Name="Dharma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatriBhasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PermaState" Type="Int32" />
+    <Property Name="PermaDistrict" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWardNo" Type="Int32" />
+    <Property Name="GaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaLiyekoDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIsssueDistrict" Type="Int32" />
+    <Property Name="PassportNo_Desh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BideshThegana" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ForeignThegana" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BajekoNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Grandfather" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BabukoNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MotherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VivahGardaAge" Type="Int32" />
+    <NavigationProperty Name="tblVivahDarta" Relationship="Self.FK_tblVivahBrideDetails_tblVivahDarta" FromRole="tblVivahBrideDetails" ToRole="tblVivahDarta" />
+  </EntityType>
+  <EntityType Name="tblVivahDarta">
+    <Key>
+      <PropertyRef Name="NewMarriageId" />
+    </Key>
+    <Property Name="NewMarriageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PanjiId" Type="Int32" Nullable="false" />
+    <Property Name="VivahKisim" Type="Int32" />
+    <Property Name="VivahBhayekoMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VivahBhayekoDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VivahPradesh" Type="Int32" />
+    <Property Name="VivahJilla" Type="Int32" />
+    <Property Name="VivahPalika" Type="Int32" />
+    <Property Name="VivahWardNo" Type="Int32" />
+    <Property Name="VivahGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VivahGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VivahBidesh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VivahForeign" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblPanjika" Relationship="Self.FK_tblVivahDarta_tblPanjika" FromRole="tblVivahDarta" ToRole="tblPanjika" />
+    <NavigationProperty Name="tblVivahBrideDetails" Relationship="Self.FK_tblVivahBrideDetails_tblVivahDarta" FromRole="tblVivahDarta" ToRole="tblVivahBrideDetails" />
+    <NavigationProperty Name="tblVivahDartaInformants" Relationship="Self.FK_tblVivahDartaInformant_tblVivahDarta" FromRole="tblVivahDarta" ToRole="tblVivahDartaInformant" />
+    <NavigationProperty Name="tblVivahGroomDetails" Relationship="Self.FK_tblVivahGroomDetails_tblVivahDarta" FromRole="tblVivahDarta" ToRole="tblVivahGroomDetails" />
+  </EntityType>
+  <EntityType Name="tblVivahDartaInformant">
+    <Key>
+      <PropertyRef Name="NewMarriageInformantId" />
+    </Key>
+    <Property Name="NewMarriageInformantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewMarriageId" Type="Int32" />
+    <Property Name="InfNaamThar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfState" Type="Int32" />
+    <Property Name="InfDistrict" Type="Int32" />
+    <Property Name="InfPalika" Type="Int32" />
+    <Property Name="InfWardNo" Type="Int32" />
+    <Property Name="InfGaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfGharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InfNagariktaIssueDistrict" Type="Int32" />
+    <Property Name="InfPassportNo_Desh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblVivahDarta" Relationship="Self.FK_tblVivahDartaInformant_tblVivahDarta" FromRole="tblVivahDartaInformant" ToRole="tblVivahDarta" />
+  </EntityType>
+  <EntityType Name="tblVivahGroomDetail">
+    <Key>
+      <PropertyRef Name="NewMarriageGroomDetailsId" />
+    </Key>
+    <Property Name="NewMarriageGroomDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewMarriageId" Type="Int32" Nullable="false" />
+    <Property Name="NaamThar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaMiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JaatJati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaritalStatus" Type="Boolean" />
+    <Property Name="ShikshaSthar" Type="Int32" />
+    <Property Name="Pesha" Type="Int32" />
+    <Property Name="Dharma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatriBhasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PermaState" Type="Int32" />
+    <Property Name="PermaDistrict" Type="Int32" />
+    <Property Name="PermaPalika" Type="Int32" />
+    <Property Name="PermaWardNo" Type="Int32" />
+    <Property Name="GaunTole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GharNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JanmaDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaLiyekoDesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaPraPaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NagariktaIsssueDistrict" Type="Int32" />
+    <Property Name="PassportNo_Desh" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="BideshThegana" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ForeignThegana" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BajekoNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Grandfather" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BabukoNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AamakoNaam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MotherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VivahGardaAge" Type="Int32" />
+    <NavigationProperty Name="tblVivahDarta" Relationship="Self.FK_tblVivahGroomDetails_tblVivahDarta" FromRole="tblVivahGroomDetails" ToRole="tblVivahDarta" />
+  </EntityType>
+  <EntityType Name="tblVivahKisim">
+    <Key>
+      <PropertyRef Name="VivahKisimId" />
+    </Key>
+    <Property Name="VivahKisimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VivahKisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VivahKisim_Nep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblWorkOffice">
+    <Key>
+      <PropertyRef Name="WorkOfficeId" />
+    </Key>
+    <Property Name="WorkOfficeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="WorkOfficeAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblDepartments" Relationship="Self.FK_tblDepartment_tblDepartment" FromRole="tblWorkOffice" ToRole="tblDepartment" />
+    <NavigationProperty Name="tblDistrict" Relationship="Self.FK_tblWarehouse_tblDistrict" FromRole="tblWorkOffice" ToRole="tblDistrict" />
+    <NavigationProperty Name="tblShakhas" Relationship="Self.FK_tblShakha_tblWorkOffice" FromRole="tblWorkOffice" ToRole="tblShakha" />
+  </EntityType>
+  <EntityType Name="Ward">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WardNo" Type="Int64" />
+    <Property Name="LocalLevelId" Type="Int64" />
+    <NavigationProperty Name="LocalLevel" Relationship="Self.FK_Ward_LocalLevel" FromRole="Ward" ToRole="LocalLevel" />
+    <NavigationProperty Name="WardDetails" Relationship="Self.FK_WardDetails_Ward" FromRole="Ward" ToRole="WardDetails" />
+  </EntityType>
+  <EntityType Name="WardDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WardId" Type="Int64" />
+    <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Density" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Popullation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Ward" Relationship="Self.FK_WardDetails_Ward" FromRole="WardDetails" ToRole="Ward" />
+  </EntityType>
+  <EntityType Name="Year">
+    <Key>
+      <PropertyRef Name="YearId" />
+    </Key>
+    <Property Name="YearId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YearName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Citizen_GharJagga_Info_Citizen_Info">
+    <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="0..1" />
+    <End Role="Citizen_GharJagga_Info" Type="Self.Citizen_GharJagga_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Citizen_GharJagga_Info">
+        <PropertyRef Name="Citizen_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Citizen_Info_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DeparmentId" />
+      </Principal>
+      <Dependent Role="Citizen_Info">
+        <PropertyRef Name="DeparmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JaagaTarfa_Citizen_Info">
+    <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="0..1" />
+    <End Role="JaagaTarfa" Type="Self.JaagaTarfa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JaagaTarfa">
+        <PropertyRef Name="CitizenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Karlayatarfa_Citizen_Info">
+    <End Role="Citizen_Info" Type="Self.Citizen_Info" Multiplicity="0..1" />
+    <End Role="Karlayatarfa" Type="Self.Karlayatarfa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Karlayatarfa">
+        <PropertyRef Name="citizen_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DistrictDetails_District">
+    <End Role="District" Type="Self.District" Multiplicity="1" />
+    <End Role="DistrictDetails" Type="Self.DistrictDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DistrictDetails">
+        <PropertyRef Name="DistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalLevel_District">
+    <End Role="District" Type="Self.District" Multiplicity="1" />
+    <End Role="LocalLevel" Type="Self.LocalLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocalLevel">
+        <PropertyRef Name="DistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GharjaggakarFiles_GharJaggaKar">
+    <End Role="GharJaggaKar" Type="Self.GharJaggaKar" Multiplicity="0..1" />
+    <End Role="GharjaggakarFiles" Type="Self.GharjaggakarFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GharJaggaKar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="GharjaggakarFiles">
+        <PropertyRef Name="GhraJaggaKarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalLevelDetails_LocalLevel">
+    <End Role="LocalLevel" Type="Self.LocalLevel" Multiplicity="1" />
+    <End Role="LocalLevelDetails" Type="Self.LocalLevelDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocalLevel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocalLevelDetails">
+        <PropertyRef Name="LocalLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ward_LocalLevel">
+    <End Role="LocalLevel" Type="Self.LocalLevel" Multiplicity="0..1" />
+    <End Role="Ward" Type="Self.Ward" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocalLevel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ward">
+        <PropertyRef Name="LocalLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StateDetails_State">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="StateDetails" Type="Self.StateDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StateDetails">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBasaisaraiDarta_tblPanjika">
+    <End Role="tblPanjika" Type="Self.tblPanjika" Multiplicity="1" />
+    <End Role="tblBasaisaraiDarta" Type="Self.tblBasaisaraiDarta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPanjika">
+        <PropertyRef Name="PanjikaId" />
+      </Principal>
+      <Dependent Role="tblBasaisaraiDarta">
+        <PropertyRef Name="PanjiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBasaisaraiDartaInformant_tblBasaisaraiDarta">
+    <End Role="tblBasaisaraiDarta" Type="Self.tblBasaisaraiDarta" Multiplicity="1" />
+    <End Role="tblBasaisaraiDartaInformant" Type="Self.tblBasaisaraiDartaInformant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBasaisaraiDarta">
+        <PropertyRef Name="NewMigrationId" />
+      </Principal>
+      <Dependent Role="tblBasaisaraiDartaInformant">
+        <PropertyRef Name="NewMigrationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBasaisaraiPersonalDetails_tblBasaisaraiDarta">
+    <End Role="tblBasaisaraiDarta" Type="Self.tblBasaisaraiDarta" Multiplicity="1" />
+    <End Role="tblBasaisaraiPersonalDetails" Type="Self.tblBasaisaraiPersonalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBasaisaraiDarta">
+        <PropertyRef Name="NewMigrationId" />
+      </Principal>
+      <Dependent Role="tblBasaisaraiPersonalDetails">
+        <PropertyRef Name="NewMigrationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblDepartment_tblDepartment">
+    <End Role="tblWorkOffice" Type="Self.tblWorkOffice" Multiplicity="1" />
+    <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblWorkOffice">
+        <PropertyRef Name="WorkOfficeId" />
+      </Principal>
+      <Dependent Role="tblDepartment">
+        <PropertyRef Name="WorkOfficeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblShakha_tblDepartment">
+    <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="0..1" />
+    <End Role="tblShakha" Type="Self.tblShakha" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDepartment">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="tblShakha">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblDistrict_tblDistrict">
+    <End Role="tblState" Type="Self.tblState" Multiplicity="0..1" />
+    <End Role="tblDistrict" Type="Self.tblDistrict" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblState">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="tblDistrict">
+        <PropertyRef Name="StateId_val" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblWarehouse_tblDistrict">
+    <End Role="tblDistrict" Type="Self.tblDistrict" Multiplicity="0..1" />
+    <End Role="tblWorkOffice" Type="Self.tblWorkOffice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDistrict">
+        <PropertyRef Name="DistrictId" />
+      </Principal>
+      <Dependent Role="tblWorkOffice">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblDivorceDarta_tblPanjika">
+    <End Role="tblPanjika" Type="Self.tblPanjika" Multiplicity="1" />
+    <End Role="tblDivorceDarta" Type="Self.tblDivorceDarta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPanjika">
+        <PropertyRef Name="PanjikaId" />
+      </Principal>
+      <Dependent Role="tblDivorceDarta">
+        <PropertyRef Name="PanjiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblDivorceDartaInformant_tblDivorceDarta">
+    <End Role="tblDivorceDarta" Type="Self.tblDivorceDarta" Multiplicity="1" />
+    <End Role="tblDivorceDartaInformant" Type="Self.tblDivorceDartaInformant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDivorceDarta">
+        <PropertyRef Name="DivorceId" />
+      </Principal>
+      <Dependent Role="tblDivorceDartaInformant">
+        <PropertyRef Name="DivorceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblDivorceeHusbandDetails_tblDivorceDarta">
+    <End Role="tblDivorceDarta" Type="Self.tblDivorceDarta" Multiplicity="1" />
+    <End Role="tblDivorceeHusbandDetails" Type="Self.tblDivorceeHusbandDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDivorceDarta">
+        <PropertyRef Name="DivorceId" />
+      </Principal>
+      <Dependent Role="tblDivorceeHusbandDetails">
+        <PropertyRef Name="DivorceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblDivorceeWifeDetails_tblDivorceDarta">
+    <End Role="tblDivorceDarta" Type="Self.tblDivorceDarta" Multiplicity="1" />
+    <End Role="tblDivorceeWifeDetails" Type="Self.tblDivorceeWifeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDivorceDarta">
+        <PropertyRef Name="DivorceId" />
+      </Principal>
+      <Dependent Role="tblDivorceeWifeDetails">
+        <PropertyRef Name="DivorceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEmployee_tblEmployee">
+    <End Role="tblUserTypes" Type="Self.tblUserType" Multiplicity="1" />
+    <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserTypes">
+        <PropertyRef Name="UserTypeId" />
+      </Principal>
+      <Dependent Role="tblEmployee">
+        <PropertyRef Name="UserTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEmployee_tblPadha">
+    <End Role="tblPadha" Type="Self.tblPadha" Multiplicity="0..1" />
+    <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPadha">
+        <PropertyRef Name="PadhaId" />
+      </Principal>
+      <Dependent Role="tblEmployee">
+        <PropertyRef Name="PadhaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEmployee_tblShreni">
+    <End Role="tblShreni" Type="Self.tblShreni" Multiplicity="0..1" />
+    <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblShreni">
+        <PropertyRef Name="ShreniId" />
+      </Principal>
+      <Dependent Role="tblEmployee">
+        <PropertyRef Name="ShreniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserProfile_tblEmployee">
+    <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="0..1" />
+    <End Role="tblUserProfile" Type="Self.tblUserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEmployee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="tblUserProfile">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJanmaDarta_tblPanjika">
+    <End Role="tblPanjika" Type="Self.tblPanjika" Multiplicity="1" />
+    <End Role="tblJanmaDarta" Type="Self.tblJanmaDarta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPanjika">
+        <PropertyRef Name="PanjikaId" />
+      </Principal>
+      <Dependent Role="tblJanmaDarta">
+        <PropertyRef Name="PanjiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJanmaDartaFatherDetails_tblJanmaDarta">
+    <End Role="tblJanmaDarta" Type="Self.tblJanmaDarta" Multiplicity="1" />
+    <End Role="tblJanmaDartaFatherDetails" Type="Self.tblJanmaDartaFatherDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJanmaDarta">
+        <PropertyRef Name="NewbornId" />
+      </Principal>
+      <Dependent Role="tblJanmaDartaFatherDetails">
+        <PropertyRef Name="NewbornId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJanmaDartaInformant_tblJanmaDarta">
+    <End Role="tblJanmaDarta" Type="Self.tblJanmaDarta" Multiplicity="1" />
+    <End Role="tblJanmaDartaInformant" Type="Self.tblJanmaDartaInformant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJanmaDarta">
+        <PropertyRef Name="NewbornId" />
+      </Principal>
+      <Dependent Role="tblJanmaDartaInformant">
+        <PropertyRef Name="NewbornId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJanmaDartaMotherDetails_tblJanmaDarta">
+    <End Role="tblJanmaDarta" Type="Self.tblJanmaDarta" Multiplicity="1" />
+    <End Role="tblJanmaDartaMotherDetails" Type="Self.tblJanmaDartaMotherDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJanmaDarta">
+        <PropertyRef Name="NewbornId" />
+      </Principal>
+      <Dependent Role="tblJanmaDartaMotherDetails">
+        <PropertyRef Name="NewbornId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMrityuDarta_tblPanjika">
+    <End Role="tblPanjika" Type="Self.tblPanjika" Multiplicity="1" />
+    <End Role="tblMrityuDarta" Type="Self.tblMrityuDarta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPanjika">
+        <PropertyRef Name="PanjikaId" />
+      </Principal>
+      <Dependent Role="tblMrityuDarta">
+        <PropertyRef Name="PanjiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMrityuDartaInformant_tblMrityuDarta">
+    <End Role="tblMrityuDarta" Type="Self.tblMrityuDarta" Multiplicity="1" />
+    <End Role="tblMrityuDartaInformant" Type="Self.tblMrityuDartaInformant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMrityuDarta">
+        <PropertyRef Name="NewDeathId" />
+      </Principal>
+      <Dependent Role="tblMrityuDartaInformant">
+        <PropertyRef Name="NewdeathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMrityuDartaPersonalDetails_tblMrityuDarta">
+    <End Role="tblMrityuDarta" Type="Self.tblMrityuDarta" Multiplicity="1" />
+    <End Role="tblMrityuDartaPersonalDetails" Type="Self.tblMrityuDartaPersonalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMrityuDarta">
+        <PropertyRef Name="NewDeathId" />
+      </Principal>
+      <Dependent Role="tblMrityuDartaPersonalDetails">
+        <PropertyRef Name="NewDeathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNabalakRelativeDetails_tblNabalakSifaris">
+    <End Role="tblNabalakSifaris" Type="Self.tblNabalakSifari" Multiplicity="1" />
+    <End Role="tblNabalakRelativeDetails" Type="Self.tblNabalakRelativeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNabalakSifaris">
+        <PropertyRef Name="NabalakId" />
+      </Principal>
+      <Dependent Role="tblNabalakRelativeDetails">
+        <PropertyRef Name="NabalakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNagariktaRelativeDetails_tblNagariktaSifaris">
+    <End Role="tblNagariktaSifaris" Type="Self.tblNagariktaSifari" Multiplicity="1" />
+    <End Role="tblNagariktaRelativeDetails" Type="Self.tblNagariktaRelativeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNagariktaSifaris">
+        <PropertyRef Name="NewNagariktaId" />
+      </Principal>
+      <Dependent Role="tblNagariktaRelativeDetails">
+        <PropertyRef Name="NagariktaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNataPersonalDetails_tblNataPramanit">
+    <End Role="tblNataPramanit" Type="Self.tblNataPramanit" Multiplicity="1" />
+    <End Role="tblNataPersonalDetails" Type="Self.tblNataPersonalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNataPramanit">
+        <PropertyRef Name="NewNataId" />
+      </Principal>
+      <Dependent Role="tblNataPersonalDetails">
+        <PropertyRef Name="NataId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPadha_tblShreni">
+    <End Role="tblShreni" Type="Self.tblShreni" Multiplicity="1" />
+    <End Role="tblPadha" Type="Self.tblPadha" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblShreni">
+        <PropertyRef Name="ShreniId" />
+      </Principal>
+      <Dependent Role="tblPadha">
+        <PropertyRef Name="ShreniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblVivahDarta_tblPanjika">
+    <End Role="tblPanjika" Type="Self.tblPanjika" Multiplicity="1" />
+    <End Role="tblVivahDarta" Type="Self.tblVivahDarta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPanjika">
+        <PropertyRef Name="PanjikaId" />
+      </Principal>
+      <Dependent Role="tblVivahDarta">
+        <PropertyRef Name="PanjiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblShakha_tblWorkOffice">
+    <End Role="tblWorkOffice" Type="Self.tblWorkOffice" Multiplicity="0..1" />
+    <End Role="tblShakha" Type="Self.tblShakha" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblWorkOffice">
+        <PropertyRef Name="WorkOfficeId" />
+      </Principal>
+      <Dependent Role="tblShakha">
+        <PropertyRef Name="WorkOfficeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblState_tblState">
+    <End Role="tblState" Type="Self.tblState" Multiplicity="1" />
+    <End Role="tblState1" Type="Self.tblState" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblState">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="tblState1">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblVivahBrideDetails_tblVivahDarta">
+    <End Role="tblVivahDarta" Type="Self.tblVivahDarta" Multiplicity="1" />
+    <End Role="tblVivahBrideDetails" Type="Self.tblVivahBrideDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblVivahDarta">
+        <PropertyRef Name="NewMarriageId" />
+      </Principal>
+      <Dependent Role="tblVivahBrideDetails">
+        <PropertyRef Name="NewMarriageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblVivahDartaInformant_tblVivahDarta">
+    <End Role="tblVivahDarta" Type="Self.tblVivahDarta" Multiplicity="0..1" />
+    <End Role="tblVivahDartaInformant" Type="Self.tblVivahDartaInformant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblVivahDarta">
+        <PropertyRef Name="NewMarriageId" />
+      </Principal>
+      <Dependent Role="tblVivahDartaInformant">
+        <PropertyRef Name="NewMarriageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblVivahGroomDetails_tblVivahDarta">
+    <End Role="tblVivahDarta" Type="Self.tblVivahDarta" Multiplicity="1" />
+    <End Role="tblVivahGroomDetails" Type="Self.tblVivahGroomDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblVivahDarta">
+        <PropertyRef Name="NewMarriageId" />
+      </Principal>
+      <Dependent Role="tblVivahGroomDetails">
+        <PropertyRef Name="NewMarriageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WardDetails_Ward">
+    <End Role="Ward" Type="Self.Ward" Multiplicity="0..1" />
+    <End Role="WardDetails" Type="Self.WardDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ward">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WardDetails">
+        <PropertyRef Name="WardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="SifarishEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="Citizen_GharJagga_Info" EntityType="Self.Citizen_GharJagga_Info" />
+    <EntitySet Name="Citizen_Info" EntityType="Self.Citizen_Info" />
+    <EntitySet Name="Demolitions" EntityType="Self.Demolition" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Districts" EntityType="Self.District" />
+    <EntitySet Name="DistrictDetails" EntityType="Self.DistrictDetail" />
+    <EntitySet Name="fiscal_year" EntityType="Self.fiscal_year" />
+    <EntitySet Name="gharBatoes" EntityType="Self.gharBato" />
+    <EntitySet Name="GharJaggaKars" EntityType="Self.GharJaggaKar" />
+    <EntitySet Name="GharjaggakarFiles" EntityType="Self.GharjaggakarFile" />
+    <EntitySet Name="JaagaTarfas" EntityType="Self.JaagaTarfa" />
+    <EntitySet Name="Karlayatarfas" EntityType="Self.Karlayatarfa" />
+    <EntitySet Name="LocalLevels" EntityType="Self.LocalLevel" />
+    <EntitySet Name="LocalLevelDetails" EntityType="Self.LocalLevelDetail" />
+    <EntitySet Name="Months" EntityType="Self.Month" />
+    <EntitySet Name="NirmanBebasahis" EntityType="Self.NirmanBebasahi" />
+    <EntitySet Name="NirmanBebasahiApprovals" EntityType="Self.NirmanBebasahiApproval" />
+    <EntitySet Name="States" EntityType="Self.State" />
+    <EntitySet Name="StateDetails" EntityType="Self.StateDetail" />
+    <EntitySet Name="tblBasaisaraiDartas" EntityType="Self.tblBasaisaraiDarta" />
+    <EntitySet Name="tblBasaisaraiDartaInformants" EntityType="Self.tblBasaisaraiDartaInformant" />
+    <EntitySet Name="tblBasaisaraiKarans" EntityType="Self.tblBasaisaraiKaran" />
+    <EntitySet Name="tblBasaisaraiPersonalDetails" EntityType="Self.tblBasaisaraiPersonalDetail" />
+    <EntitySet Name="tblCourtTypes" EntityType="Self.tblCourtType" />
+    <EntitySet Name="tblDepartments" EntityType="Self.tblDepartment" />
+    <EntitySet Name="tblDistricts" EntityType="Self.tblDistrict" />
+    <EntitySet Name="tblDivorceDartas" EntityType="Self.tblDivorceDarta" />
+    <EntitySet Name="tblDivorceDartaInformants" EntityType="Self.tblDivorceDartaInformant" />
+    <EntitySet Name="tblDivorceeHusbandDetails" EntityType="Self.tblDivorceeHusbandDetail" />
+    <EntitySet Name="tblDivorceeWifeDetails" EntityType="Self.tblDivorceeWifeDetail" />
+    <EntitySet Name="tblEducations" EntityType="Self.tblEducation" />
+    <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
+    <EntitySet Name="tblFiscalYears" EntityType="Self.tblFiscalYear" />
+    <EntitySet Name="tblGenders" EntityType="Self.tblGender" />
+    <EntitySet Name="tblJanmadaMaddats" EntityType="Self.tblJanmadaMaddat" />
+    <EntitySet Name="tblJanmaDartas" EntityType="Self.tblJanmaDarta" />
+    <EntitySet Name="tblJanmaDartaFatherDetails" EntityType="Self.tblJanmaDartaFatherDetail" />
+    <EntitySet Name="tblJanmaDartaInformants" EntityType="Self.tblJanmaDartaInformant" />
+    <EntitySet Name="tblJanmaDartaMotherDetails" EntityType="Self.tblJanmaDartaMotherDetail" />
+    <EntitySet Name="tblJanmaKisims" EntityType="Self.tblJanmaKisim" />
+    <EntitySet Name="tblJanmaSthaans" EntityType="Self.tblJanmaSthaan" />
+    <EntitySet Name="tblMrityuDartas" EntityType="Self.tblMrityuDarta" />
+    <EntitySet Name="tblMrityuDartaInformants" EntityType="Self.tblMrityuDartaInformant" />
+    <EntitySet Name="tblMrityuDartaPersonalDetails" EntityType="Self.tblMrityuDartaPersonalDetail" />
+    <EntitySet Name="tblNabalakRelativeDetails" EntityType="Self.tblNabalakRelativeDetail" />
+    <EntitySet Name="tblNabalakSifaris" EntityType="Self.tblNabalakSifari" />
+    <EntitySet Name="tblNagariktaRelativeDetails" EntityType="Self.tblNagariktaRelativeDetail" />
+    <EntitySet Name="tblNagariktaSifaris" EntityType="Self.tblNagariktaSifari" />
+    <EntitySet Name="tblNataPersonalDetails" EntityType="Self.tblNataPersonalDetail" />
+    <EntitySet Name="tblNataPramanits" EntityType="Self.tblNataPramanit" />
+    <EntitySet Name="tblOccupations" EntityType="Self.tblOccupation" />
+    <EntitySet Name="tblPadhas" EntityType="Self.tblPadha" />
+    <EntitySet Name="tblPalikas" EntityType="Self.tblPalika" />
+    <EntitySet Name="tblPanjikas" EntityType="Self.tblPanjika" />
+    <EntitySet Name="tblRelations" EntityType="Self.tblRelation" />
+    <EntitySet Name="tblShakhas" EntityType="Self.tblShakha" />
+    <EntitySet Name="tblShrenis" EntityType="Self.tblShreni" />
+    <EntitySet Name="tblSifarisTypes" EntityType="Self.tblSifarisType" />
+    <EntitySet Name="tblStates" EntityType="Self.tblState" />
+    <EntitySet Name="tblUserProfiles" EntityType="Self.tblUserProfile" />
+    <EntitySet Name="tblUserTypes" EntityType="Self.tblUserType" />
+    <EntitySet Name="tblVivahBrideDetails" EntityType="Self.tblVivahBrideDetail" />
+    <EntitySet Name="tblVivahDartas" EntityType="Self.tblVivahDarta" />
+    <EntitySet Name="tblVivahDartaInformants" EntityType="Self.tblVivahDartaInformant" />
+    <EntitySet Name="tblVivahGroomDetails" EntityType="Self.tblVivahGroomDetail" />
+    <EntitySet Name="tblVivahKisims" EntityType="Self.tblVivahKisim" />
+    <EntitySet Name="tblWorkOffices" EntityType="Self.tblWorkOffice" />
+    <EntitySet Name="Wards" EntityType="Self.Ward" />
+    <EntitySet Name="WardDetails" EntityType="Self.WardDetail" />
+    <EntitySet Name="Years" EntityType="Self.Year" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Citizen_GharJagga_Info_Citizen_Info" Association="Self.FK_Citizen_GharJagga_Info_Citizen_Info">
+      <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+      <End Role="Citizen_GharJagga_Info" EntitySet="Citizen_GharJagga_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Citizen_Info_Department" Association="Self.FK_Citizen_Info_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JaagaTarfa_Citizen_Info" Association="Self.FK_JaagaTarfa_Citizen_Info">
+      <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+      <End Role="JaagaTarfa" EntitySet="JaagaTarfas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Karlayatarfa_Citizen_Info" Association="Self.FK_Karlayatarfa_Citizen_Info">
+      <End Role="Citizen_Info" EntitySet="Citizen_Info" />
+      <End Role="Karlayatarfa" EntitySet="Karlayatarfas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DistrictDetails_District" Association="Self.FK_DistrictDetails_District">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="DistrictDetails" EntitySet="DistrictDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalLevel_District" Association="Self.FK_LocalLevel_District">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="LocalLevel" EntitySet="LocalLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GharjaggakarFiles_GharJaggaKar" Association="Self.FK_GharjaggakarFiles_GharJaggaKar">
+      <End Role="GharJaggaKar" EntitySet="GharJaggaKars" />
+      <End Role="GharjaggakarFiles" EntitySet="GharjaggakarFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalLevelDetails_LocalLevel" Association="Self.FK_LocalLevelDetails_LocalLevel">
+      <End Role="LocalLevel" EntitySet="LocalLevels" />
+      <End Role="LocalLevelDetails" EntitySet="LocalLevelDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ward_LocalLevel" Association="Self.FK_Ward_LocalLevel">
+      <End Role="LocalLevel" EntitySet="LocalLevels" />
+      <End Role="Ward" EntitySet="Wards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StateDetails_State" Association="Self.FK_StateDetails_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="StateDetails" EntitySet="StateDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBasaisaraiDarta_tblPanjika" Association="Self.FK_tblBasaisaraiDarta_tblPanjika">
+      <End Role="tblPanjika" EntitySet="tblPanjikas" />
+      <End Role="tblBasaisaraiDarta" EntitySet="tblBasaisaraiDartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBasaisaraiDartaInformant_tblBasaisaraiDarta" Association="Self.FK_tblBasaisaraiDartaInformant_tblBasaisaraiDarta">
+      <End Role="tblBasaisaraiDarta" EntitySet="tblBasaisaraiDartas" />
+      <End Role="tblBasaisaraiDartaInformant" EntitySet="tblBasaisaraiDartaInformants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBasaisaraiPersonalDetails_tblBasaisaraiDarta" Association="Self.FK_tblBasaisaraiPersonalDetails_tblBasaisaraiDarta">
+      <End Role="tblBasaisaraiDarta" EntitySet="tblBasaisaraiDartas" />
+      <End Role="tblBasaisaraiPersonalDetails" EntitySet="tblBasaisaraiPersonalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblDepartment_tblDepartment" Association="Self.FK_tblDepartment_tblDepartment">
+      <End Role="tblWorkOffice" EntitySet="tblWorkOffices" />
+      <End Role="tblDepartment" EntitySet="tblDepartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblShakha_tblDepartment" Association="Self.FK_tblShakha_tblDepartment">
+      <End Role="tblDepartment" EntitySet="tblDepartments" />
+      <End Role="tblShakha" EntitySet="tblShakhas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblDistrict_tblDistrict" Association="Self.FK_tblDistrict_tblDistrict">
+      <End Role="tblState" EntitySet="tblStates" />
+      <End Role="tblDistrict" EntitySet="tblDistricts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblWarehouse_tblDistrict" Association="Self.FK_tblWarehouse_tblDistrict">
+      <End Role="tblDistrict" EntitySet="tblDistricts" />
+      <End Role="tblWorkOffice" EntitySet="tblWorkOffices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblDivorceDarta_tblPanjika" Association="Self.FK_tblDivorceDarta_tblPanjika">
+      <End Role="tblPanjika" EntitySet="tblPanjikas" />
+      <End Role="tblDivorceDarta" EntitySet="tblDivorceDartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblDivorceDartaInformant_tblDivorceDarta" Association="Self.FK_tblDivorceDartaInformant_tblDivorceDarta">
+      <End Role="tblDivorceDarta" EntitySet="tblDivorceDartas" />
+      <End Role="tblDivorceDartaInformant" EntitySet="tblDivorceDartaInformants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblDivorceeHusbandDetails_tblDivorceDarta" Association="Self.FK_tblDivorceeHusbandDetails_tblDivorceDarta">
+      <End Role="tblDivorceDarta" EntitySet="tblDivorceDartas" />
+      <End Role="tblDivorceeHusbandDetails" EntitySet="tblDivorceeHusbandDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblDivorceeWifeDetails_tblDivorceDarta" Association="Self.FK_tblDivorceeWifeDetails_tblDivorceDarta">
+      <End Role="tblDivorceDarta" EntitySet="tblDivorceDartas" />
+      <End Role="tblDivorceeWifeDetails" EntitySet="tblDivorceeWifeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEmployee_tblEmployee" Association="Self.FK_tblEmployee_tblEmployee">
+      <End Role="tblUserTypes" EntitySet="tblUserTypes" />
+      <End Role="tblEmployee" EntitySet="tblEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEmployee_tblPadha" Association="Self.FK_tblEmployee_tblPadha">
+      <End Role="tblPadha" EntitySet="tblPadhas" />
+      <End Role="tblEmployee" EntitySet="tblEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEmployee_tblShreni" Association="Self.FK_tblEmployee_tblShreni">
+      <End Role="tblShreni" EntitySet="tblShrenis" />
+      <End Role="tblEmployee" EntitySet="tblEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserProfile_tblEmployee" Association="Self.FK_tblUserProfile_tblEmployee">
+      <End Role="tblEmployee" EntitySet="tblEmployees" />
+      <End Role="tblUserProfile" EntitySet="tblUserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJanmaDarta_tblPanjika" Association="Self.FK_tblJanmaDarta_tblPanjika">
+      <End Role="tblPanjika" EntitySet="tblPanjikas" />
+      <End Role="tblJanmaDarta" EntitySet="tblJanmaDartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJanmaDartaFatherDetails_tblJanmaDarta" Association="Self.FK_tblJanmaDartaFatherDetails_tblJanmaDarta">
+      <End Role="tblJanmaDarta" EntitySet="tblJanmaDartas" />
+      <End Role="tblJanmaDartaFatherDetails" EntitySet="tblJanmaDartaFatherDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJanmaDartaInformant_tblJanmaDarta" Association="Self.FK_tblJanmaDartaInformant_tblJanmaDarta">
+      <End Role="tblJanmaDarta" EntitySet="tblJanmaDartas" />
+      <End Role="tblJanmaDartaInformant" EntitySet="tblJanmaDartaInformants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJanmaDartaMotherDetails_tblJanmaDarta" Association="Self.FK_tblJanmaDartaMotherDetails_tblJanmaDarta">
+      <End Role="tblJanmaDarta" EntitySet="tblJanmaDartas" />
+      <End Role="tblJanmaDartaMotherDetails" EntitySet="tblJanmaDartaMotherDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMrityuDarta_tblPanjika" Association="Self.FK_tblMrityuDarta_tblPanjika">
+      <End Role="tblPanjika" EntitySet="tblPanjikas" />
+      <End Role="tblMrityuDarta" EntitySet="tblMrityuDartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMrityuDartaInformant_tblMrityuDarta" Association="Self.FK_tblMrityuDartaInformant_tblMrityuDarta">
+      <End Role="tblMrityuDarta" EntitySet="tblMrityuDartas" />
+      <End Role="tblMrityuDartaInformant" EntitySet="tblMrityuDartaInformants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMrityuDartaPersonalDetails_tblMrityuDarta" Association="Self.FK_tblMrityuDartaPersonalDetails_tblMrityuDarta">
+      <End Role="tblMrityuDarta" EntitySet="tblMrityuDartas" />
+      <End Role="tblMrityuDartaPersonalDetails" EntitySet="tblMrityuDartaPersonalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNabalakRelativeDetails_tblNabalakSifaris" Association="Self.FK_tblNabalakRelativeDetails_tblNabalakSifaris">
+      <End Role="tblNabalakSifaris" EntitySet="tblNabalakSifaris" />
+      <End Role="tblNabalakRelativeDetails" EntitySet="tblNabalakRelativeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNagariktaRelativeDetails_tblNagariktaSifaris" Association="Self.FK_tblNagariktaRelativeDetails_tblNagariktaSifaris">
+      <End Role="tblNagariktaSifaris" EntitySet="tblNagariktaSifaris" />
+      <End Role="tblNagariktaRelativeDetails" EntitySet="tblNagariktaRelativeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNataPersonalDetails_tblNataPramanit" Association="Self.FK_tblNataPersonalDetails_tblNataPramanit">
+      <End Role="tblNataPramanit" EntitySet="tblNataPramanits" />
+      <End Role="tblNataPersonalDetails" EntitySet="tblNataPersonalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPadha_tblShreni" Association="Self.FK_tblPadha_tblShreni">
+      <End Role="tblShreni" EntitySet="tblShrenis" />
+      <End Role="tblPadha" EntitySet="tblPadhas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblVivahDarta_tblPanjika" Association="Self.FK_tblVivahDarta_tblPanjika">
+      <End Role="tblPanjika" EntitySet="tblPanjikas" />
+      <End Role="tblVivahDarta" EntitySet="tblVivahDartas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblShakha_tblWorkOffice" Association="Self.FK_tblShakha_tblWorkOffice">
+      <End Role="tblWorkOffice" EntitySet="tblWorkOffices" />
+      <End Role="tblShakha" EntitySet="tblShakhas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblState_tblState" Association="Self.FK_tblState_tblState">
+      <End Role="tblState" EntitySet="tblStates" />
+      <End Role="tblState1" EntitySet="tblStates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblVivahBrideDetails_tblVivahDarta" Association="Self.FK_tblVivahBrideDetails_tblVivahDarta">
+      <End Role="tblVivahDarta" EntitySet="tblVivahDartas" />
+      <End Role="tblVivahBrideDetails" EntitySet="tblVivahBrideDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblVivahDartaInformant_tblVivahDarta" Association="Self.FK_tblVivahDartaInformant_tblVivahDarta">
+      <End Role="tblVivahDarta" EntitySet="tblVivahDartas" />
+      <End Role="tblVivahDartaInformant" EntitySet="tblVivahDartaInformants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblVivahGroomDetails_tblVivahDarta" Association="Self.FK_tblVivahGroomDetails_tblVivahDarta">
+      <End Role="tblVivahDarta" EntitySet="tblVivahDartas" />
+      <End Role="tblVivahGroomDetails" EntitySet="tblVivahGroomDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WardDetails_Ward" Association="Self.FK_WardDetails_Ward">
+      <End Role="Ward" EntitySet="Wards" />
+      <End Role="WardDetails" EntitySet="WardDetails" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="sp_GetLocalDate" ReturnType="Collection(String)">
+      <Parameter Name="RomanDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Format" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetRomanDate" ReturnType="Collection(DateTime)">
+      <Parameter Name="LocalYear" Mode="In" Type="Int32" />
+      <Parameter Name="LocalMonth" Mode="In" Type="Int32" />
+      <Parameter Name="LocalDay" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
