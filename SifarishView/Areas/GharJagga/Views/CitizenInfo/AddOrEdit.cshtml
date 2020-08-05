@@ -295,3 +295,30 @@
         //$(event.target).closest(".addate").val("asda");
     });
 </script>
+
+<script>
+    $('#Zone_Id').change(function ()
+        {
+            var id = $(this).val();
+            $.ajax({
+                url: "@Url.Action("GetDistrictListForStateId", "AjaxCall")",
+                type: 'get',
+                //datatype: "json",
+                data: { id: id },
+                success: function (data)
+                {
+                    debugger;
+                    var items = "<option value=\"'0'\">" + "छान्नुहोस्" + "</option>";
+                    $.each(data, function (i, item)
+                    {
+                        items += "<option value=\"" + item.Id + "\">" + item.Name + "</option>";
+                    });
+                    $("#District_Id").html(items);
+                },
+                failure: function ()
+                {
+                    alert('An error occurred.');
+                }
+            });
+        });
+</script>
