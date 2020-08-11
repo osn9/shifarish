@@ -207,7 +207,6 @@ D:\Projects\Sifarish\shifarish\SIFARIS\bin\Microsoft.Owin.Security.Google.xml
 D:\Projects\Sifarish\shifarish\SIFARIS\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Projects\Sifarish\shifarish\SIFARIS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Projects\Sifarish\shifarish\SIFARIS\bin\System.Web.Http.Owin.xml
-D:\Projects\Sifarish\shifarish\SIFARIS\obj\Debug\SIFARIS.csprojResolveAssemblyReference.cache
 D:\Projects\Sifarish\shifarish\SIFARIS\obj\Debug\SIFARIS.dll
 D:\Projects\Sifarish\shifarish\SIFARIS\obj\Debug\SIFARIS.pdb
 D:\softech project\Sifarish-osn\shifarish\SIFARIS\bin\roslyn\csc.exe
@@ -317,3 +316,6 @@ D:\softech project\Sifarish-osn\shifarish\SIFARIS\obj\Debug\SIFARIS.csproj.CoreC
 D:\softech project\Sifarish-osn\shifarish\SIFARIS\obj\Debug\SIFARIS.csproj.CopyComplete
 D:\softech project\Sifarish-osn\shifarish\SIFARIS\obj\Debug\SIFARIS.dll
 D:\softech project\Sifarish-osn\shifarish\SIFARIS\obj\Debug\SIFARIS.pdb
+D:\Projects\Sifarish\shifarish\SIFARIS\obj\Debug\SIFARIS.csprojAssemblyReference.cache
+D:\Projects\Sifarish\shifarish\SIFARIS\obj\Debug\SIFARIS.csproj.CoreCompileInputs.cache
+D:\Projects\Sifarish\shifarish\SIFARIS\obj\Debug\SIFARIS.csproj.CopyComplete

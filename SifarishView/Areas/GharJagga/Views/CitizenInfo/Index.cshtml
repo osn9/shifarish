@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     ViewBag.Title = "Index";
+    int i = 1;
 }
 
 
@@ -19,6 +20,9 @@
     <table class="table table-hover table-striped">
         <thead>
             <tr>
+                <th>
+
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Citizenship_No)
 
@@ -51,6 +55,9 @@
             {
                 <tr>
                     <td>
+                      @i
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Citizenship_No)
                     </td>
                     <td>
@@ -77,6 +84,7 @@
                         @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
                     </td>
                 </tr>
+                i++;
             }
         </tbody>
        

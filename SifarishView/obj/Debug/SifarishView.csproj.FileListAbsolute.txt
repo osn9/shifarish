@@ -203,7 +203,6 @@ D:\Projects\Sifarish\shifarish\SifarishView\bin\Microsoft.Owin.Security.OAuth.xm
 D:\Projects\Sifarish\shifarish\SifarishView\bin\Microsoft.Owin.Security.Google.xml
 D:\Projects\Sifarish\shifarish\SifarishView\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Projects\Sifarish\shifarish\SifarishView\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Projects\Sifarish\shifarish\SifarishView\obj\Debug\SifarishView.csprojResolveAssemblyReference.cache
 D:\Projects\Sifarish\shifarish\SifarishView\obj\Debug\SifarishView.dll
 D:\Projects\Sifarish\shifarish\SifarishView\obj\Debug\SifarishView.pdb
 D:\softech project\Sifarish-osn\shifarish\SifarishView\bin\roslyn\csc.exe
@@ -312,3 +311,6 @@ D:\softech project\Sifarish-osn\shifarish\SifarishView\obj\Debug\SifarishView.cs
 D:\softech project\Sifarish-osn\shifarish\SifarishView\obj\Debug\SifarishView.csproj.CopyComplete
 D:\softech project\Sifarish-osn\shifarish\SifarishView\obj\Debug\SifarishView.dll
 D:\softech project\Sifarish-osn\shifarish\SifarishView\obj\Debug\SifarishView.pdb
+D:\Projects\Sifarish\shifarish\SifarishView\obj\Debug\SifarishView.csprojAssemblyReference.cache
+D:\Projects\Sifarish\shifarish\SifarishView\obj\Debug\SifarishView.csproj.CoreCompileInputs.cache
+D:\Projects\Sifarish\shifarish\SifarishView\obj\Debug\SifarishView.csproj.CopyComplete

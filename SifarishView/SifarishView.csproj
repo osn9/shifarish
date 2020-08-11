@@ -253,7 +253,7 @@
     <Compile Include="Areas\GharJagga\Controllers\CitizenInfoController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\FiscalYearController.cs" />
-    <Compile Include="Areas\GharJagga\Controllers\CController.cs" />
+    <Compile Include="Areas\GharJagga\Controllers\DashBoardController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\GharBatoController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\GharJaggaKarController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\NirmanBebasahiApprovalController.cs" />
