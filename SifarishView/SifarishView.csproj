@@ -250,6 +250,7 @@
     <Compile Include="Areas\Darta\Models\JanmaDartaViewModel.cs" />
     <Compile Include="Areas\Darta\Models\MrityuDartaViewModel.cs" />
     <Compile Include="Areas\Darta\Models\VivahDartaViewModel.cs" />
+    <Compile Include="Areas\GharJagga\Controllers\AjaxController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\CitizenInfoController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\GharJagga\Controllers\FiscalYearController.cs" />
@@ -702,6 +703,7 @@
     <Folder Include="Areas\DartaSupplement\Views\AjaxRequest\" />
     <Folder Include="Areas\Darta\Data\" />
     <Folder Include="Areas\Darta\Views\AjaxRequest\" />
+    <Folder Include="Areas\GharJagga\Views\Ajax\" />
     <Folder Include="Areas\SetUp\Data\" />
     <Folder Include="Areas\SetUp\Views\District\" />
     <Folder Include="Areas\SetUp\Views\FiscalYear\" />
